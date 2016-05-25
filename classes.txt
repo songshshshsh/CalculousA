@@ -11,6 +11,7 @@ Utility classes:
 
 Basic classes:
 	Board
+		Vector<Point> blocks;
 		int height, width;
 		Vector<TerminalSet *> terminalSets;
 		Matrix<int> map;
