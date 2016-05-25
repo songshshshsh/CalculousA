@@ -5,6 +5,11 @@
 
 class Solver
 {
+public:
+	Solver(Board board_)
+	{
+		this->board = board_;
+	}
 private:
 	const Board *board;
 	SolveStrategy *strategy;

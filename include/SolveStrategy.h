@@ -7,8 +7,8 @@
 class SolveStrategy
 {
 private:
-	bool check(Solution);
-	void optimize(Solution);
+	bool check(Solution&);
+	void optimize(Solution&);
 	void solve();
 };
 
