@@ -1,31 +1,36 @@
 Utility classes:
 	Point
+		int x, y;
 	Vector<T>
+		jiushi vector
 	Matrix<T>
+		jiushi vector<vector< xxx >>
+		resize(h, w);
 	BitMatrix
+	
 
 Basic classes:
 	Board
-		int m_height, m_width;
-		Vector<TerminalSet *> m_terminalSets;
-		Matrix<int> m_map;
+		int height, width;
+		Vector<TerminalSet *> terminalSets;
+		Matrix<int> map;
 		void input(int mode=0, ifstream &ifs=cin);
-		void output(int mode=1, ofstream &ofs=cout);
+		void output(int mode=0, ofstream &ofs=cout);
 	TerminalSet
-		Vector<Point> m_points;
-		const Board *m_board;
-		int m_id;
+		Vector<Point> points;
+		const Board *board;
+		int id;
 	Tree
-		const TerminalSet *m_terminalSet;
-		BitMatrix m_map;
-		int m_length;
+		const TerminalSet *terminalSet;
+		BitMatrix map;
+		int length;
 	Solver
-		const Board *m_board;
-		SolveStrategy *m_strategy;
+		const Board *board;
+		SolveStrategy *strategy;
 	Solution 
-		const Board *m_board;
+		const Board *board;
 		Vector<Tree*> solution;
-		
+		Matrix<int> map;
 
 Strategy classes:
 	SolveStrategy:
