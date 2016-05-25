@@ -1,0 +1,37 @@
+Utility classes:
+	Point
+	Vector<T>
+	Matrix<T>
+	BitMatrix
+
+Basic classes:
+	Board
+		int m_height, m_width;
+		Vector<TerminalSet *> m_terminalSets;
+		Matrix<int> m_map;
+		void input(int mode=0, ifstream &ifs=cin);
+		void output(int mode=1, ofstream &ofs=cout);
+	TerminalSet
+		Vector<Point> m_points;
+		const Board *m_board;
+		int m_id;
+	Tree
+		const TerminalSet *m_terminalSet;
+		BitMatrix m_map;
+		int m_length;
+	Solver
+		const Board *m_board;
+		SolveStrategy *m_strategy;
+	Solution 
+		const Board *m_board;
+		Vector<Tree*> solution;
+		
+
+Strategy classes:
+	SolveStrategy:
+		check()
+		optimize(unshabify)
+		solve()
+		
+	
+		
