@@ -2,17 +2,21 @@
 #define TERMINALSET_H
 
 #include "global.h"
+#include "Board.h"
 
 class TerminalSet
-{
+{	
 private:
-	Vector<Point> points;
 	const Board* board;
-	int id;
+	const int id;
 public:
-	TerminalSet(int,int);
-	inline void AddPoint(Point point)
+	Vector<Point> points;
+	TerminalSet(int id_,const Board* board_):id(id_)
 	{
+		board = board_;
+	}
+	inline void AddPoint(Point point)
+	{	
 		points.push_back(point);
 	}
 };

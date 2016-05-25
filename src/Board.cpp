@@ -1,6 +1,7 @@
 #include "../include/Board.h"
+#include "../include/TerminalSet.h"
 
-void Board::input(int mode, ifstream & ifs)
+void Board::input(int mode, istream & ifs)
 {
 	if (mode == 0)
 	{
@@ -16,19 +17,15 @@ void Board::input(int mode, ifstream & ifs)
 				maxindex = max(maxindex,map[i][j]);
 			}
 	terminalSets.resize(maxindex+1);
+	for (int i = 1;i < (int)terminalSets.size(); ++i)
+		terminalSets[i] = new TerminalSet(i,this);
 	for (int i = 0;i < height; ++i)
 		for (int j = 0; j < width; ++j)
 		{
-			if (map[i][j] == -1) block.push_back(Point(x,y));
+			if (map[i][j] == -1) block.push_back(Point(i,j));
 			else if (map[i][j] > 0)
-			terminalSets[map[i][j]]->AddPoint(i,j);
-		}
-		for (int i = 1;i < (int)terminalSets.size(); ++i)
-		{
-			terminalSets[i]->id = i;
-			terminalSets[i]->board = this;
-		}
-	}
+			terminalSets[map[i][j]]->AddPoint(Point(i,j));
+		}	}
 	else
 	{
 		int id;
@@ -38,24 +35,19 @@ void Board::input(int mode, ifstream & ifs)
 			int x,y;
 			if (id > 0)
 			{
-				int n;
-				ifs>>n;
-				Terminal *terminal = new TerminalSets(id,n);
-				for (int i = 0;i < n; ++i)
+				TerminalSet *terminal = new TerminalSet(id,this);
+				while (ifs>>x>>y)
 				{
-					ifs>>x>>y;
-					terminal.AddPoint(x,y);
+					terminal->AddPoint(Point(x,y));
 					map[x][y] = id;
 				}
 				terminalSets.push_back(terminal);
 			}
 			else if (id == -1)
 			{
-				ifs>>n;
-				for (int i = 0;i < n; ++i)
+				while (ifs>>x>>y)
 				{
-					ifs>>x>>y;
-					blocks.push_back(Point(x,y));
+					block.push_back(Point(x,y));
 					map[x][y] = -1;
 				}
 			}
@@ -64,7 +56,7 @@ void Board::input(int mode, ifstream & ifs)
 	}
 }
 
-void Board::output(int mode, ofstream &ofs)
+void Board::output(int mode, ostream &ofs)
 {
 	if (mode == 0)
 	{
@@ -81,8 +73,8 @@ void Board::output(int mode, ofstream &ofs)
 		for (int i = 1;i < (int)terminalSets.size(); ++i)
 		{
 			ofs<<i<<'\n';
-			for (int j = 0;j < terminalSets[i].size(); ++j)
-				ofs<<x<<' '<<y<<' '<<'\n';
+			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
+				ofs<<terminalSets[i]->points[j].getx()<<' '<<terminalSets[i]->points[j].gety()<<' '<<'\n';
 		}
 	}
 }

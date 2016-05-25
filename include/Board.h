@@ -2,7 +2,8 @@
 #define BOARD_H
 
 #include "global.h"
-#include "TerminalSet.h"
+
+class TerminalSet;
 
 class Board
 {
@@ -10,9 +11,10 @@ class Board
 		int height, width;
 		Vector<TerminalSet *> terminalSets;
 		Matrix<int> map;
+		Vector<Point> block;
 	public:
-		void input(int mode=0, ifstream &ifs=cin);
-		void output(int mode=0, ofstream &ofs=cout);
+		void input(int mode=0, istream &ifs=cin);
+		void output(int mode=0, ostream &ofs=cout);
 };
 
 #endif
