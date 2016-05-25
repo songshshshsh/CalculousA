@@ -1,9 +1,8 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "Vector.h"
-#include "Matrix.h"
-#include "Point.h"
+#include "global.h"
+#include "TerminalSet.h"
 
 class Board
 {
