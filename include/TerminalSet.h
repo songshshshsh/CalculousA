@@ -2,16 +2,17 @@
 #define TERMINALSET_H
 
 #include "global.h"
-#include "Board.h"
+class Board;
+// #include "Board.h"
 
 class TerminalSet
 {	
 private:
-	const Board* board;
-	const int id;
 	TerminalSet &operator =(const TerminalSet &);
 public:
+	const Board* board;
 	Vector<Point> points;
+	const int id;
 	TerminalSet(int id_,const Board* board_):id(id_)
 	{
 		board = board_;

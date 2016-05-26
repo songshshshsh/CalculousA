@@ -8,10 +8,10 @@
 class Solution
 {
 private:
+public:
 	const Board *board;
 	Vector<Tree*> solution;
 	Matrix<int> map;
-public:
 	
 };
 

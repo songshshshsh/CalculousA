@@ -22,7 +22,7 @@ void Board::input(int mode, IStream & ifs)
 	for (int i = 0;i < height; ++i)
 		for (int j = 0; j < width; ++j)
 		{
-			if (map[i][j] == -1) block.push_back(Point(i,j));
+			if (map[i][j] == -1) blocks.push_back(Point(i,j));
 			else if (map[i][j] > 0)
 			terminalSets[map[i][j]]->AddPoint(Point(i,j));
 		}	
@@ -55,7 +55,7 @@ void Board::input(int mode, IStream & ifs)
 				for (int i = 1;i <=n; ++i)
 				{
 					ifs>>x>>y;
-					block.push_back(Point(x,y));
+					blocks.push_back(Point(x,y));
 					map[x][y] = -1;
 				}
 			}
@@ -85,8 +85,8 @@ void Board::output(int mode, OStream &ofs)
 			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
 				ofs<<terminalSets[i]->points[j].x<<' '<<terminalSets[i]->points[j].y<<' '<<'\n';
 		}
-		ofs<<-1<<' '<<block.size()<<'\n';
-		for (int i = 0;i < (int)block.size(); ++i)
-			ofs<<block[i].x<<' '<<block[i].y<<'\n';
+		ofs<<-1<<' '<<blocks.size()<<'\n';
+		for (int i = 0;i < (int)blocks.size(); ++i)
+			ofs<<blocks[i].x<<' '<<blocks[i].y<<'\n';
 	}
 }
