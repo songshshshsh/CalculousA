@@ -1,7 +1,7 @@
 #include "../include/Board.h"
 #include "../include/TerminalSet.h"
 
-void Board::input(int mode, istream & ifs)
+void Board::input(int mode, IStream & ifs)
 {
 	if (mode == 0)
 	{
@@ -56,7 +56,7 @@ void Board::input(int mode, istream & ifs)
 	}
 }
 
-void Board::output(int mode, ostream &ofs)
+void Board::output(int mode, OStream &ofs)
 {
 	if (mode == 0)
 	{
@@ -74,7 +74,7 @@ void Board::output(int mode, ostream &ofs)
 		{
 			ofs<<i<<'\n';
 			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
-				ofs<<terminalSets[i]->points[j].getx()<<' '<<terminalSets[i]->points[j].gety()<<' '<<'\n';
+				ofs<<terminalSets[i]->points[j].x<<' '<<terminalSets[i]->points[j].y<<' '<<'\n';
 		}
 	}
 }

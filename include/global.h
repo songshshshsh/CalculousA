@@ -1,9 +1,11 @@
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
 #include <iostream>
 using std::cin;
 using std::cout;
-using std::istream;
-using std::ostream;
+typedef std::istream IStream;
+typedef std::ostream OStream;
 
 #include <fstream>
 typedef std::ostream OStream;
@@ -12,11 +14,17 @@ typedef std::ofstream OFStream;
 
 #include <vector>
 using std::vector;
-#define Vector vector
+template <class T>
+class Vector: public std::vector<T>{
+public:
+};
 
 #include <utility>
 using std::pair;
-#define Pair pair
+template <class T1, class T2>
+class Pair: public std::pair<T1, T2>{
+public:
+};
 
 #include <algorithm>
 using std::sort;
@@ -29,9 +37,6 @@ typedef std::string String;
 using std::ifstream;
 using std::ofstream;
 using std::vector;
-
-#ifndef _MATRIX_H
-#define _MATRIX_H
 
 template <class T>
 
@@ -48,26 +53,17 @@ public:
 	T &operator[](Pair<int, int> pii){
 		return (*this)[pii.first][pii.second];
 	}
-	const T &operator[](
-		Pair<int, int> pii
-	) const{
+	const T &operator[](Pair<int, int> pii) const{
 		return (*this)[pii.first][pii.second];
 	}
 };
 
 class Point
 {
-	#define x first
-	#define y second
 public:
+	int x, y;
 	Point(int x_,int y_):x(x_),y(y_){};
-	int getx(){return x;}
-	int gety(){return y;}
-private:
-	int x;
-	int y;
-	#undef x
-	#undef y
+	Point():x(0),y(0){};
 };
 
-#endif // _MATRIX_H
+#endif // GLOBAL_H

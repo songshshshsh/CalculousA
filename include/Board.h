@@ -13,8 +13,8 @@ class Board
 		Matrix<int> map;
 		Vector<Point> block;
 	public:
-		void input(int mode=0, istream &ifs=cin);
-		void output(int mode=0, ostream &ofs=cout);
+		void input(int mode=0, IStream &ifs=cin);
+		void output(int mode=0, OStream &ofs=cout);
 };
 
 #endif
