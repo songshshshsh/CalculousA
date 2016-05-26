@@ -39,6 +39,13 @@ using std::max;
 #include <string>
 typedef std::string String;
 
+int doAssert(bool, const char *file, int line);
+#ifdef ENABLE_ASSERT
+#define assert(x) doAssert((x), __FILE__, __LINE__)
+#else
+#define assert(x) 0
+#endif // ENABLE_ASSERT
+
 #include "BitMatrix.h"
 
 template <class T>
