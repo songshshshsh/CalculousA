@@ -29,6 +29,8 @@ void Board::input(int mode, IStream & ifs)
 	else
 	{
 		int id;
+		ifs>>height>>width;
+		map.resize(height,width);
 		while (ifs>>id)
 		{
 			if (id == EOF) break;
@@ -74,6 +76,7 @@ void Board::output(int mode, OStream &ofs)
 	}
 	else
 	{
+		ofs<<height<<' '<<width<<'\n';
 		for (int i = 1;i < (int)terminalSets.size(); ++i)
 		{
 			ofs<<i<<' '<<terminalSets[i]->points.size()<<'\n';
