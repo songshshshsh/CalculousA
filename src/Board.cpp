@@ -80,10 +80,8 @@ void Board::output(int mode, OStream &ofs)
 			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
 				ofs<<terminalSets[i]->points[j].x<<' '<<terminalSets[i]->points[j].y<<' '<<'\n';
 		}
-		ofs<<-1<<
+		ofs<<-1<<' '<<block.size()<<'\n';
 		for (int i = 0;i < (int)block.size(); ++i)
-		{
-
-		}
+			ofs<<block[i].x<<' '<<block[i].y<<'\n';
 	}
 }
