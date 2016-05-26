@@ -18,10 +18,10 @@ clean:
 	del *.obj $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	cl /EHsc $(OBJECTS) /Femain
+	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $(OBJECTS) /Femain
 # /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
 	
-# debug: cl /Zi /EHse
+# debug: cl /Zi /EHsc
 # release: cl /Ox /O2 /Ot /EHsc
 %.obj: src/%.cpp $(HEADERS)
-	cl /EHsc $< /c
+	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $< /c

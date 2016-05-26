@@ -9,6 +9,7 @@ class TerminalSet
 private:
 	const Board* board;
 	const int id;
+	TerminalSet &operator =(const TerminalSet &);
 public:
 	Vector<Point> points;
 	TerminalSet(int id_,const Board* board_):id(id_)

@@ -12,17 +12,21 @@ typedef std::ostream OStream;
 typedef std::ifstream IFStream;
 typedef std::ofstream OFStream;
 
+#include <sstream>
+typedef std::stringstream StringStream;
+
 #include <vector>
-using std::vector;
+// #define Vector std::vector
 template <class T>
-class Vector: public std::vector<T>{
+class Vector: public std::vector<T>
+{
 public:
 };
 
 #include <utility>
-using std::pair;
 template <class T1, class T2>
-class Pair: public std::pair<T1, T2>{
+class Pair: public std::pair<T1, T2>
+{
 public:
 };
 
@@ -34,26 +38,25 @@ using std::max;
 
 #include <string>
 typedef std::string String;
-using std::ifstream;
-using std::ofstream;
-using std::vector;
 
 template <class T>
-
 class Matrix: public Vector<Vector<T>>{
 public:
 	using Vector<Vector<T>>::resize;
 	using Vector<Vector<T>>::operator[];
 
-	void resize(int n, int m){
+	void resize(int n, int m)
+	{
 		this->resize(n);
 		for(auto &row: *this)
 			row.resize(m);
 	}
-	T &operator[](Pair<int, int> pii){
+	T &operator[](Pair<int, int> pii)
+	{
 		return (*this)[pii.first][pii.second];
 	}
-	const T &operator[](Pair<int, int> pii) const{
+	const T &operator[](Pair<int, int> pii) const
+	{
 		return (*this)[pii.first][pii.second];
 	}
 };
