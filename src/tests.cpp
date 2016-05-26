@@ -18,7 +18,20 @@ TEST(PlusTest)
 	assert(1 + 2 != 4);
 }
 
-#include "../include/board.h"
+#include "../include/BitMatrix.h"
+TEST(BitMatrixTest)
+{
+	BitMatrix bmx(2, 3);
+	cout << bmx;
+	bmx.set(1, 2);
+	cout << bmx;
+	bmx.set(1, 0);
+	cout << bmx;
+	bmx.reset(1, 0);
+	cout << bmx;
+}
+
+#include "../include/Board.h"
 TEST(BoardIOTest)
 {
 	String ins =
