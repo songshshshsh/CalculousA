@@ -2,6 +2,7 @@
 #define TREE_H
 
 #include "global.h"
+#include "TerminalSet.h"
 
 class Tree
 {

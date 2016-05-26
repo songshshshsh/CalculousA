@@ -33,11 +33,14 @@ void Board::input(int mode, IStream & ifs)
 		{
 			if (id == EOF) break;
 			int x,y;
+			int n;
+			ifs>>n;
 			if (id > 0)
 			{
 				TerminalSet *terminal = new TerminalSet(id,this);
-				while (ifs>>x>>y)
+				for (int i = 1;i <= n; ++i)
 				{
+					ifs>>x>>y;
 					terminal->AddPoint(Point(x,y));
 					map[x][y] = id;
 				}
@@ -45,8 +48,9 @@ void Board::input(int mode, IStream & ifs)
 			}
 			else if (id == -1)
 			{
-				while (ifs>>x>>y)
+				for (int i = 1;i <=n; ++i)
 				{
+					ifs>>x>>y;
 					block.push_back(Point(x,y));
 					map[x][y] = -1;
 				}
@@ -72,7 +76,7 @@ void Board::output(int mode, OStream &ofs)
 	{
 		for (int i = 1;i < (int)terminalSets.size(); ++i)
 		{
-			ofs<<i<<'\n';
+			ofs<<i<<' '<<terminalSets.points().size()<<'\n';
 			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
 				ofs<<terminalSets[i]->points[j].x<<' '<<terminalSets[i]->points[j].y<<' '<<'\n';
 		}

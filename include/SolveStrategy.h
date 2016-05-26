@@ -8,8 +8,8 @@ class SolveStrategy
 {
 private:
 	bool check(Solution&);
-	void optimize(Solution&);
-	void solve();
+	Solution optimize(Solution&);
+	Solution solve();
 };
 
 #endif
