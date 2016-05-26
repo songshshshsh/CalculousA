@@ -25,15 +25,17 @@ void Board::input(int mode, IStream & ifs)
 			if (map[i][j] == -1) block.push_back(Point(i,j));
 			else if (map[i][j] > 0)
 			terminalSets[map[i][j]]->AddPoint(Point(i,j));
-		}	}
+		}	
+	}
 	else
 	{
 		int id;
 		ifs>>height>>width;
 		map.resize(height,width);
+		TerminalSet *terminal0 = new TerminalSet(0,this);
+		terminalSets.push_back(terminal0);
 		while (ifs>>id)
 		{
-			if (id == EOF) break;
 			int x,y;
 			int n;
 			ifs>>n;

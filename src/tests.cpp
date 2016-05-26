@@ -45,11 +45,10 @@ TEST(BoardIOTest)
 	Board board;
 	board.input(0, inf);
 	board.output(0, ouf);
-	// cout << ins << ouf.str();
 	assert(ins == ouf.str());
 	board.output(1, ouf1);
 	Board board1;
 	board1.input(1, ouf1);
-	board1.output(1, ouf2);
+	board1.output(1,ouf2);
 	assert(ouf1.str() == ouf2.str());
 }
