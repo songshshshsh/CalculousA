@@ -39,6 +39,8 @@ using std::max;
 #include <string>
 typedef std::string String;
 
+#include "BitMatrix.h"
+
 template <class T>
 class Matrix: public Vector<Vector<T>>{
 public:

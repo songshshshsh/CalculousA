@@ -76,9 +76,14 @@ void Board::output(int mode, OStream &ofs)
 	{
 		for (int i = 1;i < (int)terminalSets.size(); ++i)
 		{
-			ofs<<i<<' '<<terminalSets.points().size()<<'\n';
+			ofs<<i<<' '<<terminalSets[i]->points.size()<<'\n';
 			for (int j = 0;j < (int)terminalSets[i]->points.size(); ++j)
 				ofs<<terminalSets[i]->points[j].x<<' '<<terminalSets[i]->points[j].y<<' '<<'\n';
+		}
+		ofs<<-1<<
+		for (int i = 0;i < (int)block.size(); ++i)
+		{
+
 		}
 	}
 }

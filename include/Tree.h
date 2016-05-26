@@ -7,7 +7,7 @@
 class Tree
 {
 public:
-	Tree();
+	Tree(TerminalSet *);
 
 private:
 	const TerminalSet *terminalSet;
