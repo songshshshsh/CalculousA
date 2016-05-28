@@ -1,12 +1,12 @@
+#pragma once
 #ifndef TERMIANLSET_H
 #define TERMINALSET_H
 
 #include "global.h"
 class Board;
-// #include "Board.h"
 
 class TerminalSet
-{	
+{
 private:
 	TerminalSet &operator =(const TerminalSet &);
 public:
@@ -24,3 +24,5 @@ public:
 };
 
 #endif
+
+#include "Board.h"

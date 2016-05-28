@@ -3,6 +3,8 @@
 
 #include "global.h"
 #include "Solution.h"
+class Solver;
+// #include "Solver.h"
 
 class SolveStrategy
 {
@@ -44,3 +46,5 @@ public:
 };
 
 #endif
+
+#include "Solver.h"

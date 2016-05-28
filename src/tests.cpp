@@ -52,3 +52,24 @@ TEST(BoardIOTest)
 	board1.output(1,ouf2);
 	assert(ouf1.str() == ouf2.str());
 }
+
+#include "../include/Solver.h"
+#include "../include/StupidStrategy.h"
+TEST(StupidStrategyTest)
+{
+	String ins =
+		"3 4\n"
+		"0 -1 1 2 \n"
+		"2 0 -1 2 \n"
+		"3 4 2 2 \n"
+	;
+	StringStream inf(ins);
+	Board board;
+	board.input(0, inf);
+	Solver solver(&board);
+	solver.setSolveStrategy(new StupidSolve(&solver));
+	solver.setCheckStrategy(new StupidCheck(&solver));
+	solver.setOptimizeStrategy(new StupidOptimize(&solver));
+	Solution solution = solver.run();
+	cout << solution;
+}

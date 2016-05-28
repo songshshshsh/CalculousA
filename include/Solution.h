@@ -10,9 +10,10 @@ class Solution
 private:
 public:
 	const Board *board;
-	Vector<Tree*> solution;
+	Vector<Tree*> trees;
+	// trees.size() == board.terminalSets.size() == real number + 1
 	Matrix<int> map;
-	
+	friend OStream &operator <<(OStream &ost, const Solution &solution);
 };
 
 #endif

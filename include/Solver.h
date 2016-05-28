@@ -2,20 +2,28 @@
 #define SOLVER_H
 
 #include "global.h"
+#include "Solution.h"
+#include "SolveStrategy.h"
+#include "Board.h"
 
 class Solver
 {
 public:
-	Solver(Board board_)
+	const Board *board;
+	Solver(const Board *board_)
 	{
-		this->board = board_;
+		board = board_;
+		solve = NULL;
+		check = NULL;
+		optimize = NULL;
 	}
-	void run()
+	~Solver()
 	{
-		assert(solve);
-		assert(check);
-		assert(optimize);
+		delete solve;
+		delete check;
+		delete optimize;
 	}
+	Solution run();
 	void setSolveStrategy(SolveStrategy *solve_)
 	{
 		if(solve)
@@ -35,7 +43,6 @@ public:
 		optimize = optimize_;
 	}
 private:
-	const Board *board;
 	SolveStrategy *solve;
 	CheckStrategy *check;
 	OptimizeStrategy *optimize;

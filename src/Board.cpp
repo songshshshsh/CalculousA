@@ -1,6 +1,12 @@
 #include "../include/Board.h"
 #include "../include/TerminalSet.h"
 
+Board::~Board()
+{
+	for(auto pointer: terminalSets)
+		delete pointer;
+}
+
 void Board::input(int mode, IStream & ifs)
 {
 	if (mode == 0)

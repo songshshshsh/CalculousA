@@ -2,12 +2,12 @@
 
 OStream &operator <<(OStream &ost, const BitMatrix &bmx)
 {
-	cout << "BitMatrix " << bmx.height << " * " << bmx.width << "\n";
+	ost << "BitMatrix " << bmx.height << " * " << bmx.width << "\n";
 	for(int i = 0; i < bmx.height; i++)
 	{
 		for(int j = 0; j < bmx.width; j++)
-			cout << (int) bmx.get(i, j);
-		cout << "\n";
+			ost << (int) bmx.get(i, j);
+		ost << "\n";
 	}
 	return ost;
 }

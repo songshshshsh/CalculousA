@@ -46,6 +46,8 @@ int doAssert(bool, const char *file, int line);
 #define assert(x) 0
 #endif // ENABLE_ASSERT
 
+#define NOT_USED(x) ((void) (x))
+
 #include "BitMatrix.h"
 
 template <class T>
