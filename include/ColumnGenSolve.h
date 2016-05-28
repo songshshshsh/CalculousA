@@ -8,11 +8,13 @@
 class ColumnGenSolve: public SolveStrategy
 {
 public:
-	static const double M = 100000;
+	static const double M;
 	ColumnGenSolve(Solver *solver_): SolveStrategy(solver_){}
 	virtual ~ColumnGenSolve(){}
 	virtual Solution solve() const;
 protected:
+	struct expandFinished{};
+	
 	Vector<Tree *> ColumnGenSolve::route(int tim) const;
 	
 	double ColumnGenSolve::solveLP(
@@ -32,8 +34,14 @@ protected:
 		int n, int m, int idx, int &r
 	) const;
 	
+	void ColumnGenSolve::expand(
+		const Matrix<double> &mapPi, double lambda,
+		Vector<Pair<Tree, GRBVar>> &treeset, const BitMatrix &base,
+		int n, int m, int idx, int &r
+	) const;
+	
 	Matrix<Pair<double, BitMatrix>> dijkstra(
-		const BitMatrix &base, const Matrix<double> &mapW, int n, int m, int idx
+		const BitMatrix &base, const Matrix<double> &mapW, int n, int m
 	) const;
 
 	bool suggestTree(
@@ -43,8 +51,7 @@ protected:
 	) const;
 
 	Tree suggestTree(
-		const Vector<Point> &points, const Matrix<double> &mapW,
-		int n, int m, int idx
+		const TerminalSet *terminalSet, const Matrix<double> &mapW, int n, int m
 	) const;
 
 	void removeNonCuts(

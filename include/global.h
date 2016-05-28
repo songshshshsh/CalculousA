@@ -29,6 +29,11 @@ template <class T1, class T2>
 class Pair: public std::pair<T1, T2>
 {
 public:
+	Pair(){}
+	Pair(const T1 &t1, const T2 &t2)
+	{
+		first = t1; second = t2;
+	}
 };
 
 #include <algorithm>
@@ -40,6 +45,9 @@ using std::max;
 #include <string>
 typedef std::string String;
 
+#include <cstdlib>
+#include <ctime>
+
 int doAssert(bool, const char *file, int line);
 #ifdef ENABLE_ASSERT
 #define assert(x) doAssert((x), __FILE__, __LINE__)
@@ -48,8 +56,6 @@ int doAssert(bool, const char *file, int line);
 #endif // ENABLE_ASSERT
 
 #define NOT_USED(x) ((void) (x))
-
-#include "BitMatrix.h"
 
 template <class T>
 class Matrix: public Vector<Vector<T>>{
@@ -80,5 +86,7 @@ public:
 	Point(int x_,int y_):x(x_),y(y_){};
 	Point():x(0),y(0){};
 };
+
+#include "BitMatrix.h"
 
 #endif // GLOBAL_H

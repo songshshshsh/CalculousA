@@ -7,10 +7,11 @@
 class Tree
 {
 public:
-	Tree(TerminalSet *);
+	Tree(const TerminalSet *);
 	const TerminalSet *terminalSet;
 	BitMatrix map;
 	int length;
+	friend bool operator ==(const Tree &lhs, const Tree &rhs);
 };
 
 #endif

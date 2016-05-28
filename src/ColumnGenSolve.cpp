@@ -1,4 +1,7 @@
 #include "../include/ColumnGenSolve.h"
+#include "../include/GRBFactory.h"
+
+const double ColumnGenSolve::M = 100000;
 
 double ColumnGenSolve::solveLP(
 	Vector<Vector<Pair<Tree, GRBVar>>> &treesets,
@@ -88,7 +91,7 @@ double ColumnGenSolve::solveLP(
 	}
 	
 	// Get dual values of each set
-	if(mapLambda != NULL)
+	if(vecLambda != NULL)
 	{
 		vecLambda->clear();
 		for(const auto &cons: constrCanRoute)
@@ -142,7 +145,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				base.resize(n, m);
 				base[joint.first][joint.second] = 1;
 				Matrix<Pair<double, Matrix<bool>>> dijRes
-					= this->dijkstra(base, all1, n, m, idx);
+					= this->dijkstra(base, all1, n, m);
 				// Generate a tree with Dijkstra
 				// result
 				Tree tree(this->m_board, idx);
@@ -177,16 +180,16 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		for(const auto &treeset: treesets)
 		{
 			for(const auto &treeVar: treeset)
-				if(tree.second.get(GRB_DoubleAttr_X) > 0.5)
+				if(treeVar.second.get(GRB_DoubleAttr_X) > 0.5)
 				{
-					ans.push_back(new Tree(tree.first));
+					ans.push_back(new Tree(treeVar.first));
 					goto found;
 				}
 			ans.push_back(NULL);
 			found:;
 		}
-		output(ans, con);
-		output(ans, cout);
+		// output(ans, con);
+		// output(ans, cout);
 		
 		bool updated = false;
 		// Build weight map for unrouted set
@@ -255,9 +258,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 						if(i != idx - 1)
 						{
 							for(const auto &treeVar: treesets[i])
-								if(tree.second.get(GRB_DoubleAttr_X) > 0.5)
+								if(treeVar.second.get(GRB_DoubleAttr_X) > 0.5)
 								{
-									tmpAns.push_back(new Tree(tree.first));
+									tmpAns.push_back(new Tree(treeVar.first));
 									goto found2;
 								}
 							tmpAns.push_back(NULL);
@@ -337,7 +340,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 					expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);
 				}
 				catch(expandFinished){}
-				if(treesets[i].size() != oldSize)
+				if((int) treesets[i].size() != oldSize)
 					updated = true;
 			}
 		
@@ -379,7 +382,7 @@ void ColumnGenSolve::expand(
 			mapW[i][j] = 1 - mapPi[i][j];
 	
 	// base with weight
-	Vector<Pair<double, Matrix<bool>>> wbases;
+	Vector<Pair<double, BitMatrix>> wbases;
 	
 	for(int i = 0; i < n; i++)
 		for(int j = 0; j < m; j++)
@@ -422,7 +425,7 @@ void ColumnGenSolve::expand(
 		expand(mapW, lambda, treeset, wbase.second, n, m, idx, r);
 }
 
-bool ColumnGenSolve::expand(
+void ColumnGenSolve::expand(
 	const Matrix<double> &mapW, double lambda,
 	Vector<Pair<Tree, GRBVar>> &treeset, const BitMatrix &base,
 	int n, int m, int idx, int &r
@@ -430,11 +433,10 @@ bool ColumnGenSolve::expand(
 {
 	// split the branch
 	Vector<BitMatrix> branches = treeGetBranches(base, n, m);
-	int nb = branches.size();
 	// Dijkstra from each branch
 	Vector<Matrix<Pair<double, BitMatrix>>> dijMatrices;
 	for(const auto &branch: branches)
-		dijMatrices.push_back(dijkstra(branch, mapW, n, m, idx));
+		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
 	
 	double bestw = 1e40;
 	TerminalSet *termset = solver->board->terminalSets[idx];
@@ -453,11 +455,11 @@ bool ColumnGenSolve::expand(
 					goto fail;
 				tree.map |= dijMatrix[i][j].second;
 			}
-			tree.map.set(i, j)
+			tree.map.set(i, j);
 			removeNonCuts(solver->board->map, idx, tree.map, n, m);
 			for(int i1 = 0; i1 < n; i1++)
 				for(int j1 = 0; j1 < m; j1++)
-					if(tree.get(i1, j1))
+					if(tree.map.get(i1, j1))
 						cw += mapW[i1][j1];
 			if(cw < bestw)
 			{
@@ -470,8 +472,8 @@ bool ColumnGenSolve::expand(
 		throw expandFinished();
 }
 
-Matrix<Pair<double, BitMatrix>> ColumnGenSolver::dijkstra(
-	const BitMatrix &base, const Matrix<double> &mapW, int n, int m, int idx
+Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
+	const BitMatrix &base, const Matrix<double> &mapW, int n, int m
 ) const
 {
 	// simple Dijkstra algorithm
@@ -536,15 +538,14 @@ bool ColumnGenSolve::suggestTree(
 ) const
 {
 	auto &treeset = treesets[idx - 1];
-	Tree tree = suggestTree(termsets[idx - 1], mapW, n, m, idx);
+	Tree tree = suggestTree(termsets[idx - 1], mapW, n, m);
 	// The tree may have some useless grids
 	removeNonCuts(solver->board->map, idx, tree.map, n, m);
 	return pushTreeSet(treeset, tree);
 }
 
-Tree ColumnGen::suggestTree(
-	const TerminalSet *terminalSet, const Matrix<double> &mapW,
-	int n, int m, int idx
+Tree ColumnGenSolve::suggestTree(
+	const TerminalSet *terminalSet, const Matrix<double> &mapW, int n, int m
 ) const
 {
 	// similar but different to the expand process
@@ -557,7 +558,7 @@ Tree ColumnGen::suggestTree(
 		branch.resize(n, m);
 		branch.set(term);
 		base.set(term);
-		dijMatrices.push_back(dijkstra(branch, mapW, n, m, idx));
+		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
 	}
 	double bestw = 1e40;
 	Tree btree(terminalSet);
@@ -604,7 +605,7 @@ void ColumnGenSolve::removeNonCuts(
 			}
 }
 
-double ColumnGen::removeNonCuts(
+double ColumnGenSolve::removeNonCuts(
 	Matrix<bool> &visited, const Matrix<int> &map, int idx,
 	const Matrix<double> &mapW, BitMatrix &tree, int n, int m
 ) const
@@ -626,7 +627,7 @@ double ColumnGen::removeNonCuts(
 	return ans;
 }
 
-bool ColumnGen::pushTreeSet(
+bool ColumnGenSolve::pushTreeSet(
 	Vector<Pair<Tree, GRBVar>> &treeset, const Tree &tree
 ) const
 {

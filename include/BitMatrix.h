@@ -23,10 +23,18 @@ public:
 		x = x * width + y;
 		data[x >> 5] |= (1u << (x & 31));
 	}
+	void set(Point point)
+	{
+		set(point.x, point.y);
+	}
 	void reset(int x, int y)
 	{
 		x = x * width + y;
 		data[x >> 5] &= ~(1u << (x & 31));
+	}
+	void reset(Point point)
+	{
+		reset(point.x, point.y);
 	}
 	bool get(int x, int y) const
 	{
@@ -34,6 +42,9 @@ public:
 		return data[x >> 5] >> (x & 31) & 1;
 	}
 	friend OStream &operator <<(OStream &ost, const BitMatrix &bmx);
+	friend bool operator ==(const BitMatrix &lhs, const BitMatrix &rhs);
+	friend bool operator !=(const BitMatrix &lhs, const BitMatrix &rhs);
+	BitMatrix &operator |=(const BitMatrix &other);
 };
 
 #endif // BITMATRIX_H
