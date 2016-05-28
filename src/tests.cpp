@@ -74,16 +74,11 @@ TEST(StupidStrategyTest)
 	cout << solution;
 }
 
-#include "../include/gurobi_c++.h"
+#include "../include/GRBFactory.h"
 TEST(GurobiTest)
 {
   try {
-    GRBEnv env;
-	env.set(GRB_IntParam_Threads, 1);
-	env.set(GRB_IntParam_LogToConsole, 0);
-	env.set(GRB_StringParam_LogFile, "Gurobi.log");
-
-    GRBModel model = GRBModel(env);
+    GRBModel &model = GRBFactory::createModel();
 
     // Create variables
 

@@ -1,5 +1,4 @@
-#pragma once
-#ifndef TERMIANLSET_H
+#ifndef TERMINALSET_H
 #define TERMINALSET_H
 
 #include "global.h"
