@@ -1,1 +1,0 @@
-Possible memory leak of class Board.
