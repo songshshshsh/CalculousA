@@ -14,6 +14,7 @@ public:
 	// trees.size() == board.terminalSets.size() == real number + 1
 	Matrix<int> map;
 	friend OStream &operator <<(OStream &ost, const Solution &solution);
+	void computeMap();
 };
 
 #endif
