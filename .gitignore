@@ -31,3 +31,6 @@
 *.ilk
 *.pdb
 *.suo
+
+# Runtime Log Files
+*.log

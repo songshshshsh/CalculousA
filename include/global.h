@@ -4,6 +4,7 @@
 #include <iostream>
 using std::cin;
 using std::cout;
+using std::endl;
 typedef std::istream IStream;
 typedef std::ostream OStream;
 

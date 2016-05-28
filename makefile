@@ -10,18 +10,17 @@
 TARGET = main.exe
 HEADERS = $(wildcard include/*.h)
 SOURCES = $(wildcard src/*.cpp)
-OBJECTS = $(SOURCES:src/%.cpp=%.obj)
+OBJECTS = $(SOURCES:src/%.cpp=build/%.obj)
 
 all: $(TARGET)
 
 clean:
-	del *.obj $(TARGET)
+	rm -f build/*.obj $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $(OBJECTS) /Femain
-# /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
+	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $(OBJECTS) /Fe$@ /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
 	
 # debug: cl /Zi /EHsc
 # release: cl /Ox /O2 /Ot /EHsc
-%.obj: src/%.cpp $(HEADERS)
-	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $< /c
+build/%.obj: src/%.cpp $(HEADERS)
+	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $< /c /Fo$@

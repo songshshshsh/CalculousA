@@ -73,3 +73,62 @@ TEST(StupidStrategyTest)
 	Solution solution = solver.run();
 	cout << solution;
 }
+
+#include "../include/gurobi_c++.h"
+TEST(GurobiTest)
+{
+  try {
+    GRBEnv env;
+	env.set(GRB_IntParam_Threads, 1);
+	env.set(GRB_IntParam_LogToConsole, 0);
+	env.set(GRB_StringParam_LogFile, "Gurobi.log");
+
+    GRBModel model = GRBModel(env);
+
+    // Create variables
+
+    GRBVar x1 = model.addVar(0, GRB_INFINITY, 0, GRB_CONTINUOUS, "x1");
+    GRBVar x2 = model.addVar(0, GRB_INFINITY, 0, GRB_CONTINUOUS, "x2");
+    // GRBVar x3 = model.addVar(0, GRB_INFINITY, 0, GRB_INTEGER, "x3");
+
+    // Integrate new variables
+
+    model.update();
+
+    // Set objective: maximize x + y + 2 z
+
+    model.setObjective(5 * x1 + 4 * x2, GRB_MAXIMIZE);
+
+    // Add constraint: x + 2 y + 3 z <= 4
+
+    GRBConstr c0 = model.addConstr(x1 + 3 * x2 <= 90, "c0");
+    GRBConstr c1 = model.addConstr(2 * x1 + x2 <= 80, "c1");
+    GRBConstr c2 = model.addConstr(x1 + x2 <= 45, "c2");
+
+    // Optimize model
+
+    model.optimize();
+
+    cout << x1.get(GRB_StringAttr_VarName) << " "
+         << x1.get(GRB_DoubleAttr_X) << endl;
+    cout << x2.get(GRB_StringAttr_VarName) << " "
+         << x2.get(GRB_DoubleAttr_X) << endl;
+
+    cout << c0.get(GRB_StringAttr_ConstrName) << " "
+         << c0.get(GRB_DoubleAttr_Pi) << endl;
+
+    cout << c1.get(GRB_StringAttr_ConstrName) << " "
+         << c1.get(GRB_DoubleAttr_Pi) << endl;
+
+    cout << c2.get(GRB_StringAttr_ConstrName) << " "
+         << c2.get(GRB_DoubleAttr_Pi) << endl;
+
+    cout << "Obj: " << model.get(GRB_DoubleAttr_ObjVal) << endl;
+
+  } catch(GRBException e) {
+    cout << "Error code = " << e.getErrorCode() << endl;
+    cout << e.getMessage() << endl;
+  } catch(...) {
+    cout << "Exception during optimization" << endl;
+  }
+}
