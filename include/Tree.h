@@ -8,8 +8,6 @@ class Tree
 {
 public:
 	Tree(TerminalSet *);
-
-private:
 	const TerminalSet *terminalSet;
 	BitMatrix map;
 	int length;
