@@ -57,6 +57,14 @@ int doAssert(bool, const char *file, int line);
 
 #define NOT_USED(x) ((void) (x))
 
+class Point
+{
+public:
+	int x, y;
+	Point(int x_,int y_):x(x_),y(y_){};
+	Point():x(0),y(0){};
+};
+
 template <class T>
 class Matrix: public Vector<Vector<T>>{
 public:
@@ -69,22 +77,14 @@ public:
 		for(auto &row: *this)
 			row.resize(m);
 	}
-	T &operator[](Pair<int, int> pii)
+	T &operator[](Point pii)
 	{
-		return (*this)[pii.first][pii.second];
+		return (*this)[pii.x][pii.y];
 	}
-	const T &operator[](Pair<int, int> pii) const
+	const T &operator[](Point pii) const
 	{
-		return (*this)[pii.first][pii.second];
+		return (*this)[pii.x][pii.y];
 	}
-};
-
-class Point
-{
-public:
-	int x, y;
-	Point(int x_,int y_):x(x_),y(y_){};
-	Point():x(0),y(0){};
 };
 
 #include "BitMatrix.h"

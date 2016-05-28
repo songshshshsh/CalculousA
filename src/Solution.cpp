@@ -14,16 +14,18 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 
 void Solution::computeMap()
 {
-	map.resize(board->height,board->weight);
-	for (int i = 1;i < trees.size(); ++i)
+	map.resize(board->height,board->width);
+	for (int i = 1;i < (int) trees.size(); ++i)
 	{
 		if (trees[i] != NULL)
 		{
 			for (int j = 0;j < board->height; ++j)
-				for (int k = 0;k < board->weight; ++k)
+				for (int k = 0;k < board->width; ++k)
 					map[j][k] += trees[i]->map.get(j,k) * i;
 		}
 	}
-	for (int i = 0;i < board->block.size(); ++i)
-		map[block[i].x][block[i].y] = -1;
+	for(auto block: board->blocks)
+		map[block] = -1;
+	// for (int i = 0;i < (int)board->blocks.size(); ++i)
+		// map[board->blocks[i].x][board->blocks[i].y] = -1;
 }

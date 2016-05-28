@@ -334,7 +334,14 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			for(int i = 0; i < t; i++){
 				int oldSize = treesets[i].size();
 				int r = 1000;
-				sort(treesets[i].begin(), treesets[i].end());
+				sort(
+					treesets[i].begin(), treesets[i].end(),
+					[](const Pair<Tree, GRBVar> &l, const Pair<Tree, GRBVar> &r)
+					{
+						return l.second.get(GRB_DoubleAttr_X)
+							> r.second.get(GRB_DoubleAttr_X);
+					}
+				);
 				try
 				{
 					expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);
@@ -417,8 +424,14 @@ void ColumnGenSolve::expand(
 				wbases.push_back(Pair<double, BitMatrix>(cw, newTree));
 			}
 	
-	sort(wbases.begin(), wbases.end());
-	reverse(wbases.begin(), wbases.end());
+	sort(
+		wbases.begin(), wbases.end(),
+		[](const Pair<double, BitMatrix> &l, const Pair<double, BitMatrix> &r)
+		{
+			return l.first > r.first;
+		}
+	);
+	// reverse(wbases.begin(), wbases.end());
 	
 	// for each remove solution, try it
 	for(const auto &wbase: wbases)
@@ -492,7 +505,7 @@ Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
 	int dy[4] = {0, 0, 1, -1};
 	while(T--)
 	{
-		double mdist = 1e31; int cx, cy;
+		double mdist = 1e31; int cx = -1, cy = -1;
 		for(int i = 0; i < n; i++)
 			for(int j = 0; j < m; j++)
 				if(!visited[i][j] && dist[i][j].first < mdist)
@@ -628,12 +641,13 @@ double ColumnGenSolve::removeNonCuts(
 }
 
 bool ColumnGenSolve::pushTreeSet(
-	Vector<Pair<Tree, GRBVar>> &treeset, const Tree &tree
+	Vector<Pair<Tree, GRBVar>> &treeset, Tree &tree
 ) const
 {
 	for(const auto &treeVar: treeset)
 		if(treeVar.first == tree)
 			return false;
+	tree.computeLength();
 	treeset.push_back(Pair<Tree, GRBVar>(tree, GRBVar()));
 	return true;
 }
@@ -659,7 +673,7 @@ void ColumnGenSolve::treeDFSBranches(
 	// Simple DFS
 	if(i < 0 || i >= n || j < 0 || j >= m || !tree.get(i, j)) 
 		return;
-	tree.reset(i, j)
+	tree.reset(i, j);
 	treeDFSBranches(tree, i - 1, j, n, m);
 	treeDFSBranches(tree, i + 1, j, n, m);
 	treeDFSBranches(tree, i, j - 1, n, m);
@@ -689,7 +703,7 @@ void ColumnGenSolve::treeDFSGetBranches(
 ) const
 {
 	// Simple DFS
-	if(i < 0 || i >= n || j < 0 || j >= m || !tree[i][j]) 
+	if(i < 0 || i >= n || j < 0 || j >= m || !tree.get(i, j)) 
 		return;
 	tree.reset(i, j); res.set(i, j);
 	treeDFSGetBranches(tree, res, i - 1, j, n, m);
@@ -710,7 +724,10 @@ Solution ColumnGenSolve::solve() const
 {
 	Solution solution;
 	solution.board = solver->board;
-	solution.trees = route(10);
+	Vector<Tree *> res = route(10);
+	solution.trees.push_back(NULL);
+	for(auto tree: res)
+		solution.trees.push_back(tree);
 	solution.computeMap();
 	return solution;
 }

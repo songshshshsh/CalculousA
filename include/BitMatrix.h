@@ -41,8 +41,10 @@ public:
 		x = x * width + y;
 		return data[x >> 5] >> (x & 31) & 1;
 	}
+	int popcnt() const;
 	friend OStream &operator <<(OStream &ost, const BitMatrix &bmx);
 	friend bool operator ==(const BitMatrix &lhs, const BitMatrix &rhs);
+	friend bool operator <(const BitMatrix &lhs, const BitMatrix &rhs);
 	friend bool operator !=(const BitMatrix &lhs, const BitMatrix &rhs);
 	BitMatrix &operator |=(const BitMatrix &other);
 };

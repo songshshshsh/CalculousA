@@ -65,7 +65,7 @@ protected:
 	) const;
 
 	bool pushTreeSet(
-		Vector<Pair<Tree, GRBVar>> &treeset, const Tree &tree
+		Vector<Pair<Tree, GRBVar>> &treeset, Tree &tree
 	) const;
 	
 	int treeBranches(BitMatrix tree, int n, int m) const;

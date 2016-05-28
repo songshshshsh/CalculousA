@@ -1,5 +1,15 @@
 #include "../include/BitMatrix.h"
 
+int BitMatrix::popcnt() const
+{
+	// TODO: can be improved
+	int ans = 0;
+	for(int i = 0; i < height; i++)
+		for(int j = 0; j < width; j++)
+			ans += (int) get(i, j);
+	return ans;
+}
+
 OStream &operator <<(OStream &ost, const BitMatrix &bmx)
 {
 	ost << "BitMatrix " << bmx.height << " * " << bmx.width << "\n";
@@ -18,6 +28,14 @@ bool operator ==(const BitMatrix &lhs, const BitMatrix &rhs)
 	if(sz != rhs.height * rhs.width)
 		return false;
 	return lhs.data == rhs.data;
+}
+
+bool operator <(const BitMatrix &lhs, const BitMatrix &rhs)
+{
+	int sz = lhs.height * lhs.width;
+	if(sz != rhs.height * rhs.width)
+		return sz < rhs.height * rhs.width;
+	return lhs.data < rhs.data;
 }
 
 bool operator !=(const BitMatrix &lhs, const BitMatrix &rhs)
