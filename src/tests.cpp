@@ -55,19 +55,27 @@ TEST(BoardIOTest)
 
 #include "../include/Solver.h"
 #include "../include/StupidStrategy.h"
+#include "../include/ColumnGenSolve.h"
 TEST(StupidStrategyTest)
 {
 	String ins =
-		"3 4\n"
-		"0 -1 1 2 \n"
-		"2 0 -1 2 \n"
-		"3 4 2 2 \n"
+		"10	10\n"
+		"	1	3	0	0	0	0	0	0	0	0	\n"
+		"	0	2	4	0	0	0	0	0	4	0	\n"
+		"	0	0	0	3	0	0	0	0	0	3	\n"
+		"	0	0	0	0	0	0	0	0	0	4	\n"
+		"	0	0	0	0	0	0	0	0	0	0	\n"
+		"	0	0	0	0	0	0	0	0	0	0	\n"
+		"	0	0	0	0	0	0	0	0	0	0	\n"
+		"	0	0	0	0	0	0	0	0	0	0	\n"
+		"	1	0	0	0	0	0	0	0	0	0	\n"
+		"	2	0	0	0	0	0	0	0	0	0	\n"
 	;
 	StringStream inf(ins);
 	Board board;
 	board.input(0, inf);
 	Solver solver(&board);
-	solver.setSolveStrategy(new StupidSolve(&solver));
+	solver.setSolveStrategy(new ColumnGenSolve(&solver));
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();

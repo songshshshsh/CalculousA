@@ -111,7 +111,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	const Board *board = solver->board;
 	const Vector<TerminalSet *> &termsets = board->terminalSets;
 	const Matrix<int> &map = board->map;
-	const int t = termsets.size();
+	const int t = termsets.size() - 1;
 	const int n = board->height;
 	const int m = board->width;
 	
@@ -150,7 +150,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				// result
 				Tree tree(this->m_board, idx);
 				tree.m_tree[joint.first][joint.second] = 1;
-				for(auto term: termsets[idx - 1])
+				for(auto term: termsets[idx])
 				{
 					tree.m_tree[term.first][term.second] = 1;
 					for(int i = 0; i < n; i++)
@@ -551,7 +551,7 @@ bool ColumnGenSolve::suggestTree(
 ) const
 {
 	auto &treeset = treesets[idx - 1];
-	Tree tree = suggestTree(termsets[idx - 1], mapW, n, m);
+	Tree tree = suggestTree(termsets[idx], mapW, n, m);
 	// The tree may have some useless grids
 	removeNonCuts(solver->board->map, idx, tree.map, n, m);
 	return pushTreeSet(treeset, tree);
