@@ -18,9 +18,9 @@ clean:
 	rm -f build/*.obj $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $(OBJECTS) /Fe$@ /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
+	cl /Ox /O2 /Ot /W4 /WX /EHsc $(OBJECTS) /Fe$@ /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
 	
-# debug: cl /Zi /EHsc
-# release: cl /Ox /O2 /Ot /EHsc
+# debug: cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc
+# release: cl /Ox /O2 /Ot /W4 /WX /EHsc
 build/%.obj: src/%.cpp $(HEADERS)
-	cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc $< /c /Fo$@
+	cl /Ox /O2 /Ot /W4 /WX /EHsc $< /c /Fo$@

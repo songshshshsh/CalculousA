@@ -55,8 +55,10 @@ TEST(BoardIOTest)
 
 #include "../include/Solver.h"
 #include "../include/StupidStrategy.h"
+#include "../include/DACSolve.h"
 #include "../include/ColumnGenSolve.h"
-TEST(StupidStrategyTest)
+// TEST(StupidStrategyTest)
+void StupidStrategyTest()
 {
 	String ins =
 		"10	10\n"
@@ -75,7 +77,82 @@ TEST(StupidStrategyTest)
 	Board board;
 	board.input(0, inf);
 	Solver solver(&board);
-	solver.setSolveStrategy(new ColumnGenSolve(&solver));
+	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
+	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
+	solver.setCheckStrategy(new StupidCheck(&solver));
+	solver.setOptimizeStrategy(new StupidOptimize(&solver));
+	Solution solution = solver.run();
+	// cout << solution;
+}
+
+// TEST(LargeTest)
+void LargeTest()
+{
+	String ins =
+		"50 50\n"
+		"1 6\n"
+			"1 1 2 2 4 4 8 8 16 16 32 32\n"
+		"2 4\n"
+			"10 8 8 10 49 49 0 30\n"
+		"3 3\n"
+			"1 6 0 38 1 27\n"
+		"-1 10\n"
+			"3 0 3 1 3 2 3 3 3 4 3 5 3 6 3 7 3 8 3 9\n"
+	;
+	StringStream inf(ins);
+	Board board;
+	board.input(1, inf);
+	Solver solver(&board);
+	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
+	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
+	solver.setCheckStrategy(new StupidCheck(&solver));
+	solver.setOptimizeStrategy(new StupidOptimize(&solver));
+	Solution solution = solver.run();
+	cout << solution;
+}
+
+#include <set>
+typedef std::pair<int, int> PII;
+
+void rp(OStream &ost, int n, int m){
+	static std::set<PII> S;
+	int x, y;
+	do{
+		x = rand() % n;
+		y = rand() % m;
+	}while(S.count(PII(x, y)));
+	S.insert(PII(x, y));
+	ost << x << ' ' << y << ' ';
+}
+
+TEST(LargeTest2)
+// void LargeTest2()
+{
+	int n = 100, m = 100, t = 10, tl = 5, tr = 10, ob = 100;
+	StringStream inf;
+	
+	srand((unsigned) time(0));
+	inf << n << ' ' << m << ' ';
+	for(int i = 1; i <= t; i++)
+	{
+		inf << i << ' ';
+		int nt = rand() % (tr - tl + 1) + tl;
+		inf << nt << ' ';
+		while(nt--) rp(inf, n, m);
+	}
+	inf << -1 << ' ' << ob << ' ';
+	while(ob--)
+		rp(inf, n, m);
+	
+	cout << inf.str();
+	
+	Board board;
+	board.input(1, inf);
+	board.output();
+	cout.flush();
+	Solver solver(&board);
+	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
+	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();

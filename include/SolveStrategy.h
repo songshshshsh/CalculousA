@@ -9,40 +9,43 @@ class Solver;
 class SolveStrategy
 {
 protected:
-	Solver *solver;
 public:
+	Solver *solver;
 	SolveStrategy(Solver *solver_)
 	{
 		solver = solver_;
 	}
 	virtual ~SolveStrategy(){}
 	virtual Solution solve() const = 0;
+	virtual SolveStrategy *clone() const = 0;
 };
 
 class CheckStrategy
 {
 protected:
-	Solver *solver;
 public:
+	Solver *solver;
 	CheckStrategy(Solver *solver_)
 	{
 		solver = solver_;
 	}
 	virtual ~CheckStrategy(){}
 	virtual bool check(const Solution &solution) const = 0;
+	virtual CheckStrategy *clone() const = 0;
 };
 
 class OptimizeStrategy
 {
 protected:
-	Solver *solver;
 public:
+	Solver *solver;
 	OptimizeStrategy(Solver *solver_)
 	{
 		solver = solver_;
 	}
 	virtual ~OptimizeStrategy(){}
 	virtual Solution optimize(const Solution &solution) const = 0;
+	virtual OptimizeStrategy *clone() const = 0;
 };
 
 #endif

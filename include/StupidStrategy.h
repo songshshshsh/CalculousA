@@ -9,6 +9,10 @@ public:
 	StupidSolve(Solver *solver_): SolveStrategy(solver_){}
 	virtual ~StupidSolve(){}
 	virtual Solution solve() const;
+	virtual SolveStrategy *clone() const
+	{
+		return new StupidSolve(*this);
+	}
 };
 
 class StupidCheck: public CheckStrategy
@@ -21,6 +25,10 @@ public:
 		NOT_USED(solution);
 		return true;
 	}
+	virtual CheckStrategy *clone() const
+	{
+		return new StupidCheck(*this);
+	}
 };
 
 class StupidOptimize: public OptimizeStrategy
@@ -31,6 +39,10 @@ public:
 	virtual Solution optimize(const Solution &solution) const
 	{
 		return solution;
+	}
+	virtual OptimizeStrategy *clone() const
+	{
+		return new StupidOptimize(*this);
 	}
 };
 

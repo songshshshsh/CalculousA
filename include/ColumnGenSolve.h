@@ -12,6 +12,10 @@ public:
 	ColumnGenSolve(Solver *solver_): SolveStrategy(solver_){}
 	virtual ~ColumnGenSolve(){}
 	virtual Solution solve() const;
+	virtual SolveStrategy *clone() const
+	{
+		return new ColumnGenSolve(*this);
+	}
 protected:
 	struct expandFinished{};
 	

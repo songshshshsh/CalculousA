@@ -17,6 +17,32 @@ public:
 		check = NULL;
 		optimize = NULL;
 	}
+	Solver *clone() const
+	{
+		Solver *ans = new Solver(board);
+		if(solve)
+		{
+			ans->solve = solve->clone();
+			ans->solve->solver = ans;
+		}
+		else
+			ans->solve = NULL;
+		if(check)
+		{
+			ans->check = check->clone();
+			ans->check->solver = ans;
+		}
+		else
+			ans->check = NULL;
+		if(optimize)
+		{
+			ans->optimize = optimize->clone();
+			ans->optimize->solver = ans;
+		}
+		else
+			ans->optimize = NULL;
+		return ans;
+	}
 	~Solver()
 	{
 		delete solve;
@@ -29,18 +55,21 @@ public:
 		if(solve)
 			delete solve;
 		solve = solve_;
+		solve->solver = this;
 	}
 	void setCheckStrategy(CheckStrategy *check_)
 	{
 		if(check)
 			delete check;
 		check = check_;
+		check->solver = this;
 	}
 	void setOptimizeStrategy(OptimizeStrategy *optimize_)
 	{
 		if(optimize)
 			delete optimize;
 		optimize = optimize_;
+		optimize->solver = this;
 	}
 private:
 	SolveStrategy *solve;

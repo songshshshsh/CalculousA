@@ -23,7 +23,7 @@ void Board::input(int mode, IStream & ifs)
 				maxindex = max(maxindex,map[i][j]);
 			}
 	terminalSets.resize(maxindex+1);
-	for (int i = 1;i < (int)terminalSets.size(); ++i)
+	for (int i = 0;i < (int)terminalSets.size(); ++i)
 		terminalSets[i] = new TerminalSet(i,this);
 	for (int i = 0;i < height; ++i)
 		for (int j = 0; j < width; ++j)
@@ -70,7 +70,7 @@ void Board::input(int mode, IStream & ifs)
 	}
 }
 
-void Board::output(int mode, OStream &ofs)
+void Board::output(int mode, OStream &ofs) const
 {
 	if (mode == 0)
 	{

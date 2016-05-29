@@ -13,7 +13,7 @@ public:
 	Vector<Point> blocks;
 	~Board();
 	void input(int mode=0, IStream &ifs=cin);
-	void output(int mode=0, OStream &ofs=cout);
+	void output(int mode=0, OStream &ofs=cout) const;
 };
 
 #endif

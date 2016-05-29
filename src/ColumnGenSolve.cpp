@@ -172,6 +172,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	// Answer history
 	Vector<double> tarAns;
 	for(int T = 0;; T++){
+		// cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
 		solveLP(treesets, 1);
 		
@@ -188,6 +189,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			ans.push_back(NULL);
 			found:;
 		}
+		
+		if(T >= 2)
+			return ans;
 		// output(ans, con);
 		// output(ans, cout);
 		
@@ -210,6 +214,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 							mapObs[i][j] = M;
 		// Try to generate from each set
 		for(int idx = 1; idx <= t; idx++)
+		{
+			if(termsets[idx]->points.empty())
+				continue;
 			if(!ans[idx - 1]){
 				// If unrouted, try to generate from the map above
 				if(suggestTree(termsets, treesets, mapObs, n, m, idx))
@@ -294,6 +301,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 						delete tree;
 				}
 			}
+		}
 		
 		auto clkNow = clock();
 		if(!updated && (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
@@ -310,18 +318,18 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		
 		// Output current colution info
-		cout << "iteration " << T << "\n";
-		con << "current time: "
-			<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
-		con << "iteration " << T << "\ncolumn sizes: ";
-		for(const auto &treeset: treesets)
-		{
-			cout << "size " << treeset.size() << "\n";
-			con << treeset.size() << " ";
-		}
-		con << "\n";
-		con.flush();
-		fflush(stdout);
+		// cout << "iteration " << T << "\n";
+		// con << "current time: "
+			// << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
+		// con << "iteration " << T << "\ncolumn sizes: ";
+		// for(const auto &treeset: treesets)
+		// {
+			// cout << "size " << treeset.size() << "\n";
+			// con << treeset.size() << " ";
+		// }
+		// con << "\n";
+		// con.flush();
+		// fflush(stdout);
 		
 		// Solve LP
 		Matrix<double> mapPi;
@@ -332,8 +340,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		// Only try to expand when Dijkstra cannot find any solution
 		if(!updated)
 			for(int i = 0; i < t; i++){
+				if(termsets[i + 1]->points.empty())
+					continue;
 				int oldSize = treesets[i].size();
-				int r = 1000;
 				sort(
 					treesets[i].begin(), treesets[i].end(),
 					[](const Pair<Tree, GRBVar> &l, const Pair<Tree, GRBVar> &r)
@@ -344,7 +353,8 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				);
 				try
 				{
-					expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);
+					// int r = 10;
+					// expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);
 				}
 				catch(expandFinished){}
 				if((int) treesets[i].size() != oldSize)
@@ -564,15 +574,12 @@ Tree ColumnGenSolve::suggestTree(
 	// similar but different to the expand process
 	BitMatrix base;
 	base.resize(n, m);
-	Vector<Matrix<Pair<double, BitMatrix>>> dijMatrices;
 	for(const auto &term: terminalSet->points)
-	{
-		BitMatrix branch;
-		branch.resize(n, m);
-		branch.set(term);
 		base.set(term);
+	Vector<BitMatrix> branches = treeGetBranches(base, n, m);
+	Vector<Matrix<Pair<double, BitMatrix>>> dijMatrices;
+	for(const auto &branch: branches)
 		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
-	}
 	double bestw = 1e40;
 	Tree btree(terminalSet);
 	for(int i = 0; i < n; i++)
@@ -724,7 +731,7 @@ Solution ColumnGenSolve::solve() const
 {
 	Solution solution;
 	solution.board = solver->board;
-	Vector<Tree *> res = route(10);
+	Vector<Tree *> res = route(solver->board->width * solver->board->height / 1000 + 1);
 	solution.trees.push_back(NULL);
 	for(auto tree: res)
 		solution.trees.push_back(tree);
