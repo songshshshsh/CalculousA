@@ -18,11 +18,11 @@ clean:
 	rm -f build/*.obj $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	LINK $(OBJECTS) lib/gurobi_c++mt2012.lib lib/gurobi65.lib /OUT:$@ /STACK:1048576
+	LINK $(OBJECTS) lib/gurobi_c++mt2012.lib lib/gurobi65.lib /OUT:$@ /STACK:268435456 /DEBUG /PROFILE
 # LINK $(OBJECTS) lib/gurobi_c++mt2012.lib lib/gurobi65.lib /PROFILE /OUT:$@ /STACK:268435456 /DEBUG
 # cl $(OBJECTS) /Fe$@ /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
 	
 # debug: cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc
 # release: cl /Ox /O2 /Ot /W4 /WX /EHsc
 build/%.obj: src/%.cpp $(HEADERS)
-	cl /Ox /O2 /Ot /W4 /WX /EHsc $< /c /Fo$@
+	cl /Zi /Ox /O2 /Ot /W4 /WX /EHsc $< /c /Fo$@

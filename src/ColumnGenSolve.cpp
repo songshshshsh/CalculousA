@@ -375,7 +375,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			delete tree;
 	}
 }
-
+/*
 void ColumnGenSolve::expand(
 	const Matrix<double> &mapPi, double lambda,
 	Vector<Pair<Tree, GRBVar>> &treeset, int n, int m, int idx, int &r
@@ -499,18 +499,18 @@ void ColumnGenSolve::expand(
 	if(bestw < lambda && pushTreeSet(treeset, btree) && (--r) <= 0)
 		throw expandFinished();
 }
-
-Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
+*/
+Matrix<Pair<double, Point>> ColumnGenSolve::dijkstra(
 	const BitMatrix &base, const Matrix<double> &mapW, int n, int m
 ) const
 {
 	// simple Dijkstra algorithm
-	Matrix<Pair<double, BitMatrix>> dist;
+	Matrix<Pair<double, Point>> dist;
 	dist.resize(n, m);
 	for(int i = 0; i < n; i++)
 		for(int j = 0; j < m; j++)
 			if(base.get(i, j))
-				dist[i][j].second = base;
+				dist[i][j].second = Point(-1, -1);
 			else
 				dist[i][j].first = 1e30;
 	// Matrix<bool> visited;
@@ -545,7 +545,7 @@ Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
 		for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
 			sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
 		// visited[cx][cy] = 1;
-		const Pair<double, BitMatrix> &cd = dist[cx][cy];
+		const Pair<double, Point> &cd = dist[cx][cy];
 		for(int d = 0; d < 4; d++)
 		{
 			int tx = cx + dx[d], ty = cy + dy[d];
@@ -555,8 +555,7 @@ Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
 			if(tdFirst < dist[tx][ty].first)
 			{
 				dist[tx][ty].first = tdFirst;
-				dist[tx][ty].second = cd.second;
-				dist[tx][ty].second.set(tx, ty);
+				dist[tx][ty].second = Point(cx, cy);
 				sgt[sgtIdx = EX + tx * m + ty] = tdFirst;
 				for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
 					sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
@@ -564,19 +563,21 @@ Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
 		}
 	}
 	// cout << "core dij end\n";
-	Matrix<Pair<double, BitMatrix>> ans = dist;
+	Matrix<Pair<double, Point>> ans = dist;
 	for(int i = 0; i < n; i++)
 		for(int j = 0; j < m; j++)
 		{
-			for(int d = 0; d < 4; d++)
+			for(int d = 3; d >= 0; d--)
 			{
 				int tx = i + dx[d], ty = j + dy[d];
 				if(tx < 0 || tx >= n || ty < 0 || ty >= m)
 					continue;
-				if(dist[tx][ty] < ans[i][j])
-					ans[i][j] = dist[tx][ty];
+				if(dist[tx][ty].first < ans[i][j].first)
+				{
+					ans[i][j].first = dist[tx][ty].first;
+					ans[i][j].second = Point(tx, ty);
+				}
 			}
-			ans[i][j].second.set(i, j);
 		}
 	return ans;
 }
@@ -590,7 +591,6 @@ bool ColumnGenSolve::suggestTree(
 	auto &treeset = treesets[idx - 1];
 	Tree tree = suggestTree(termsets[idx], mapW, n, m);
 	// The tree may have some useless grids
-	removeNonCuts(solver->board->map, idx, tree.map, n, m);
 	return pushTreeSet(treeset, tree);
 }
 
@@ -604,12 +604,12 @@ Tree ColumnGenSolve::suggestTree(
 	for(const auto &term: terminalSet->points)
 		base.set(term);
 	Vector<BitMatrix> branches = treeGetBranches(base, n, m);
-	Vector<Matrix<Pair<double, BitMatrix>>> dijMatrices;
+	Vector<Matrix<Pair<double, Point>>> dijMatrices;
 	for(const auto &branch: branches)
 		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
 	double bestw = 1e40;
 	Tree btree(terminalSet);
-	int T = n * m / 128 + 1;
+	int T = (int) n * m / 256 + 10;
 	while(T--)
 	// for(int i = 0; i < n; i++)
 		// for(int j = 0; j < m; j++)
@@ -622,9 +622,12 @@ Tree ColumnGenSolve::suggestTree(
 			{
 				if(dijMatrix[i][j].first >= 1e20)
 					goto fail;
-				tree.map |= dijMatrix[i][j].second;
+				for(Point cp(i, j); cp.x != -1 && cp.y != -1; cp = dijMatrix[cp].second)
+					tree.map.set(cp);
+				// tree.map |= dijMatrix[i][j].second;
 			}
-			tree.map.set(i, j);
+			// tree.map.set(i, j);
+			removeNonCuts(solver->board->map, terminalSet->id, tree.map, n, m);
 			for(int i1 = 0; i1 < n; i1++)
 				for(int j1 = 0; j1 < m; j1++)
 					if(tree.map.get(i1, j1))

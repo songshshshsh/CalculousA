@@ -27,7 +27,7 @@ protected:
 		Vector<double> *vecLambda = NULL, int ignoreIdx = -1
 	) const;
 	
-	void ColumnGenSolve::expand(
+	/*void ColumnGenSolve::expand(
 		const Matrix<double> &mapPi, double lambda,
 		Vector<Pair<Tree, GRBVar>> &treeset, int n, int m, int idx, int &r
 	) const;
@@ -42,9 +42,9 @@ protected:
 		const Matrix<double> &mapPi, double lambda,
 		Vector<Pair<Tree, GRBVar>> &treeset, const BitMatrix &base,
 		int n, int m, int idx, int &r
-	) const;
+	) const;*/
 	
-	Matrix<Pair<double, BitMatrix>> dijkstra(
+	Matrix<Pair<double, Point>> dijkstra(
 		const BitMatrix &base, const Matrix<double> &mapW, int n, int m
 	) const;
 

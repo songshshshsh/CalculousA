@@ -128,10 +128,10 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 150, m = 150, t = 10, tl = 5, tr = 5, ob = 100;
+	int n = 50, m = 50, t = 10, tl = 5, tr = 5, ob = 100;
 	StringStream inf;
 	
-	srand((unsigned) time(0));
+	srand(2345678);
 	inf << n << ' ' << m << ' ';
 	for(int i = 1; i <= t; i++)
 	{
