@@ -57,10 +57,17 @@ protected:
 	Tree suggestTree(
 		const TerminalSet *terminalSet, const Matrix<double> &mapW, int n, int m
 	) const;
+	
+	void dfsEdge(
+		BitMatrix &tree, const Matrix<int> &id, Vector<Point> &points,
+		int x, int y, int n, int m, int &s, int &t
+	) const;
+	
+	int dfsFather(Vector<int> &father, int x) const;
 
 	void removeNonCuts(
-	const Matrix<int> &map, int idx, BitMatrix &tree,
-		int n, int m, int exx = -1, int exy = -1
+		const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m
+		//, int exx = -1, int exy = -1
 	) const;
 
 	double removeNonCuts(

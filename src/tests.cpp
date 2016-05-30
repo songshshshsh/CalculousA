@@ -128,7 +128,7 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 50, m = 50, t = 10, tl = 5, tr = 5, ob = 100;
+	int n = 300, m = 300, t = 10, tl = 5, tr = 5, ob = 10000;
 	StringStream inf;
 	
 	srand(2345678);

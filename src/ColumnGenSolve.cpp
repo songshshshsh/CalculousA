@@ -174,7 +174,10 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	for(int T = 0;; T++){
 		cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
-		solveLP(treesets, 1);
+		double curAns = solveLP(treesets, 1);
+		cout << "curAns " << curAns << endl;
+		con << "curAns " << curAns << endl;
+		tarAns.push_back(curAns);
 		
 		// Construct current best answer
 		Vector<Tree *> ans;
@@ -190,8 +193,8 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			found:;
 		}
 		
-		if(T >= 3)
-			return ans;
+		// if(T >= 3)
+			// return ans;
 		// output(ans, con);
 		// output(ans, cout);
 		
@@ -304,7 +307,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		}
 		
 		auto clkNow = clock();
-		if(!updated && (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
+		if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
 		{
 			con << "time up, aborting\n";
 			con << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC)
@@ -312,15 +315,12 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		}
 		
-		/*
-		
 		// If solution didn't improve recently,
 		// cut!
-		if(!updated && T >= 21 && tarAns[T - 21] == tarAns[T - 1])
+		if(T >= 1 && fabs(tarAns[T - 1] - tarAns[T]) < 0.5)
 			return ans;
 		
 		// Output current colution info
-		*/
 		cout << "iteration " << T << "\n";
 		con << "current time: "
 			<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
@@ -609,7 +609,7 @@ Tree ColumnGenSolve::suggestTree(
 		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
 	double bestw = 1e40;
 	Tree btree(terminalSet);
-	int T = (int) n * m / 256 + 10;
+	int T = max(n, m);
 	while(T--)
 	// for(int i = 0; i < n; i++)
 		// for(int j = 0; j < m; j++)
@@ -639,23 +639,172 @@ Tree ColumnGenSolve::suggestTree(
 		}
 	return btree;
 }
-
-void ColumnGenSolve::removeNonCuts(
-	const Matrix<int> &map, int idx, BitMatrix &tree,
-	int n, int m, int exx, int exy
+	
+void ColumnGenSolve::dfsEdge(
+	BitMatrix &tree, const Matrix<int> &id, Vector<Point> &points,
+	int x, int y, int n, int m, int &s, int &t
 ) const
 {
-	begin:
+	if(x < 0 || x >= n || y < 0 || y >= m || !tree.get(x, y))
+		return;
+	if(id[x][y])
+	{
+		if(s)
+		{
+			assert(!t);
+			t = id[x][y];
+		}
+		else
+			s = id[x][y];
+		return;
+	}
+	points.push_back(Point(x, y));
+	tree.reset(x, y);
+	dfsEdge(tree, id, points, x - 1, y, n, m, s, t);
+	dfsEdge(tree, id, points, x + 1, y, n, m, s, t);
+	dfsEdge(tree, id, points, x, y - 1, n, m, s, t);
+	dfsEdge(tree, id, points, x, y + 1, n, m, s, t);
+}
+
+int ColumnGenSolve::dfsFather(Vector<int> &father, int x) const
+{
+	if(father[x] == x)
+		return x;
+	else
+		return father[x] = dfsFather(father, father[x]);
+}
+
+void ColumnGenSolve::removeNonCuts(
+	const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m
+) const
+{
+	// cout << "Begin Removal\n" << tree;
+	struct TreeEdge
+	{
+		int s, t;
+		bool enabled;
+		Vector<Point> points;
+	};
+	Vector<TreeEdge *> edges;
+	Matrix<int> id; int totId = 0;
+	id.resize(n, m);
+	Vector<bool> isKey; isKey.push_back(false);
+	
 	for(int i = 0; i < n; i++)
 		for(int j = 0; j < m; j++)
-			if(
-				tree.get(i, j) && map[i][j] != idx
-				&& (i != exx || j != exy) && !treeIsCut(tree, i, j, n, m)
-			)
+		{
+			if(!tree.get(i, j))
+				continue;
+			int deg = 0;
+			if(i && tree.get(i - 1, j))
+				++deg;
+			if(i + 1 < n && tree.get(i + 1, j))
+				++deg;
+			if(j && tree.get(i, j - 1))
+				++deg;
+			if(j + 1 < m && tree.get(i, j + 1))
+				++deg;
+			if(deg == 2 && map[i][j] != idx)
+				continue;
+			id[i][j] = ++totId;
+			isKey.push_back(map[i][j] == idx);
+			if(i && id[i - 1][j])
 			{
-				tree.reset(i, j);
-				goto begin;
+				TreeEdge *edge = new TreeEdge;
+				edge->s = totId; edge->t = id[i - 1][j];
+				edge->enabled = false;
+				edges.push_back(edge);
 			}
+			if(j && id[i][j - 1])
+			{
+				TreeEdge *edge = new TreeEdge;
+				edge->s = totId; edge->t = id[i][j - 1];
+				edge->enabled = false;
+				edges.push_back(edge);
+			}
+		}
+	
+	for(int i = 0; i < n; i++)
+		for(int j = 0; j < m; j++)
+		{
+			if(!tree.get(i, j) || id[i][j])
+				continue;
+			TreeEdge *edge = new TreeEdge;
+			edge->s = 0; edge->t = 0;
+			edge->enabled = false;
+			dfsEdge(tree, id, edge->points, i, j, n, m, edge->s, edge->t);
+			assert(edge->s); assert(edge->t);
+			edges.push_back(edge);
+		}
+	
+	sort(
+		edges.begin(), edges.end(),
+		[](TreeEdge *x, TreeEdge *y)
+		{
+			return x->points.size() < y->points.size();
+		}
+	);
+	
+	Vector<int> father;
+	father.resize(totId + 1);
+	Vector<int> deg;
+	deg.resize(totId + 1);
+	Vector<Vector<TreeEdge *>> graphEdges;
+	graphEdges.resize(totId + 1);
+	
+	for(int i = 1; i <= totId; i++)
+		father[i] = i;
+	for(auto edge: edges)
+	{
+		int fatherS = dfsFather(father, edge->s);
+		int fatherT = dfsFather(father, edge->t);
+		if(fatherS == fatherT)
+			continue;
+		father[fatherS] = fatherT;
+		graphEdges[edge->s].push_back(edge);
+		graphEdges[edge->t].push_back(edge);
+		++deg[edge->s];
+		++deg[edge->t];
+		edge->enabled = true;
+	}
+	
+	Vector<int> queue;
+	queue.resize(totId + 1);
+	int queueHead = 1, queueTail = 0;
+	Vector<bool> disposed;
+	disposed.resize(totId + 1);
+	for(int i = 1; i <= totId; i++)
+		if(deg[i] == 1 && !isKey[i])
+			queue[++queueTail] = i;
+	while(queueHead <= queueTail)
+	{
+		int curId = queue[queueHead++];
+		disposed[curId] = true;
+		for(auto edge: graphEdges[curId])
+		{
+			if(!edge->enabled)
+				continue;
+			int otherId = (edge->s ^ edge->t ^ curId);
+			assert(!disposed[otherId]);
+			if((--deg[otherId]) == 1 && !isKey[otherId])
+				queue[++queueTail] = otherId;
+			edge->enabled = false;
+		}
+	}
+	
+	for(auto edge: edges)
+		if(edge->enabled)
+			for(auto &point: edge->points)
+				tree.set(point);
+	
+	for(int i = 0; i < n; i++)
+		for(int j = 0; j < m; j++)
+			if(id[i][j] && disposed[id[i][j]])
+				tree.reset(i, j);
+	
+	for(auto edge: edges)
+		delete edge;
+	// cout << "End Removal\n" << tree;
 }
 
 double ColumnGenSolve::removeNonCuts(
@@ -764,7 +913,7 @@ Solution ColumnGenSolve::solve() const
 {
 	Solution solution;
 	solution.board = solver->board;
-	Vector<Tree *> res = route(solver->board->width * solver->board->height / 1000 + 1);
+	Vector<Tree *> res = route(solver->board->width * solver->board->height / 100 + 1);
 	solution.trees.push_back(NULL);
 	for(auto tree: res)
 		solution.trees.push_back(tree);
