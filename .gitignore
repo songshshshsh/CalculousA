@@ -34,3 +34,7 @@
 
 # Runtime Log Files
 *.log
+*.vsp
+*.vspx
+*.orig
+

@@ -172,7 +172,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	// Answer history
 	Vector<double> tarAns;
 	for(int T = 0;; T++){
-		// cout << "LP " << T << endl;
+		cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
 		solveLP(treesets, 1);
 		
@@ -190,7 +190,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			found:;
 		}
 		
-		if(T >= 2)
+		if(T >= 3)
 			return ans;
 		// output(ans, con);
 		// output(ans, cout);
@@ -312,25 +312,28 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		}
 		
+		/*
+		
 		// If solution didn't improve recently,
 		// cut!
 		if(!updated && T >= 21 && tarAns[T - 21] == tarAns[T - 1])
 			return ans;
 		
 		// Output current colution info
-		// cout << "iteration " << T << "\n";
-		// con << "current time: "
-			// << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
-		// con << "iteration " << T << "\ncolumn sizes: ";
-		// for(const auto &treeset: treesets)
-		// {
-			// cout << "size " << treeset.size() << "\n";
-			// con << treeset.size() << " ";
-		// }
-		// con << "\n";
-		// con.flush();
-		// fflush(stdout);
-		
+		*/
+		cout << "iteration " << T << "\n";
+		con << "current time: "
+			<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
+		con << "iteration " << T << "\ncolumn sizes: ";
+		for(const auto &treeset: treesets)
+		{
+			cout << "size " << treeset.size() << "\n";
+			con << treeset.size() << " ";
+		}
+		con << "\n";
+		con.flush();
+		fflush(stdout);
+		/*
 		// Solve LP
 		Matrix<double> mapPi;
 		Vector<double> vecLambda;
@@ -360,6 +363,8 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				if((int) treesets[i].size() != oldSize)
 					updated = true;
 			}
+			
+		*/
 		
 		// Still cannot generate, cut
 		if(!updated)
@@ -508,35 +513,57 @@ Matrix<Pair<double, BitMatrix>> ColumnGenSolve::dijkstra(
 				dist[i][j].second = base;
 			else
 				dist[i][j].first = 1e30;
-	Matrix<bool> visited;
-	visited.resize(n, m);
-	int T = n * m;
+	// Matrix<bool> visited;
+	// visited.resize(n, m);
 	int dx[4] = {1, -1, 0, 0};
 	int dy[4] = {0, 0, 1, -1};
-	while(T--)
+	int EX = 1;
+	while(n * m > EX)
+		EX <<= 1;
+	vector<double> sgt;
+	sgt.resize(EX << 1, 1e30);
+	for(int i = 0; i < n; i++)
+		for(int j = 0; j < m; j++)
+			if(base.get(i, j))
+				sgt[EX + i * m + j] = 0;
+	for(int i = EX - 1; i >= 1; i--)
+		sgt[i] = min(sgt[i << 1], sgt[i << 1 | 1]);
+	// cout << "core dij begin\n";
+	for(;;)
 	{
-		double mdist = 1e31; int cx = -1, cy = -1;
-		for(int i = 0; i < n; i++)
-			for(int j = 0; j < m; j++)
-				if(!visited[i][j] && dist[i][j].first < mdist)
-				{
-					mdist = dist[i][j].first;
-					cx = i; cy = j;
-				}
-		visited[cx][cy] = 1;
+		// cout << "cur " << sgt[1] << endl;
+		if(sgt[1] >= 1e25) break;
+		int sgtIdx = 1;
+		while(sgtIdx < EX)
+			if(sgt[sgtIdx] == sgt[sgtIdx << 1])
+				sgtIdx <<= 1;
+			else
+				sgtIdx = (sgtIdx << 1 | 1);
+		sgtIdx -= EX;
+		int cx = sgtIdx / m, cy = sgtIdx % m;
+		sgt[sgtIdx += EX] = 1e30;
+		for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+			sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
+		// visited[cx][cy] = 1;
 		const Pair<double, BitMatrix> &cd = dist[cx][cy];
 		for(int d = 0; d < 4; d++)
 		{
 			int tx = cx + dx[d], ty = cy + dy[d];
 			if(tx < 0 || tx >= n || ty < 0 || ty >= m)
 				continue;
-			Pair<double, BitMatrix> td = cd;
-			td.first += mapW[tx][ty];
-			td.second.set(tx, ty);
-			if(td < dist[tx][ty])
-				dist[tx][ty] = td;
+			double tdFirst = cd.first + mapW[tx][ty];
+			if(tdFirst < dist[tx][ty].first)
+			{
+				dist[tx][ty].first = tdFirst;
+				dist[tx][ty].second = cd.second;
+				dist[tx][ty].second.set(tx, ty);
+				sgt[sgtIdx = EX + tx * m + ty] = tdFirst;
+				for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+					sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
+			}
 		}
 	}
+	// cout << "core dij end\n";
 	Matrix<Pair<double, BitMatrix>> ans = dist;
 	for(int i = 0; i < n; i++)
 		for(int j = 0; j < m; j++)
@@ -582,9 +609,12 @@ Tree ColumnGenSolve::suggestTree(
 		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
 	double bestw = 1e40;
 	Tree btree(terminalSet);
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
+	int T = n * m / 128 + 1;
+	while(T--)
+	// for(int i = 0; i < n; i++)
+		// for(int j = 0; j < m; j++)
 		{
+			int i = rand() % n, j = rand() % m;
 			double cw = 0;
 			Tree tree(terminalSet);
 			tree.map = base;
