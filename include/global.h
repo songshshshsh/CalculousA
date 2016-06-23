@@ -63,6 +63,10 @@ public:
 	int x, y;
 	Point(int x_,int y_):x(x_),y(y_){};
 	Point():x(0),y(0){};
+	bool operator!=(const Point& point) const
+	{
+		return (this->x != point.x || this->y != point.y);
+	}
 };
 
 template <class T>

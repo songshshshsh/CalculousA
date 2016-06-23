@@ -9,6 +9,9 @@ class Solution
 {
 private:
 public:
+	Solution(const Solution&);
+	Solution(){}
+	~Solution();
 	const Board *board;
 	Vector<Tree*> trees;
 	// trees.size() == board.terminalSets.size() == real number + 1
