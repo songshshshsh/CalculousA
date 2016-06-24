@@ -590,6 +590,7 @@ bool ColumnGenSolve::suggestTree(
 {
 	auto &treeset = treesets[idx - 1];
 	Tree tree = suggestTree(termsets[idx], mapW, n, m);
+	removeNonCuts(solver->board->map, idx, tree.map, n, m, &mapW);
 	// The tree may have some useless grids
 	return pushTreeSet(treeset, tree);
 }
@@ -675,7 +676,8 @@ int ColumnGenSolve::dfsFather(Vector<int> &father, int x) const
 }
 
 void ColumnGenSolve::removeNonCuts(
-	const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m
+	const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m,
+	const Matrix<double> *mapW
 ) const
 {
 	// cout << "Begin Removal\n" << tree;
@@ -802,8 +804,57 @@ void ColumnGenSolve::removeNonCuts(
 			if(id[i][j] && disposed[id[i][j]])
 				tree.reset(i, j);
 	
+	if(mapW == NULL)
+		goto funcend;
+	
+	// cout << "optimizing tree\n";
+	// cout << tree;
+	
+	for(auto edge: edges)
+		if(edge->enabled)
+		{
+			BitMatrix newTree = tree;
+			for(auto point: edge->points)
+				newTree.reset(point);
+			Vector<BitMatrix> branches = treeGetBranches(newTree, n, m);
+			// cout << "branchsize " << (int) branches.size() << '\n';
+			if((int) branches.size() != 2) continue;
+			Matrix<Pair<double, Point>> dijResult
+				= dijkstra(branches[0], *mapW, n, m);
+			Point bestPoint1(-1, -1); double dist = 1e30;
+			for(int i = 0; i < n; i++)
+				for(int j = 0; j < m; j++)
+					if(branches[1].get(i, j) && dijResult[i][j].first < dist)
+					{
+						dist = dijResult[i][j].first;
+						bestPoint1.x = i; bestPoint1.y = j;
+					}
+			// cout << "dist " << dist << '\n';
+			for(auto point: edge->points)
+				dist -= (*mapW)[point];
+			// cout << "dist " << dist << '\n';
+			if(dist >= 0)
+				continue;
+			while(bestPoint1 != Point(-1, -1))
+			{
+				newTree.set(bestPoint1);
+				bestPoint1 = dijResult[bestPoint1].second;
+			}
+			removeNonCuts(map, idx, newTree, n, m, mapW);
+			tree = newTree;
+			goto funcend;
+		}
+	
+	funcend:;
 	for(auto edge: edges)
 		delete edge;
+	
+	// if(mapW != NULL)
+	// {
+		// cout << "optimize finished\n";
+		// cout << tree;
+	// }
+
 	// cout << "End Removal\n" << tree;
 }
 

@@ -63,6 +63,14 @@ public:
 	int x, y;
 	Point(int x_,int y_):x(x_),y(y_){};
 	Point():x(0),y(0){};
+	bool operator ==(const Point &other) const
+	{
+		return x == other.x && y == other.y;
+	}
+	bool operator !=(const Point &other) const
+	{
+		return x != other.x || y != other.y;
+	}
 };
 
 template <class T>
@@ -84,6 +92,16 @@ public:
 	const T &operator[](Point pii) const
 	{
 		return (*this)[pii.x][pii.y];
+	}
+	friend OStream &operator <<(OStream &ost, const Matrix<T> &mat)
+	{
+		for(auto &row: mat)
+		{
+			for(auto col: row)
+				ost << col << ' ';
+			ost << '\n';
+		}
+		return ost;
 	}
 };
 

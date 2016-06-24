@@ -60,29 +60,17 @@ TEST(BoardIOTest)
 // TEST(StupidStrategyTest)
 void StupidStrategyTest()
 {
-	String ins =
-		"10	10\n"
-		"	1	3	0	0	0	0	0	0	0	0	\n"
-		"	0	2	4	0	0	0	0	0	4	0	\n"
-		"	0	0	0	3	0	0	0	0	0	3	\n"
-		"	0	0	0	0	0	0	0	0	0	4	\n"
-		"	0	0	0	0	0	0	0	0	0	0	\n"
-		"	0	0	0	0	0	0	0	0	0	0	\n"
-		"	0	0	0	0	0	0	0	0	0	0	\n"
-		"	0	0	0	0	0	0	0	0	0	0	\n"
-		"	1	0	0	0	0	0	0	0	0	0	\n"
-		"	2	0	0	0	0	0	0	0	0	0	\n"
-	;
-	StringStream inf(ins);
+	// String ins; 
+	// StringStream inf(ins);
 	Board board;
-	board.input(0, inf);
+	board.input(0);
 	Solver solver(&board);
 	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
 	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();
-	// cout << solution;
+	cout << solution;
 }
 
 // TEST(LargeTest)
@@ -128,7 +116,7 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 300, m = 300, t = 10, tl = 5, tr = 5, ob = 10000;
+	int n = 300, m = 300, t = 10, tl = 5, tr = 5, ob = 0;
 	StringStream inf;
 	
 	srand(2345678);
@@ -157,6 +145,7 @@ TEST(LargeTest2)
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();
 	cout << solution;
+	cout << solution.map;
 }
 
 #include "../include/GRBFactory.h"

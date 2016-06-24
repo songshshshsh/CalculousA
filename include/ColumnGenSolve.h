@@ -66,7 +66,8 @@ protected:
 	int dfsFather(Vector<int> &father, int x) const;
 
 	void removeNonCuts(
-		const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m
+		const Matrix<int> &map, int idx, BitMatrix &tree, int n, int m,
+		const Matrix<double> *mapW = NULL
 		//, int exx = -1, int exy = -1
 	) const;
 

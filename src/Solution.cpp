@@ -19,7 +19,7 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 				ost << " X ";
 			else if(solution.map[i][j] == 0)
 				ost << "   ";
-			else if(map[i][j])
+			else if(map[i][j] == solution.map[i][j])
 				ost << "[" << solution.map[i][j] - 1 << "]";
 			else
 				ost << " " << solution.map[i][j] - 1 << " ";
