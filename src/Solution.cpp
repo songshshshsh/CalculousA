@@ -4,11 +4,16 @@ Solution::Solution(const Solution& _solution)
 {
 	for (unsigned i = 0;i < _solution.trees.size();++i)
 	{
-		Tree* _tree = new Tree();
-		_tree->terminalSet = _solution.trees[i]->terminalSet;
-		_tree->map = _solution.trees[i]->map;
-		_tree->length = _solution.trees[i]->length;
-		this->trees.push_back(_tree);
+		if(_solution.trees[i] == NULL)
+			this->trees.push_back(NULL);
+		else
+		{
+			Tree* _tree = new Tree();
+			_tree->terminalSet = _solution.trees[i]->terminalSet;
+			_tree->map = _solution.trees[i]->map;
+			_tree->length = _solution.trees[i]->length;
+			this->trees.push_back(_tree);
+		}
 	}
 	this->board = _solution.board;
 	this->map = _solution.map;
@@ -44,6 +49,21 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 				ost << "[" << solution.map[i][j] - 1 << "]";
 			else
 				ost << " " << solution.map[i][j] - 1 << " ";
+		}
+		ost << "\n";
+	}
+	for(int i = 0; i < n; i++)
+	{
+		for(int j = 0; j < m; j++)
+		{
+			if(solution.map[i][j] == -1)
+				ost << "-1 ";
+			else if(solution.map[i][j] == 0)
+				ost << "0 ";
+			else if(map[i][j] == solution.map[i][j])
+				ost << solution.map[i][j] << " ";
+			else
+				ost << solution.map[i][j] + 100000 << " ";
 		}
 		ost << "\n";
 	}

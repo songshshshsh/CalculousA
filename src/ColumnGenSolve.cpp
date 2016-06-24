@@ -312,7 +312,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			con << "time up, aborting\n";
 			con << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC)
 				<< " seconds passed\n";
-			return ans;
+			//return ans;
 		}
 		
 		// If solution didn't improve recently,

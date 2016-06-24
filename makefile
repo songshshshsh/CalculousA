@@ -25,4 +25,4 @@ $(TARGET): $(OBJECTS)
 # debug: cl /Zi /W4 /WX /DENABLE_ASSERT /EHsc
 # release: cl /Ox /O2 /Ot /W4 /WX /EHsc
 build/%.obj: src/%.cpp $(HEADERS)
-	cl /favor:ATOM /Ox /O2 /Ot /W4 /WX /EHsc $< /c /Fo$@
+	cl /Ox /O2 /Ot /W4 /WX /EHsc $< /c /Fo$@
