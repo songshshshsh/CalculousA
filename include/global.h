@@ -63,6 +63,7 @@ public:
 	int x, y;
 	Point(int x_,int y_):x(x_),y(y_){};
 	Point():x(0),y(0){};
+<<<<<<< HEAD
 	bool operator ==(const Point &other) const
 	{
 		return x == other.x && y == other.y;
@@ -70,6 +71,11 @@ public:
 	bool operator !=(const Point &other) const
 	{
 		return x != other.x || y != other.y;
+=======
+	bool operator!=(const Point& point) const
+	{
+		return (this->x != point.x || this->y != point.y);
+>>>>>>> 6afc32d99d57f2db411989e2c2a484c94855ee6c
 	}
 };
 

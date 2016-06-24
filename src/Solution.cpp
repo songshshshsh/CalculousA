@@ -1,5 +1,26 @@
 #include "../include/Solution.h"
 
+Solution::Solution(const Solution& _solution)
+{
+	for (unsigned i = 0;i < _solution.trees.size();++i)
+	{
+		Tree* _tree = new Tree();
+		_tree->terminalSet = _solution.trees[i]->terminalSet;
+		_tree->map = _solution.trees[i]->map;
+		_tree->length = _solution.trees[i]->length;
+		this->trees.push_back(_tree);
+	}
+	this->board = _solution.board;
+	this->map = _solution.map;
+}
+
+Solution::~Solution()
+{
+	for (unsigned i = 0;i < this->trees.size();++i)
+		if (this->trees[i])
+		delete this->trees[i];
+}
+
 OStream &operator <<(OStream &ost, const Solution &solution)
 {
 	ost << "Solution\n";
