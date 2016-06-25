@@ -18,6 +18,32 @@ TEST(PlusTest)
 	assert(1 + 2 != 4);
 }
 
+#include <thread>
+
+void output(int x)
+{
+	int ans = 0;
+	for(int i = 0; i < x; i++)
+		for(int j = 0; j < x; j++)
+			ans += i * j;
+	printf("%d\n", ans);
+}
+/*
+TEST(ThreadTest)
+{
+	using std::thread;
+	Vector<thread> th;
+	for(int i = 0; i < 2; i++)
+		th.push_back(thread(output, 100000));
+	for(auto &x: th)
+		x.join();
+}
+
+TEST(PXTest)
+{
+	output(100000);
+}
+*/
 #include "../include/BitMatrix.h"
 TEST(BitMatrixTest)
 {
@@ -105,10 +131,11 @@ typedef std::pair<int, int> PII;
 void rp(OStream &ost, int n, int m){
 	static std::set<PII> S;
 	int x, y;
-	do{
+	do
+	{
 		x = rand() % n;
 		y = rand() % m;
-	}while(S.count(PII(x, y)));
+	} while(S.count(PII(x, y)));
 	S.insert(PII(x, y));
 	ost << x << ' ' << y << ' ';
 }
@@ -116,7 +143,7 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 300, m = 300, t = 20, tl = 3, tr = 3, ob = 0;
+	int n = 10, m = 10, t = 10, tl = 5, tr = 5, ob = 0;
 	StringStream inf;
 	
 	srand(2345678);

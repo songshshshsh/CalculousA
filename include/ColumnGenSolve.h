@@ -18,6 +18,30 @@ public:
 	}
 protected:
 	struct expandFinished{};
+
+	static const int THREAD_CNT = 2;
+	static Thread threads[THREAD_CNT];
+	static void sync();
+	struct parDijkstraParams
+	{
+	private:
+		parDijkstraParams(const parDijkstraParams &);
+		parDijkstraParams &operator =(const parDijkstraParams &);
+	public:
+		parDijkstraParams(){}
+		const BitMatrix *baseStar;
+		const Matrix<double> *mapWStar;
+		int n; int m;
+		Matrix<Pair<double, Point>> *ansStar;
+		Mutex mutex;
+		bool finished;
+		bool exiting;
+	};
+	static parDijkstraParams paramsList[THREAD_CNT];
+	static void parDijkstraAtExit();
+	static void parDijkstra(parDijkstraParams &params);
+	static void *parDijkstraInit();
+	static const void *parDijkstraInitRes;
 	
 	Vector<Tree *> ColumnGenSolve::route(int tim) const;
 	
@@ -44,8 +68,9 @@ protected:
 		int n, int m, int idx, int &r
 	) const;*/
 	
-	Matrix<Pair<double, Point>> dijkstra(
-		const BitMatrix &base, const Matrix<double> &mapW, int n, int m
+	void dijkstra(
+		const BitMatrix &base, const Matrix<double> &mapW, int n, int m,
+		Matrix<Pair<double, Point>> &ans
 	) const;
 
 	bool suggestTree(

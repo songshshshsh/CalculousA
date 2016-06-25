@@ -45,6 +45,11 @@ using std::max;
 #include <string>
 typedef std::string String;
 
+#include <thread>
+typedef std::thread Thread;
+#include <mutex>
+typedef std::mutex Mutex;
+
 #include <cstdlib>
 #include <ctime>
 
