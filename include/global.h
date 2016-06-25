@@ -32,7 +32,7 @@ public:
 	Pair(){}
 	Pair(const T1 &t1, const T2 &t2)
 	{
-		first = t1; second = t2;
+		this->first = t1; this->second = t2;
 	}
 };
 
@@ -52,6 +52,9 @@ typedef std::mutex Mutex;
 
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
+
+#include <set>
 
 int doAssert(bool, const char *file, int line);
 #ifdef ENABLE_ASSERT

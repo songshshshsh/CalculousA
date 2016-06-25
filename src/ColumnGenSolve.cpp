@@ -117,6 +117,8 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	const int t = termsets.size() - 1;
 	const int n = board->height;
 	const int m = board->width;
+	if(n * m >= 1250)
+		cout << "solving subproblem " << n << " * " << m << "\n";
 	
 	// Two useful Vectors
 	/*
@@ -175,11 +177,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	// Answer history
 	Vector<double> tarAns;
 	for(int T = 0;; T++){
-		cout << "LP " << T << endl;
+		// cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
 		double curAns = solveLP(treesets, 1);
-		cout << "curAns " << curAns << endl;
-		con << "curAns " << curAns << endl;
 		tarAns.push_back(curAns);
 		
 		// Construct current best answer
@@ -310,13 +310,13 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		}
 		
 		auto clkNow = clock();
-		if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
+		/*if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
 		{
 			con << "time up, aborting\n";
 			con << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC)
 				<< " seconds passed\n";
 			//return ans;
-		}
+		}*/
 		
 		// If solution didn't improve recently,
 		// cut!
@@ -324,18 +324,18 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		
 		// Output current colution info
-		cout << "iteration " << T << "\n";
-		con << "current time: "
-			<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
-		con << "iteration " << T << "\ncolumn sizes: ";
-		for(const auto &treeset: treesets)
+		if(n * m >= 20000)
 		{
-			cout << "size " << treeset.size() << "\n";
-			con << treeset.size() << " ";
+			cout << "iteration " << T << "\n";
+			cout << "current time: "
+				<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
+			cout << "curAns " << curAns << endl;
+			cout << "column sizes:\n";
+			for(const auto &treeset: treesets)
+				cout << treeset.size() << " ";
+			cout << "\n";
+			cout.flush();
 		}
-		con << "\n";
-		con.flush();
-		fflush(stdout);
 		/*
 		// Solve LP
 		Matrix<double> mapPi;
@@ -506,14 +506,14 @@ void ColumnGenSolve::expand(
 
 void ColumnGenSolve::parDijkstraAtExit()
 {
-	cout << "atexit\n";
-	cout.flush();
+	// cout << "atexit\n";
+	// cout.flush();
 	for(int i = 0; i < THREAD_CNT; i++){
 		paramsList[i].exiting = true;
 		threads[i].join();
 	}
-	cout << "atexit finished\n";
-	cout.flush();
+	// cout << "atexit finished\n";
+	// cout.flush();
 }
 
 void *ColumnGenSolve::parDijkstraInit()
@@ -645,15 +645,15 @@ void ColumnGenSolve::dijkstra(
 				}
 				// paramsList[i].mutex.unlock();
 			// }
-		std::this_thread::sleep_for(std::chrono::microseconds(100));
+		std::this_thread::sleep_for(std::chrono::microseconds(1));
 	}
 	foundThread:;
-	cout << "id = " << id << '\n';
+	// cout << "id = " << id << '\n';
 	static int a = 0;
 	static int b = 0;
 	a += id; ++b;
-	cout << "p " << a << "/" << b << "\n";
-	cout.flush();
+	// cout << "p " << a << "/" << b << "\n";
+	// cout.flush();
 	parDijkstraParams &params = paramsList[id];
 	params.baseStar = &base;
 	params.mapWStar = &mapW;
@@ -941,8 +941,8 @@ void ColumnGenSolve::removeNonCuts(
 			static int a = 0;
 			static int b = 0;
 			a += (int) (dist >= 0); b++;
-			cout << "q " << a << "/" << b << "\n";
-			cout.flush();
+			// cout << "q " << a << "/" << b << "\n";
+			// cout.flush();
 			if(dist >= 0)
 				continue;
 			while(bestPoint1 != Point(-1, -1))

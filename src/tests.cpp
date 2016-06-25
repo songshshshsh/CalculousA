@@ -12,6 +12,7 @@
 	Test *testname::instance = new testname;\
 	void testname::run() const
 
+/*
 TEST(PlusTest)
 {
 	assert(1 + 1 == 2);
@@ -28,7 +29,6 @@ void output(int x)
 			ans += i * j;
 	printf("%d\n", ans);
 }
-/*
 TEST(ThreadTest)
 {
 	using std::thread;
@@ -45,7 +45,8 @@ TEST(PXTest)
 }
 */
 #include "../include/BitMatrix.h"
-TEST(BitMatrixTest)
+// TEST(BitMatrixTest)
+void BitMatrixTest()
 {
 	BitMatrix bmx(2, 3);
 	cout << bmx;
@@ -58,7 +59,8 @@ TEST(BitMatrixTest)
 }
 
 #include "../include/Board.h"
-TEST(BoardIOTest)
+// TEST(BoardIOTest)
+void BoardIOTest()
 {
 	String ins =
 		"3 4\n"
@@ -143,7 +145,7 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 10, m = 10, t = 10, tl = 5, tr = 5, ob = 0;
+	int n = 300, m = 300, t = 10, tl = 5, tr = 5, ob = 0;
 	StringStream inf;
 	
 	srand(2345678);
@@ -159,24 +161,25 @@ TEST(LargeTest2)
 	while(ob--)
 		rp(inf, n, m);
 	
-	cout << inf.str();
+	// cout << inf.str();
 	
 	Board board;
 	board.input(1, inf);
-	board.output();
-	cout.flush();
+	// board.output();
+	// cout.flush();
 	Solver solver(&board);
 	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
 	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();
-	cout << solution;
-	cout << solution.map;
+	// cout << solution;
+	// cout << solution.map;
 }
 
 #include "../include/GRBFactory.h"
-TEST(GurobiTest)
+// TEST(GurobiTest)
+void GurobiTest()
 {
   try {
     GRBModel &model = GRBFactory::createModel();

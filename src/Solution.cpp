@@ -1,4 +1,6 @@
 #include "../include/Solution.h"
+#include "../include/IntArray2bmp.h"
+#include "../include/global.h"
 
 Solution::Solution(const Solution& _solution)
 {
@@ -67,6 +69,38 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 		}
 		ost << "\n";
 	}
+	std::set<int> index;
+	index.insert(-1);
+	int** pic = new int*[n];
+	for (int i = 0;i < n; ++i) 
+		pic[i] = new int[m];
+	for (int i = 0;i < n; ++i)
+		for (int j = 0;j < m; ++j)
+		{
+			int &p = pic[i][j];
+			if(solution.map[i][j] == -1)
+				p = -1;
+			else if(solution.map[i][j] == 0)
+				p = 0;
+			else if(map[i][j] == solution.map[i][j])
+				p = solution.map[i][j];
+			else
+				p = solution.map[i][j] + 100000;
+			index.insert(p);
+		}
+	for (int i = 0;i < n; ++i)
+		for (int j = 0;j < m; ++j)
+			pic[i][j] = std::distance(index.begin(),index.find(pic[i][j]));
+			// if (pic[i][j] == -1) pic[i][j] = index.size() - 1;
+	int min = 0,max = index.size() - 1;
+	char fileName[256];
+	int len = strftime(fileName, sizeof(fileName), "%Y%m%d%H%M%S", localtime((const time_t *) time(NULL)));
+	sprintf(fileName + len, "_%010d", (int) clock());
+	if (intarray2bmp::intarray2bmp(fileName,pic,n,m,min,max))
+		ost<<"picture saved to " << fileName << "\n";
+	for (int i = 0;i < n; ++i) 
+		delete[] pic[i];
+	delete[] pic;
 	return ost;
 }
 

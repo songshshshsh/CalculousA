@@ -6,7 +6,7 @@ Solution DACSolve::solve() const
 	const Board *board = solver->board;
 	int n = board->height, m = board->width;
 	// cout << "solve " << n << " " << m << endl;
-	if(n < 10000 || m < 10000)
+	if(n < 12 || m < 12)
 		return subSolve->solve();
 	// int n1 = n / 2, n2 = n - n1, m1 = m / 2, m2 = m - m1;
 	Matrix<int> newMap = board->map;

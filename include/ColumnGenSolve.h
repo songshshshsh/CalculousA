@@ -43,9 +43,9 @@ protected:
 	static void *parDijkstraInit();
 	static const void *parDijkstraInitRes;
 	
-	Vector<Tree *> ColumnGenSolve::route(int tim) const;
+	Vector<Tree *> route(int tim) const;
 	
-	double ColumnGenSolve::solveLP(
+	double solveLP(
 		Vector<Vector<Pair<Tree, GRBVar>>> &treesets,
 		int mode, Matrix<double> *mapPi = NULL,
 		Vector<double> *vecLambda = NULL, int ignoreIdx = -1
