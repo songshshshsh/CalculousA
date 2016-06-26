@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{colortbl}
-% \usepackage[top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in]{geometry}
+\usepackage[top = 1.5in, bottom = 1.5in, left = 1.5in, right = 1.5in]{geometry}
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -71,7 +71,7 @@
 
 
 \title{Team Project (V): Large-Scale Multiple-Terminal Path Finding}
-\author{asdfasdf}
+\author{Shihong Song, Jiping Yu}
 
 \begin{document}
 
@@ -101,11 +101,21 @@
 	
 	\section{Overview}
 	
-<<<<<<< HEAD
+		Our main advantages are:
+		
+		\begin{itemize}
+		
+		\item For $N = 300, M = 10$ and each set not more than 5 terminals, the algorithm can coverage on average in 100 seconds, and for most cases ($> 99\%$) in 150 seconds.
+		
+		\item For larger data, i.e. larger $N$, $M$ or terminals in each set, the running time will increase. However, the programming can be terminated at any time and the current best solution will be shown.
+		
+		\item Multiple threads are used to boost the calculation process.
+		
+		\item Can visualize the results into BMP format.
+		
+		\end{itemize}
+	
 		This document gives a method solving the problem decribed above. First, we give the overall design and system architecture of our project by giving the class design in the header file. Then, we introduce our algorithms which are used to solve this problem. Then, we give the OOP design of our project. Finally, we give the experiment results of this solving method.
-=======
-		This 
->>>>>>> a33bf05f9c0d3d34f6f0adf5f4e3b4923b14dfa9
 	
 	\section{Header Files and System Architecture}
 	
@@ -162,13 +172,10 @@
 		\subsection{test.h}
 		
 			This class provides a testing platform automatically calculating the running time of the test.
-<<<<<<< HEAD
 
 		\subsection{IntArray2bmp.h}
 
 			This header file just gives a namespace that can be used to convert a two-dimension array to a picture.
-=======
->>>>>>> a33bf05f9c0d3d34f6f0adf5f4e3b4923b14dfa9
 		
 		\subsection{GRBFactory.h}
 		
@@ -222,17 +229,38 @@
 	
 	\section{OOP Design}
 	
+	There are mainly four types of classes.
+
+Utility classes: \texttt{Vector<T>}, \texttt{Matrix<T>}, \texttt{BitMatrix}, etc. These classes are used for coding convenience.
+
+Basic classes: \texttt{Board}, \texttt{TerminalSet}, \texttt{Tree}, etc. These classes provide basic data storage and functions for the problem description.
+
+Interface classes: \texttt{Solver}, \texttt{SolveStrategy}, \texttt{CheckStrategy} and \texttt{OptimizeStrategy}. These classes provide interfaces for solving the given problem. Certainly, polymorphism is used here.
+
+Implementation classes: \texttt{ColumnGenSolve}, \texttt{DACSolve}, \texttt{CleverOptimize}, etc. These classes implement the interfaces above.
+
+It is noticeable that strategy design pattern is used here, for easily alternating the solving strategy.
+
+Some useful graphs describing the relationships between the classes are shown here.
+
+\fullimage{1.png}
+\fullimage{2.png}
+\fullimage{3.png}
+\fullimage{4.png}
+	
 	\section{Experiment Results}
+	
+	Here is a table of the 10 testcases:
 
 \begin{flushleft}
 			\begin{tabular}{l l l l l l}
-			\textbf{id} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\
+			\textbf{id} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4*} \\
 			\midrule
 			Size & 300 & 300 & 300 & 400 & 300 \\
 			Set & 10 & 10 & 10 & 10 & 100 \\
 			Terminal & 3 & 3 & 3 & 3 & 3 \\
-			Block($*10^4$) & 0 & 1 & 2 & 1 & 1 \\
-			Time  & 72.562s & 95.673s & 135.041s & 323.812s & 27m24.842s \\
+			Block($\times 10^4$) & 0 & 1 & 2 & 1 & 1 \\
+			Time  & 72.562s & 95.673s & 135.041s & 323.812s & N/A\textbf{*} \\
 			Connected Sets & 9 & 9 & 9 & 10 & 24 \\
 			Length & 3490 & 3494 & 4060 & 6693 & 6693 \\
 			\bottomrule
@@ -252,6 +280,13 @@
 			\end{tabular}
 \end{flushleft}
 
+	\textbf{*}: The result is obtained at 27m24.842s. We did not wait until its termination.
+
+	We also ran 60 tests for $300 \times 300$ boards, 10 sets, each with 3 or 5 terminals, and from 0 to 10085 blocks (randomly generated) and record the running time. The graph is shown:
+
+	\fullimage{statistics.png}
+	
+	The average running time of 3 and 5 terminals are 97.642 and 97.001 seconds. It is observed that, when the number of terminals of each set is not so large ($\leq 5$), the running time does not explicitly depends on it.
 	
 \end{document}
 
