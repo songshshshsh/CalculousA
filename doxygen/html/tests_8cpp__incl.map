@@ -1,0 +1,18 @@
+<map id="src/tests.cpp" name="src/tests.cpp">
+<area shape="rect" id="node2" href="$test_8h.html" title="../include/test.h" alt="" coords="113,155,225,181"/>
+<area shape="rect" id="node17" href="$BitMatrix_8h.html" title="BitMatrix.h" alt="" coords="69,603,155,629"/>
+<area shape="rect" id="node18" href="$Solution_8h.html" title="../include/Solution.h" alt="" coords="641,304,778,331"/>
+<area shape="rect" id="node19" href="$Board_8h.html" title="Board.h" alt="" coords="573,379,640,405"/>
+<area shape="rect" id="node22" href="$CleverOptimize_8h.html" title="../include/CleverOptimize.h" alt="" coords="723,80,901,107"/>
+<area shape="rect" id="node24" href="$Solver_8h.html" title="Solver.h" alt="" coords="577,229,645,256"/>
+<area shape="rect" id="node25" href="$StupidStrategy_8h.html" title="../include/StupidStrategy.h" alt="" coords="351,80,527,107"/>
+<area shape="rect" id="node26" href="$DACSolve_8h.html" title="../include/DACSolve.h" alt="" coords="551,80,699,107"/>
+<area shape="rect" id="node27" href="$ColumnGenSolve_8h.html" title="../include/ColumnGenSolve.h" alt="" coords="976,80,1165,107"/>
+<area shape="rect" id="node32" href="$GRBFactory_8h.html" title="../include/GRBFactory.h" alt="" coords="1116,229,1279,256"/>
+<area shape="rect" id="node3" href="$global_8h.html" title="global.h" alt="" coords="549,528,616,555"/>
+<area shape="rect" id="node21" href="$Tree_8h.html" title="Tree.h" alt="" coords="739,379,797,405"/>
+<area shape="rect" id="node20" href="$TerminalSet_8h.html" title="TerminalSet.h" alt="" coords="561,453,663,480"/>
+<area shape="rect" id="node23" href="$SolveStrategy_8h.html" title="SolveStrategy.h" alt="" coords="591,155,705,181"/>
+<area shape="rect" id="node28" href="$gurobi__c_09_09_8h.html" title="gurobi_c++.h" alt="" coords="1028,528,1127,555"/>
+<area shape="rect" id="node30" href="$gurobi__c_8h.html" title="gurobi_c.h" alt="" coords="1300,603,1383,629"/>
+</map>

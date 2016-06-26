@@ -1,0 +1,7 @@
+<map id="ColumnGenSolve::treeBranches" name="ColumnGenSolve::treeBranches">
+<area shape="rect" id="node2" href="$classBitMatrix.html#ad19d1045b54ccc8a99d70d38305b4ca6" title="BitMatrix::get" alt="" coords="545,31,645,57"/>
+<area shape="rect" id="node5" href="$classColumnGenSolve.html#a57004ff3ac6bffa4f19fa5838a851a25" title="ColumnGenSolve::treeDFSBranches" alt="" coords="260,81,492,108"/>
+<area shape="rect" id="node3" href="$classBitMatrix.html#ae5aeab0b906b1e70fdc2086bb434dd85" title="BitMatrix::operator\|=" alt="" coords="699,5,839,32"/>
+<area shape="rect" id="node4" href="$classBitMatrix.html#aff2c100f5123e0f821a1d6c6d20daf21" title="BitMatrix::popcnt" alt="" coords="708,56,829,83"/>
+<area shape="rect" id="node6" href="$classBitMatrix.html#a0ee870454e6343c3272ab791e45af404" title="BitMatrix::reset" alt="" coords="540,81,651,108"/>
+</map>

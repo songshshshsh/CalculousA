@@ -1,0 +1,138 @@
+\hypertarget{classGRBFactory}{}\section{G\+R\+B\+Factory类 参考}
+\label{classGRBFactory}\index{G\+R\+B\+Factory@{G\+R\+B\+Factory}}
+
+
+{\ttfamily \#include \char`\"{}G\+R\+B\+Factory.\+h\char`\"{}}
+
+
+
+G\+R\+B\+Factory 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classGRBFactory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGRBModel}{G\+R\+B\+Model} \& \hyperlink{classGRBFactory_aadd50eacec778be1265b494b4348fe8c}{create\+Model} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBFactory_a08b7599eb8c438a5576db24c82e6641d}{G\+R\+B\+Factory} ()
+\end{DoxyCompactItemize}
+\subsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classGRBEnv}{G\+R\+B\+Env} $\ast$ \hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grb\+Env} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 G\+R\+B\+Factory.\+h 第 6 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{G\+R\+B\+Factory@{G\+R\+B\+Factory}!G\+R\+B\+Factory@{G\+R\+B\+Factory}}
+\index{G\+R\+B\+Factory@{G\+R\+B\+Factory}!G\+R\+B\+Factory@{G\+R\+B\+Factory}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Factory()}{GRBFactory()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Factory\+::\+G\+R\+B\+Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classGRBFactory_a08b7599eb8c438a5576db24c82e6641d}{}\label{classGRBFactory_a08b7599eb8c438a5576db24c82e6641d}
+
+
+在文件 G\+R\+B\+Factory.\+h 第 9 行定义.
+
+
+\begin{DoxyCode}
+9 \{\}
+\end{DoxyCode}
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Factory@{G\+R\+B\+Factory}!create\+Model@{create\+Model}}
+\index{create\+Model@{create\+Model}!G\+R\+B\+Factory@{G\+R\+B\+Factory}}
+\subsubsection[{\texorpdfstring{create\+Model()}{createModel()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Model} \& G\+R\+B\+Factory\+::create\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classGRBFactory_aadd50eacec778be1265b494b4348fe8c}{}\label{classGRBFactory_aadd50eacec778be1265b494b4348fe8c}
+
+
+在文件 G\+R\+B\+Factory.\+cpp 第 5 行定义.
+
+
+
+参考 G\+R\+B\+\_\+\+Int\+Param\+\_\+\+Log\+To\+Console, G\+R\+B\+\_\+\+Int\+Param\+\_\+\+Threads, G\+R\+B\+\_\+\+String\+Param\+\_\+\+Log\+File, grb\+Env , 以及 G\+R\+B\+Env\+::set().
+
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+\begin{DoxyCode}
+6 \{
+7     \textcolor{keywordflow}{if}(\hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv} == NULL)
+8     \{
+9         \hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv} = \textcolor{keyword}{new} \hyperlink{classGRBEnv}{GRBEnv};
+10         \hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv}->\hyperlink{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}{set}(\hyperlink{gurobi__c_09_09_8h_ab02a171b88b53892fce22c6426a9d166a92b379cd1a568389f6ba4b6f8d1991ec}{GRB\_IntParam\_Threads}, 1);
+11         \hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv}->\hyperlink{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}{set}(\hyperlink{gurobi__c_09_09_8h_ab02a171b88b53892fce22c6426a9d166a90160a82fabe018d22962d7b554b419b}{GRB\_IntParam\_LogToConsole}, 0);
+12         \hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv}->\hyperlink{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}{set}(\hyperlink{gurobi__c_09_09_8h_a7ed46434ddcd973e46a3acd4d6c2cf04af3e55b4b2e1c8ecbb5a652b18d11197e}{GRB\_StringParam\_LogFile}, \textcolor{stringliteral}{"Gurobi.log"});
+13     \}
+14     \textcolor{keyword}{static} \hyperlink{classGRBModel}{GRBModel} *lastModel = NULL;
+15     \textcolor{keywordflow}{if}(lastModel != NULL)
+16         \textcolor{keyword}{delete} lastModel;
+17     \textcolor{keywordflow}{return} *(lastModel = \textcolor{keyword}{new} \hyperlink{classGRBModel}{GRBModel}(*\hyperlink{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{grbEnv}));
+18 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classGRBFactory_aadd50eacec778be1265b494b4348fe8c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBFactory_aadd50eacec778be1265b494b4348fe8c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Factory@{G\+R\+B\+Factory}!grb\+Env@{grb\+Env}}
+\index{grb\+Env@{grb\+Env}!G\+R\+B\+Factory@{G\+R\+B\+Factory}}
+\subsubsection[{\texorpdfstring{grb\+Env}{grbEnv}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Env} $\ast$ G\+R\+B\+Factory\+::grb\+Env = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}{}\label{classGRBFactory_af4f851ebdd232a3c3054f59078e2c2f5}
+
+
+在文件 G\+R\+B\+Factory.\+h 第 10 行定义.
+
+
+
+参考自 create\+Model().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{GRBFactory_8h}{G\+R\+B\+Factory.\+h}\item 
+src/\hyperlink{GRBFactory_8cpp}{G\+R\+B\+Factory.\+cpp}\end{DoxyCompactItemize}

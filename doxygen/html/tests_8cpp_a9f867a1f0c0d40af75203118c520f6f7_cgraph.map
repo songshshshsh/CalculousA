@@ -1,0 +1,6 @@
+<map id="BoardIOTest" name="BoardIOTest">
+<area shape="rect" id="node2" href="$classBoard.html#ace215dfac6b741c9fb51cc40a6fe6ab1" title="Board::input" alt="" coords="152,31,244,57"/>
+<area shape="rect" id="node5" href="$classBoard.html#a88190948cb3ed605cb54355de513cfa6" title="Board::output" alt="" coords="148,81,248,108"/>
+<area shape="rect" id="node3" href="$classMatrix.html#a15ce96c8af4c7a982c2c10b96f29cea1" title="Matrix::resize" alt="" coords="321,5,423,32"/>
+<area shape="rect" id="node4" href="$classTerminalSet.html#a405cff3b74573b5459da6ffd387f347a" title="TerminalSet::AddPoint" alt="" coords="296,56,448,83"/>
+</map>

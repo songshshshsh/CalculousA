@@ -1,0 +1,7 @@
+<map id="CleverOptimize::getMap" name="CleverOptimize::getMap">
+<area shape="rect" id="node2" href="$classBitMatrix.html#ad19d1045b54ccc8a99d70d38305b4ca6" title="BitMatrix::get" alt="" coords="214,31,314,57"/>
+<area shape="rect" id="node5" href="$classMatrix.html#a15ce96c8af4c7a982c2c10b96f29cea1" title="Matrix::resize" alt="" coords="213,81,315,108"/>
+<area shape="rect" id="node6" href="$classBitMatrix.html#ad26dd2e93e9d24d70834d6d79e29c81e" title="BitMatrix::set" alt="" coords="214,132,314,159"/>
+<area shape="rect" id="node3" href="$classBitMatrix.html#ae5aeab0b906b1e70fdc2086bb434dd85" title="BitMatrix::operator\|=" alt="" coords="363,5,503,32"/>
+<area shape="rect" id="node4" href="$classBitMatrix.html#aff2c100f5123e0f821a1d6c6d20daf21" title="BitMatrix::popcnt" alt="" coords="372,56,493,83"/>
+</map>

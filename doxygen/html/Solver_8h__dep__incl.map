@@ -1,0 +1,14 @@
+<map id="include/Solver.h" name="include/Solver.h">
+<area shape="rect" id="node2" href="$SolveStrategy_8h.html" title="include/SolveStrategy.h" alt="" coords="567,80,725,107"/>
+<area shape="rect" id="node5" href="$tests_8cpp.html" title="src/tests.cpp" alt="" coords="618,229,717,256"/>
+<area shape="rect" id="node13" href="$Solver_8cpp.html" title="src/Solver.cpp" alt="" coords="970,80,1074,107"/>
+<area shape="rect" id="node3" href="$CleverOptimize_8h.html" title="include/CleverOptimize.h" alt="" coords="194,155,359,181"/>
+<area shape="rect" id="node6" href="$ColumnGenSolve_8h.html" title="include/ColumnGenSolve.h" alt="" coords="557,155,735,181"/>
+<area shape="rect" id="node8" href="$DACSolve_8h.html" title="include/DACSolve.h" alt="" coords="759,155,895,181"/>
+<area shape="rect" id="node10" href="$StupidStrategy_8h.html" title="include/StupidStrategy.h" alt="" coords="5,155,169,181"/>
+<area shape="rect" id="node12" href="$SolveStrategy_8cpp.html" title="src/SolveStrategy.cpp" alt="" coords="383,155,533,181"/>
+<area shape="rect" id="node4" href="$CleverOptimizie_8cpp.html" title="src/CleverOptimizie.cpp" alt="" coords="197,229,356,256"/>
+<area shape="rect" id="node7" href="$ColumnGenSolve_8cpp.html" title="src/ColumnGenSolve.cpp" alt="" coords="426,229,594,256"/>
+<area shape="rect" id="node9" href="$DACSolve_8cpp.html" title="src/DACSolve.cpp" alt="" coords="764,229,891,256"/>
+<area shape="rect" id="node11" href="$StupidStrategy_8cpp.html" title="src/StupidStrategy.cpp" alt="" coords="10,229,165,256"/>
+</map>

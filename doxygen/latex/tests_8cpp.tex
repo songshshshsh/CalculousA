@@ -1,0 +1,420 @@
+\hypertarget{tests_8cpp}{}\section{src/tests.cpp 文件参考}
+\label{tests_8cpp}\index{src/tests.\+cpp@{src/tests.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/test.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Solution.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Clever\+Optimize.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Bit\+Matrix.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Board.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Stupid\+Strategy.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+D\+A\+C\+Solve.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Column\+Gen\+Solve.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include \char`\"{}../include/\+G\+R\+B\+Factory.\+h\char`\"{}}\\*
+tests.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tests_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tests_8cpp_a2e885700370c55560bdfb31cfc3b894b}{T\+E\+ST}(testname)                                        
+\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ int, int $>$ \hyperlink{tests_8cpp_a66f07903c2de34f8864e17dd89eea319}{P\+II}
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tests_8cpp_afbab43f8d3aaf7fca466f9177584e38c}{T\+E\+ST} (Clever\+Optimize\+Test)
+\item 
+void \hyperlink{tests_8cpp_a695cbb3ee9e790c628209e39fae41418}{Bit\+Matrix\+Test} ()
+\item 
+void \hyperlink{tests_8cpp_a9f867a1f0c0d40af75203118c520f6f7}{Board\+I\+O\+Test} ()
+\item 
+void \hyperlink{tests_8cpp_a4ad1eecdf21f57184d350b6c9f1711c1}{Stupid\+Strategy\+Test} ()
+\item 
+void \hyperlink{tests_8cpp_a95ab05e912ce2da242f167395141cb1e}{Large\+Test} ()
+\item 
+void \hyperlink{tests_8cpp_ad4255877e71be11f33517117ae6f6767}{rp} (\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ost, int n, int m)
+\item 
+\hyperlink{tests_8cpp_a30640f9c6d5430c07a83a57787acb5c5}{srand} (23456789)
+\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{String\+Stream} \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf}
+\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\index{tests.\+cpp@{tests.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+ST}{TEST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+ST(
+\begin{DoxyParamCaption}
+\item[{}]{testname}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a2e885700370c55560bdfb31cfc3b894b}{}\label{tests_8cpp_a2e885700370c55560bdfb31cfc3b894b}
+{\bfseries 值\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }testname: \textcolor{keyword}{public} \hyperlink{classTest}{Test}             \(\backslash\)
+    \{                                       \(\backslash\)
+    private:                                \(\backslash\)
+        static \hyperlink{classTest}{Test} *instance;              \(\backslash\)
+    protected:                              \(\backslash\)
+        testname(): \hyperlink{classTest}{Test}(#testname)\{\}       \(\backslash\)
+        virtual \textcolor{keywordtype}{void} \hyperlink{classTest_a203ca6c43b72403db54c8bdffb6efae9}{run}() \textcolor{keyword}{const};           \(\backslash\)
+    \};                                      \(\backslash\)
+    Test *testname::instance = \textcolor{keyword}{new} testname;\(\backslash\)
+    void testname::run() const
+\end{DoxyCode}
+
+
+在文件 tests.\+cpp 第 3 行定义.
+
+
+
+参考自 rp().
+
+
+
+\subsection{类型定义说明}
+\index{tests.\+cpp@{tests.\+cpp}!P\+II@{P\+II}}
+\index{P\+II@{P\+II}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{P\+II}{PII}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$int, int$>$ {\bf P\+II}}\hypertarget{tests_8cpp_a66f07903c2de34f8864e17dd89eea319}{}\label{tests_8cpp_a66f07903c2de34f8864e17dd89eea319}
+
+
+在文件 tests.\+cpp 第 187 行定义.
+
+
+
+\subsection{函数说明}
+\index{tests.\+cpp@{tests.\+cpp}!Bit\+Matrix\+Test@{Bit\+Matrix\+Test}}
+\index{Bit\+Matrix\+Test@{Bit\+Matrix\+Test}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{Bit\+Matrix\+Test()}{BitMatrixTest()}}]{\setlength{\rightskip}{0pt plus 5cm}void Bit\+Matrix\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a695cbb3ee9e790c628209e39fae41418}{}\label{tests_8cpp_a695cbb3ee9e790c628209e39fae41418}
+
+
+在文件 tests.\+cpp 第 105 行定义.
+
+
+
+参考 Bit\+Matrix\+::set().
+
+
+\begin{DoxyCode}
+106 \{
+107     \hyperlink{classBitMatrix}{BitMatrix} bmx(2, 3);
+108     cout << bmx;
+109     bmx.set(1, 2);
+110     cout << bmx;
+111     bmx.set(1, 0);
+112     cout << bmx;
+113     bmx.reset(1, 0);
+114     cout << bmx;
+115 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{tests_8cpp_a695cbb3ee9e790c628209e39fae41418_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tests.\+cpp@{tests.\+cpp}!Board\+I\+O\+Test@{Board\+I\+O\+Test}}
+\index{Board\+I\+O\+Test@{Board\+I\+O\+Test}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{Board\+I\+O\+Test()}{BoardIOTest()}}]{\setlength{\rightskip}{0pt plus 5cm}void Board\+I\+O\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a9f867a1f0c0d40af75203118c520f6f7}{}\label{tests_8cpp_a9f867a1f0c0d40af75203118c520f6f7}
+
+
+在文件 tests.\+cpp 第 119 行定义.
+
+
+
+参考 assert, board, inf, Board\+::input() , 以及 Board\+::output().
+
+
+\begin{DoxyCode}
+120 \{
+121     \hyperlink{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}{String} ins =
+122         \textcolor{stringliteral}{"3 4\(\backslash\)n"}
+123         \textcolor{stringliteral}{"0 -1 1 2 \(\backslash\)n"}
+124         \textcolor{stringliteral}{"2 0 -1 2 \(\backslash\)n"}
+125         \textcolor{stringliteral}{"3 4 2 2 \(\backslash\)n"}
+126     ;
+127     \hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{StringStream} \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf}(ins);
+128     \hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{StringStream} ouf, ouf1, ouf2;
+129     \hyperlink{classBoard}{Board} \hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board};
+130     board.\hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input}(0, \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf});
+131     board.\hyperlink{classBoard_a88190948cb3ed605cb54355de513cfa6}{output}(0, ouf);
+132     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(ins == ouf.str());
+133     board.\hyperlink{classBoard_a88190948cb3ed605cb54355de513cfa6}{output}(1, ouf1);
+134     \hyperlink{classBoard}{Board} board1;
+135     board1.\hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input}(1, ouf1);
+136     board1.\hyperlink{classBoard_a88190948cb3ed605cb54355de513cfa6}{output}(1,ouf2);
+137     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(ouf1.str() == ouf2.str());
+138 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tests_8cpp_a9f867a1f0c0d40af75203118c520f6f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tests.\+cpp@{tests.\+cpp}!Large\+Test@{Large\+Test}}
+\index{Large\+Test@{Large\+Test}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{Large\+Test()}{LargeTest()}}]{\setlength{\rightskip}{0pt plus 5cm}void Large\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a95ab05e912ce2da242f167395141cb1e}{}\label{tests_8cpp_a95ab05e912ce2da242f167395141cb1e}
+
+
+在文件 tests.\+cpp 第 161 行定义.
+
+
+
+参考 board, inf, Board\+::input(), Solver\+::run(), Solver\+::set\+Check\+Strategy(), Solver\+::set\+Optimize\+Strategy(), Solver\+::set\+Solve\+Strategy() , 以及 solution.
+
+
+\begin{DoxyCode}
+162 \{
+163     \hyperlink{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}{String} ins =
+164         \textcolor{stringliteral}{"50 50\(\backslash\)n"}
+165         \textcolor{stringliteral}{"1 6\(\backslash\)n"}
+166             \textcolor{stringliteral}{"1 1 2 2 4 4 8 8 16 16 32 32\(\backslash\)n"}
+167         \textcolor{stringliteral}{"2 4\(\backslash\)n"}
+168             \textcolor{stringliteral}{"10 8 8 10 49 49 0 30\(\backslash\)n"}
+169         \textcolor{stringliteral}{"3 3\(\backslash\)n"}
+170             \textcolor{stringliteral}{"1 6 0 38 1 27\(\backslash\)n"}
+171         \textcolor{stringliteral}{"-1 10\(\backslash\)n"}
+172             \textcolor{stringliteral}{"3 0 3 1 3 2 3 3 3 4 3 5 3 6 3 7 3 8 3 9\(\backslash\)n"}
+173     ;
+174     \hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{StringStream} \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf}(ins);
+175     \hyperlink{classBoard}{Board} \hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board};
+176     board.\hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input}(1, \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf});
+177     \hyperlink{classSolver}{Solver} solver(&board);
+178     \textcolor{comment}{// solver.setSolveStrategy(new ColumnGenSolve(&solver));}
+179     solver.setSolveStrategy(\textcolor{keyword}{new} \hyperlink{classDACSolve}{DACSolve}(&solver, \textcolor{keyword}{new} \hyperlink{classColumnGenSolve}{ColumnGenSolve}(&solver)));
+180     solver.setCheckStrategy(\textcolor{keyword}{new} \hyperlink{classStupidCheck}{StupidCheck}(&solver));
+181     solver.setOptimizeStrategy(\textcolor{keyword}{new} \hyperlink{classStupidOptimize}{StupidOptimize}(&solver));
+182     \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution} = solver.run();
+183     cout << \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+184 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tests_8cpp_a95ab05e912ce2da242f167395141cb1e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tests.\+cpp@{tests.\+cpp}!rp@{rp}}
+\index{rp@{rp}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{rp(\+O\+Stream \&ost, int n, int m)}{rp(OStream &ost, int n, int m)}}]{\setlength{\rightskip}{0pt plus 5cm}void rp (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+Stream} \&}]{ost, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_ad4255877e71be11f33517117ae6f6767}{}\label{tests_8cpp_ad4255877e71be11f33517117ae6f6767}
+
+
+在文件 tests.\+cpp 第 189 行定义.
+
+
+
+参考 T\+E\+ST , 以及 y.
+
+
+\begin{DoxyCode}
+189                                    \{
+190     \textcolor{keyword}{static} std::set<PII> S;
+191     \textcolor{keywordtype}{int} x, \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y};
+192     \textcolor{keywordflow}{do}
+193     \{
+194         x = rand() % n;
+195         y = rand() % m;
+196     \} \textcolor{keywordflow}{while}(S.count(\hyperlink{tests_8cpp_a66f07903c2de34f8864e17dd89eea319}{PII}(x, y)));
+197     S.insert(\hyperlink{tests_8cpp_a66f07903c2de34f8864e17dd89eea319}{PII}(x, y));
+198     ost << x << \textcolor{charliteral}{' '} << y << \textcolor{charliteral}{' '};
+199 \}
+\end{DoxyCode}
+\index{tests.\+cpp@{tests.\+cpp}!srand@{srand}}
+\index{srand@{srand}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{srand(23456789)}{srand(23456789)}}]{\setlength{\rightskip}{0pt plus 5cm}srand (
+\begin{DoxyParamCaption}
+\item[{23456789}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a30640f9c6d5430c07a83a57787acb5c5}{}\label{tests_8cpp_a30640f9c6d5430c07a83a57787acb5c5}
+\index{tests.\+cpp@{tests.\+cpp}!Stupid\+Strategy\+Test@{Stupid\+Strategy\+Test}}
+\index{Stupid\+Strategy\+Test@{Stupid\+Strategy\+Test}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{Stupid\+Strategy\+Test()}{StupidStrategyTest()}}]{\setlength{\rightskip}{0pt plus 5cm}void Stupid\+Strategy\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_a4ad1eecdf21f57184d350b6c9f1711c1}{}\label{tests_8cpp_a4ad1eecdf21f57184d350b6c9f1711c1}
+
+
+在文件 tests.\+cpp 第 145 行定义.
+
+
+
+参考 board, Board\+::input(), Solver\+::run(), Solver\+::set\+Check\+Strategy(), Solver\+::set\+Optimize\+Strategy(), Solver\+::set\+Solve\+Strategy() , 以及 solution.
+
+
+\begin{DoxyCode}
+146 \{
+147     \textcolor{comment}{// String ins; }
+148     \textcolor{comment}{// StringStream inf(ins);}
+149     \hyperlink{classBoard}{Board} \hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board};
+150     board.\hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input}(0);
+151     \hyperlink{classSolver}{Solver} solver(&board);
+152     \textcolor{comment}{// solver.setSolveStrategy(new ColumnGenSolve(&solver));}
+153     solver.setSolveStrategy(\textcolor{keyword}{new} \hyperlink{classDACSolve}{DACSolve}(&solver, \textcolor{keyword}{new} \hyperlink{classColumnGenSolve}{ColumnGenSolve}(&solver)));
+154     solver.setCheckStrategy(\textcolor{keyword}{new} \hyperlink{classStupidCheck}{StupidCheck}(&solver));
+155     solver.setOptimizeStrategy(\textcolor{keyword}{new} \hyperlink{classStupidOptimize}{StupidOptimize}(&solver));
+156     \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution} = solver.run();
+157     cout << \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+158 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tests_8cpp_a4ad1eecdf21f57184d350b6c9f1711c1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tests.\+cpp@{tests.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Clever\+Optimize\+Test)}{TEST(CleverOptimizeTest)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Clever\+Optimize\+Test}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{tests_8cpp_afbab43f8d3aaf7fca466f9177584e38c}{}\label{tests_8cpp_afbab43f8d3aaf7fca466f9177584e38c}
+
+
+在文件 tests.\+cpp 第 18 行定义.
+
+
+
+参考 Solution\+::board, board, Tree\+::compute\+Length(), Solution\+::compute\+Map(), inf, Board\+::input(), Tree\+::map, Clever\+Optimize\+::optimize(), Bit\+Matrix\+::set(), solution, Board\+::terminal\+Sets , 以及 Solution\+::trees.
+
+
+\begin{DoxyCode}
+19 \{
+20     \hyperlink{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}{String} ins =
+21         \textcolor{stringliteral}{"5 6 \(\backslash\)n"}
+22         \textcolor{stringliteral}{"1 0 0 0 0 0 \(\backslash\)n"}
+23         \textcolor{stringliteral}{"0 0 0 0 0 0 \(\backslash\)n"}
+24         \textcolor{stringliteral}{"1 0 0 0 2 1 \(\backslash\)n"}
+25         \textcolor{stringliteral}{"2 0 0 0 0 0 \(\backslash\)n"}
+26         \textcolor{stringliteral}{"0 0 0 0 0 0 \(\backslash\)n"}
+27     ;
+28     \hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{StringStream} \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf}(ins);
+29     \hyperlink{classBoard}{Board} \hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board};
+30     board.\hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input}(0, \hyperlink{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{inf});
+31     \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+32     solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board} = &\hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board};
+33     \hyperlink{classTerminalSet}{TerminalSet} &terminalSet1 = *board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[1];
+34     \hyperlink{classTerminalSet}{TerminalSet} &terminalSet2 = *board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[2];
+35     \hyperlink{classTree}{Tree} tree1(&terminalSet1);
+36     \hyperlink{classTree}{Tree} tree2(&terminalSet2);
+37     \hyperlink{classBitMatrix}{BitMatrix} bitMatrix1(5,6);
+38     \hyperlink{classBitMatrix}{BitMatrix} bitMatrix2(5,6);
+39     bitMatrix1.set(0,0);
+40     bitMatrix1.set(0,3);
+41     bitMatrix1.set(0,2);
+42     bitMatrix1.set(0,4);
+43     bitMatrix1.set(1,0);
+44     bitMatrix1.set(1,2);
+45     bitMatrix1.set(1,1);
+46     bitMatrix1.set(1,4);
+47     bitMatrix1.set(1,5);
+48     bitMatrix1.set(2,0);
+49     bitMatrix1.set(2,5);
+50     bitMatrix2.set(2,4);
+51     bitMatrix2.set(3,1);
+52     bitMatrix2.set(3,0);
+53     bitMatrix2.set(3,4);
+54     bitMatrix2.set(3,3);
+55     bitMatrix2.set(4,3);
+56     bitMatrix2.set(4,2);
+57     bitMatrix2.set(4,1);
+58     tree1.map = bitMatrix1;
+59     tree1.computeLength();
+60     tree2.map = bitMatrix2;
+61     tree2.computeLength();
+62     solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(NULL);
+63     solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(\textcolor{keyword}{new} \hyperlink{classTree}{Tree}(tree1));
+64     solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(\textcolor{keyword}{new} \hyperlink{classTree}{Tree}(tree2));
+65     solution.\hyperlink{classSolution_a45e5ef985917b725347a0742fe887400}{computeMap}();
+66     \hyperlink{classCleverOptimize}{CleverOptimize} cleverOptimize(NULL);
+67     \hyperlink{classSolution}{Solution} cleverSolution = cleverOptimize.optimize(solution);
+68     cout<<cleverSolution;
+69 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tests_8cpp_afbab43f8d3aaf7fca466f9177584e38c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{变量说明}
+\index{tests.\+cpp@{tests.\+cpp}!inf@{inf}}
+\index{inf@{inf}!tests.\+cpp@{tests.\+cpp}}
+\subsubsection[{\texorpdfstring{inf}{inf}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Stream} inf}\hypertarget{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}{}\label{tests_8cpp_a6242205b8cef1c1592ac905b5338ee77}
+{\bfseries 初始值\+:}
+\begin{DoxyCode}
+\{
+    \textcolor{keywordtype}{int} n = 350, m = 350, t = 10, tl = 5, tr = 5, ob = 10000
+\end{DoxyCode}
+
+
+在文件 tests.\+cpp 第 203 行定义.
+
+
+
+参考自 Board\+I\+O\+Test(), Large\+Test() , 以及 T\+E\+S\+T().
+

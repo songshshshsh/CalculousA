@@ -1,0 +1,10 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node2" href="$classTree.html#a70810e1d66ffb05f9787ab07c713c104" title="Tree::computeLength" alt="" coords="119,5,263,32"/>
+<area shape="rect" id="node4" href="$classSolution.html#a45e5ef985917b725347a0742fe887400" title="Solution::computeMap" alt="" coords="323,81,475,108"/>
+<area shape="rect" id="node6" href="$classBoard.html#ace215dfac6b741c9fb51cc40a6fe6ab1" title="Board::input" alt="" coords="145,157,237,184"/>
+<area shape="rect" id="node8" href="$classCleverOptimize.html#ab3cc46af7f8e30d264c2f737870ab9e6" title="CleverOptimize::optimize" alt="" coords="108,107,275,133"/>
+<area shape="rect" id="node9" href="$classBitMatrix.html#ad26dd2e93e9d24d70834d6d79e29c81e" title="BitMatrix::set" alt="" coords="141,208,241,235"/>
+<area shape="rect" id="node3" href="$classBitMatrix.html#aff2c100f5123e0f821a1d6c6d20daf21" title="BitMatrix::popcnt" alt="" coords="338,5,459,32"/>
+<area shape="rect" id="node5" href="$classMatrix.html#a15ce96c8af4c7a982c2c10b96f29cea1" title="Matrix::resize" alt="" coords="523,107,624,133"/>
+<area shape="rect" id="node7" href="$classTerminalSet.html#a405cff3b74573b5459da6ffd387f347a" title="TerminalSet::AddPoint" alt="" coords="323,183,475,209"/>
+</map>

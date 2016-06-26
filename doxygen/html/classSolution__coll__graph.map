@@ -1,0 +1,8 @@
+<map id="Solution" name="Solution">
+<area shape="rect" id="node2" href="$classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="263,443,347,593"/>
+<area shape="rect" id="node3" href="$classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="27,288,189,365"/>
+<area shape="rect" id="node5" href="$classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="224,288,339,365"/>
+<area shape="rect" id="node7" href="$classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="367,273,465,380"/>
+<area shape="rect" id="node8" href="$classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="373,147,533,224"/>
+<area shape="rect" id="node10" href="$classVector.html" title="{Vector\&lt; Tree * \&gt;\n||}" alt="" coords="489,479,607,557"/>
+</map>

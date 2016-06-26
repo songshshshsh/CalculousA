@@ -1,0 +1,439 @@
+\hypertarget{classSolver}{}\section{Solver类 参考}
+\label{classSolver}\index{Solver@{Solver}}
+
+
+{\ttfamily \#include \char`\"{}Solver.\+h\char`\"{}}
+
+
+
+Solver 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSolver_aa700448cac8f07eda6adccc6c79c4b9e}{Solver} (const \hyperlink{classBoard}{Board} $\ast$board\+\_\+)
+\item 
+\hyperlink{classSolver}{Solver} $\ast$ \hyperlink{classSolver_a1a6f0075358685b01c83188d206e41a5}{clone} () const 
+\item 
+\hyperlink{classSolver_aba52d3c92fafceb6fe39f937f2d73db3}{$\sim$\+Solver} ()
+\item 
+\hyperlink{classSolution}{Solution} \hyperlink{classSolver_ac0b51cb3578988fe9c461ea3fc424bef}{run} ()
+\item 
+void \hyperlink{classSolver_a2b07dd3c581eeb3207036430082cb2f9}{set\+Solve\+Strategy} (\hyperlink{classSolveStrategy}{Solve\+Strategy} $\ast$solve\+\_\+)
+\item 
+void \hyperlink{classSolver_a1a0ef339f8da3d56acea8b5a0d50d701}{set\+Check\+Strategy} (\hyperlink{classCheckStrategy}{Check\+Strategy} $\ast$check\+\_\+)
+\item 
+void \hyperlink{classSolver_a9917ba104c1daf8d9104e1892b480c2f}{set\+Optimize\+Strategy} (\hyperlink{classOptimizeStrategy}{Optimize\+Strategy} $\ast$optimize\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classBoard}{Board} $\ast$ \hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSolveStrategy}{Solve\+Strategy} $\ast$ \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve}
+\item 
+\hyperlink{classCheckStrategy}{Check\+Strategy} $\ast$ \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check}
+\item 
+\hyperlink{classOptimizeStrategy}{Optimize\+Strategy} $\ast$ \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Solver.\+h 第 9 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Solver@{Solver}!Solver@{Solver}}
+\index{Solver@{Solver}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{Solver(const Board $\ast$board\+\_\+)}{Solver(const Board *board_)}}]{\setlength{\rightskip}{0pt plus 5cm}Solver\+::\+Solver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Board} $\ast$}]{board\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_aa700448cac8f07eda6adccc6c79c4b9e}{}\label{classSolver_aa700448cac8f07eda6adccc6c79c4b9e}
+
+
+在文件 Solver.\+h 第 13 行定义.
+
+
+
+参考 check, optimize , 以及 solve.
+
+
+
+参考自 clone().
+
+
+\begin{DoxyCode}
+14     \{
+15         \hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board} = board\_;
+16         \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve} = NULL;
+17         \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check} = NULL;
+18         \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize} = NULL;
+19     \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_aa700448cac8f07eda6adccc6c79c4b9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solver@{Solver}!````~Solver@{$\sim$\+Solver}}
+\index{````~Solver@{$\sim$\+Solver}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{$\sim$\+Solver()}{~Solver()}}]{\setlength{\rightskip}{0pt plus 5cm}Solver\+::$\sim$\+Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_aba52d3c92fafceb6fe39f937f2d73db3}{}\label{classSolver_aba52d3c92fafceb6fe39f937f2d73db3}
+
+
+在文件 Solver.\+h 第 46 行定义.
+
+
+
+参考 check, optimize, run() , 以及 solve.
+
+
+\begin{DoxyCode}
+47     \{
+48         \textcolor{keyword}{delete} \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve};
+49         \textcolor{keyword}{delete} \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check};
+50         \textcolor{keyword}{delete} \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize};
+51     \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_aba52d3c92fafceb6fe39f937f2d73db3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{成员函数说明}
+\index{Solver@{Solver}!clone@{clone}}
+\index{clone@{clone}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{clone() const }{clone() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solver}$\ast$ Solver\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_a1a6f0075358685b01c83188d206e41a5}{}\label{classSolver_a1a6f0075358685b01c83188d206e41a5}
+
+
+在文件 Solver.\+h 第 20 行定义.
+
+
+
+参考 check, Solve\+Strategy\+::clone(), Check\+Strategy\+::clone(), Optimize\+Strategy\+::clone(), optimize, solve, Solver(), Solve\+Strategy\+::solver, Check\+Strategy\+::solver , 以及 Optimize\+Strategy\+::solver.
+
+
+
+参考自 D\+A\+C\+Solve\+::divide() , 以及 D\+A\+C\+Solve\+::solve().
+
+
+\begin{DoxyCode}
+21     \{
+22         \hyperlink{classSolver}{Solver} *ans = \textcolor{keyword}{new} \hyperlink{classSolver_aa700448cac8f07eda6adccc6c79c4b9e}{Solver}(\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board});
+23         \textcolor{keywordflow}{if}(\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve})
+24         \{
+25             ans->\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve} = \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve}->\hyperlink{classSolveStrategy_a49d51ab69b0c47648638819c2f61f247}{clone}();
+26             ans->\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve}->\hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver} = ans;
+27         \}
+28         \textcolor{keywordflow}{else}
+29             ans->\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve} = NULL;
+30         \textcolor{keywordflow}{if}(\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check})
+31         \{
+32             ans->\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check} = \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check}->\hyperlink{classCheckStrategy_ae3d41d899831bf33314db410d7f2f947}{clone}();
+33             ans->\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check}->\hyperlink{classCheckStrategy_a2adc667c9f5fe299ef7fa0a01781448b}{solver} = ans;
+34         \}
+35         \textcolor{keywordflow}{else}
+36             ans->\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check} = NULL;
+37         \textcolor{keywordflow}{if}(\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize})
+38         \{
+39             ans->\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize} = \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize}->\hyperlink{classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd}{clone}();
+40             ans->\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize}->\hyperlink{classOptimizeStrategy_a3954aa31d0f832b79a52648ef295b379}{solver} = ans;
+41         \}
+42         \textcolor{keywordflow}{else}
+43             ans->\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize} = NULL;
+44         \textcolor{keywordflow}{return} ans;
+45     \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classSolver_a1a6f0075358685b01c83188d206e41a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a1a6f0075358685b01c83188d206e41a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solver@{Solver}!run@{run}}
+\index{run@{run}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} Solver\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSolver_ac0b51cb3578988fe9c461ea3fc424bef}{}\label{classSolver_ac0b51cb3578988fe9c461ea3fc424bef}
+
+
+在文件 Solver.\+cpp 第 3 行定义.
+
+
+
+参考 assert, Check\+Strategy\+::check(), check, Optimize\+Strategy\+::optimize(), optimize, solution, Solve\+Strategy\+::solve() , 以及 solve.
+
+
+
+参考自 D\+A\+C\+Solve\+::divide(), Large\+Test(), D\+A\+C\+Solve\+::solve(), Stupid\+Strategy\+Test() , 以及 $\sim$\+Solver().
+
+
+\begin{DoxyCode}
+3                     \{
+4     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve} != NULL);
+5     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check} != NULL);
+6     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize} != NULL);
+7     \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution} = \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve}->\hyperlink{classSolveStrategy_ad3c3800be3e04570b466c3d8d054c500}{solve}();
+8     \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check}->\hyperlink{classCheckStrategy_a4ea49fe480604a34b1a4604f61e34b11}{check}(solution));
+9     \textcolor{comment}{/*if(board->width * board->height >= 500)}
+10 \textcolor{comment}{    \{}
+11 \textcolor{comment}{        board->output();}
+12 \textcolor{comment}{        cout << solution;}
+13 \textcolor{comment}{        cout.flush();}
+14 \textcolor{comment}{    \}*/}
+15     \textcolor{keywordflow}{return} \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize}->\hyperlink{classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb}{optimize}(solution);
+16 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classSolver_ac0b51cb3578988fe9c461ea3fc424bef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_ac0b51cb3578988fe9c461ea3fc424bef_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solver@{Solver}!set\+Check\+Strategy@{set\+Check\+Strategy}}
+\index{set\+Check\+Strategy@{set\+Check\+Strategy}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{set\+Check\+Strategy(\+Check\+Strategy $\ast$check\+\_\+)}{setCheckStrategy(CheckStrategy *check_)}}]{\setlength{\rightskip}{0pt plus 5cm}void Solver\+::set\+Check\+Strategy (
+\begin{DoxyParamCaption}
+\item[{{\bf Check\+Strategy} $\ast$}]{check\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_a1a0ef339f8da3d56acea8b5a0d50d701}{}\label{classSolver_a1a0ef339f8da3d56acea8b5a0d50d701}
+
+
+在文件 Solver.\+h 第 60 行定义.
+
+
+
+参考 check , 以及 Check\+Strategy\+::solver.
+
+
+
+参考自 Large\+Test() , 以及 Stupid\+Strategy\+Test().
+
+
+\begin{DoxyCode}
+61     \{
+62         \textcolor{keywordflow}{if}(\hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check})
+63             \textcolor{keyword}{delete} \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check};
+64         \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check} = check\_;
+65         \hyperlink{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{check}->\hyperlink{classCheckStrategy_a2adc667c9f5fe299ef7fa0a01781448b}{solver} = \textcolor{keyword}{this};
+66     \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classSolver_a1a0ef339f8da3d56acea8b5a0d50d701_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solver@{Solver}!set\+Optimize\+Strategy@{set\+Optimize\+Strategy}}
+\index{set\+Optimize\+Strategy@{set\+Optimize\+Strategy}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{set\+Optimize\+Strategy(\+Optimize\+Strategy $\ast$optimize\+\_\+)}{setOptimizeStrategy(OptimizeStrategy *optimize_)}}]{\setlength{\rightskip}{0pt plus 5cm}void Solver\+::set\+Optimize\+Strategy (
+\begin{DoxyParamCaption}
+\item[{{\bf Optimize\+Strategy} $\ast$}]{optimize\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_a9917ba104c1daf8d9104e1892b480c2f}{}\label{classSolver_a9917ba104c1daf8d9104e1892b480c2f}
+
+
+在文件 Solver.\+h 第 67 行定义.
+
+
+
+参考 optimize , 以及 Optimize\+Strategy\+::solver.
+
+
+
+参考自 Large\+Test() , 以及 Stupid\+Strategy\+Test().
+
+
+\begin{DoxyCode}
+68     \{
+69         \textcolor{keywordflow}{if}(\hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize})
+70             \textcolor{keyword}{delete} \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize};
+71         \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize} = optimize\_;
+72         \hyperlink{classSolver_a030d66f9899352a9c96313801ae58b8a}{optimize}->\hyperlink{classOptimizeStrategy_a3954aa31d0f832b79a52648ef295b379}{solver} = \textcolor{keyword}{this};
+73     \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a9917ba104c1daf8d9104e1892b480c2f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solver@{Solver}!set\+Solve\+Strategy@{set\+Solve\+Strategy}}
+\index{set\+Solve\+Strategy@{set\+Solve\+Strategy}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{set\+Solve\+Strategy(\+Solve\+Strategy $\ast$solve\+\_\+)}{setSolveStrategy(SolveStrategy *solve_)}}]{\setlength{\rightskip}{0pt plus 5cm}void Solver\+::set\+Solve\+Strategy (
+\begin{DoxyParamCaption}
+\item[{{\bf Solve\+Strategy} $\ast$}]{solve\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolver_a2b07dd3c581eeb3207036430082cb2f9}{}\label{classSolver_a2b07dd3c581eeb3207036430082cb2f9}
+
+
+在文件 Solver.\+h 第 53 行定义.
+
+
+
+参考 solve , 以及 Solve\+Strategy\+::solver.
+
+
+
+参考自 Large\+Test(), D\+A\+C\+Solve\+::solve() , 以及 Stupid\+Strategy\+Test().
+
+
+\begin{DoxyCode}
+54     \{
+55         \textcolor{keywordflow}{if}(\hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve})
+56             \textcolor{keyword}{delete} \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve};
+57         \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve} = solve\_;
+58         \hyperlink{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{solve}->\hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver} = \textcolor{keyword}{this};
+59     \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolver_a2b07dd3c581eeb3207036430082cb2f9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{类成员变量说明}
+\index{Solver@{Solver}!board@{board}}
+\index{board@{board}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{board}{board}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Board}$\ast$ Solver\+::board}\hypertarget{classSolver_a8966a22c2f247addc8ce453d119bc54e}{}\label{classSolver_a8966a22c2f247addc8ce453d119bc54e}
+
+
+在文件 Solver.\+h 第 12 行定义.
+
+
+
+参考自 D\+A\+C\+Solve\+::divide(), Column\+Gen\+Solve\+::route(), Stupid\+Solve\+::solve(), Column\+Gen\+Solve\+::solve(), D\+A\+C\+Solve\+::solve(), Column\+Gen\+Solve\+::solve\+L\+P() , 以及 Column\+Gen\+Solve\+::suggest\+Tree().
+
+\index{Solver@{Solver}!check@{check}}
+\index{check@{check}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{check}{check}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Check\+Strategy}$\ast$ Solver\+::check\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}{}\label{classSolver_af9c1ccc9336ccdee35dcc7c1c0e39a95}
+
+
+在文件 Solver.\+h 第 76 行定义.
+
+
+
+参考自 clone(), run(), set\+Check\+Strategy(), Solver() , 以及 $\sim$\+Solver().
+
+\index{Solver@{Solver}!optimize@{optimize}}
+\index{optimize@{optimize}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{optimize}{optimize}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Optimize\+Strategy}$\ast$ Solver\+::optimize\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSolver_a030d66f9899352a9c96313801ae58b8a}{}\label{classSolver_a030d66f9899352a9c96313801ae58b8a}
+
+
+在文件 Solver.\+h 第 77 行定义.
+
+
+
+参考自 clone(), run(), set\+Optimize\+Strategy(), Solver() , 以及 $\sim$\+Solver().
+
+\index{Solver@{Solver}!solve@{solve}}
+\index{solve@{solve}!Solver@{Solver}}
+\subsubsection[{\texorpdfstring{solve}{solve}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solve\+Strategy}$\ast$ Solver\+::solve\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}{}\label{classSolver_a2da9746bdd69a8ae76bb519bb1bc95b3}
+
+
+在文件 Solver.\+h 第 75 行定义.
+
+
+
+参考自 clone(), run(), set\+Solve\+Strategy(), Solver() , 以及 $\sim$\+Solver().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Solver_8h}{Solver.\+h}\item 
+src/\hyperlink{Solver_8cpp}{Solver.\+cpp}\end{DoxyCompactItemize}

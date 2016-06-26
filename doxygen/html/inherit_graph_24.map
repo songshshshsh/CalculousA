@@ -1,0 +1,6 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" href="$classSolveStrategy.html" title="SolveStrategy" alt="" coords="5,56,108,83"/>
+<area shape="rect" id="node2" href="$classColumnGenSolve.html" title="ColumnGenSolve" alt="" coords="156,5,277,32"/>
+<area shape="rect" id="node3" href="$classDACSolve.html" title="DACSolve" alt="" coords="177,56,257,83"/>
+<area shape="rect" id="node4" href="$classStupidSolve.html" title="StupidSolve" alt="" coords="171,107,262,133"/>
+</map>

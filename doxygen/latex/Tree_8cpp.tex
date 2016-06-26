@@ -1,0 +1,42 @@
+\hypertarget{Tree_8cpp}{}\section{src/\+Tree.cpp 文件参考}
+\label{Tree_8cpp}\index{src/\+Tree.\+cpp@{src/\+Tree.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Tree.\+h\char`\"{}}\\*
+Tree.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tree_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Tree_8cpp_ad56ecc1d0ca3804eee80fadc45195294}{operator==} (const \hyperlink{classTree}{Tree} \&lhs, const \hyperlink{classTree}{Tree} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{Tree.\+cpp@{Tree.\+cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!Tree.\+cpp@{Tree.\+cpp}}
+\subsubsection[{\texorpdfstring{operator==(const Tree \&lhs, const Tree \&rhs)}{operator==(const Tree &lhs, const Tree &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tree} \&}]{lhs, }
+\item[{const {\bf Tree} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{Tree_8cpp_ad56ecc1d0ca3804eee80fadc45195294}{}\label{Tree_8cpp_ad56ecc1d0ca3804eee80fadc45195294}
+
+
+在文件 Tree.\+cpp 第 10 行定义.
+
+
+
+参考 Tree\+::map , 以及 Tree\+::terminal\+Set.
+
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{keywordflow}{return} lhs.\hyperlink{classTree_a83a3dcb8167164b3086d1f52c5b7b3eb}{terminalSet} == rhs.\hyperlink{classTree_a83a3dcb8167164b3086d1f52c5b7b3eb}{terminalSet} && lhs.\hyperlink{classTree_a1e3b10da468444e998120389f271d6b1}{map} == rhs.
+      \hyperlink{classTree_a1e3b10da468444e998120389f271d6b1}{map};
+13 \}
+\end{DoxyCode}

@@ -1,0 +1,373 @@
+\hypertarget{classSolution}{}\section{Solution类 参考}
+\label{classSolution}\index{Solution@{Solution}}
+
+
+{\ttfamily \#include \char`\"{}Solution.\+h\char`\"{}}
+
+
+
+Solution 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSolution_ae476d795607d0cc25347480be20a39c7}{Solution} (const \hyperlink{classSolution}{Solution} \&)
+\item 
+\hyperlink{classSolution_ab55bd4b023d596ce11aaf737b9a6123b}{Solution} ()
+\item 
+\hyperlink{classSolution_a5d245f7409aacf6ace5e965b7879a580}{$\sim$\+Solution} ()
+\item 
+void \hyperlink{classSolution_a45e5ef985917b725347a0742fe887400}{compute\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classBoard}{Board} $\ast$ \hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTree}{Tree} $\ast$ $>$ \hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}
+\item 
+\hyperlink{classMatrix}{Matrix}$<$ int $>$ \hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \& \hyperlink{classSolution_a5af0fc266ffa02e4ca1231a71aca1873}{operator$<$$<$} (\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ost, const \hyperlink{classSolution}{Solution} \&\hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution})
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Solution.\+h 第 8 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Solution@{Solution}!Solution@{Solution}}
+\index{Solution@{Solution}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{Solution(const Solution \&)}{Solution(const Solution &)}}]{\setlength{\rightskip}{0pt plus 5cm}Solution\+::\+Solution (
+\begin{DoxyParamCaption}
+\item[{const {\bf Solution} \&}]{\+\_\+solution}
+\end{DoxyParamCaption}
+)}\hypertarget{classSolution_ae476d795607d0cc25347480be20a39c7}{}\label{classSolution_ae476d795607d0cc25347480be20a39c7}
+
+
+在文件 Solution.\+cpp 第 5 行定义.
+
+
+
+参考 board, Tree\+::length, Tree\+::map, map, Tree\+::terminal\+Set , 以及 trees.
+
+
+\begin{DoxyCode}
+6 \{
+7     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0;i < \_solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.size();++i)
+8     \{
+9         \textcolor{keywordflow}{if}(\_solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i] == NULL)
+10             this->\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(NULL);
+11         \textcolor{keywordflow}{else}
+12         \{
+13             \hyperlink{classTree}{Tree}* \_tree = \textcolor{keyword}{new} \hyperlink{classTree}{Tree}();
+14             \_tree->\hyperlink{classTree_a83a3dcb8167164b3086d1f52c5b7b3eb}{terminalSet} = \_solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i]->terminalSet;
+15             \_tree->\hyperlink{classTree_a1e3b10da468444e998120389f271d6b1}{map} = \_solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i]->map;
+16             \_tree->\hyperlink{classTree_abd2590a324518ea612aeeebd16ca3b19}{length} = \_solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i]->length;
+17             this->\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(\_tree);
+18         \}
+19     \}
+20     this->\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board} = \_solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board};
+21     this->\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map} = \_solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map};
+22 \}
+\end{DoxyCode}
+\index{Solution@{Solution}!Solution@{Solution}}
+\index{Solution@{Solution}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{Solution()}{Solution()}}]{\setlength{\rightskip}{0pt plus 5cm}Solution\+::\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSolution_ab55bd4b023d596ce11aaf737b9a6123b}{}\label{classSolution_ab55bd4b023d596ce11aaf737b9a6123b}
+
+
+在文件 Solution.\+h 第 13 行定义.
+
+
+
+参考 $\sim$\+Solution().
+
+
+\begin{DoxyCode}
+13 \{\}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classSolution_ab55bd4b023d596ce11aaf737b9a6123b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Solution@{Solution}!````~Solution@{$\sim$\+Solution}}
+\index{````~Solution@{$\sim$\+Solution}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{$\sim$\+Solution()}{~Solution()}}]{\setlength{\rightskip}{0pt plus 5cm}Solution\+::$\sim$\+Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSolution_a5d245f7409aacf6ace5e965b7879a580}{}\label{classSolution_a5d245f7409aacf6ace5e965b7879a580}
+
+
+在文件 Solution.\+cpp 第 24 行定义.
+
+
+
+参考 trees.
+
+
+
+参考自 Solution().
+
+
+\begin{DoxyCode}
+25 \{
+26     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0;i < this->\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.size();++i)
+27         \textcolor{keywordflow}{if} (this->\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i] != NULL)
+28         \textcolor{keyword}{delete} this->\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i];
+29 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classSolution_a5d245f7409aacf6ace5e965b7879a580_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{成员函数说明}
+\index{Solution@{Solution}!compute\+Map@{compute\+Map}}
+\index{compute\+Map@{compute\+Map}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{compute\+Map()}{computeMap()}}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\+::compute\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSolution_a45e5ef985917b725347a0742fe887400}{}\label{classSolution_a45e5ef985917b725347a0742fe887400}
+
+
+在文件 Solution.\+cpp 第 118 行定义.
+
+
+
+参考 Board\+::blocks, board, Board\+::height, map, Matrix$<$ T $>$\+::resize(), trees , 以及 Board\+::width.
+
+
+
+参考自 Clever\+Optimize\+::optimize(), Column\+Gen\+Solve\+::route(), Column\+Gen\+Solve\+::solve() , 以及 T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+119 \{
+120     \hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height},\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width});
+121     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i < (int) \hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.size(); ++i)
+122     \{
+123         \textcolor{keywordflow}{if} (\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i] != NULL)
+124         \{
+125             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < \hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}; ++j)
+126                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0;k < \hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}; ++k)
+127                     \textcolor{keywordflow}{if} (\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i]->\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}.get(j,k) != 0)
+128                     \hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[j][k] = \hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[i]->\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}.get(j,k) * i;
+129                 \textcolor{keywordflow}{else}
+130                 \{
+131                     \textcolor{keywordtype}{bool} find = \textcolor{keyword}{false};
+132                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 1;p < (int) \hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.size(); ++p)
+133                     \textcolor{keywordflow}{if} (\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}[p]->\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}.get(j,k) == 1) find = \textcolor{keyword}{true};
+134                     \textcolor{keywordflow}{if} (!find) \hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[j][k] = 0;
+135                 \}
+136         \}
+137     \}
+138     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} block: \hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks})
+139         \hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[block] = -1;
+140     \textcolor{comment}{// for (int i = 0;i < (int)board->blocks.size(); ++i)}
+141         \textcolor{comment}{// map[board->blocks[i].x][board->blocks[i].y] = -1;}
+142 \}\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classSolution_a45e5ef985917b725347a0742fe887400_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSolution_a45e5ef985917b725347a0742fe887400_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{友元及相关函数文档}
+\index{Solution@{Solution}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+Stream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+Stream} \&}]{ost, }
+\item[{const {\bf Solution} \&}]{solution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classSolution_a5af0fc266ffa02e4ca1231a71aca1873}{}\label{classSolution_a5af0fc266ffa02e4ca1231a71aca1873}
+
+
+在文件 Solution.\+cpp 第 31 行定义.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordtype}{int} treeCnt = 0, totLen = 0;
+34     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees})
+35         \textcolor{keywordflow}{if}(tree != NULL)
+36         \{
+37             ++treeCnt;
+38             totLen += tree->length;
+39         \}
+40     cout << \textcolor{stringliteral}{"successfully routed "} << treeCnt << \textcolor{stringliteral}{" sets of terminals with "} << totLen << \textcolor{stringliteral}{" grids\(\backslash\)n"};
+41     cout.flush();
+42     ost << \textcolor{stringliteral}{"Solution\(\backslash\)n"};
+43     \textcolor{comment}{// for(auto &row: solution.map)}
+44     \textcolor{comment}{// \{}
+45         \textcolor{comment}{// for(auto col: row)}
+46             \textcolor{comment}{// ost << col << " ";}
+47         \textcolor{comment}{// ost << "\(\backslash\)n";}
+48     \textcolor{comment}{// \}}
+49     \textcolor{keywordtype}{int} n = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}, m = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+50     \textcolor{keyword}{const} \hyperlink{classMatrix}{Matrix<int>} &\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map} = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map};
+51     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+52     \{
+53         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+54         \{
+55             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+56                 ost << \textcolor{stringliteral}{" X "};
+57             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+58                 ost << \textcolor{stringliteral}{"   "};
+59             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+60                 ost << \textcolor{stringliteral}{"["} << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] - 1 << \textcolor{stringliteral}{"]"};
+61             \textcolor{keywordflow}{else}
+62                 ost << \textcolor{stringliteral}{" "} << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] - 1 << \textcolor{stringliteral}{" "};
+63         \}
+64         ost << \textcolor{stringliteral}{"\(\backslash\)n"};
+65     \}
+66     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+67     \{
+68         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+69         \{
+70             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+71                 ost << \textcolor{stringliteral}{"-1 "};
+72             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+73                 ost << \textcolor{stringliteral}{"0 "};
+74             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+75                 ost << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] << \textcolor{stringliteral}{" "};
+76             \textcolor{keywordflow}{else}
+77                 ost << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] + 100000 << \textcolor{stringliteral}{" "};
+78         \}
+79         ost << \textcolor{stringliteral}{"\(\backslash\)n"};
+80     \}
+81     std::set<int> index;
+82     index.insert(-1);
+83     \textcolor{keywordtype}{int}** pic = \textcolor{keyword}{new} \textcolor{keywordtype}{int}*[n];
+84     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i) 
+85         pic[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[m];
+86     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i)
+87         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < m; ++j)
+88         \{
+89             \textcolor{keywordtype}{int} &p = pic[i][j];
+90             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+91                 p = -1;
+92             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+93                 p = 0;
+94             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+95                 p = solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j];
+96             \textcolor{keywordflow}{else}
+97                 p = solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] + 100;
+98             index.insert(p);
+99         \}
+100     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i)
+101         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < m; ++j)
+102             ++pic[i][j];
+103             \textcolor{comment}{// pic[i][j] = std::distance(index.begin(),index.find(pic[i][j]));}
+104     \textcolor{keywordtype}{int} min = 0,max = index.size() - 1;
+105     \textcolor{keywordtype}{char} fileName[256];
+106     time\_t cTime = time(NULL);
+107     \textcolor{keywordtype}{int} len = strftime(fileName, \textcolor{keyword}{sizeof}(fileName), \textcolor{stringliteral}{"%Y%m%d%H%M%S"}, localtime(&cTime));
+108     sprintf(fileName + len, \textcolor{stringliteral}{"\_%010d.bmp"}, (\textcolor{keywordtype}{int}) clock());
+109     \textcolor{keywordflow}{if} (\hyperlink{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49}{intarray2bmp::intarray2bmp}(fileName,pic,n,m,min,max))
+110         cout<<\textcolor{stringliteral}{"picture saved to "} << fileName << \textcolor{stringliteral}{"\(\backslash\)n"};
+111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i) 
+112         \textcolor{keyword}{delete}[] pic[i];
+113     \textcolor{keyword}{delete}[] pic;
+114     cout.flush();
+115     \textcolor{keywordflow}{return} ost;
+116 \}
+\end{DoxyCode}
+
+
+\subsection{类成员变量说明}
+\index{Solution@{Solution}!board@{board}}
+\index{board@{board}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{board}{board}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Board}$\ast$ Solution\+::board}\hypertarget{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{}\label{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}
+
+
+在文件 Solution.\+h 第 15 行定义.
+
+
+
+参考自 Clever\+Optimize\+::bfs(), compute\+Map(), operator$<$$<$(), Clever\+Optimize\+::optimize(), Column\+Gen\+Solve\+::route(), Solution(), Stupid\+Solve\+::solve(), Column\+Gen\+Solve\+::solve(), D\+A\+C\+Solve\+::solve() , 以及 T\+E\+S\+T().
+
+\index{Solution@{Solution}!map@{map}}
+\index{map@{map}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{map}{map}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}$<$int$>$ Solution\+::map}\hypertarget{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{}\label{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}
+
+
+在文件 Solution.\+h 第 18 行定义.
+
+
+
+参考自 Clever\+Optimize\+::bfs(), compute\+Map(), D\+A\+C\+Solve\+::divide(), operator$<$$<$(), Solution() , 以及 Stupid\+Solve\+::solve().
+
+\index{Solution@{Solution}!trees@{trees}}
+\index{trees@{trees}!Solution@{Solution}}
+\subsubsection[{\texorpdfstring{trees}{trees}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<${\bf Tree}$\ast$$>$ Solution\+::trees}\hypertarget{classSolution_a554205b5c578add14d2d7836042215d8}{}\label{classSolution_a554205b5c578add14d2d7836042215d8}
+
+
+在文件 Solution.\+h 第 16 行定义.
+
+
+
+参考自 compute\+Map(), operator$<$$<$(), Clever\+Optimize\+::optimize(), Column\+Gen\+Solve\+::route(), Solution(), Stupid\+Solve\+::solve(), Column\+Gen\+Solve\+::solve(), T\+E\+S\+T() , 以及 $\sim$\+Solution().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Solution_8h}{Solution.\+h}\item 
+src/\hyperlink{Solution_8cpp}{Solution.\+cpp}\end{DoxyCompactItemize}

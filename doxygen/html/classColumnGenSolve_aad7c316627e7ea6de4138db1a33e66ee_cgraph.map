@@ -1,0 +1,30 @@
+<map id="ColumnGenSolve::solve" name="ColumnGenSolve::solve">
+<area shape="rect" id="node2" href="$classSolution.html#a45e5ef985917b725347a0742fe887400" title="Solution::computeMap" alt="" coords="443,275,595,301"/>
+<area shape="rect" id="node4" href="$classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="212,325,371,352"/>
+<area shape="rect" id="node3" href="$classMatrix.html#a15ce96c8af4c7a982c2c10b96f29cea1" title="Matrix::resize" alt="" coords="726,275,827,301"/>
+<area shape="rect" id="node5" href="$classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="431,427,606,453"/>
+<area shape="rect" id="node14" href="$classColumnGenSolve.html#a4ec729b2184612495e657f7ec2d644fa" title="ColumnGenSolve::suggestTree" alt="" coords="419,224,619,251"/>
+<area shape="rect" id="node6" href="$classGRBFactory.html#aadd50eacec778be1265b494b4348fe8c" title="GRBFactory::createModel" alt="" coords="690,477,863,504"/>
+<area shape="rect" id="node8" href="$classGRBModel.html#af31f99d256c700fa34ef0c9efdd76d98" title="GRBModel::addVar" alt="" coords="709,528,844,555"/>
+<area shape="rect" id="node9" href="$classGRBModel.html#a7662994a5e461c9fa82345f93985e043" title="GRBModel::update" alt="" coords="711,579,843,605"/>
+<area shape="rect" id="node10" href="$classGRBModel.html#a408a224373e26cb163510c5352577d51" title="GRBModel::setObjective" alt="" coords="695,629,859,656"/>
+<area shape="rect" id="node11" href="$classGRBModel.html#a95e9bc35355e800ebdf87ba618153d27" title="GRBModel::addConstr" alt="" coords="701,325,853,352"/>
+<area shape="rect" id="node12" href="$classGRBModel.html#a261ee3d0ea71fe57fd484d3c93e4388d" title="GRBModel::optimize" alt="" coords="705,376,848,403"/>
+<area shape="rect" id="node13" href="$classGRBModel.html#a8fe021a9f145ee918ab1a7a1b326aa20" title="GRBModel::get" alt="" coords="721,427,832,453"/>
+<area shape="rect" id="node7" href="$classGRBEnv.html#a7f3ec7e37fbed1c7606ea52e18ed8a95" title="GRBEnv::set" alt="" coords="999,477,1097,504"/>
+<area shape="rect" id="node15" href="$classColumnGenSolve.html#a6c08d317e692a357d49ee56184a9db22" title="ColumnGenSolve::removeNonCuts" alt="" coords="667,224,887,251"/>
+<area shape="rect" id="node28" href="$classColumnGenSolve.html#a4a1019de523004757e60c023fc92a38d" title="ColumnGenSolve::pushTreeSet" alt="" coords="947,5,1149,32"/>
+<area shape="rect" id="node16" href="$classColumnGenSolve.html#a96cbeba5fb978bb67e32b8f42ba161fe" title="ColumnGenSolve::dfsEdge" alt="" coords="1221,325,1397,352"/>
+<area shape="rect" id="node17" href="$classBitMatrix.html#ad19d1045b54ccc8a99d70d38305b4ca6" title="BitMatrix::get" alt="" coords="1461,165,1561,192"/>
+<area shape="rect" id="node20" href="$classBitMatrix.html#a0ee870454e6343c3272ab791e45af404" title="BitMatrix::reset" alt="" coords="1456,325,1567,352"/>
+<area shape="rect" id="node21" href="$classColumnGenSolve.html#af3470aaed4b9d0aa92f27b487b093479" title="ColumnGenSolve::dfsFather" alt="" coords="957,123,1139,149"/>
+<area shape="rect" id="node22" href="$classColumnGenSolve.html#a71007959556061091171c03da6197f34" title="ColumnGenSolve::dijkstra" alt="" coords="963,173,1133,200"/>
+<area shape="rect" id="node23" href="$classBitMatrix.html#ad26dd2e93e9d24d70834d6d79e29c81e" title="BitMatrix::set" alt="" coords="1461,85,1561,112"/>
+<area shape="rect" id="node24" href="$classColumnGenSolve.html#ab976cab8582808218110d86252177f88" title="ColumnGenSolve::sync" alt="" coords="969,376,1127,403"/>
+<area shape="rect" id="node25" href="$classColumnGenSolve.html#acbcc78e94e4a6e59ceb7da2357ddb87a" title="ColumnGenSolve::treeGetBranches" alt="" coords="935,224,1161,251"/>
+<area shape="rect" id="node18" href="$classBitMatrix.html#ae5aeab0b906b1e70fdc2086bb434dd85" title="BitMatrix::operator\|=" alt="" coords="1615,165,1755,192"/>
+<area shape="rect" id="node19" href="$classBitMatrix.html#aff2c100f5123e0f821a1d6c6d20daf21" title="BitMatrix::popcnt" alt="" coords="1624,68,1745,95"/>
+<area shape="rect" id="node26" href="$classBitMatrix.html#ab09face4935598cf90705d6e8f8d1cfa" title="BitMatrix::resize" alt="" coords="1250,224,1367,251"/>
+<area shape="rect" id="node27" href="$classColumnGenSolve.html#a39be14a210fccecb512a754e1a359861" title="ColumnGenSolve::treeDFSGet\lBranches" alt="" coords="1209,158,1408,199"/>
+<area shape="rect" id="node29" href="$classTree.html#a70810e1d66ffb05f9787ab07c713c104" title="Tree::computeLength" alt="" coords="1237,5,1381,32"/>
+</map>

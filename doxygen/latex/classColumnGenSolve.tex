@@ -1,0 +1,2057 @@
+\hypertarget{classColumnGenSolve}{}\section{Column\+Gen\+Solve类 参考}
+\label{classColumnGenSolve}\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+
+
+{\ttfamily \#include \char`\"{}Column\+Gen\+Solve.\+h\char`\"{}}
+
+
+
+类 Column\+Gen\+Solve 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classColumnGenSolve__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Column\+Gen\+Solve 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structColumnGenSolve_1_1expandFinished}{expand\+Finished}
+\item 
+struct \hyperlink{structColumnGenSolve_1_1parDijkstraParams}{par\+Dijkstra\+Params}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classColumnGenSolve_a825d4a3f8f1995c6a772535b29b3bbeb}{Column\+Gen\+Solve} (\hyperlink{classSolver}{Solver} $\ast$solver\+\_\+)
+\item 
+virtual \hyperlink{classColumnGenSolve_a04ccfc4d9676794aa5413590b41a07f4}{$\sim$\+Column\+Gen\+Solve} ()
+\item 
+virtual \hyperlink{classSolution}{Solution} \hyperlink{classColumnGenSolve_aad7c316627e7ea6de4138db1a33e66ee}{solve} () const 
+\item 
+virtual \hyperlink{classSolveStrategy}{Solve\+Strategy} $\ast$ \hyperlink{classColumnGenSolve_ae7cc479a554a497f738630259e446b8f}{clone} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M}
+\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTree}{Tree} $\ast$ $>$ \hyperlink{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002}{route} (int tim) const 
+\item 
+double \hyperlink{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81}{solve\+LP} (\hyperlink{classVector}{Vector}$<$ \hyperlink{classVector}{Vector}$<$ \hyperlink{classPair}{Pair}$<$ \hyperlink{classTree}{Tree}, \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$$>$$>$ \&treesets, int mode, \hyperlink{classMatrix}{Matrix}$<$ double $>$ $\ast$map\+Pi=N\+U\+LL, \hyperlink{classVector}{Vector}$<$ double $>$ $\ast$vec\+Lambda=N\+U\+LL, int ignore\+Idx=-\/1) const 
+\item 
+void \hyperlink{classColumnGenSolve_a71007959556061091171c03da6197f34}{dijkstra} (const \hyperlink{classBitMatrix}{Bit\+Matrix} \&base, const \hyperlink{classMatrix}{Matrix}$<$ double $>$ \&mapW, int n, int m, \hyperlink{classMatrix}{Matrix}$<$ \hyperlink{classPair}{Pair}$<$ double, \hyperlink{classPoint}{Point} $>$$>$ \&ans) const 
+\item 
+bool \hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggest\+Tree} (const \hyperlink{classVector}{Vector}$<$ \hyperlink{classTerminalSet}{Terminal\+Set} $\ast$ $>$ \&termsets, \hyperlink{classVector}{Vector}$<$ \hyperlink{classVector}{Vector}$<$ \hyperlink{classPair}{Pair}$<$ \hyperlink{classTree}{Tree}, \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$$>$$>$ \&treesets, const \hyperlink{classMatrix}{Matrix}$<$ double $>$ \&mapW, int n, int m, int idx) const 
+\item 
+\hyperlink{classTree}{Tree} \hyperlink{classColumnGenSolve_a9f9ca7d65c0e42d18ea422ff136d52d0}{suggest\+Tree} (const \hyperlink{classTerminalSet}{Terminal\+Set} $\ast$\hyperlink{classes_8txt_a597568d74a60fa533165215be11d5f0b}{terminal\+Set}, const \hyperlink{classMatrix}{Matrix}$<$ double $>$ \&mapW, int n, int m) const 
+\item 
+void \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfs\+Edge} (\hyperlink{classBitMatrix}{Bit\+Matrix} \&tree, const \hyperlink{classMatrix}{Matrix}$<$ int $>$ \&\hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id}, \hyperlink{classVector}{Vector}$<$ \hyperlink{classPoint}{Point} $>$ \&\hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}, int x, int \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}, int n, int m, int \&s, int \&t) const 
+\item 
+int \hyperlink{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}{dfs\+Father} (\hyperlink{classVector}{Vector}$<$ int $>$ \&father, int x) const 
+\item 
+void \hyperlink{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}{remove\+Non\+Cuts} (const \hyperlink{classMatrix}{Matrix}$<$ int $>$ \&\hyperlink{classes_8txt_a0a12e395730487ab04f7f11cbc4d2132}{map}, int idx, \hyperlink{classBitMatrix}{Bit\+Matrix} \&tree, int n, int m, const \hyperlink{classMatrix}{Matrix}$<$ double $>$ $\ast$mapW=N\+U\+LL) const 
+\item 
+double \hyperlink{classColumnGenSolve_ad5a36333d83b1a1803eb582c9a0a9941}{remove\+Non\+Cuts} (\hyperlink{classMatrix}{Matrix}$<$ bool $>$ \&visited, const \hyperlink{classMatrix}{Matrix}$<$ int $>$ \&\hyperlink{classes_8txt_a0a12e395730487ab04f7f11cbc4d2132}{map}, int idx, const \hyperlink{classMatrix}{Matrix}$<$ double $>$ \&mapW, \hyperlink{classBitMatrix}{Bit\+Matrix} \&tree, int n, int m) const 
+\item 
+bool \hyperlink{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d}{push\+Tree\+Set} (\hyperlink{classVector}{Vector}$<$ \hyperlink{classPair}{Pair}$<$ \hyperlink{classTree}{Tree}, \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$$>$ \&treeset, \hyperlink{classTree}{Tree} \&tree) const 
+\item 
+int \hyperlink{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78}{tree\+Branches} (\hyperlink{classBitMatrix}{Bit\+Matrix} tree, int n, int m) const 
+\item 
+void \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{tree\+D\+F\+S\+Branches} (\hyperlink{classBitMatrix}{Bit\+Matrix} \&tree, int i, int j, int n, int m) const 
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classBitMatrix}{Bit\+Matrix} $>$ \hyperlink{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a}{tree\+Get\+Branches} (\hyperlink{classBitMatrix}{Bit\+Matrix} tree, int n, int m) const 
+\item 
+void \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{tree\+D\+F\+S\+Get\+Branches} (\hyperlink{classBitMatrix}{Bit\+Matrix} \&tree, \hyperlink{classBitMatrix}{Bit\+Matrix} \&res, int i, int j, int n, int m) const 
+\item 
+bool \hyperlink{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f}{tree\+Is\+Cut} (\hyperlink{classBitMatrix}{Bit\+Matrix} tree, int i, int j, int n, int m) const 
+\end{DoxyCompactItemize}
+\subsection*{静态 Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classColumnGenSolve_ab976cab8582808218110d86252177f88}{sync} ()
+\item 
+static void \hyperlink{classColumnGenSolve_a5501879ba2b6480f0bacbc38b6e5121e}{par\+Dijkstra\+At\+Exit} ()
+\item 
+static void \hyperlink{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20}{par\+Dijkstra} (\hyperlink{structColumnGenSolve_1_1parDijkstraParams}{par\+Dijkstra\+Params} \&params)
+\item 
+static void $\ast$ \hyperlink{classColumnGenSolve_a97e581fdab12a396fd173b030ec26bec}{par\+Dijkstra\+Init} ()
+\end{DoxyCompactItemize}
+\subsection*{静态 Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT} = 2
+\item 
+static \hyperlink{global_8h_ab4108db709b91dc2efcd48309edb9f5e}{Thread} \hyperlink{classColumnGenSolve_ae836bca68776f265a26e46c7e842492e}{threads} \mbox{[}\hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT}\mbox{]}
+\item 
+static \hyperlink{structColumnGenSolve_1_1parDijkstraParams}{par\+Dijkstra\+Params} \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{params\+List} \mbox{[}\hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT}\mbox{]}
+\item 
+static const void $\ast$ \hyperlink{classColumnGenSolve_ac77eb4def69a3476015487be8a49818a}{par\+Dijkstra\+Init\+Res} = \hyperlink{classColumnGenSolve_a97e581fdab12a396fd173b030ec26bec}{Column\+Gen\+Solve\+::par\+Dijkstra\+Init}()
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 8 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{Column\+Gen\+Solve(\+Solver $\ast$solver\+\_\+)}{ColumnGenSolve(Solver *solver_)}}]{\setlength{\rightskip}{0pt plus 5cm}Column\+Gen\+Solve\+::\+Column\+Gen\+Solve (
+\begin{DoxyParamCaption}
+\item[{{\bf Solver} $\ast$}]{solver\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classColumnGenSolve_a825d4a3f8f1995c6a772535b29b3bbeb}{}\label{classColumnGenSolve_a825d4a3f8f1995c6a772535b29b3bbeb}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 12 行定义.
+
+
+
+参考自 clone().
+
+
+\begin{DoxyCode}
+12 : \hyperlink{classSolveStrategy_adae0995ba06bc3bd6d79b08f7a0677b7}{SolveStrategy}(solver\_), \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M}(solver\_->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width} * solver\_->
+      \hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height})\{\}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a825d4a3f8f1995c6a772535b29b3bbeb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!````~Column\+Gen\+Solve@{$\sim$\+Column\+Gen\+Solve}}
+\index{````~Column\+Gen\+Solve@{$\sim$\+Column\+Gen\+Solve}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{$\sim$\+Column\+Gen\+Solve()}{~ColumnGenSolve()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Column\+Gen\+Solve\+::$\sim$\+Column\+Gen\+Solve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classColumnGenSolve_a04ccfc4d9676794aa5413590b41a07f4}{}\label{classColumnGenSolve_a04ccfc4d9676794aa5413590b41a07f4}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 13 行定义.
+
+
+
+参考 solve().
+
+
+\begin{DoxyCode}
+13 \{\}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a04ccfc4d9676794aa5413590b41a07f4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{成员函数说明}
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!clone@{clone}}
+\index{clone@{clone}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{clone() const }{clone() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Solve\+Strategy}$\ast$ Column\+Gen\+Solve\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classColumnGenSolve_ae7cc479a554a497f738630259e446b8f}{}\label{classColumnGenSolve_ae7cc479a554a497f738630259e446b8f}
+
+
+实现了 \hyperlink{classSolveStrategy_a49d51ab69b0c47648638819c2f61f247}{Solve\+Strategy}.
+
+
+
+在文件 Column\+Gen\+Solve.\+h 第 15 行定义.
+
+
+
+参考 Column\+Gen\+Solve().
+
+
+\begin{DoxyCode}
+16     \{
+17         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classColumnGenSolve_a825d4a3f8f1995c6a772535b29b3bbeb}{ColumnGenSolve}(*\textcolor{keyword}{this});
+18     \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ae7cc479a554a497f738630259e446b8f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!dfs\+Edge@{dfs\+Edge}}
+\index{dfs\+Edge@{dfs\+Edge}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{dfs\+Edge(\+Bit\+Matrix \&tree, const Matrix$<$ int $>$ \&id, Vector$<$ Point $>$ \&points, int x, int y, int n, int m, int \&s, int \&t) const }{dfsEdge(BitMatrix &tree, const Matrix< int > &id, Vector< Point > &points, int x, int y, int n, int m, int &s, int &t) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::dfs\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix} \&}]{tree, }
+\item[{const {\bf Matrix}$<$ int $>$ \&}]{id, }
+\item[{{\bf Vector}$<$ {\bf Point} $>$ \&}]{points, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{n, }
+\item[{int}]{m, }
+\item[{int \&}]{s, }
+\item[{int \&}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{}\label{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 762 行定义.
+
+
+
+参考 assert, Bit\+Matrix\+::get(), Bit\+Matrix\+::reset() , 以及 y.
+
+
+
+参考自 remove\+Non\+Cuts().
+
+
+\begin{DoxyCode}
+766 \{
+767     \textcolor{keywordflow}{if}(x < 0 || x >= n || y < 0 || y >= m || !tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(x, \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}))
+768         \textcolor{keywordflow}{return};
+769     \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id}[x][\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}])
+770     \{
+771         \textcolor{keywordflow}{if}(s)
+772         \{
+773             \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(!t);
+774             t = \textcolor{keywordtype}{id}[x][\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}];
+775         \}
+776         \textcolor{keywordflow}{else}
+777             s = \textcolor{keywordtype}{id}[x][\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}];
+778         \textcolor{keywordflow}{return};
+779     \}
+780     points.push\_back(\hyperlink{classPoint}{Point}(x, y));
+781     tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(x, y);
+782     \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfsEdge}(tree, \textcolor{keywordtype}{id}, points, x - 1, y, n, m, s, t);
+783     \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfsEdge}(tree, \textcolor{keywordtype}{id}, points, x + 1, y, n, m, s, t);
+784     \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfsEdge}(tree, \textcolor{keywordtype}{id}, points, x, y - 1, n, m, s, t);
+785     \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfsEdge}(tree, \textcolor{keywordtype}{id}, points, x, y + 1, n, m, s, t);
+786 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!dfs\+Father@{dfs\+Father}}
+\index{dfs\+Father@{dfs\+Father}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{dfs\+Father(\+Vector$<$ int $>$ \&father, int x) const }{dfsFather(Vector< int > &father, int x) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Column\+Gen\+Solve\+::dfs\+Father (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}$<$ int $>$ \&}]{father, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}{}\label{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 788 行定义.
+
+
+
+参考自 remove\+Non\+Cuts().
+
+
+\begin{DoxyCode}
+789 \{
+790     \textcolor{keywordflow}{if}(father[x] == x)
+791         \textcolor{keywordflow}{return} x;
+792     \textcolor{keywordflow}{else}
+793         \textcolor{keywordflow}{return} father[x] = \hyperlink{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}{dfsFather}(father, father[x]);
+794 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{dijkstra(const Bit\+Matrix \&base, const Matrix$<$ double $>$ \&map\+W, int n, int m, Matrix$<$ Pair$<$ double, Point $>$$>$ \&ans) const }{dijkstra(const BitMatrix &base, const Matrix< double > &mapW, int n, int m, Matrix< Pair< double, Point >> &ans) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::dijkstra (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bit\+Matrix} \&}]{base, }
+\item[{const {\bf Matrix}$<$ double $>$ \&}]{mapW, }
+\item[{int}]{n, }
+\item[{int}]{m, }
+\item[{{\bf Matrix}$<$ {\bf Pair}$<$ double, {\bf Point} $>$$>$ \&}]{ans}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a71007959556061091171c03da6197f34}{}\label{classColumnGenSolve_a71007959556061091171c03da6197f34}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 643 行定义.
+
+
+
+参考 Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::ans\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::base\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::finished, id, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::m, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::map\+W\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::n, params\+List , 以及 T\+H\+R\+E\+A\+D\+\_\+\+C\+NT.
+
+
+
+参考自 remove\+Non\+Cuts() , 以及 suggest\+Tree().
+
+
+\begin{DoxyCode}
+647 \{
+648     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = -1;
+649     \textcolor{keywordflow}{for}(;;)
+650     \{
+651         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{THREAD\_CNT}; i++)
+652             \textcolor{comment}{// if(paramsList[i].mutex.try\_lock())}
+653             \textcolor{comment}{// \{}
+654                 \textcolor{keywordflow}{if}(\hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i].finished)
+655                 \{
+656                     \textcolor{keywordtype}{id} = i;
+657                     \textcolor{keywordflow}{goto} foundThread;
+658                 \}
+659                 \textcolor{comment}{// paramsList[i].mutex.unlock();}
+660             \textcolor{comment}{// \}}
+661         std::this\_thread::sleep\_for(std::chrono::microseconds(1));
+662     \}
+663     foundThread:;
+664     \textcolor{comment}{// cout << "id = " << id << '\(\backslash\)n';}
+665     \textcolor{keyword}{static} \textcolor{keywordtype}{int} a = 0;
+666     \textcolor{keyword}{static} \textcolor{keywordtype}{int} b = 0;
+667     a += \hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id}; ++b;
+668     \textcolor{comment}{// cout << "p " << a << "/" << b << "\(\backslash\)n";}
+669     \textcolor{comment}{// cout.flush();}
+670     parDijkstraParams &params = \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[\hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id}];
+671     params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a6d66ec75238960aaf04d2d62058ea077}{baseStar} = &base;
+672     params.mapWStar = &mapW;
+673     params.n = n; params.m = m;
+674     params.ansStar = &ans;
+675     \textcolor{comment}{// cout << "createthread begin" << '\(\backslash\)n';}
+676     \textcolor{comment}{// cout.flush();}
+677     params.finished = \textcolor{keyword}{false};
+678     \textcolor{comment}{// cout << "createthread end" << '\(\backslash\)n';}
+679     \textcolor{comment}{// cout.flush();}
+680     \textcolor{comment}{// params.mutex.unlock();}
+681 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a71007959556061091171c03da6197f34_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!par\+Dijkstra@{par\+Dijkstra}}
+\index{par\+Dijkstra@{par\+Dijkstra}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{par\+Dijkstra(par\+Dijkstra\+Params \&params)}{parDijkstra(parDijkstraParams &params)}}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::par\+Dijkstra (
+\begin{DoxyParamCaption}
+\item[{{\bf Column\+Gen\+Solve\+::par\+Dijkstra\+Params} \&}]{params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20}{}\label{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 544 行定义.
+
+
+
+参考 Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::ans\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::base\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::exiting, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::finished, Bit\+Matrix\+::get(), Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::m, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::map\+W\+Star, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::n , 以及 Matrix$<$ T $>$\+::resize().
+
+
+
+参考自 par\+Dijkstra\+Init().
+
+
+\begin{DoxyCode}
+545 \{
+546     \textcolor{keywordflow}{for}(;;)
+547     \{
+548         \textcolor{comment}{// params.mutex.lock();}
+549         \textcolor{keywordflow}{if}(params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a56efc1b9b760d7a8934f06406e2e61a0}{exiting})
+550             \textcolor{keywordflow}{return};
+551         \textcolor{keywordflow}{if}(params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a72bfc9f9b0c4851bdb63715b053df511}{finished})
+552         \{
+553             \textcolor{comment}{// std::this\_thread::sleep\_for(std::chrono::microseconds(1));}
+554             \textcolor{comment}{// params.mutex.unlock();}
+555             \textcolor{keywordflow}{continue};
+556         \}
+557         \textcolor{comment}{// cout << "run!\(\backslash\)n";}
+558         \textcolor{comment}{// cout.flush();}
+559         \textcolor{keyword}{const} \hyperlink{classBitMatrix}{BitMatrix} &base = *params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a6d66ec75238960aaf04d2d62058ea077}{baseStar};
+560         \textcolor{keyword}{const} \hyperlink{classMatrix}{Matrix<double>} &mapW = *params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_ae0b35a1ba11e00c8ce3113b2a174042d}{mapWStar};
+561         \textcolor{keywordtype}{int} n = params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a33cbd8316dde8102d996c01ad2ae68d5}{n}, m = params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a20f153fdd04ede56c8ec19f155e1e423}{m};
+562         \hyperlink{classMatrix}{Matrix<Pair<double, Point>}> &ans = *params.
+      \hyperlink{structColumnGenSolve_1_1parDijkstraParams_a6e3c1462f7a9a1714c190a83819cf632}{ansStar};
+563         \textcolor{comment}{// simple Dijkstra algorithm}
+564         \hyperlink{classMatrix}{Matrix<Pair<double, Point>}> dist;
+565         dist.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+566         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+567             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+568                 \textcolor{keywordflow}{if}(base.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j))
+569                     dist[i][j].second = \hyperlink{classPoint}{Point}(-1, -1);
+570                 \textcolor{keywordflow}{else}
+571                     dist[i][j].first = 1e30;
+572         \textcolor{comment}{// Matrix<bool> visited;}
+573         \textcolor{comment}{// visited.resize(n, m);}
+574         \textcolor{keywordtype}{int} dx[4] = \{1, -1, 0, 0\};
+575         \textcolor{keywordtype}{int} dy[4] = \{0, 0, 1, -1\};
+576         \textcolor{keywordtype}{int} EX = 1;
+577         \textcolor{keywordflow}{while}(n * m > EX)
+578             EX <<= 1;
+579         vector<double> sgt;
+580         sgt.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(EX << 1, 1e30);
+581         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+582             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+583                 \textcolor{keywordflow}{if}(base.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j))
+584                     sgt[EX + i * m + j] = 0;
+585         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = EX - 1; i >= 1; i--)
+586             sgt[i] = min(sgt[i << 1], sgt[i << 1 | 1]);
+587         \textcolor{comment}{// cout << "core dij begin\(\backslash\)n";}
+588         \textcolor{keywordflow}{for}(;;)
+589         \{
+590             \textcolor{comment}{// cout << "cur " << sgt[1] << endl;}
+591             \textcolor{keywordflow}{if}(sgt[1] >= 1e25) \textcolor{keywordflow}{break};
+592             \textcolor{keywordtype}{int} sgtIdx = 1;
+593             \textcolor{keywordflow}{while}(sgtIdx < EX)
+594                 \textcolor{keywordflow}{if}(sgt[sgtIdx] == sgt[sgtIdx << 1])
+595                     sgtIdx <<= 1;
+596                 \textcolor{keywordflow}{else}
+597                     sgtIdx = (sgtIdx << 1 | 1);
+598             sgtIdx -= EX;
+599             \textcolor{keywordtype}{int} cx = sgtIdx / m, cy = sgtIdx % m;
+600             sgt[sgtIdx += EX] = 1e30;
+601             \textcolor{keywordflow}{for}(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+602                 sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
+603             \textcolor{comment}{// visited[cx][cy] = 1;}
+604             \textcolor{keyword}{const} \hyperlink{classPair}{Pair<double, Point>} &cd = dist[cx][cy];
+605             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} d = 0; d < 4; d++)
+606             \{
+607                 \textcolor{keywordtype}{int} tx = cx + dx[d], ty = cy + dy[d];
+608                 \textcolor{keywordflow}{if}(tx < 0 || tx >= n || ty < 0 || ty >= m)
+609                     \textcolor{keywordflow}{continue};
+610                 \textcolor{keywordtype}{double} tdFirst = cd.first + mapW[tx][ty];
+611                 \textcolor{keywordflow}{if}(tdFirst < dist[tx][ty].first)
+612                 \{
+613                     dist[tx][ty].first = tdFirst;
+614                     dist[tx][ty].second = \hyperlink{classPoint}{Point}(cx, cy);
+615                     sgt[sgtIdx = EX + tx * m + ty] = tdFirst;
+616                     \textcolor{keywordflow}{for}(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+617                         sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
+618                 \}
+619             \}
+620         \}
+621         \textcolor{comment}{// cout << "core dij end\(\backslash\)n";}
+622         ans = dist;
+623         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+624             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+625             \{
+626                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} d = 3; d >= 0; d--)
+627                 \{
+628                     \textcolor{keywordtype}{int} tx = i + dx[d], ty = j + dy[d];
+629                     \textcolor{keywordflow}{if}(tx < 0 || tx >= n || ty < 0 || ty >= m)
+630                         \textcolor{keywordflow}{continue};
+631                     \textcolor{keywordflow}{if}(dist[tx][ty].first < ans[i][j].first)
+632                     \{
+633                         ans[i][j].first = dist[tx][ty].first;
+634                         ans[i][j].second = \hyperlink{classPoint}{Point}(tx, ty);
+635                     \}
+636                 \}
+637             \}
+638         params.\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a72bfc9f9b0c4851bdb63715b053df511}{finished} = \textcolor{keyword}{true};
+639         \textcolor{comment}{// params.mutex.unlock();}
+640     \}
+641 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!par\+Dijkstra\+At\+Exit@{par\+Dijkstra\+At\+Exit}}
+\index{par\+Dijkstra\+At\+Exit@{par\+Dijkstra\+At\+Exit}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{par\+Dijkstra\+At\+Exit()}{parDijkstraAtExit()}}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::par\+Dijkstra\+At\+Exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a5501879ba2b6480f0bacbc38b6e5121e}{}\label{classColumnGenSolve_a5501879ba2b6480f0bacbc38b6e5121e}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 520 行定义.
+
+
+
+参考 Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::exiting, params\+List, T\+H\+R\+E\+A\+D\+\_\+\+C\+NT , 以及 threads.
+
+
+
+参考自 par\+Dijkstra\+Init().
+
+
+\begin{DoxyCode}
+521 \{
+522     \textcolor{comment}{// cout << "atexit\(\backslash\)n";}
+523     \textcolor{comment}{// cout.flush();}
+524     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{THREAD\_CNT}; i++)\{
+525         \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i].\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a56efc1b9b760d7a8934f06406e2e61a0}{exiting} = \textcolor{keyword}{true};
+526         \hyperlink{classColumnGenSolve_ae836bca68776f265a26e46c7e842492e}{threads}[i].join();
+527     \}
+528     \textcolor{comment}{// cout << "atexit finished\(\backslash\)n";}
+529     \textcolor{comment}{// cout.flush();}
+530 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a5501879ba2b6480f0bacbc38b6e5121e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!par\+Dijkstra\+Init@{par\+Dijkstra\+Init}}
+\index{par\+Dijkstra\+Init@{par\+Dijkstra\+Init}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{par\+Dijkstra\+Init()}{parDijkstraInit()}}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ Column\+Gen\+Solve\+::par\+Dijkstra\+Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a97e581fdab12a396fd173b030ec26bec}{}\label{classColumnGenSolve_a97e581fdab12a396fd173b030ec26bec}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 532 行定义.
+
+
+
+参考 Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::exiting, Column\+Gen\+Solve\+::par\+Dijkstra\+Params\+::finished, params\+List, par\+Dijkstra(), par\+Dijkstra\+At\+Exit(), T\+H\+R\+E\+A\+D\+\_\+\+C\+NT , 以及 threads.
+
+
+\begin{DoxyCode}
+533 \{
+534     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{THREAD\_CNT}; i++)
+535     \{
+536         \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i].\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a56efc1b9b760d7a8934f06406e2e61a0}{exiting} = \textcolor{keyword}{false};
+537         \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i].\hyperlink{structColumnGenSolve_1_1parDijkstraParams_a72bfc9f9b0c4851bdb63715b053df511}{finished} = \textcolor{keyword}{true};
+538         \hyperlink{classColumnGenSolve_ae836bca68776f265a26e46c7e842492e}{threads}[i] = \hyperlink{global_8h_ab4108db709b91dc2efcd48309edb9f5e}{Thread}(\hyperlink{classColumnGenSolve_a6dc294df38e9aa3160f435bd527f2f20}{parDijkstra}, std::ref(
+      \hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i]));
+539     \}
+540     \textcolor{keywordflow}{while}(atexit(\hyperlink{classColumnGenSolve_a5501879ba2b6480f0bacbc38b6e5121e}{ColumnGenSolve::parDijkstraAtExit}));
+541     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void} *) 0x23333333;
+542 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a97e581fdab12a396fd173b030ec26bec_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!push\+Tree\+Set@{push\+Tree\+Set}}
+\index{push\+Tree\+Set@{push\+Tree\+Set}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{push\+Tree\+Set(\+Vector$<$ Pair$<$ Tree, G\+R\+B\+Var $>$$>$ \&treeset, Tree \&tree) const }{pushTreeSet(Vector< Pair< Tree, GRBVar >> &treeset, Tree &tree) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Column\+Gen\+Solve\+::push\+Tree\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}$<$ {\bf Pair}$<$ {\bf Tree}, {\bf G\+R\+B\+Var} $>$$>$ \&}]{treeset, }
+\item[{{\bf Tree} \&}]{tree}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d}{}\label{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1007 行定义.
+
+
+
+参考 Tree\+::compute\+Length().
+
+
+
+参考自 suggest\+Tree().
+
+
+\begin{DoxyCode}
+1010 \{
+1011     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treeset)
+1012         \textcolor{keywordflow}{if}(treeVar.first == tree)
+1013             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1014     tree.\hyperlink{classTree_a70810e1d66ffb05f9787ab07c713c104}{computeLength}();
+1015     treeset.push\_back(\hyperlink{classPair}{Pair<Tree, GRBVar>}(tree, \hyperlink{classGRBVar}{GRBVar}()));
+1016     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1017 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!remove\+Non\+Cuts@{remove\+Non\+Cuts}}
+\index{remove\+Non\+Cuts@{remove\+Non\+Cuts}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{remove\+Non\+Cuts(const Matrix$<$ int $>$ \&map, int idx, Bit\+Matrix \&tree, int n, int m, const Matrix$<$ double $>$ $\ast$map\+W=\+N\+U\+L\+L) const }{removeNonCuts(const Matrix< int > &map, int idx, BitMatrix &tree, int n, int m, const Matrix< double > *mapW=NULL) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::remove\+Non\+Cuts (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ int $>$ \&}]{map, }
+\item[{int}]{idx, }
+\item[{{\bf Bit\+Matrix} \&}]{tree, }
+\item[{int}]{n, }
+\item[{int}]{m, }
+\item[{const {\bf Matrix}$<$ double $>$ $\ast$}]{mapW = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}{}\label{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 796 行定义.
+
+
+
+参考 assert, dfs\+Edge(), dfs\+Father(), dijkstra(), Bit\+Matrix\+::get(), id, points, Bit\+Matrix\+::reset(), Bit\+Matrix\+::set(), sync(), tree\+Get\+Branches(), Point\+::x, y , 以及 Point\+::y.
+
+
+
+参考自 suggest\+Tree().
+
+
+\begin{DoxyCode}
+800 \{
+801     \textcolor{comment}{// cout << "Begin Removal\(\backslash\)n" << tree;}
+802     \textcolor{keyword}{struct }TreeEdge
+803     \{
+804         \textcolor{keywordtype}{int} s, t;
+805         \textcolor{keywordtype}{bool} enabled;
+806         \hyperlink{classVector}{Vector<Point>} \hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points};
+807     \};
+808     \hyperlink{classVector}{Vector<TreeEdge *>} edges;
+809     \hyperlink{classMatrix}{Matrix<int>} \hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id}; \textcolor{keywordtype}{int} totId = 0;
+810     \textcolor{keywordtype}{id}.resize(n, m);
+811     \hyperlink{classVector}{Vector<bool>} isKey; isKey.push\_back(\textcolor{keyword}{false});
+812     
+813     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+814         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+815         \{
+816             \textcolor{keywordflow}{if}(!tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j))
+817                 \textcolor{keywordflow}{continue};
+818             \textcolor{keywordtype}{int} deg = 0;
+819             \textcolor{keywordflow}{if}(i && tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i - 1, j))
+820                 ++deg;
+821             \textcolor{keywordflow}{if}(i + 1 < n && tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i + 1, j))
+822                 ++deg;
+823             \textcolor{keywordflow}{if}(j && tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j - 1))
+824                 ++deg;
+825             \textcolor{keywordflow}{if}(j + 1 < m && tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j + 1))
+826                 ++deg;
+827             \textcolor{keywordflow}{if}(deg == 2 && map[i][j] != idx)
+828                 \textcolor{keywordflow}{continue};
+829             \textcolor{keywordtype}{id}[i][j] = ++totId;
+830             isKey.push\_back(map[i][j] == idx);
+831             \textcolor{keywordflow}{if}(i && \textcolor{keywordtype}{id}[i - 1][j])
+832             \{
+833                 TreeEdge *edge = \textcolor{keyword}{new} TreeEdge;
+834                 edge->s = totId; edge->t = \textcolor{keywordtype}{id}[i - 1][j];
+835                 edge->enabled = \textcolor{keyword}{false};
+836                 edges.push\_back(edge);
+837             \}
+838             \textcolor{keywordflow}{if}(j && \textcolor{keywordtype}{id}[i][j - 1])
+839             \{
+840                 TreeEdge *edge = \textcolor{keyword}{new} TreeEdge;
+841                 edge->s = totId; edge->t = \textcolor{keywordtype}{id}[i][j - 1];
+842                 edge->enabled = \textcolor{keyword}{false};
+843                 edges.push\_back(edge);
+844             \}
+845         \}
+846     
+847     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+848         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+849         \{
+850             \textcolor{keywordflow}{if}(!tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j) || \textcolor{keywordtype}{id}[i][j])
+851                 \textcolor{keywordflow}{continue};
+852             TreeEdge *edge = \textcolor{keyword}{new} TreeEdge;
+853             edge->s = 0; edge->t = 0;
+854             edge->enabled = \textcolor{keyword}{false};
+855             \hyperlink{classColumnGenSolve_a96cbeba5fb978bb67e32b8f42ba161fe}{dfsEdge}(tree, \textcolor{keywordtype}{id}, edge->points, i, j, n, m, edge->s, edge->t);
+856             \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(edge->s); \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(edge->t);
+857             edges.push\_back(edge);
+858         \}
+859     
+860     sort(
+861         edges.begin(), edges.end(),
+862         [](TreeEdge *x, TreeEdge *\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+863         \{
+864             \textcolor{keywordflow}{return} x->points.size() < \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}->points.size();
+865         \}
+866     );
+867     
+868     \hyperlink{classVector}{Vector<int>} father;
+869     father.resize(totId + 1);
+870     \hyperlink{classVector}{Vector<int>} deg;
+871     deg.resize(totId + 1);
+872     \hyperlink{classVector}{Vector<Vector<TreeEdge *>}> graphEdges;
+873     graphEdges.resize(totId + 1);
+874     
+875     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i <= totId; i++)
+876         father[i] = i;
+877     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} edge: edges)
+878     \{
+879         \textcolor{keywordtype}{int} fatherS = \hyperlink{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}{dfsFather}(father, edge->s);
+880         \textcolor{keywordtype}{int} fatherT = \hyperlink{classColumnGenSolve_af3470aaed4b9d0aa92f27b487b093479}{dfsFather}(father, edge->t);
+881         \textcolor{keywordflow}{if}(fatherS == fatherT)
+882             \textcolor{keywordflow}{continue};
+883         father[fatherS] = fatherT;
+884         graphEdges[edge->s].push\_back(edge);
+885         graphEdges[edge->t].push\_back(edge);
+886         ++deg[edge->s];
+887         ++deg[edge->t];
+888         edge->enabled = \textcolor{keyword}{true};
+889     \}
+890     
+891     \hyperlink{classVector}{Vector<int>} queue;
+892     queue.resize(totId + 1);
+893     \textcolor{keywordtype}{int} queueHead = 1, queueTail = 0;
+894     \hyperlink{classVector}{Vector<bool>} disposed;
+895     disposed.resize(totId + 1);
+896     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i <= totId; i++)
+897         \textcolor{keywordflow}{if}(deg[i] == 1 && !isKey[i])
+898             queue[++queueTail] = i;
+899     \textcolor{keywordflow}{while}(queueHead <= queueTail)
+900     \{
+901         \textcolor{keywordtype}{int} curId = queue[queueHead++];
+902         disposed[curId] = \textcolor{keyword}{true};
+903         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} edge: graphEdges[curId])
+904         \{
+905             \textcolor{keywordflow}{if}(!edge->enabled)
+906                 \textcolor{keywordflow}{continue};
+907             \textcolor{keywordtype}{int} otherId = (edge->s ^ edge->t ^ curId);
+908             \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(!disposed[otherId]);
+909             \textcolor{keywordflow}{if}((--deg[otherId]) == 1 && !isKey[otherId])
+910                 queue[++queueTail] = otherId;
+911             edge->enabled = \textcolor{keyword}{false};
+912         \}
+913     \}
+914     
+915     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} edge: edges)
+916         \textcolor{keywordflow}{if}(edge->enabled)
+917             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} &point: edge->points)
+918                 tree.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(point);
+919     
+920     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+921         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+922             \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id}[i][j] && disposed[\textcolor{keywordtype}{id}[i][j]])
+923                 tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(i, j);
+924     
+925     \textcolor{keywordflow}{if}(mapW == NULL)
+926         \textcolor{keywordflow}{goto} funcend;
+927     
+928     \textcolor{comment}{// cout << "optimizing tree\(\backslash\)n";}
+929     \textcolor{comment}{// cout << tree;}
+930     
+931     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} edge: edges)
+932         \textcolor{keywordflow}{if}(edge->enabled)
+933         \{
+934             \hyperlink{classBitMatrix}{BitMatrix} newTree = tree;
+935             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} point: edge->points)
+936                 newTree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(point);
+937             \hyperlink{classVector}{Vector<BitMatrix>} branches = \hyperlink{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a}{treeGetBranches}(newTree, n, m);
+938             \textcolor{comment}{// cout << "branchsize " << (int) branches.size() << '\(\backslash\)n';}
+939             \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int}) branches.size() != 2) \textcolor{keywordflow}{continue};
+940             \hyperlink{classMatrix}{Matrix<Pair<double, Point>}> dijResult;
+941             \hyperlink{classColumnGenSolve_a71007959556061091171c03da6197f34}{dijkstra}(branches[0], *mapW, n, m, dijResult);
+942             \hyperlink{classColumnGenSolve_ab976cab8582808218110d86252177f88}{sync}();
+943             \hyperlink{classPoint}{Point} bestPoint1(-1, -1); \textcolor{keywordtype}{double} dist = 1e30;
+944             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+945                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+946                     \textcolor{keywordflow}{if}(branches[1].\textcolor{keyword}{get}(i, j) && dijResult[i][j].first < dist)
+947                     \{
+948                         dist = dijResult[i][j].first;
+949                         bestPoint1.x = i; bestPoint1.y = j;
+950                     \}
+951             \textcolor{comment}{// cout << "dist " << dist << '\(\backslash\)n';}
+952             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} point: edge->points)
+953                 dist -= (*mapW)[point];
+954             \textcolor{comment}{// cout << "dist " << dist << '\(\backslash\)n';}
+955             \textcolor{keyword}{static} \textcolor{keywordtype}{int} a = 0;
+956             \textcolor{keyword}{static} \textcolor{keywordtype}{int} b = 0;
+957             a += (int) (dist >= 0); b++;
+958             \textcolor{comment}{// cout << "q " << a << "/" << b << "\(\backslash\)n";}
+959             \textcolor{comment}{// cout.flush();}
+960             \textcolor{keywordflow}{if}(dist >= 0)
+961                 \textcolor{keywordflow}{continue};
+962             \textcolor{keywordflow}{while}(bestPoint1 != \hyperlink{classPoint}{Point}(-1, -1))
+963             \{
+964                 newTree.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(bestPoint1);
+965                 bestPoint1 = dijResult[bestPoint1].second;
+966             \}
+967             \hyperlink{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}{removeNonCuts}(map, idx, newTree, n, m, mapW);
+968             tree = newTree;
+969             \textcolor{keywordflow}{goto} funcend;
+970         \}
+971     
+972     funcend:;
+973     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} edge: edges)
+974         \textcolor{keyword}{delete} edge;
+975     
+976     \textcolor{comment}{// if(mapW != NULL)}
+977     \textcolor{comment}{// \{}
+978         \textcolor{comment}{// cout << "optimize finished\(\backslash\)n";}
+979         \textcolor{comment}{// cout << tree;}
+980     \textcolor{comment}{// \}}
+981 
+982     \textcolor{comment}{// cout << "End Removal\(\backslash\)n" << tree;}
+983 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!remove\+Non\+Cuts@{remove\+Non\+Cuts}}
+\index{remove\+Non\+Cuts@{remove\+Non\+Cuts}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{remove\+Non\+Cuts(\+Matrix$<$ bool $>$ \&visited, const Matrix$<$ int $>$ \&map, int idx, const Matrix$<$ double $>$ \&map\+W, Bit\+Matrix \&tree, int n, int m) const }{removeNonCuts(Matrix< bool > &visited, const Matrix< int > &map, int idx, const Matrix< double > &mapW, BitMatrix &tree, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Column\+Gen\+Solve\+::remove\+Non\+Cuts (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix}$<$ bool $>$ \&}]{visited, }
+\item[{const {\bf Matrix}$<$ int $>$ \&}]{map, }
+\item[{int}]{idx, }
+\item[{const {\bf Matrix}$<$ double $>$ \&}]{mapW, }
+\item[{{\bf Bit\+Matrix} \&}]{tree, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ad5a36333d83b1a1803eb582c9a0a9941}{}\label{classColumnGenSolve_ad5a36333d83b1a1803eb582c9a0a9941}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 985 行定义.
+
+
+
+参考 Bit\+Matrix\+::get(), Bit\+Matrix\+::reset() , 以及 tree\+Is\+Cut().
+
+
+\begin{DoxyCode}
+989 \{
+990     \textcolor{keywordtype}{double} ans = 0;
+991     begin:
+992     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+993         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+994             \textcolor{keywordflow}{if}(
+995                 tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j) && map[i][j] != idx
+996                 && !\hyperlink{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f}{treeIsCut}(tree, i, j, n, m)
+997             )
+998             \{
+999                 visited[i][j] = 1;
+1000                 tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(i, j);
+1001                 ans += mapW[i][j];
+1002                 \textcolor{keywordflow}{goto} begin;
+1003             \}
+1004     \textcolor{keywordflow}{return} ans;
+1005 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ad5a36333d83b1a1803eb582c9a0a9941_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!route@{route}}
+\index{route@{route}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{route(int tim) const }{route(int tim) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<$ {\bf Tree} $\ast$ $>$ Column\+Gen\+Solve\+::route (
+\begin{DoxyParamCaption}
+\item[{int}]{tim}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002}{}\label{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 106 行定义.
+
+
+
+参考 Solver\+::board, Solution\+::board, board, Solution\+::compute\+Map(), G\+R\+B\+\_\+\+Double\+Attr\+\_\+X, Board\+::height, M, Board\+::map, map, points, Matrix$<$ T $>$\+::resize(), solution, solve\+L\+P(), Solve\+Strategy\+::solver, suggest\+Tree(), Board\+::terminal\+Sets, Solution\+::trees , 以及 Board\+::width.
+
+
+
+参考自 solve().
+
+
+\begin{DoxyCode}
+107 \{
+108     \textcolor{comment}{// Open a console for output}
+109     \hyperlink{global_8h_a7ec5bb64a5a7c56f5600caebf1ac2b7e}{OFStream} con(\textcolor{stringliteral}{"con"});
+110     \textcolor{keyword}{auto} clkStart = clock();
+111     
+112     \textcolor{comment}{// Constant definition}
+113     \textcolor{keyword}{const} \hyperlink{classBoard}{Board} *\hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board} = \hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board};
+114     \textcolor{keyword}{const} \hyperlink{classVector}{Vector<TerminalSet *>} &termsets = board->
+      \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets};
+115     \textcolor{keyword}{const} \hyperlink{classMatrix}{Matrix<int>} &\hyperlink{classes_8txt_a0a12e395730487ab04f7f11cbc4d2132}{map} = board->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map};
+116     \textcolor{keyword}{const} \textcolor{keywordtype}{int} t = termsets.size() - 1;
+117     \textcolor{keyword}{const} \textcolor{keywordtype}{int} n = board->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height};
+118     \textcolor{keyword}{const} \textcolor{keywordtype}{int} m = board->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+119     \textcolor{keywordflow}{if}(n * m >= 1250)
+120         cout << \textcolor{stringliteral}{"solving subproblem "} << n << \textcolor{stringliteral}{" * "} << m << \textcolor{stringliteral}{"\(\backslash\)n"};
+121     
+122     \textcolor{comment}{// Two useful Vectors}
+123     \textcolor{comment}{/*}
+124 \textcolor{comment}{    Vector<Point> allPoints;}
+125 \textcolor{comment}{    for(int i = 0; i < n; i++)}
+126 \textcolor{comment}{        for(int j = 0; j < m; j++)}
+127 \textcolor{comment}{            allPoints.push\_back(Point(i, j));}
+128 \textcolor{comment}{    */}
+129     
+130     \hyperlink{classMatrix}{Matrix<double>} all1;
+131     all1.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+132     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+133         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+134             all1[i][j] = 1;
+135     
+136     \textcolor{comment}{// The tree set, initially empty}
+137     \hyperlink{classVector}{Vector<Vector<Pair<Tree, GRBVar>}>> treesets;
+138     
+139     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} idx = 1; idx <= t; idx++)
+140     \{
+141         \textcolor{comment}{// Current tree set}
+142         \hyperlink{classVector}{Vector<Pair<Tree, GRBVar>}> vec;
+143         \textcolor{comment}{/*}
+144 \textcolor{comment}{        // If "Precise", all points can be joint}
+145 \textcolor{comment}{        if(this->m\_mode == "Precise")}
+146 \textcolor{comment}{            for(auto joint: allPoints)\{}
+147 \textcolor{comment}{                // Call Dijkstra}
+148 \textcolor{comment}{                Matrix<bool> base;}
+149 \textcolor{comment}{                base.resize(n, m);}
+150 \textcolor{comment}{                base[joint.first][joint.second] = 1;}
+151 \textcolor{comment}{                Matrix<Pair<double, Matrix<bool>>> dijRes}
+152 \textcolor{comment}{                    = this->dijkstra(base, all1, n, m);}
+153 \textcolor{comment}{                // Generate a tree with Dijkstra}
+154 \textcolor{comment}{                // result}
+155 \textcolor{comment}{                Tree tree(this->m\_board, idx);}
+156 \textcolor{comment}{                tree.m\_tree[joint.first][joint.second] = 1;}
+157 \textcolor{comment}{                for(auto term: termsets[idx])}
+158 \textcolor{comment}{                \{}
+159 \textcolor{comment}{                    tree.m\_tree[term.first][term.second] = 1;}
+160 \textcolor{comment}{                    for(int i = 0; i < n; i++)}
+161 \textcolor{comment}{                        for(int j = 0; j < m; j++)}
+162 \textcolor{comment}{                            if(dijRes[term].second[i][j])}
+163 \textcolor{comment}{                                tree.m\_tree[i][j] = 1;}
+164 \textcolor{comment}{                \}}
+165 \textcolor{comment}{                this->removeNonCuts(}
+166 \textcolor{comment}{                    map, idx, tree.m\_tree, n, m, joint.first, joint.second}
+167 \textcolor{comment}{                );}
+168 \textcolor{comment}{                // Add the tree to the set}
+169 \textcolor{comment}{                vec.push\_back(tree);}
+170 \textcolor{comment}{            \}}
+171 \textcolor{comment}{        */}
+172         \textcolor{comment}{// Add the set to the set list}
+173         treesets.push\_back(vec);
+174     \}
+175     
+176     \textcolor{comment}{// Answer history}
+177     \hyperlink{classVector}{Vector<double>} tarAns;
+178     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} T = 0;; T++)\{
+179         \textcolor{comment}{// cout << "LP " << T << endl;}
+180         \textcolor{comment}{// Solve the integer (binary) programming problem}
+181         \textcolor{keywordtype}{double} curAns = \hyperlink{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81}{solveLP}(treesets, 1);
+182         tarAns.push\_back(curAns);
+183         
+184         \textcolor{comment}{// Construct current best answer}
+185         \hyperlink{classVector}{Vector<Tree *>} ans;
+186         \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeset: treesets)
+187         \{
+188             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treeset)
+189                 \textcolor{keywordflow}{if}(treeVar.second.get(\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180a88afa2b5caf4dd5e8b44785752f6940a}{GRB\_DoubleAttr\_X}) > 0.5)
+190                 \{
+191                     ans.push\_back(\textcolor{keyword}{new} \hyperlink{classTree}{Tree}(treeVar.first));
+192                     \textcolor{keywordflow}{goto} found;
+193                 \}
+194             ans.push\_back(NULL);
+195             found:;
+196         \}
+197         
+198         \textcolor{comment}{// if(T >= 3)}
+199             \textcolor{comment}{// return ans;}
+200         \textcolor{comment}{// output(ans, con);}
+201         \textcolor{comment}{// output(ans, cout);}
+202         
+203         \textcolor{keywordtype}{bool} updated = \textcolor{keyword}{false};
+204         \textcolor{comment}{// Build weight map for unrouted set}
+205         \hyperlink{classMatrix}{Matrix<double>} mapObs;
+206         mapObs.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+207         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+208             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+209                 \textcolor{keywordflow}{if}(map[i][j] == -1)
+210                     mapObs[i][j] = \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M};
+211                 \textcolor{keywordflow}{else}
+212                     mapObs[i][j] = 1;
+213         
+214         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} idx = 1; idx <= t; idx++)
+215             \textcolor{keywordflow}{if}(ans[idx - 1])
+216                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+217                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+218                         \textcolor{keywordflow}{if}(ans[idx - 1]->map.get(i, j))
+219                             mapObs[i][j] = \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M};
+220         \textcolor{comment}{// Try to generate from each set}
+221         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} idx = 1; idx <= t; idx++)
+222         \{
+223             \textcolor{keywordflow}{if}(termsets[idx]->\hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}.empty())
+224                 \textcolor{keywordflow}{continue};
+225             \textcolor{keywordflow}{if}(!ans[idx - 1])\{
+226                 \textcolor{comment}{// If unrouted, try to generate from the map above}
+227                 \textcolor{keywordflow}{if}(\hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggestTree}(termsets, treesets, mapObs, n, m, idx))
+228                     updated = \textcolor{keyword}{true};
+229             \}\textcolor{keywordflow}{else}\{
+230                 \textcolor{comment}{// If routed}
+231                 \{
+232                     \textcolor{comment}{// Try to reroute current set}
+233                     \hyperlink{classMatrix}{Matrix<double>} mapObs2 = mapObs;
+234                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+235                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+236                             \textcolor{keywordflow}{if}(
+237                                 mapObs2[i][j] >= \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M} / 2
+238                                 && ans[idx - 1]->map.get(i, j)
+239                             )
+240                                 mapObs2[i][j] = 1;
+241                     \textcolor{keywordflow}{if}(\hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggestTree}(termsets, treesets, mapObs2, n, m, idx))
+242                         updated = \textcolor{keyword}{true};
+243                 \}
+244                 \{
+245                     \textcolor{comment}{/*}
+246 \textcolor{comment}{                        Try to reroute current set and try to route another tree}
+247 \textcolor{comment}{                        rather than current tree}
+248 \textcolor{comment}{                    */}
+249                     \hyperlink{classMatrix}{Matrix<double>} mapObs2 = mapObs;
+250                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+251                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+252                             \textcolor{keywordflow}{if}(
+253                                 mapObs2[i][j] >= \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M} / 2 &&
+254                                 !ans[idx - 1]->map.get(i, j)
+255                             ) mapObs2[i][j] = \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M} * \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M};
+256                     \textcolor{keywordflow}{if}(\hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggestTree}(termsets, treesets, mapObs2, n, m, idx))
+257                         updated = \textcolor{keyword}{true};
+258                 \}
+259                 \{
+260                     \textcolor{comment}{/*}
+261 \textcolor{comment}{                        Try to solve integer programming without current set and}
+262 \textcolor{comment}{                        try to avoid overlap between current tree and the}
+263 \textcolor{comment}{                        solution above}
+264 \textcolor{comment}{                    */}
+265                     \hyperlink{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81}{solveLP}(treesets, 1, NULL, NULL, idx);
+266                     
+267                     \hyperlink{classVector}{Vector<Tree *>} tmpAns;
+268                     
+269                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < t; i++)
+270                         \textcolor{keywordflow}{if}(i != idx - 1)
+271                         \{
+272                             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treesets[i])
+273                                 \textcolor{keywordflow}{if}(treeVar.second.get(\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180a88afa2b5caf4dd5e8b44785752f6940a}{GRB\_DoubleAttr\_X}) > 0.5)
+274                                 \{
+275                                     tmpAns.push\_back(\textcolor{keyword}{new} \hyperlink{classTree}{Tree}(treeVar.first));
+276                                     \textcolor{keywordflow}{goto} found2;
+277                                 \}
+278                             tmpAns.push\_back(NULL);
+279                             found2:;
+280                         \}
+281                         \textcolor{keywordflow}{else}
+282                             tmpAns.push\_back(NULL);
+283                     
+284                     \textcolor{comment}{// OK, let's construct weight map}
+285                     \hyperlink{classMatrix}{Matrix<double>} mapObs2;
+286                     mapObs2.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+287                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+288                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+289                             \textcolor{keywordflow}{if}(map[i][j] == -1)
+290                                 mapObs2[i][j] = \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M} * \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M};
+291                             \textcolor{keywordflow}{else}
+292                                 mapObs2[i][j] = 1;
+293                     
+294                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} nidx = 1; nidx <= t; nidx++)
+295                         \textcolor{keywordflow}{if}(tmpAns[nidx - 1])
+296                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+297                                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+298                                     \textcolor{keywordflow}{if}(tmpAns[nidx - 1]->map.get(i, j))
+299                                         mapObs2[i][j] = M;
+300                     
+301                     \textcolor{keywordflow}{if}(\hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggestTree}(termsets, treesets, mapObs2, n, m, idx))
+302                         updated = \textcolor{keyword}{true};
+303                     
+304                     \textcolor{comment}{// clean up}
+305                     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: tmpAns)
+306                         \textcolor{keyword}{delete} tree;
+307                 \}
+308             \}
+309         \}
+310         
+311         \textcolor{keyword}{auto} clkNow = clock();
+312         \textcolor{comment}{/*if((int) ((clkNow - clkStart) / CLOCKS\_PER\_SEC) > tim)}
+313 \textcolor{comment}{        \{}
+314 \textcolor{comment}{            con << "time up, aborting\(\backslash\)n";}
+315 \textcolor{comment}{            con << (int) ((clkNow - clkStart) / CLOCKS\_PER\_SEC)}
+316 \textcolor{comment}{                << " seconds passed\(\backslash\)n";}
+317 \textcolor{comment}{            //return ans;}
+318 \textcolor{comment}{        \}*/}
+319         
+320         \textcolor{comment}{// If solution didn't improve recently,}
+321         \textcolor{comment}{// cut!}
+322         \textcolor{keywordflow}{if}(T >= 1 && fabs(tarAns[T - 1] - tarAns[T]) < 0.5)
+323             \textcolor{keywordflow}{return} ans;
+324         
+325         \textcolor{comment}{// Output current colution info}
+326         \textcolor{keywordflow}{if}(n * m >= 20000)
+327         \{
+328             cout << \textcolor{stringliteral}{"iteration "} << T << \textcolor{stringliteral}{"\(\backslash\)n"};
+329             cout << \textcolor{stringliteral}{"current time: "}
+330                 << (int) ((clkNow - clkStart) / CLOCKS\_PER\_SEC) << \textcolor{stringliteral}{" seconds\(\backslash\)n"};
+331             cout << \textcolor{stringliteral}{"curAns "} << curAns << endl;
+332             cout << \textcolor{stringliteral}{"column sizes:\(\backslash\)n"};
+333             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeset: treesets)
+334                 cout << treeset.size() << \textcolor{stringliteral}{" "};
+335             cout << \textcolor{stringliteral}{"\(\backslash\)n"};
+336             cout.flush();
+337             \textcolor{keywordflow}{if}(n * m >= 80000)
+338             \{
+339                 \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+340                 solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board} = \hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board};
+341                 solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(NULL);
+342                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: ans)
+343                     \textcolor{keywordflow}{if}(tree)
+344                         solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(\textcolor{keyword}{new} \hyperlink{classTree}{Tree}(*tree));
+345                     \textcolor{keywordflow}{else}
+346                         solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(NULL);
+347                 solution.\hyperlink{classSolution_a45e5ef985917b725347a0742fe887400}{computeMap}();
+348                 con << \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+349                 con.flush();
+350             \}
+351         \}
+352         \textcolor{comment}{/*}
+353 \textcolor{comment}{        // Solve LP}
+354 \textcolor{comment}{        Matrix<double> mapPi;}
+355 \textcolor{comment}{        Vector<double> vecLambda;}
+356 \textcolor{comment}{        }
+357 \textcolor{comment}{        tarAns.push\_back(solveLP(treesets, 0, &mapPi, &vecLambda));}
+358 \textcolor{comment}{        }
+359 \textcolor{comment}{        // Only try to expand when Dijkstra cannot find any solution}
+360 \textcolor{comment}{        if(!updated)}
+361 \textcolor{comment}{            for(int i = 0; i < t; i++)\{}
+362 \textcolor{comment}{                if(termsets[i + 1]->points.empty())}
+363 \textcolor{comment}{                    continue;}
+364 \textcolor{comment}{                int oldSize = treesets[i].size();}
+365 \textcolor{comment}{                sort(}
+366 \textcolor{comment}{                    treesets[i].begin(), treesets[i].end(),}
+367 \textcolor{comment}{                    [](const Pair<Tree, GRBVar> &l, const Pair<Tree, GRBVar> &r)}
+368 \textcolor{comment}{                    \{}
+369 \textcolor{comment}{                        return l.second.get(GRB\_DoubleAttr\_X)}
+370 \textcolor{comment}{                            > r.second.get(GRB\_DoubleAttr\_X);}
+371 \textcolor{comment}{                    \}}
+372 \textcolor{comment}{                );}
+373 \textcolor{comment}{                try}
+374 \textcolor{comment}{                \{}
+375 \textcolor{comment}{                    // int r = 10;}
+376 \textcolor{comment}{                    // expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);}
+377 \textcolor{comment}{                \}}
+378 \textcolor{comment}{                catch(expandFinished)\{\}}
+379 \textcolor{comment}{                if((int) treesets[i].size() != oldSize)}
+380 \textcolor{comment}{                    updated = true;}
+381 \textcolor{comment}{            \}}
+382 \textcolor{comment}{            }
+383 \textcolor{comment}{        */}
+384         
+385         \textcolor{comment}{// Still cannot generate, cut}
+386         \textcolor{keywordflow}{if}(!updated)
+387             \textcolor{keywordflow}{return} ans;
+388         
+389         \textcolor{comment}{// Clean up}
+390         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: ans)
+391             \textcolor{keyword}{delete} tree;
+392     \}
+393 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!solve@{solve}}
+\index{solve@{solve}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{solve() const }{solve() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} Column\+Gen\+Solve\+::solve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classColumnGenSolve_aad7c316627e7ea6de4138db1a33e66ee}{}\label{classColumnGenSolve_aad7c316627e7ea6de4138db1a33e66ee}
+
+
+实现了 \hyperlink{classSolveStrategy_ad3c3800be3e04570b466c3d8d054c500}{Solve\+Strategy}.
+
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1087 行定义.
+
+
+
+参考 Solver\+::board, Solution\+::board, Solution\+::compute\+Map(), Board\+::height, route(), solution, Solve\+Strategy\+::solver, Solution\+::trees , 以及 Board\+::width.
+
+
+
+参考自 $\sim$\+Column\+Gen\+Solve().
+
+
+\begin{DoxyCode}
+1088 \{
+1089     \hyperlink{classSolution}{Solution} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+1090     solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board} = \hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board};
+1091     \hyperlink{classVector}{Vector<Tree *>} res = \hyperlink{classColumnGenSolve_af97cd5f1c4a7305b72e46971fdb85002}{route}(\hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->
+      \hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width} * \hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height} / 100 + 1);
+1092     solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(NULL);
+1093     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: res)
+1094         solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees}.push\_back(tree);
+1095     solution.\hyperlink{classSolution_a45e5ef985917b725347a0742fe887400}{computeMap}();
+1096     \textcolor{keywordflow}{return} \hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution};
+1097 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_aad7c316627e7ea6de4138db1a33e66ee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_aad7c316627e7ea6de4138db1a33e66ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!solve\+LP@{solve\+LP}}
+\index{solve\+LP@{solve\+LP}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{solve\+L\+P(\+Vector$<$ Vector$<$ Pair$<$ Tree, G\+R\+B\+Var $>$$>$$>$ \&treesets, int mode, Matrix$<$ double $>$ $\ast$map\+Pi=\+N\+U\+L\+L, Vector$<$ double $>$ $\ast$vec\+Lambda=\+N\+U\+L\+L, int ignore\+Idx=-\/1) const }{solveLP(Vector< Vector< Pair< Tree, GRBVar >>> &treesets, int mode, Matrix< double > *mapPi=NULL, Vector< double > *vecLambda=NULL, int ignoreIdx=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}double Column\+Gen\+Solve\+::solve\+LP (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}$<$ {\bf Vector}$<$ {\bf Pair}$<$ {\bf Tree}, {\bf G\+R\+B\+Var} $>$$>$$>$ \&}]{treesets, }
+\item[{int}]{mode, }
+\item[{{\bf Matrix}$<$ double $>$ $\ast$}]{map\+Pi = {\ttfamily NULL}, }
+\item[{{\bf Vector}$<$ double $>$ $\ast$}]{vec\+Lambda = {\ttfamily NULL}, }
+\item[{int}]{ignore\+Idx = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81}{}\label{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 8 行定义.
+
+
+
+参考 G\+R\+B\+Model\+::add\+Constr(), G\+R\+B\+Model\+::add\+Var(), Solver\+::board, board, G\+R\+B\+Factory\+::create\+Model(), G\+R\+B\+Model\+::get(), G\+R\+B\+\_\+\+B\+I\+N\+A\+RY, G\+R\+B\+\_\+\+C\+O\+N\+T\+I\+N\+U\+O\+US, G\+R\+B\+\_\+\+Double\+Attr\+\_\+\+Obj\+Val, G\+R\+B\+\_\+\+Double\+Attr\+\_\+\+Pi, G\+R\+B\+\_\+\+M\+I\+N\+I\+M\+I\+ZE, Board\+::height, M, Board\+::map, G\+R\+B\+Model\+::optimize(), Matrix$<$ T $>$\+::resize(), G\+R\+B\+Model\+::set\+Objective(), Solve\+Strategy\+::solver, G\+R\+B\+Model\+::update() , 以及 Board\+::width.
+
+
+
+参考自 route().
+
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordtype}{int} t = (int) treesets.size();
+14     \textcolor{keyword}{const} \hyperlink{classBoard}{Board} *\hyperlink{classes_8txt_ab2104b75e0965a7c5fc13208045d9b59}{board} = \hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board};
+15     \textcolor{keywordtype}{int} n = board->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height};
+16     \textcolor{keywordtype}{int} m = board->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+17     \hyperlink{classGRBModel}{GRBModel} &model = \hyperlink{classGRBFactory_aadd50eacec778be1265b494b4348fe8c}{GRBFactory::createModel}();
+18     
+19     \textcolor{comment}{// Create variables for trees}
+20     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < t; i++)
+21         \textcolor{keywordflow}{if}(i != ignoreIdx - 1)
+22             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} &treeVar: treesets[i])
+23                 treeVar.second = model.\hyperlink{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98}{addVar}(
+24                     0, 1, 0, mode ? \hyperlink{gurobi__c_8h_af253f5e12cd48e0718eac5d4cb4f161d}{GRB\_BINARY} : \hyperlink{gurobi__c_8h_a6cc9be6c5a5942fae165ac67f0b55c09}{GRB\_CONTINUOUS}
+25                 );
+26     
+27     \textcolor{comment}{// Create variables for sets}
+28     \hyperlink{classVector}{Vector<GRBVar>} varCanRoute;
+29     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < t; i++)
+30         varCanRoute.push\_back(model.\hyperlink{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98}{addVar}(
+31             0, 1, 0, mode ? \hyperlink{gurobi__c_8h_af253f5e12cd48e0718eac5d4cb4f161d}{GRB\_BINARY} : GRB\_CONTINUOUS
+32         ));
+33     model.\hyperlink{classGRBModel_a7662994a5e461c9fa82345f93985e043}{update}();
+34     
+35     \textcolor{comment}{// Create target}
+36     \hyperlink{classGRBLinExpr}{GRBLinExpr} target;
+37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < t; i++)
+38     \{
+39         target += \hyperlink{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{M} * varCanRoute[i];
+40         \textcolor{keywordflow}{if}(i != ignoreIdx - 1)
+41             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treesets[i])
+42                 target += treeVar.first.length * treeVar.second;
+43     \}
+44     model.\hyperlink{classGRBModel_a408a224373e26cb163510c5352577d51}{setObjective}(target, \hyperlink{gurobi__c_8h_ad4477c4c3cade685194ae6957edce447}{GRB\_MINIMIZE});
+45     
+46     \textcolor{comment}{// Create constraints for sets}
+47     \hyperlink{classVector}{Vector<GRBConstr>} constrCanRoute;
+48     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < t; i++)
+49     \{
+50         \hyperlink{classGRBLinExpr}{GRBLinExpr} consLeft;
+51         consLeft += varCanRoute[i];
+52         \textcolor{keywordflow}{if}(i != ignoreIdx - 1)
+53             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treesets[i])
+54                 consLeft += treeVar.second;
+55         constrCanRoute.push\_back(model.\hyperlink{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}{addConstr}(consLeft == 1));
+56     \}
+57     
+58     \textcolor{comment}{// Create constraints for grids}
+59     \hyperlink{classMatrix}{Matrix<GRBConstr>} constrNode;
+60     constrNode.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+61     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+62         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+63         \{
+64             \hyperlink{classGRBLinExpr}{GRBLinExpr} consLeft;
+65             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} idx = 0; idx < t; idx++)
+66                 \textcolor{keywordflow}{if}(idx != ignoreIdx - 1)
+67                     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &treeVar: treesets[idx])
+68                         \textcolor{keywordflow}{if}(treeVar.first.map.get(i, j))
+69                             consLeft += treeVar.second;
+70             \textcolor{keywordflow}{if}(board->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j] == -1)
+71                 constrNode[i][j] = model.\hyperlink{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}{addConstr}(consLeft == 0);
+72             \textcolor{keywordflow}{else}
+73                 constrNode[i][j] = model.\hyperlink{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}{addConstr}(consLeft <= 1);
+74         \}
+75     
+76     \textcolor{comment}{// Optimize!}
+77     model.\hyperlink{classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d}{optimize}();
+78     
+79     \textcolor{keywordtype}{double} ans = model.\hyperlink{classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20}{get}(\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180a4a9cfc64b93ee8a035ab4f23104d8641}{GRB\_DoubleAttr\_ObjVal});
+80     
+81     \textcolor{comment}{// If mode is binary, dual values are not calculated,}
+82     \textcolor{comment}{// we only return the answer.}
+83     \textcolor{comment}{// if(mode)}
+84         \textcolor{comment}{// return ans;}
+85     
+86     \textcolor{comment}{// Get dual values of each grid}
+87     \textcolor{keywordflow}{if}(mapPi != NULL)
+88     \{
+89         mapPi->\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n, m);
+90         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+91             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+92                 (*mapPi)[i][j] = constrNode[i][j].get(\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180a9a7c190c12f277ba010fc1039b9540fd}{GRB\_DoubleAttr\_Pi});
+93     \}
+94     
+95     \textcolor{comment}{// Get dual values of each set}
+96     \textcolor{keywordflow}{if}(vecLambda != NULL)
+97     \{
+98         vecLambda->clear();
+99         \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &cons: constrCanRoute)
+100             vecLambda->push\_back(cons.get(\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180a9a7c190c12f277ba010fc1039b9540fd}{GRB\_DoubleAttr\_Pi}));
+101     \}
+102     
+103     \textcolor{keywordflow}{return} ans;
+104 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_aadb23efa531a3eb68651ba11f4d36c81_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!suggest\+Tree@{suggest\+Tree}}
+\index{suggest\+Tree@{suggest\+Tree}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{suggest\+Tree(const Vector$<$ Terminal\+Set $\ast$ $>$ \&termsets, Vector$<$ Vector$<$ Pair$<$ Tree, G\+R\+B\+Var $>$$>$$>$ \&treesets, const Matrix$<$ double $>$ \&map\+W, int n, int m, int idx) const }{suggestTree(const Vector< TerminalSet * > &termsets, Vector< Vector< Pair< Tree, GRBVar >>> &treesets, const Matrix< double > &mapW, int n, int m, int idx) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Column\+Gen\+Solve\+::suggest\+Tree (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector}$<$ {\bf Terminal\+Set} $\ast$ $>$ \&}]{termsets, }
+\item[{{\bf Vector}$<$ {\bf Vector}$<$ {\bf Pair}$<$ {\bf Tree}, {\bf G\+R\+B\+Var} $>$$>$$>$ \&}]{treesets, }
+\item[{const {\bf Matrix}$<$ double $>$ \&}]{mapW, }
+\item[{int}]{n, }
+\item[{int}]{m, }
+\item[{int}]{idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{}\label{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 700 行定义.
+
+
+
+参考 Solver\+::board, Tree\+::map, Board\+::map, push\+Tree\+Set(), remove\+Non\+Cuts() , 以及 Solve\+Strategy\+::solver.
+
+
+
+参考自 route().
+
+
+\begin{DoxyCode}
+705 \{
+706     \textcolor{keyword}{auto} &treeset = treesets[idx - 1];
+707     \hyperlink{classTree}{Tree} tree = \hyperlink{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa}{suggestTree}(termsets[idx], mapW, n, m);
+708     \textcolor{comment}{// if(termsets[idx]->points.size() > 3)}
+709     \hyperlink{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}{removeNonCuts}(\hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}, idx, tree.\hyperlink{classTree_a1e3b10da468444e998120389f271d6b1}{map}, n, m, &mapW);
+710     \textcolor{comment}{// The tree may have some useless grids}
+711     \textcolor{keywordflow}{return} \hyperlink{classColumnGenSolve_a4a1019de523004757e60c023fc92a38d}{pushTreeSet}(treeset, tree);
+712 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a4ec729b2184612495e657f7ec2d644fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!suggest\+Tree@{suggest\+Tree}}
+\index{suggest\+Tree@{suggest\+Tree}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{suggest\+Tree(const Terminal\+Set $\ast$terminal\+Set, const Matrix$<$ double $>$ \&map\+W, int n, int m) const }{suggestTree(const TerminalSet *terminalSet, const Matrix< double > &mapW, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tree} Column\+Gen\+Solve\+::suggest\+Tree (
+\begin{DoxyParamCaption}
+\item[{const {\bf Terminal\+Set} $\ast$}]{terminal\+Set, }
+\item[{const {\bf Matrix}$<$ double $>$ \&}]{mapW, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a9f9ca7d65c0e42d18ea422ff136d52d0}{}\label{classColumnGenSolve_a9f9ca7d65c0e42d18ea422ff136d52d0}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 714 行定义.
+
+
+
+参考 Solver\+::board, dijkstra(), Bit\+Matrix\+::get(), Terminal\+Set\+::id, Tree\+::map, Board\+::map, Terminal\+Set\+::points, remove\+Non\+Cuts(), Bit\+Matrix\+::resize(), Bit\+Matrix\+::set(), Solve\+Strategy\+::solver, sync(), tree\+Get\+Branches() , 以及 Point\+::x.
+
+
+\begin{DoxyCode}
+717 \{
+718     \textcolor{comment}{// similar but different to the expand process}
+719     \hyperlink{classBitMatrix}{BitMatrix} base;
+720     base.\hyperlink{classBitMatrix_ab09face4935598cf90705d6e8f8d1cfa}{resize}(n, m);
+721     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &term: terminalSet->\hyperlink{classTerminalSet_a08ca403fedfeab1fed1dbf96cf7ec1cb}{points})
+722         base.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(term);
+723     \hyperlink{classVector}{Vector<BitMatrix>} branches = \hyperlink{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a}{treeGetBranches}(base, n, m);
+724     \hyperlink{classVector}{Vector<Matrix<Pair<double, Point>}>> dijMatrices;
+725     dijMatrices.resize(branches.size());
+726     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} i = 0; i < branches.size(); i++)
+727         \hyperlink{classColumnGenSolve_a71007959556061091171c03da6197f34}{dijkstra}(branches[i], mapW, n, m, dijMatrices[i]);
+728     \hyperlink{classColumnGenSolve_ab976cab8582808218110d86252177f88}{sync}();
+729     \textcolor{keywordtype}{double} bestw = 1e40;
+730     \hyperlink{classTree}{Tree} btree(terminalSet);
+731     \textcolor{keywordtype}{int} T = max(n, m);
+732     \textcolor{keywordflow}{while}(T--)
+733     \textcolor{comment}{// for(int i = 0; i < n; i++)}
+734         \textcolor{comment}{// for(int j = 0; j < m; j++)}
+735         \{
+736             \textcolor{keywordtype}{int} i = rand() % n, j = rand() % m;
+737             \textcolor{keywordtype}{double} cw = 0;
+738             \hyperlink{classTree}{Tree} tree(terminalSet);
+739             tree.map = base;
+740             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} &dijMatrix: dijMatrices)
+741             \{
+742                 \textcolor{keywordflow}{if}(dijMatrix[i][j].first >= 1e20)
+743                     \textcolor{keywordflow}{goto} fail;
+744                 \textcolor{keywordflow}{for}(\hyperlink{classPoint}{Point} cp(i, j); cp.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x} != -1 && cp.y != -1; cp = dijMatrix[cp].second)
+745                     tree.map.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(cp);
+746                 \textcolor{comment}{// tree.map |= dijMatrix[i][j].second;}
+747             \}
+748             \textcolor{comment}{// tree.map.set(i, j);}
+749             \hyperlink{classColumnGenSolve_a6c08d317e692a357d49ee56184a9db22}{removeNonCuts}(\hyperlink{classSolveStrategy_a94d43c47305176d0d3858697d3410443}{solver}->\hyperlink{classSolver_a8966a22c2f247addc8ce453d119bc54e}{board}->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}, terminalSet->
+      \hyperlink{classTerminalSet_a3c9824c98990fdf3abb15b766fd93e6b}{id}, tree.map, n, m);
+750             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i1 = 0; i1 < n; i1++)
+751                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j1 = 0; j1 < m; j1++)
+752                     \textcolor{keywordflow}{if}(tree.map.get(i1, j1))
+753                         cw += mapW[i1][j1];
+754             \textcolor{keywordflow}{if}(cw < bestw)\{
+755                 bestw = cw; btree = tree;
+756             \}
+757             fail:;
+758         \}
+759     \textcolor{keywordflow}{return} btree;
+760 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a9f9ca7d65c0e42d18ea422ff136d52d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!sync@{sync}}
+\index{sync@{sync}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{sync()}{sync()}}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ab976cab8582808218110d86252177f88}{}\label{classColumnGenSolve_ab976cab8582808218110d86252177f88}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 683 行定义.
+
+
+
+参考 params\+List , 以及 T\+H\+R\+E\+A\+D\+\_\+\+C\+NT.
+
+
+
+参考自 remove\+Non\+Cuts() , 以及 suggest\+Tree().
+
+
+\begin{DoxyCode}
+684 \{
+685     \textcolor{comment}{// cout << "sync begin" << '\(\backslash\)n';}
+686     \textcolor{comment}{// cout.flush();}
+687     \textcolor{keywordflow}{for}(;;)
+688     \{
+689         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{THREAD\_CNT}; i++)
+690             \textcolor{keywordflow}{if}(!\hyperlink{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{paramsList}[i].finished)
+691                 \textcolor{keywordflow}{goto} fail;
+692         \textcolor{keywordflow}{break};
+693         fail:
+694         std::this\_thread::sleep\_for(std::chrono::microseconds(100));
+695     \}
+696     \textcolor{comment}{// cout << "sync end" << '\(\backslash\)n';}
+697     \textcolor{comment}{// cout.flush();}
+698 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ab976cab8582808218110d86252177f88_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!tree\+Branches@{tree\+Branches}}
+\index{tree\+Branches@{tree\+Branches}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{tree\+Branches(\+Bit\+Matrix tree, int n, int m) const }{treeBranches(BitMatrix tree, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Column\+Gen\+Solve\+::tree\+Branches (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix}}]{tree, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78}{}\label{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1019 行定义.
+
+
+
+参考 Bit\+Matrix\+::get() , 以及 tree\+D\+F\+S\+Branches().
+
+
+
+参考自 tree\+Is\+Cut().
+
+
+\begin{DoxyCode}
+1020 \{
+1021     \textcolor{comment}{// Simple method finding how many branches}
+1022     \textcolor{keywordtype}{int} ans = 0;
+1023     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+1024         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+1025             \textcolor{keywordflow}{if}(tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j))
+1026             \{
+1027                 \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{treeDFSBranches}(tree, i, j, n, m);
+1028                 ++ans;
+1029             \}
+1030     \textcolor{keywordflow}{return} ans;
+1031 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!tree\+D\+F\+S\+Branches@{tree\+D\+F\+S\+Branches}}
+\index{tree\+D\+F\+S\+Branches@{tree\+D\+F\+S\+Branches}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{tree\+D\+F\+S\+Branches(\+Bit\+Matrix \&tree, int i, int j, int n, int m) const }{treeDFSBranches(BitMatrix &tree, int i, int j, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::tree\+D\+F\+S\+Branches (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix} \&}]{tree, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{}\label{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1033 行定义.
+
+
+
+参考 Bit\+Matrix\+::get() , 以及 Bit\+Matrix\+::reset().
+
+
+
+参考自 tree\+Branches().
+
+
+\begin{DoxyCode}
+1036 \{
+1037     \textcolor{comment}{// Simple DFS}
+1038     \textcolor{keywordflow}{if}(i < 0 || i >= n || j < 0 || j >= m || !tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j)) 
+1039         \textcolor{keywordflow}{return};
+1040     tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(i, j);
+1041     \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{treeDFSBranches}(tree, i - 1, j, n, m);
+1042     \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{treeDFSBranches}(tree, i + 1, j, n, m);
+1043     \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{treeDFSBranches}(tree, i, j - 1, n, m);
+1044     \hyperlink{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25}{treeDFSBranches}(tree, i, j + 1, n, m);
+1045 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a57004ff3ac6bffa4f19fa5838a851a25_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!tree\+D\+F\+S\+Get\+Branches@{tree\+D\+F\+S\+Get\+Branches}}
+\index{tree\+D\+F\+S\+Get\+Branches@{tree\+D\+F\+S\+Get\+Branches}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{tree\+D\+F\+S\+Get\+Branches(\+Bit\+Matrix \&tree, Bit\+Matrix \&res, int i, int j, int n, int m) const }{treeDFSGetBranches(BitMatrix &tree, BitMatrix &res, int i, int j, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Column\+Gen\+Solve\+::tree\+D\+F\+S\+Get\+Branches (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix} \&}]{tree, }
+\item[{{\bf Bit\+Matrix} \&}]{res, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{}\label{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1065 行定义.
+
+
+
+参考 Bit\+Matrix\+::get(), Bit\+Matrix\+::reset() , 以及 Bit\+Matrix\+::set().
+
+
+
+参考自 tree\+Get\+Branches().
+
+
+\begin{DoxyCode}
+1068 \{
+1069     \textcolor{comment}{// Simple DFS}
+1070     \textcolor{keywordflow}{if}(i < 0 || i >= n || j < 0 || j >= m || !tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j)) 
+1071         \textcolor{keywordflow}{return};
+1072     tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(i, j); res.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(i, j);
+1073     \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{treeDFSGetBranches}(tree, res, i - 1, j, n, m);
+1074     \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{treeDFSGetBranches}(tree, res, i + 1, j, n, m);
+1075     \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{treeDFSGetBranches}(tree, res, i, j - 1, n, m);
+1076     \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{treeDFSGetBranches}(tree, res, i, j + 1, n, m);
+1077 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a39be14a210fccecb512a754e1a359861_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_a39be14a210fccecb512a754e1a359861_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!tree\+Get\+Branches@{tree\+Get\+Branches}}
+\index{tree\+Get\+Branches@{tree\+Get\+Branches}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{tree\+Get\+Branches(\+Bit\+Matrix tree, int n, int m) const }{treeGetBranches(BitMatrix tree, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<$ {\bf Bit\+Matrix} $>$ Column\+Gen\+Solve\+::tree\+Get\+Branches (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix}}]{tree, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a}{}\label{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1047 行定义.
+
+
+
+参考 Bit\+Matrix\+::get(), Bit\+Matrix\+::resize() , 以及 tree\+D\+F\+S\+Get\+Branches().
+
+
+
+参考自 remove\+Non\+Cuts() , 以及 suggest\+Tree().
+
+
+\begin{DoxyCode}
+1050 \{
+1051     \textcolor{comment}{// Simple method finding every branch}
+1052     \hyperlink{classVector}{Vector<BitMatrix>} ans;
+1053     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+1054         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+1055             \textcolor{keywordflow}{if}(tree.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j))
+1056             \{
+1057                 \hyperlink{classBitMatrix}{BitMatrix} res;
+1058                 res.\hyperlink{classBitMatrix_ab09face4935598cf90705d6e8f8d1cfa}{resize}(n, m);
+1059                 \hyperlink{classColumnGenSolve_a39be14a210fccecb512a754e1a359861}{treeDFSGetBranches}(tree, res, i, j, n, m);
+1060                 ans.push\_back(res);
+1061             \}
+1062     \textcolor{keywordflow}{return} ans;
+1063 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_acbcc78e94e4a6e59ceb7da2357ddb87a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!tree\+Is\+Cut@{tree\+Is\+Cut}}
+\index{tree\+Is\+Cut@{tree\+Is\+Cut}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{tree\+Is\+Cut(\+Bit\+Matrix tree, int i, int j, int n, int m) const }{treeIsCut(BitMatrix tree, int i, int j, int n, int m) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Column\+Gen\+Solve\+::tree\+Is\+Cut (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix}}]{tree, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f}{}\label{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f}
+
+
+在文件 Column\+Gen\+Solve.\+cpp 第 1079 行定义.
+
+
+
+参考 Bit\+Matrix\+::reset() , 以及 tree\+Branches().
+
+
+
+参考自 remove\+Non\+Cuts().
+
+
+\begin{DoxyCode}
+1080 \{
+1081     \textcolor{comment}{// A simple method judging a cut-grid}
+1082     \textcolor{keywordtype}{int} b0 = \hyperlink{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78}{treeBranches}(tree, n, m);
+1083     tree.\hyperlink{classBitMatrix_a0ee870454e6343c3272ab791e45af404}{reset}(i, j);
+1084     \textcolor{keywordflow}{return} \hyperlink{classColumnGenSolve_ac6a085a6c1704afde58891f19d1acf78}{treeBranches}(tree, n, m) != b0;
+1085 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classColumnGenSolve_ae971ef7c0098fd33bea1701fbfe92f4f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{类成员变量说明}
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!M@{M}}
+\index{M@{M}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{M}{M}}]{\setlength{\rightskip}{0pt plus 5cm}const double Column\+Gen\+Solve\+::M}\hypertarget{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}{}\label{classColumnGenSolve_ac5abb4d6dfd291b01af6ea006b5f9f5d}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 11 行定义.
+
+
+
+参考自 route() , 以及 solve\+L\+P().
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!params\+List@{params\+List}}
+\index{params\+List@{params\+List}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{params\+List}{paramsList}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Column\+Gen\+Solve\+::par\+Dijkstra\+Params} Column\+Gen\+Solve\+::params\+List\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}{}\label{classColumnGenSolve_aba2e5f0dc752db74718e834faf9ef606}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 40 行定义.
+
+
+
+参考自 dijkstra(), par\+Dijkstra\+At\+Exit(), par\+Dijkstra\+Init() , 以及 sync().
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!par\+Dijkstra\+Init\+Res@{par\+Dijkstra\+Init\+Res}}
+\index{par\+Dijkstra\+Init\+Res@{par\+Dijkstra\+Init\+Res}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{par\+Dijkstra\+Init\+Res}{parDijkstraInitRes}}]{\setlength{\rightskip}{0pt plus 5cm}const void $\ast$ Column\+Gen\+Solve\+::par\+Dijkstra\+Init\+Res = {\bf Column\+Gen\+Solve\+::par\+Dijkstra\+Init}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ac77eb4def69a3476015487be8a49818a}{}\label{classColumnGenSolve_ac77eb4def69a3476015487be8a49818a}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 44 行定义.
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!T\+H\+R\+E\+A\+D\+\_\+\+C\+NT@{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT}}
+\index{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT@{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{T\+H\+R\+E\+A\+D\+\_\+\+C\+NT}{THREAD_CNT}}]{\setlength{\rightskip}{0pt plus 5cm}const int Column\+Gen\+Solve\+::\+T\+H\+R\+E\+A\+D\+\_\+\+C\+NT = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}{}\label{classColumnGenSolve_a6ead284bdba22a11e3b84eb873807e23}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 22 行定义.
+
+
+
+参考自 dijkstra(), par\+Dijkstra\+At\+Exit(), par\+Dijkstra\+Init() , 以及 sync().
+
+\index{Column\+Gen\+Solve@{Column\+Gen\+Solve}!threads@{threads}}
+\index{threads@{threads}!Column\+Gen\+Solve@{Column\+Gen\+Solve}}
+\subsubsection[{\texorpdfstring{threads}{threads}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread} Column\+Gen\+Solve\+::threads\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classColumnGenSolve_ae836bca68776f265a26e46c7e842492e}{}\label{classColumnGenSolve_ae836bca68776f265a26e46c7e842492e}
+
+
+在文件 Column\+Gen\+Solve.\+h 第 23 行定义.
+
+
+
+参考自 par\+Dijkstra\+At\+Exit() , 以及 par\+Dijkstra\+Init().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ColumnGenSolve_8h}{Column\+Gen\+Solve.\+h}\item 
+src/\hyperlink{ColumnGenSolve_8cpp}{Column\+Gen\+Solve.\+cpp}\end{DoxyCompactItemize}

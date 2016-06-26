@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: OptimizeStrategy类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="classOptimizeStrategy-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OptimizeStrategy类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a>&quot;</code></p>
+<div class="dynheader">
+类 OptimizeStrategy 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOptimizeStrategy__inherit__graph.png" border="0" usemap="#OptimizeStrategy_inherit__map" alt="Inheritance graph"/></div>
+<map name="OptimizeStrategy_inherit__map" id="OptimizeStrategy_inherit__map">
+<area shape="rect" id="node2" href="classCleverOptimize.html" title="{CleverOptimize\n||+ optimize()\l+ CleverOptimize()\l+ clone()\l&#45; bfs()\l&#45; backtrace()\l&#45; getLastDirection()\l&#45; getMap()\l}" alt="" coords="5,175,137,340"/>
+<area shape="rect" id="node3" href="classStupidOptimize.html" title="{StupidOptimize\n||+ StupidOptimize()\l+ ~StupidOptimize()\l+ optimize()\l+ clone()\l}" alt="" coords="162,197,301,318"/>
+</map>
+</div>
+<div class="dynheader">
+OptimizeStrategy 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOptimizeStrategy__coll__graph.png" border="0" usemap="#OptimizeStrategy_coll__map" alt="Collaboration graph"/></div>
+<map name="OptimizeStrategy_coll__map" id="OptimizeStrategy_coll__map">
+<area shape="rect" id="node2" href="classSolver.html" title="{Solver\n||+ Solver()\l+ clone()\l+ ~Solver()\l+ run()\l+ setSolveStrategy()\l+ setCheckStrategy()\l+ setOptimizeStrategy()\l}" alt="" coords="125,656,286,821"/>
+<area shape="rect" id="node3" href="classSolveStrategy.html" title="{SolveStrategy\n||+ SolveStrategy()\l+ ~SolveStrategy()\l+ solve()\l+ clone()\l}" alt="" coords="61,884,192,1005"/>
+<area shape="rect" id="node4" href="classCheckStrategy.html" title="{CheckStrategy\n||+ CheckStrategy()\l+ ~CheckStrategy()\l+ check()\l+ clone()\l}" alt="" coords="232,884,368,1005"/>
+<area shape="rect" id="node5" href="classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="239,443,323,593"/>
+<area shape="rect" id="node6" href="classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="27,288,189,365"/>
+<area shape="rect" id="node8" href="classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="224,288,339,365"/>
+<area shape="rect" id="node10" href="classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="374,273,471,380"/>
+<area shape="rect" id="node11" href="classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="373,147,533,224"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4d2e0bc2a8590dd000428896bc26b7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizeStrategy.html#a4d2e0bc2a8590dd000428896bc26b7f0">OptimizeStrategy</a> (<a class="el" href="classSolver.html">Solver</a> *solver_)</td></tr>
+<tr class="separator:a4d2e0bc2a8590dd000428896bc26b7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ec4ccf210c79fccbede891814584c5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizeStrategy.html#ae6ec4ccf210c79fccbede891814584c5">~OptimizeStrategy</a> ()</td></tr>
+<tr class="separator:ae6ec4ccf210c79fccbede891814584c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac1b1c33fa54a59e6f3a9daffcbf4eb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classSolution.html">Solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb">optimize</a> (const <a class="el" href="classSolution.html">Solution</a> &amp;<a class="el" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>) const  =0</td></tr>
+<tr class="separator:a2ac1b1c33fa54a59e6f3a9daffcbf4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf14f98ef8800d2e6c67ddd610edcbd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizeStrategy.html#a3cf14f98ef8800d2e6c67ddd610edcbd">clone</a> () const  =0</td></tr>
+<tr class="separator:a3cf14f98ef8800d2e6c67ddd610edcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a3954aa31d0f832b79a52648ef295b379"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolver.html">Solver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">solver</a></td></tr>
+<tr class="separator:a3954aa31d0f832b79a52648ef295b379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a> 第 <a class="el" href="SolveStrategy_8h_source.html#l00037">37</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a4d2e0bc2a8590dd000428896bc26b7f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OptimizeStrategy::OptimizeStrategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSolver.html">Solver</a> *&#160;</td>
+          <td class="paramname"><em>solver_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a> 第 <a class="el" href="SolveStrategy_8h_source.html#l00042">42</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">solver</a> = solver_;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="classOptimizeStrategy_html_a3954aa31d0f832b79a52648ef295b379"><div class="ttname"><a href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">OptimizeStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00041">SolveStrategy.h:41</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae6ec4ccf210c79fccbede891814584c5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual OptimizeStrategy::~OptimizeStrategy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a> 第 <a class="el" href="SolveStrategy_8h_source.html#l00046">46</a> 行定义.</p>
+
+<p>参考 <a class="el" href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247">SolveStrategy::clone()</a> , 以及 <a class="el" href="classes_8txt_source.html#l00033">solution</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{}</div></div><!-- fragment -->
+<p><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOptimizeStrategy_ae6ec4ccf210c79fccbede891814584c5_cgraph.png" border="0" usemap="#classOptimizeStrategy_ae6ec4ccf210c79fccbede891814584c5_cgraph" alt=""/></div>
+<map name="classOptimizeStrategy_ae6ec4ccf210c79fccbede891814584c5_cgraph" id="classOptimizeStrategy_ae6ec4ccf210c79fccbede891814584c5_cgraph">
+<area shape="rect" id="node2" href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247" title="SolveStrategy::clone" alt="" coords="184,13,325,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a3cf14f98ef8800d2e6c67ddd610edcbd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a>* OptimizeStrategy::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classStupidOptimize.html#a112d117092ca22231f28729fcad8f71b">StupidOptimize</a> , 以及 <a class="el" href="classCleverOptimize.html#a64e5717a9e8090ccf6aecd185fbc9054">CleverOptimize</a> 内被实现.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">Solver::clone()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd_icgraph.png" border="0" usemap="#classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd_icgraph" alt=""/></div>
+<map name="classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd_icgraph" id="classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd_icgraph">
+<area shape="rect" id="node2" href="classSolver.html#a1a6f0075358685b01c83188d206e41a5" title="Solver::clone" alt="" coords="216,5,312,32"/>
+<area shape="rect" id="node3" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="528,5,645,32"/>
+<area shape="rect" id="node5" href="classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="360,31,480,57"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="693,5,848,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ac1b1c33fa54a59e6f3a9daffcbf4eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classSolution.html">Solution</a> OptimizeStrategy::optimize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSolution.html">Solution</a> &amp;&#160;</td>
+          <td class="paramname"><em>solution</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classStupidOptimize.html#a6a3817a3c94145c676b31aa7e778669f">StupidOptimize</a> , 以及 <a class="el" href="classCleverOptimize.html#ab3cc46af7f8e30d264c2f737870ab9e6">CleverOptimize</a> 内被实现.</p>
+
+<p>参考自 <a class="el" href="Solver_8cpp_source.html#l00003">Solver::run()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb_icgraph.png" border="0" usemap="#classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb_icgraph" alt=""/></div>
+<map name="classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb_icgraph" id="classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb_icgraph">
+<area shape="rect" id="node2" href="classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef" title="Solver::run" alt="" coords="233,107,316,133"/>
+<area shape="rect" id="node3" href="classSolver.html#aba52d3c92fafceb6fe39f937f2d73db3" title="Solver::~Solver" alt="" coords="377,5,485,32"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="545,81,663,108"/>
+<area shape="rect" id="node6" href="classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="371,107,491,133"/>
+<area shape="rect" id="node7" href="tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="364,157,497,184"/>
+<area shape="rect" id="node8" href="tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="391,208,470,235"/>
+<area shape="rect" id="node5" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="711,81,865,108"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="a3954aa31d0f832b79a52648ef295b379"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolver.html">Solver</a>* OptimizeStrategy::solver</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a> 第 <a class="el" href="SolveStrategy_8h_source.html#l00041">41</a> 行定义.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">Solver::clone()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00067">Solver::setOptimizeStrategy()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="SolveStrategy_8h_source.html">SolveStrategy.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

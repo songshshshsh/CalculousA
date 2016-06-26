@@ -1,0 +1,6 @@
+<map id="Solver::~Solver" name="Solver::~Solver">
+<area shape="rect" id="node2" href="$classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef" title="Solver::run" alt="" coords="161,56,244,83"/>
+<area shape="rect" id="node3" href="$classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500" title="SolveStrategy::solve" alt="" coords="313,5,451,32"/>
+<area shape="rect" id="node4" href="$classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11" title="CheckStrategy::check" alt="" coords="307,56,457,83"/>
+<area shape="rect" id="node5" href="$classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb" title="OptimizeStrategy::optimize" alt="" coords="292,107,472,133"/>
+</map>

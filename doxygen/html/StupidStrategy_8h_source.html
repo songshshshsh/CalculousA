@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: include/StupidStrategy.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">StupidStrategy.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="StupidStrategy_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STUPIDSTRATEGY_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define STUPIDSTRATEGY_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SolveStrategy_8h.html">SolveStrategy.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classStupidSolve.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStupidSolve.html">StupidSolve</a>: <span class="keyword">public</span> <a class="code" href="classSolveStrategy.html">SolveStrategy</a></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classStupidSolve.html#a6362d046b2b7082d7fbd7251e991f99f">    9</a></span>&#160;    <a class="code" href="classStupidSolve.html#a6362d046b2b7082d7fbd7251e991f99f">StupidSolve</a>(<a class="code" href="classSolver.html">Solver</a> *solver_): <a class="code" href="classSolveStrategy.html">SolveStrategy</a>(solver_){}</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classStupidSolve.html#a5492220840d035dfae95335957eb1848">   10</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classStupidSolve.html#a5492220840d035dfae95335957eb1848">~StupidSolve</a>(){}</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSolution.html">Solution</a> <a class="code" href="classStupidSolve.html#aee240779acb1983c0fba3dfc6bec643f">solve</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classStupidSolve.html#aeec5309af1a0358ac13ff5f9384e3af7">   12</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSolveStrategy.html">SolveStrategy</a> *<a class="code" href="classStupidSolve.html#aeec5309af1a0358ac13ff5f9384e3af7">clone</a>()<span class="keyword"> const</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">    </span>{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classStupidSolve.html#a6362d046b2b7082d7fbd7251e991f99f">StupidSolve</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classStupidCheck.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStupidCheck.html">StupidCheck</a>: <span class="keyword">public</span> <a class="code" href="classCheckStrategy.html">CheckStrategy</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">   21</a></span>&#160;    <a class="code" href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">StupidCheck</a>(<a class="code" href="classSolver.html">Solver</a> *solver_): <a class="code" href="classCheckStrategy.html">CheckStrategy</a>(solver_){}</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classStupidCheck.html#a8f0518b4d64dd33ef27f9af0117f9dd2">   22</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classStupidCheck.html#a8f0518b4d64dd33ef27f9af0117f9dd2">~StupidCheck</a>(){}</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classStupidCheck.html#a6291b52893e1caf4dc84e195dc79e534">   23</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classStupidCheck.html#a6291b52893e1caf4dc84e195dc79e534">check</a>(<span class="keyword">const</span> <a class="code" href="classSolution.html">Solution</a> &amp;<a class="code" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>)<span class="keyword"> const</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">    </span>{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="global_8h.html#a05a7b30aaf65db56c27346272aa681e5">NOT_USED</a>(solution);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classStupidCheck.html#a5c2425603803daf7d190771623c78bcd">   28</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classCheckStrategy.html">CheckStrategy</a> *<a class="code" href="classStupidCheck.html#a5c2425603803daf7d190771623c78bcd">clone</a>()<span class="keyword"> const</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">    </span>{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classStupidCheck.html">StupidCheck</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classStupidOptimize.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStupidOptimize.html">StupidOptimize</a>: <span class="keyword">public</span> <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classStupidOptimize.html#a33514f9f829ac93cc524b37ce55922e7">   37</a></span>&#160;    <a class="code" href="classStupidOptimize.html#a33514f9f829ac93cc524b37ce55922e7">StupidOptimize</a>(<a class="code" href="classSolver.html">Solver</a> *solver_): <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a>(solver_){}</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classStupidOptimize.html#aab5bc971dccd2b70e6ae07dc3ecc6ba6">   38</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classStupidOptimize.html#aab5bc971dccd2b70e6ae07dc3ecc6ba6">~StupidOptimize</a>(){}</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classStupidOptimize.html#a6a3817a3c94145c676b31aa7e778669f">   39</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSolution.html">Solution</a> <a class="code" href="classStupidOptimize.html#a6a3817a3c94145c676b31aa7e778669f">optimize</a>(<span class="keyword">const</span> <a class="code" href="classSolution.html">Solution</a> &amp;<a class="code" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>)<span class="keyword"> const</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">    </span>{</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classStupidOptimize.html#a112d117092ca22231f28729fcad8f71b">   43</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a> *<a class="code" href="classStupidOptimize.html#a112d117092ca22231f28729fcad8f71b">clone</a>()<span class="keyword"> const</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">    </span>{</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classStupidOptimize.html">StupidOptimize</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif // STUPIDSTRATEGY_H</span></div><div class="ttc" id="classCheckStrategy_html"><div class="ttname"><a href="classCheckStrategy.html">CheckStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00023">SolveStrategy.h:23</a></div></div>
+<div class="ttc" id="classes_8txt_html_aa43d5190bbc491d9c9134146e01a248e"><div class="ttname"><a href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a></div><div class="ttdeci">Vector&lt; Tree * &gt; solution</div><div class="ttdef"><b>Definition:</b> <a href="classes_8txt_source.html#l00033">classes.txt:33</a></div></div>
+<div class="ttc" id="classStupidCheck_html"><div class="ttname"><a href="classStupidCheck.html">StupidCheck</a></div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00018">StupidStrategy.h:18</a></div></div>
+<div class="ttc" id="classStupidCheck_html_a6291b52893e1caf4dc84e195dc79e534"><div class="ttname"><a href="classStupidCheck.html#a6291b52893e1caf4dc84e195dc79e534">StupidCheck::check</a></div><div class="ttdeci">virtual bool check(const Solution &amp;solution) const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00023">StupidStrategy.h:23</a></div></div>
+<div class="ttc" id="classStupidOptimize_html_a33514f9f829ac93cc524b37ce55922e7"><div class="ttname"><a href="classStupidOptimize.html#a33514f9f829ac93cc524b37ce55922e7">StupidOptimize::StupidOptimize</a></div><div class="ttdeci">StupidOptimize(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00037">StupidStrategy.h:37</a></div></div>
+<div class="ttc" id="classOptimizeStrategy_html"><div class="ttname"><a href="classOptimizeStrategy.html">OptimizeStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00037">SolveStrategy.h:37</a></div></div>
+<div class="ttc" id="global_8h_html_a05a7b30aaf65db56c27346272aa681e5"><div class="ttname"><a href="global_8h.html#a05a7b30aaf65db56c27346272aa681e5">NOT_USED</a></div><div class="ttdeci">#define NOT_USED(x)</div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00066">global.h:66</a></div></div>
+<div class="ttc" id="classStupidCheck_html_a5d9cfbf24ede46fe72f85817996081d2"><div class="ttname"><a href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">StupidCheck::StupidCheck</a></div><div class="ttdeci">StupidCheck(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00021">StupidStrategy.h:21</a></div></div>
+<div class="ttc" id="classStupidSolve_html_aee240779acb1983c0fba3dfc6bec643f"><div class="ttname"><a href="classStupidSolve.html#aee240779acb1983c0fba3dfc6bec643f">StupidSolve::solve</a></div><div class="ttdeci">virtual Solution solve() const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8cpp_source.html#l00003">StupidStrategy.cpp:3</a></div></div>
+<div class="ttc" id="classStupidOptimize_html_a112d117092ca22231f28729fcad8f71b"><div class="ttname"><a href="classStupidOptimize.html#a112d117092ca22231f28729fcad8f71b">StupidOptimize::clone</a></div><div class="ttdeci">virtual OptimizeStrategy * clone() const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00043">StupidStrategy.h:43</a></div></div>
+<div class="ttc" id="classStupidCheck_html_a8f0518b4d64dd33ef27f9af0117f9dd2"><div class="ttname"><a href="classStupidCheck.html#a8f0518b4d64dd33ef27f9af0117f9dd2">StupidCheck::~StupidCheck</a></div><div class="ttdeci">virtual ~StupidCheck()</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00022">StupidStrategy.h:22</a></div></div>
+<div class="ttc" id="classSolver_html"><div class="ttname"><a href="classSolver.html">Solver</a></div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00009">Solver.h:9</a></div></div>
+<div class="ttc" id="classSolveStrategy_html"><div class="ttname"><a href="classSolveStrategy.html">SolveStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00009">SolveStrategy.h:9</a></div></div>
+<div class="ttc" id="classStupidSolve_html_a5492220840d035dfae95335957eb1848"><div class="ttname"><a href="classStupidSolve.html#a5492220840d035dfae95335957eb1848">StupidSolve::~StupidSolve</a></div><div class="ttdeci">virtual ~StupidSolve()</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00010">StupidStrategy.h:10</a></div></div>
+<div class="ttc" id="classStupidSolve_html_a6362d046b2b7082d7fbd7251e991f99f"><div class="ttname"><a href="classStupidSolve.html#a6362d046b2b7082d7fbd7251e991f99f">StupidSolve::StupidSolve</a></div><div class="ttdeci">StupidSolve(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00009">StupidStrategy.h:9</a></div></div>
+<div class="ttc" id="classSolution_html"><div class="ttname"><a href="classSolution.html">Solution</a></div><div class="ttdef"><b>Definition:</b> <a href="Solution_8h_source.html#l00008">Solution.h:8</a></div></div>
+<div class="ttc" id="classStupidCheck_html_a5c2425603803daf7d190771623c78bcd"><div class="ttname"><a href="classStupidCheck.html#a5c2425603803daf7d190771623c78bcd">StupidCheck::clone</a></div><div class="ttdeci">virtual CheckStrategy * clone() const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00028">StupidStrategy.h:28</a></div></div>
+<div class="ttc" id="classStupidOptimize_html_aab5bc971dccd2b70e6ae07dc3ecc6ba6"><div class="ttname"><a href="classStupidOptimize.html#aab5bc971dccd2b70e6ae07dc3ecc6ba6">StupidOptimize::~StupidOptimize</a></div><div class="ttdeci">virtual ~StupidOptimize()</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00038">StupidStrategy.h:38</a></div></div>
+<div class="ttc" id="classStupidOptimize_html"><div class="ttname"><a href="classStupidOptimize.html">StupidOptimize</a></div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00034">StupidStrategy.h:34</a></div></div>
+<div class="ttc" id="classStupidOptimize_html_a6a3817a3c94145c676b31aa7e778669f"><div class="ttname"><a href="classStupidOptimize.html#a6a3817a3c94145c676b31aa7e778669f">StupidOptimize::optimize</a></div><div class="ttdeci">virtual Solution optimize(const Solution &amp;solution) const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00039">StupidStrategy.h:39</a></div></div>
+<div class="ttc" id="classStupidSolve_html"><div class="ttname"><a href="classStupidSolve.html">StupidSolve</a></div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00006">StupidStrategy.h:6</a></div></div>
+<div class="ttc" id="classStupidSolve_html_aeec5309af1a0358ac13ff5f9384e3af7"><div class="ttname"><a href="classStupidSolve.html#aeec5309af1a0358ac13ff5f9384e3af7">StupidSolve::clone</a></div><div class="ttdeci">virtual SolveStrategy * clone() const </div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00012">StupidStrategy.h:12</a></div></div>
+<div class="ttc" id="SolveStrategy_8h_html"><div class="ttname"><a href="SolveStrategy_8h.html">SolveStrategy.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

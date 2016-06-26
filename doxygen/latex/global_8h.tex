@@ -1,0 +1,191 @@
+\hypertarget{global_8h}{}\section{include/global.h 文件参考}
+\label{global_8h}\index{include/global.\+h@{include/global.\+h}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include $<$mutex$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include \char`\"{}Bit\+Matrix.\+h\char`\"{}}\\*
+global.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVector}{Vector$<$ T $>$}
+\item 
+class \hyperlink{classPair}{Pair$<$ T1, T2 $>$}
+\item 
+class \hyperlink{classPoint}{Point}
+\item 
+class \hyperlink{classMatrix}{Matrix$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{assert}(x)~0
+\item 
+\#define \hyperlink{global_8h_a05a7b30aaf65db56c27346272aa681e5}{N\+O\+T\+\_\+\+U\+S\+ED}(x)~((void) (x))
+\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::istream \hyperlink{global_8h_a3ae955d826788591b03995dc737012c7}{I\+Stream}
+\item 
+typedef std\+::ostream \hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream}
+\item 
+typedef std\+::ifstream \hyperlink{global_8h_a6b9b4efa4e8dedbbc3ff147b0fb94071}{I\+F\+Stream}
+\item 
+typedef std\+::ofstream \hyperlink{global_8h_a7ec5bb64a5a7c56f5600caebf1ac2b7e}{O\+F\+Stream}
+\item 
+typedef std\+::stringstream \hyperlink{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{String\+Stream}
+\item 
+typedef std\+::string \hyperlink{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}{String}
+\item 
+typedef std\+::thread \hyperlink{global_8h_ab4108db709b91dc2efcd48309edb9f5e}{Thread}
+\item 
+typedef std\+::mutex \hyperlink{global_8h_a2cdb1fa98da4079d3a6c4ad3e2afe4af}{Mutex}
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{global_8h_a1fb1f97263125239f4977ad75cb60e57}{do\+Assert} (bool, const char $\ast$file, int line)
+\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\index{global.\+h@{global.\+h}!assert@{assert}}
+\index{assert@{assert}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{assert}{assert}}]{\setlength{\rightskip}{0pt plus 5cm}\#define assert(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~0}\hypertarget{global_8h_af576bf8ffa22a44e53018c67095ffbf0}{}\label{global_8h_af576bf8ffa22a44e53018c67095ffbf0}
+
+
+在文件 global.\+h 第 63 行定义.
+
+
+
+参考自 Board\+I\+O\+Test(), Column\+Gen\+Solve\+::dfs\+Edge(), Bit\+Matrix\+::operator$\vert$=(), Column\+Gen\+Solve\+::remove\+Non\+Cuts() , 以及 Solver\+::run().
+
+\index{global.\+h@{global.\+h}!N\+O\+T\+\_\+\+U\+S\+ED@{N\+O\+T\+\_\+\+U\+S\+ED}}
+\index{N\+O\+T\+\_\+\+U\+S\+ED@{N\+O\+T\+\_\+\+U\+S\+ED}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{N\+O\+T\+\_\+\+U\+S\+ED}{NOT_USED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+T\+\_\+\+U\+S\+ED(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~((void) (x))}\hypertarget{global_8h_a05a7b30aaf65db56c27346272aa681e5}{}\label{global_8h_a05a7b30aaf65db56c27346272aa681e5}
+
+
+在文件 global.\+h 第 66 行定义.
+
+
+
+参考自 Stupid\+Check\+::check().
+
+
+
+\subsection{类型定义说明}
+\index{global.\+h@{global.\+h}!I\+F\+Stream@{I\+F\+Stream}}
+\index{I\+F\+Stream@{I\+F\+Stream}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{I\+F\+Stream}{IFStream}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::ifstream {\bf I\+F\+Stream}}\hypertarget{global_8h_a6b9b4efa4e8dedbbc3ff147b0fb94071}{}\label{global_8h_a6b9b4efa4e8dedbbc3ff147b0fb94071}
+
+
+在文件 global.\+h 第 13 行定义.
+
+\index{global.\+h@{global.\+h}!I\+Stream@{I\+Stream}}
+\index{I\+Stream@{I\+Stream}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{I\+Stream}{IStream}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::istream {\bf I\+Stream}}\hypertarget{global_8h_a3ae955d826788591b03995dc737012c7}{}\label{global_8h_a3ae955d826788591b03995dc737012c7}
+
+
+在文件 global.\+h 第 8 行定义.
+
+\index{global.\+h@{global.\+h}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{Mutex}{Mutex}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::mutex {\bf Mutex}}\hypertarget{global_8h_a2cdb1fa98da4079d3a6c4ad3e2afe4af}{}\label{global_8h_a2cdb1fa98da4079d3a6c4ad3e2afe4af}
+
+
+在文件 global.\+h 第 51 行定义.
+
+\index{global.\+h@{global.\+h}!O\+F\+Stream@{O\+F\+Stream}}
+\index{O\+F\+Stream@{O\+F\+Stream}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{O\+F\+Stream}{OFStream}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::ofstream {\bf O\+F\+Stream}}\hypertarget{global_8h_a7ec5bb64a5a7c56f5600caebf1ac2b7e}{}\label{global_8h_a7ec5bb64a5a7c56f5600caebf1ac2b7e}
+
+
+在文件 global.\+h 第 14 行定义.
+
+\index{global.\+h@{global.\+h}!O\+Stream@{O\+Stream}}
+\index{O\+Stream@{O\+Stream}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{O\+Stream}{OStream}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::ostream {\bf O\+Stream}}\hypertarget{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{}\label{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}
+
+
+在文件 global.\+h 第 9 行定义.
+
+\index{global.\+h@{global.\+h}!String@{String}}
+\index{String@{String}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{String}{String}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::string {\bf String}}\hypertarget{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}{}\label{global_8h_afbeda3fd1bdc8c37d01bdf9f5c8274ff}
+
+
+在文件 global.\+h 第 46 行定义.
+
+\index{global.\+h@{global.\+h}!String\+Stream@{String\+Stream}}
+\index{String\+Stream@{String\+Stream}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{String\+Stream}{StringStream}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::stringstream {\bf String\+Stream}}\hypertarget{global_8h_a3b00b4d9ec9db1584a445acde990ced6}{}\label{global_8h_a3b00b4d9ec9db1584a445acde990ced6}
+
+
+在文件 global.\+h 第 17 行定义.
+
+\index{global.\+h@{global.\+h}!Thread@{Thread}}
+\index{Thread@{Thread}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{Thread}{Thread}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::thread {\bf Thread}}\hypertarget{global_8h_ab4108db709b91dc2efcd48309edb9f5e}{}\label{global_8h_ab4108db709b91dc2efcd48309edb9f5e}
+
+
+在文件 global.\+h 第 49 行定义.
+
+
+
+\subsection{函数说明}
+\index{global.\+h@{global.\+h}!do\+Assert@{do\+Assert}}
+\index{do\+Assert@{do\+Assert}!global.\+h@{global.\+h}}
+\subsubsection[{\texorpdfstring{do\+Assert(bool, const char $\ast$file, int line)}{doAssert(bool, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}int do\+Assert (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{global_8h_a1fb1f97263125239f4977ad75cb60e57}{}\label{global_8h_a1fb1f97263125239f4977ad75cb60e57}
+
+
+在文件 global.\+cpp 第 3 行定义.
+
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keywordflow}{if}(x)
+6         \textcolor{keywordflow}{return} 0;
+7     cout << \textcolor{stringliteral}{"Assertion failed at file "} << file << \textcolor{stringliteral}{" line "} << line << \textcolor{stringliteral}{"\(\backslash\)n"};
+8     exit(1);
+9 \}
+\end{DoxyCode}

@@ -1,0 +1,9 @@
+<map id="CheckStrategy::check" name="CheckStrategy::check">
+<area shape="rect" id="node2" href="$classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef" title="Solver::run" alt="" coords="204,107,287,133"/>
+<area shape="rect" id="node3" href="$classSolver.html#aba52d3c92fafceb6fe39f937f2d73db3" title="Solver::~Solver" alt="" coords="347,5,455,32"/>
+<area shape="rect" id="node4" href="$classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="516,81,633,108"/>
+<area shape="rect" id="node6" href="$classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="341,107,461,133"/>
+<area shape="rect" id="node7" href="$tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="335,157,468,184"/>
+<area shape="rect" id="node8" href="$tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="362,208,441,235"/>
+<area shape="rect" id="node5" href="$classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="681,81,836,108"/>
+</map>

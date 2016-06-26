@@ -1,0 +1,307 @@
+\hypertarget{classGRBEnv}{}\section{G\+R\+B\+Env类 参考}
+\label{classGRBEnv}\index{G\+R\+B\+Env@{G\+R\+B\+Env}}
+
+
+{\ttfamily \#include \char`\"{}gurobi\+\_\+c++.\+h\char`\"{}}
+
+
+
+G\+R\+B\+Env 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classGRBEnv__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBEnv_ae83989a2de3dc8269e07ff86268e6307}{G\+R\+B\+Env} ()
+\item 
+\hyperlink{classGRBEnv_a7ab5f47660f638645913c694c1a38deb}{G\+R\+B\+Env} (const string \&logfilename)
+\item 
+\hyperlink{classGRBEnv_a472e887a6f907dd3841cb82db19b8224}{G\+R\+B\+Env} (const string \&logfilename, const string \&computeservers, int port, const string \&password, int priority, double timeout)
+\item 
+\hyperlink{classGRBEnv_a70a83b789fc3307063f0a269ae154482}{G\+R\+B\+Env} (const string \&, const string \&, const string \&, int, const string \&)
+\item 
+\hyperlink{classGRBEnv_a1f17093649616f37cf594604a003cd64}{$\sim$\+G\+R\+B\+Env} ()
+\item 
+void \hyperlink{classGRBEnv_a767efd5ec6946c463d4f49eaf98ebc5b}{message} (const string \&msg)
+\item 
+int \hyperlink{classGRBEnv_a2110323bbc642797af268cda5cae230f}{get} (\hyperlink{gurobi__c_09_09_8h_ab02a171b88b53892fce22c6426a9d166}{G\+R\+B\+\_\+\+Int\+Param} param) const 
+\item 
+double \hyperlink{classGRBEnv_a1cd6e05d94ee1154f73818a3f7a0a677}{get} (\hyperlink{gurobi__c_09_09_8h_a4703eabc6bd97595ee1d0b3241981772}{G\+R\+B\+\_\+\+Double\+Param} param) const 
+\item 
+const string \hyperlink{classGRBEnv_ac866810468b30710288554338d4681f6}{get} (\hyperlink{gurobi__c_09_09_8h_a7ed46434ddcd973e46a3acd4d6c2cf04}{G\+R\+B\+\_\+\+String\+Param} param) const 
+\item 
+void \hyperlink{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}{set} (\hyperlink{gurobi__c_09_09_8h_ab02a171b88b53892fce22c6426a9d166}{G\+R\+B\+\_\+\+Int\+Param} param, int newvalue)
+\item 
+void \hyperlink{classGRBEnv_a6f2c82571e7c901f796e3b8f673988cb}{set} (\hyperlink{gurobi__c_09_09_8h_a4703eabc6bd97595ee1d0b3241981772}{G\+R\+B\+\_\+\+Double\+Param} param, double newvalue)
+\item 
+void \hyperlink{classGRBEnv_a802a1623a34bebb9171452db16753920}{set} (\hyperlink{gurobi__c_09_09_8h_a7ed46434ddcd973e46a3acd4d6c2cf04}{G\+R\+B\+\_\+\+String\+Param} param, const string \&newvalue)
+\item 
+void \hyperlink{classGRBEnv_a7e076fcc7f772b56f247fc4dbd376917}{set} (const string \&paramname, const string \&newvalue)
+\item 
+void \hyperlink{classGRBEnv_a2307d1763c215e44ba1a9006de210ecf}{get\+Param\+Info} (\hyperlink{gurobi__c_09_09_8h_a4703eabc6bd97595ee1d0b3241981772}{G\+R\+B\+\_\+\+Double\+Param} param, double $\ast$valP, double $\ast$minP, double $\ast$maxP, double $\ast$defP)
+\item 
+void \hyperlink{classGRBEnv_acd3dcb4f007b51ac0724fc4701489cd2}{get\+Param\+Info} (\hyperlink{gurobi__c_09_09_8h_ab02a171b88b53892fce22c6426a9d166}{G\+R\+B\+\_\+\+Int\+Param} param, int $\ast$valP, int $\ast$minP, int $\ast$maxP, int $\ast$defP)
+\item 
+void \hyperlink{classGRBEnv_a925b2c44fcdc1c3f73d0030bd3baa3b9}{get\+Param\+Info} (\hyperlink{gurobi__c_09_09_8h_a7ed46434ddcd973e46a3acd4d6c2cf04}{G\+R\+B\+\_\+\+String\+Param} param, string \&value, string \&defvalue)
+\item 
+void \hyperlink{classGRBEnv_ab9961b41498c1ac27a9b636f630d4d19}{reset\+Params} ()
+\item 
+void \hyperlink{classGRBEnv_a0fab9f92af27e787f9f2271df0c6262f}{write\+Params} (const string \&paramfile)
+\item 
+void \hyperlink{classGRBEnv_a030dde91644684c2118031a5ace34d11}{read\+Params} (const string \&paramfile)
+\item 
+const string \hyperlink{classGRBEnv_ab885068657ab5f74109d350415890072}{get\+Error\+Msg} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classGRBEnv}{G\+R\+B\+Env} \& \hyperlink{classGRBEnv_acac68ecf2c8e672377cf8227182fcee0}{operator=} (const \hyperlink{classGRBEnv}{G\+R\+B\+Env} \&xenv)
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gurobi__c_8h_a2963ba0c46b86ac4680fb3bb4ca8b2f3}{G\+R\+Benv} $\ast$ \hyperlink{classGRBEnv_a73432e3a07386ee4a3669f67137ec1cc}{env}
+\item 
+\hyperlink{gurobi__c_8h_a2963ba0c46b86ac4680fb3bb4ca8b2f3}{G\+R\+Benv} $\ast$$\ast$ \hyperlink{classGRBEnv_aa55900386bf034ad127526269ad6465b}{envP}
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGRBEnv_a43690ac42cca6dade14d7fde97306d59}{G\+R\+B\+Model}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 322 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Env()}{GRBEnv()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Env\+::\+G\+R\+B\+Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_ae83989a2de3dc8269e07ff86268e6307}{}\label{classGRBEnv_ae83989a2de3dc8269e07ff86268e6307}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Env(const string \&logfilename)}{GRBEnv(const string &logfilename)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Env\+::\+G\+R\+B\+Env (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{logfilename}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a7ab5f47660f638645913c694c1a38deb}{}\label{classGRBEnv_a7ab5f47660f638645913c694c1a38deb}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Env(const string \&logfilename, const string \&computeservers, int port, const string \&password, int priority, double timeout)}{GRBEnv(const string &logfilename, const string &computeservers, int port, const string &password, int priority, double timeout)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Env\+::\+G\+R\+B\+Env (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{logfilename, }
+\item[{const string \&}]{computeservers, }
+\item[{int}]{port, }
+\item[{const string \&}]{password, }
+\item[{int}]{priority, }
+\item[{double}]{timeout}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a472e887a6f907dd3841cb82db19b8224}{}\label{classGRBEnv_a472e887a6f907dd3841cb82db19b8224}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Env(const string \&, const string \&, const string \&, int, const string \&)}{GRBEnv(const string &, const string &, const string &, int, const string &)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Env\+::\+G\+R\+B\+Env (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{, }
+\item[{const string \&}]{, }
+\item[{const string \&}]{, }
+\item[{int}]{, }
+\item[{const string \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a70a83b789fc3307063f0a269ae154482}{}\label{classGRBEnv_a70a83b789fc3307063f0a269ae154482}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!````~G\+R\+B\+Env@{$\sim$\+G\+R\+B\+Env}}
+\index{````~G\+R\+B\+Env@{$\sim$\+G\+R\+B\+Env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{$\sim$\+G\+R\+B\+Env()}{~GRBEnv()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Env\+::$\sim$\+G\+R\+B\+Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a1f17093649616f37cf594604a003cd64}{}\label{classGRBEnv_a1f17093649616f37cf594604a003cd64}
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get@{get}}
+\index{get@{get}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Int\+Param param) const }{get(GRB_IntParam param) const }}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Env\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Param}}]{param}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBEnv_a2110323bbc642797af268cda5cae230f}{}\label{classGRBEnv_a2110323bbc642797af268cda5cae230f}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get@{get}}
+\index{get@{get}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Param param) const }{get(GRB_DoubleParam param) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Env\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Param}}]{param}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBEnv_a1cd6e05d94ee1154f73818a3f7a0a677}{}\label{classGRBEnv_a1cd6e05d94ee1154f73818a3f7a0a677}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get@{get}}
+\index{get@{get}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Param param) const }{get(GRB_StringParam param) const }}]{\setlength{\rightskip}{0pt plus 5cm}const string G\+R\+B\+Env\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Param}}]{param}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBEnv_ac866810468b30710288554338d4681f6}{}\label{classGRBEnv_ac866810468b30710288554338d4681f6}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get\+Error\+Msg@{get\+Error\+Msg}}
+\index{get\+Error\+Msg@{get\+Error\+Msg}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get\+Error\+Msg() const }{getErrorMsg() const }}]{\setlength{\rightskip}{0pt plus 5cm}const string G\+R\+B\+Env\+::get\+Error\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBEnv_ab885068657ab5f74109d350415890072}{}\label{classGRBEnv_ab885068657ab5f74109d350415890072}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get\+Param\+Info@{get\+Param\+Info}}
+\index{get\+Param\+Info@{get\+Param\+Info}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get\+Param\+Info(\+G\+R\+B\+\_\+\+Double\+Param param, double $\ast$val\+P, double $\ast$min\+P, double $\ast$max\+P, double $\ast$def\+P)}{getParamInfo(GRB_DoubleParam param, double *valP, double *minP, double *maxP, double *defP)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::get\+Param\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Param}}]{param, }
+\item[{double $\ast$}]{valP, }
+\item[{double $\ast$}]{minP, }
+\item[{double $\ast$}]{maxP, }
+\item[{double $\ast$}]{defP}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a2307d1763c215e44ba1a9006de210ecf}{}\label{classGRBEnv_a2307d1763c215e44ba1a9006de210ecf}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get\+Param\+Info@{get\+Param\+Info}}
+\index{get\+Param\+Info@{get\+Param\+Info}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get\+Param\+Info(\+G\+R\+B\+\_\+\+Int\+Param param, int $\ast$val\+P, int $\ast$min\+P, int $\ast$max\+P, int $\ast$def\+P)}{getParamInfo(GRB_IntParam param, int *valP, int *minP, int *maxP, int *defP)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::get\+Param\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Param}}]{param, }
+\item[{int $\ast$}]{valP, }
+\item[{int $\ast$}]{minP, }
+\item[{int $\ast$}]{maxP, }
+\item[{int $\ast$}]{defP}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_acd3dcb4f007b51ac0724fc4701489cd2}{}\label{classGRBEnv_acd3dcb4f007b51ac0724fc4701489cd2}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!get\+Param\+Info@{get\+Param\+Info}}
+\index{get\+Param\+Info@{get\+Param\+Info}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{get\+Param\+Info(\+G\+R\+B\+\_\+\+String\+Param param, string \&value, string \&defvalue)}{getParamInfo(GRB_StringParam param, string &value, string &defvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::get\+Param\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Param}}]{param, }
+\item[{string \&}]{value, }
+\item[{string \&}]{defvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a925b2c44fcdc1c3f73d0030bd3baa3b9}{}\label{classGRBEnv_a925b2c44fcdc1c3f73d0030bd3baa3b9}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!message@{message}}
+\index{message@{message}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{message(const string \&msg)}{message(const string &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::message (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a767efd5ec6946c463d4f49eaf98ebc5b}{}\label{classGRBEnv_a767efd5ec6946c463d4f49eaf98ebc5b}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!operator=@{operator=}}
+\index{operator=@{operator=}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{operator=(const G\+R\+B\+Env \&xenv)}{operator=(const GRBEnv &xenv)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf G\+R\+B\+Env}\& G\+R\+B\+Env\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Env} \&}]{xenv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBEnv_acac68ecf2c8e672377cf8227182fcee0}{}\label{classGRBEnv_acac68ecf2c8e672377cf8227182fcee0}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!read\+Params@{read\+Params}}
+\index{read\+Params@{read\+Params}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{read\+Params(const string \&paramfile)}{readParams(const string &paramfile)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::read\+Params (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{paramfile}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a030dde91644684c2118031a5ace34d11}{}\label{classGRBEnv_a030dde91644684c2118031a5ace34d11}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!reset\+Params@{reset\+Params}}
+\index{reset\+Params@{reset\+Params}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{reset\+Params()}{resetParams()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::reset\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_ab9961b41498c1ac27a9b636f630d4d19}{}\label{classGRBEnv_ab9961b41498c1ac27a9b636f630d4d19}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!set@{set}}
+\index{set@{set}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Param param, int newvalue)}{set(GRB_IntParam param, int newvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Param}}]{param, }
+\item[{int}]{newvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}{}\label{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95}
+
+
+参考自 G\+R\+B\+Factory\+::create\+Model().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBEnv_a7f3ec7e37fbed1c7606ea52e18ed8a95_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!set@{set}}
+\index{set@{set}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Param param, double newvalue)}{set(GRB_DoubleParam param, double newvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Param}}]{param, }
+\item[{double}]{newvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a6f2c82571e7c901f796e3b8f673988cb}{}\label{classGRBEnv_a6f2c82571e7c901f796e3b8f673988cb}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!set@{set}}
+\index{set@{set}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Param param, const string \&newvalue)}{set(GRB_StringParam param, const string &newvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Param}}]{param, }
+\item[{const string \&}]{newvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a802a1623a34bebb9171452db16753920}{}\label{classGRBEnv_a802a1623a34bebb9171452db16753920}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!set@{set}}
+\index{set@{set}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{set(const string \&paramname, const string \&newvalue)}{set(const string &paramname, const string &newvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::set (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{paramname, }
+\item[{const string \&}]{newvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a7e076fcc7f772b56f247fc4dbd376917}{}\label{classGRBEnv_a7e076fcc7f772b56f247fc4dbd376917}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!write\+Params@{write\+Params}}
+\index{write\+Params@{write\+Params}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{write\+Params(const string \&paramfile)}{writeParams(const string &paramfile)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Env\+::write\+Params (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{paramfile}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBEnv_a0fab9f92af27e787f9f2271df0c6262f}{}\label{classGRBEnv_a0fab9f92af27e787f9f2271df0c6262f}
+
+
+\subsection{友元及相关函数文档}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Model}{GRBModel}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf G\+R\+B\+Model}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBEnv_a43690ac42cca6dade14d7fde97306d59}{}\label{classGRBEnv_a43690ac42cca6dade14d7fde97306d59}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 333 行定义.
+
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!env@{env}}
+\index{env@{env}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{env}{env}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+Benv}$\ast$ G\+R\+B\+Env\+::env\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBEnv_a73432e3a07386ee4a3669f67137ec1cc}{}\label{classGRBEnv_a73432e3a07386ee4a3669f67137ec1cc}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 326 行定义.
+
+\index{G\+R\+B\+Env@{G\+R\+B\+Env}!envP@{envP}}
+\index{envP@{envP}!G\+R\+B\+Env@{G\+R\+B\+Env}}
+\subsubsection[{\texorpdfstring{envP}{envP}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+Benv}$\ast$$\ast$ G\+R\+B\+Env\+::envP\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBEnv_aa55900386bf034ad127526269ad6465b}{}\label{classGRBEnv_aa55900386bf034ad127526269ad6465b}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 327 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{gurobi__c_09_09_8h}{gurobi\+\_\+c++.\+h}\end{DoxyCompactItemize}

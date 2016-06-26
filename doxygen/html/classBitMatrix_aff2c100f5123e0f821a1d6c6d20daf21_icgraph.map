@@ -1,0 +1,24 @@
+<map id="BitMatrix::popcnt" name="BitMatrix::popcnt">
+<area shape="rect" id="node2" href="$classTree.html#a70810e1d66ffb05f9787ab07c713c104" title="Tree::computeLength" alt="" coords="175,56,319,83"/>
+<area shape="rect" id="node9" href="$classBitMatrix.html#ad19d1045b54ccc8a99d70d38305b4ca6" title="BitMatrix::get" alt="" coords="197,347,297,373"/>
+<area shape="rect" id="node3" href="$classColumnGenSolve.html#a4a1019de523004757e60c023fc92a38d" title="ColumnGenSolve::pushTreeSet" alt="" coords="659,56,861,83"/>
+<area shape="rect" id="node8" href="$tests_8cpp.html#afbab43f8d3aaf7fca466f9177584e38c" title="TEST" alt="" coords="455,5,510,32"/>
+<area shape="rect" id="node4" href="$classColumnGenSolve.html#a4ec729b2184612495e657f7ec2d644fa" title="ColumnGenSolve::suggestTree" alt="" coords="1199,108,1399,135"/>
+<area shape="rect" id="node5" href="$classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="1457,108,1616,135"/>
+<area shape="rect" id="node6" href="$classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="1664,108,1823,135"/>
+<area shape="rect" id="node7" href="$classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="1871,101,2076,142"/>
+<area shape="rect" id="node10" href="$classCleverOptimize.html#a4b53de9bec3e3bbfd176ab68562a0df6" title="CleverOptimize::bfs" alt="" coords="415,208,550,235"/>
+<area shape="rect" id="node11" href="$classColumnGenSolve.html#a96cbeba5fb978bb67e32b8f42ba161fe" title="ColumnGenSolve::dfsEdge" alt="" coords="672,157,848,184"/>
+<area shape="rect" id="node12" href="$classColumnGenSolve.html#a6c08d317e692a357d49ee56184a9db22" title="ColumnGenSolve::removeNonCuts" alt="" coords="921,145,1141,172"/>
+<area shape="rect" id="node13" href="$classCleverOptimize.html#a616cb7ecce678bca75c693230c7415ce" title="CleverOptimize::getMap" alt="" coords="403,376,563,403"/>
+<area shape="rect" id="node14" href="$BitMatrix_8cpp.html#ab6451c309fb63e3ef335e931f5918834" title="operator\&lt;\&lt;" alt="" coords="440,427,525,453"/>
+<area shape="rect" id="node15" href="$classColumnGenSolve.html#a6dc294df38e9aa3160f435bd527f2f20" title="ColumnGenSolve::parDijkstra" alt="" coords="387,477,578,504"/>
+<area shape="rect" id="node17" href="$classColumnGenSolve.html#a9f9ca7d65c0e42d18ea422ff136d52d0" title="ColumnGenSolve::suggestTree" alt="" coords="931,433,1131,460"/>
+<area shape="rect" id="node18" href="$classColumnGenSolve.html#ac6a085a6c1704afde58891f19d1acf78" title="ColumnGenSolve::treeBranches" alt="" coords="657,604,863,631"/>
+<area shape="rect" id="node21" href="$classColumnGenSolve.html#a57004ff3ac6bffa4f19fa5838a851a25" title="ColumnGenSolve::treeDFSBranches" alt="" coords="367,579,599,605"/>
+<area shape="rect" id="node22" href="$classColumnGenSolve.html#a39be14a210fccecb512a754e1a359861" title="ColumnGenSolve::treeDFSGet\lBranches" alt="" coords="383,310,582,351"/>
+<area shape="rect" id="node23" href="$classColumnGenSolve.html#acbcc78e94e4a6e59ceb7da2357ddb87a" title="ColumnGenSolve::treeGetBranches" alt="" coords="647,288,873,315"/>
+<area shape="rect" id="node16" href="$classColumnGenSolve.html#a97e581fdab12a396fd173b030ec26bec" title="ColumnGenSolve::parDijkstraInit" alt="" coords="656,477,864,504"/>
+<area shape="rect" id="node19" href="$classColumnGenSolve.html#ae971ef7c0098fd33bea1701fbfe92f4f" title="ColumnGenSolve::treeIsCut" alt="" coords="941,604,1122,631"/>
+<area shape="rect" id="node20" href="$classColumnGenSolve.html#ad5a36333d83b1a1803eb582c9a0a9941" title="ColumnGenSolve::removeNonCuts" alt="" coords="1189,604,1409,631"/>
+</map>

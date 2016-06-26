@@ -1,0 +1,511 @@
+\hypertarget{classCleverOptimize}{}\section{Clever\+Optimize类 参考}
+\label{classCleverOptimize}\index{Clever\+Optimize@{Clever\+Optimize}}
+
+
+{\ttfamily \#include \char`\"{}Clever\+Optimize.\+h\char`\"{}}
+
+
+
+类 Clever\+Optimize 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classCleverOptimize__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Clever\+Optimize 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCleverOptimize__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSolution}{Solution} \hyperlink{classCleverOptimize_ab3cc46af7f8e30d264c2f737870ab9e6}{optimize} (const \hyperlink{classSolution}{Solution} \&\hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution}) const 
+\item 
+\hyperlink{classCleverOptimize_a84307b644b9fafa57d21042e02e9cdd3}{Clever\+Optimize} (\hyperlink{classSolver}{Solver} $\ast$solver\+\_\+)
+\item 
+virtual \hyperlink{classOptimizeStrategy}{Optimize\+Strategy} $\ast$ \hyperlink{classCleverOptimize_a64e5717a9e8090ccf6aecd185fbc9054}{clone} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCleverOptimize_a4b53de9bec3e3bbfd176ab68562a0df6}{bfs} (const \hyperlink{classPoint}{Point} \&start, \hyperlink{classBitMatrix}{Bit\+Matrix} \&\+\_\+map, \hyperlink{classBitMatrix}{Bit\+Matrix} \&\+\_\+compute\+Map, const \hyperlink{classSolution}{Solution} \&temp) const 
+\item 
+void \hyperlink{classCleverOptimize_ad4df8b31e69546d22b2066d33ef57c81}{backtrace} (const \hyperlink{classPoint}{Point} \&start, \hyperlink{classBitMatrix}{Bit\+Matrix} \&\hyperlink{classes_8txt_a0a12e395730487ab04f7f11cbc4d2132}{map}, \hyperlink{classMatrix}{Matrix}$<$ int $>$ \&visited, const \hyperlink{classPoint}{Point} \&end, int step) const 
+\item 
+int \hyperlink{classCleverOptimize_ac1cf58abb7c91bbabffde680d06226af}{get\+Last\+Direction} (const int k) const 
+\item 
+void \hyperlink{classCleverOptimize_a616cb7ecce678bca75c693230c7415ce}{get\+Map} (\hyperlink{classBitMatrix}{Bit\+Matrix} \&\+\_\+map, const \hyperlink{classPoint}{Point} \&start, \hyperlink{classBitMatrix}{Bit\+Matrix} \&\+\_\+origin\+Map) const 
+\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+
+
+在文件 Clever\+Optimize.\+h 第 6 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Clever\+Optimize@{Clever\+Optimize}!Clever\+Optimize@{Clever\+Optimize}}
+\index{Clever\+Optimize@{Clever\+Optimize}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{Clever\+Optimize(\+Solver $\ast$solver\+\_\+)}{CleverOptimize(Solver *solver_)}}]{\setlength{\rightskip}{0pt plus 5cm}Clever\+Optimize\+::\+Clever\+Optimize (
+\begin{DoxyParamCaption}
+\item[{{\bf Solver} $\ast$}]{solver\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCleverOptimize_a84307b644b9fafa57d21042e02e9cdd3}{}\label{classCleverOptimize_a84307b644b9fafa57d21042e02e9cdd3}
+
+
+在文件 Clever\+Optimize.\+h 第 15 行定义.
+
+
+
+参考 clone().
+
+
+\begin{DoxyCode}
+15 : \hyperlink{classOptimizeStrategy_a4d2e0bc2a8590dd000428896bc26b7f0}{OptimizeStrategy}(solver\_)\{\}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCleverOptimize_a84307b644b9fafa57d21042e02e9cdd3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{成员函数说明}
+\index{Clever\+Optimize@{Clever\+Optimize}!backtrace@{backtrace}}
+\index{backtrace@{backtrace}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{backtrace(const Point \&start, Bit\+Matrix \&map, Matrix$<$ int $>$ \&visited, const Point \&end, int step) const }{backtrace(const Point &start, BitMatrix &map, Matrix< int > &visited, const Point &end, int step) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Clever\+Optimize\+::backtrace (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{start, }
+\item[{{\bf Bit\+Matrix} \&}]{map, }
+\item[{{\bf Matrix}$<$ int $>$ \&}]{visited, }
+\item[{const {\bf Point} \&}]{end, }
+\item[{int}]{step}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCleverOptimize_ad4df8b31e69546d22b2066d33ef57c81}{}\label{classCleverOptimize_ad4df8b31e69546d22b2066d33ef57c81}
+
+
+在文件 Clever\+Optimizie.\+cpp 第 204 行定义.
+
+
+
+参考 Bit\+Matrix\+::height, Bit\+Matrix\+::set(), X, Point\+::x, Y , 以及 Point\+::y.
+
+
+\begin{DoxyCode}
+205 \{
+206     \hyperlink{classPoint}{Point} currentPoint = end;
+207     \textcolor{keywordflow}{while} (currentPoint != start)
+208     \{
+209         step = step - 1;
+210         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <= 4;++i)
+211         \{
+212             \textcolor{keywordtype}{int} currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[i] + currentPoint.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x};
+213             \textcolor{keywordtype}{int} currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[i] + currentPoint.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y};
+214             \textcolor{keywordflow}{if} (currenty >= 0 && currenty < map.width && currentx >= 0 && currentx < map.
+      \hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height})
+215             \{
+216                 \textcolor{keywordflow}{if} (visited[currentx][currenty] == step)
+217                 \{
+218                     currentPoint = \hyperlink{classPoint}{Point}(currentx,currenty);
+219                     map.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(currentx,currenty);
+220                     \textcolor{keywordflow}{break};
+221                 \}
+222             \}
+223         \}
+224     \}
+225 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCleverOptimize_ad4df8b31e69546d22b2066d33ef57c81_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Clever\+Optimize@{Clever\+Optimize}!bfs@{bfs}}
+\index{bfs@{bfs}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{bfs(const Point \&start, Bit\+Matrix \&\+\_\+map, Bit\+Matrix \&\+\_\+compute\+Map, const Solution \&temp) const }{bfs(const Point &start, BitMatrix &_map, BitMatrix &_computeMap, const Solution &temp) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Clever\+Optimize\+::bfs (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{start, }
+\item[{{\bf Bit\+Matrix} \&}]{\+\_\+map, }
+\item[{{\bf Bit\+Matrix} \&}]{\+\_\+compute\+Map, }
+\item[{const {\bf Solution} \&}]{temp}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCleverOptimize_a4b53de9bec3e3bbfd176ab68562a0df6}{}\label{classCleverOptimize_a4b53de9bec3e3bbfd176ab68562a0df6}
+
+
+在文件 Clever\+Optimizie.\+cpp 第 156 行定义.
+
+
+
+参考 Solution\+::board, Bit\+Matrix\+::get(), Bit\+Matrix\+::height, Board\+::map, Solution\+::map, Matrix$<$ T $>$\+::resize(), Bit\+Matrix\+::width, X, Point\+::x, Y , 以及 Point\+::y.
+
+
+\begin{DoxyCode}
+157 \{
+158     \hyperlink{classMatrix}{Matrix<int>} visited;
+159     list<Point> waitingPoints;
+160     waitingPoints.push\_back(start);
+161     visited.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(\_map.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height},\_map.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width});
+162     visited[start.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}][start.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}] = 1;
+163     \textcolor{keywordtype}{bool} find = \textcolor{keyword}{false};
+164     \textcolor{keywordtype}{int} step = 1;
+165     \textcolor{keywordflow}{while} (!waitingPoints.empty() && !find)
+166     \{
+167         \hyperlink{classPoint}{Point} currentPoint = waitingPoints.front();
+168         waitingPoints.pop\_front();
+169         step = visited[currentPoint.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}][currentPoint.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}] + 1;
+170         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <= 4;++i)
+171         \{
+172             \textcolor{keywordtype}{int} currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[i] + currentPoint.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x};
+173             \textcolor{keywordtype}{int} currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[i] + currentPoint.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y};
+174                 \textcolor{keywordflow}{if} (currenty >= 0 && currenty < 
+175                     \_map.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width} && currentx >= 0 && currentx < \_map.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height})
+176                 \textcolor{keywordflow}{if} (!visited[currentx][currenty] && !(temp.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[currentx][currenty] == -1) 
+177                     && ((\_map.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(currentx,currenty)^(temp.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[currentx][currenty] > 0)) == 0))
+178                 \{
+179                     \textcolor{comment}{// cout<<currentx<<"now"<<currenty<<endl;}
+180                     visited[currentx][currenty] = step;
+181                     waitingPoints.push\_back(\hyperlink{classPoint}{Point}(currentx,currenty));
+182                     \textcolor{keywordflow}{if} (\_computedMap.get(currentx,currenty) == 1)
+183                     \{
+184                         \textcolor{comment}{// cout<<"true"<<currentx<<' '<<currenty<<endl;}
+185                         \textcolor{comment}{// cout<<"currentPoint"<<currentPoint.x<<' '<<currentPoint.y<<endl;}
+186                         find  = \textcolor{keyword}{true};
+187                         \textcolor{comment}{// cout<<"bfs completed"<<endl;}
+188                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < \_map.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width}; ++i)
+189                         \{
+190                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < \_map.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height}; ++j)
+191                                 cout<<visited[i][j]<<\textcolor{charliteral}{' '};
+192                             \textcolor{comment}{// cout<<endl;}
+193                         \}
+194                         \hyperlink{classCleverOptimize_ad4df8b31e69546d22b2066d33ef57c81}{backtrace}(start,\_map,visited,\hyperlink{classPoint}{Point}(currentx,currenty),step);
+195                         \textcolor{comment}{// cout<<\_map<<endl;}
+196                         find = \textcolor{keyword}{true};
+197                         \textcolor{keywordflow}{break};
+198                     \}
+199                 \}
+200         \}
+201     \}
+202 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCleverOptimize_a4b53de9bec3e3bbfd176ab68562a0df6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Clever\+Optimize@{Clever\+Optimize}!clone@{clone}}
+\index{clone@{clone}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{clone() const }{clone() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Optimize\+Strategy} $\ast$ Clever\+Optimize\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCleverOptimize_a64e5717a9e8090ccf6aecd185fbc9054}{}\label{classCleverOptimize_a64e5717a9e8090ccf6aecd185fbc9054}
+
+
+实现了 \hyperlink{classOptimizeStrategy_a3cf14f98ef8800d2e6c67ddd610edcbd}{Optimize\+Strategy}.
+
+
+
+在文件 Clever\+Optimizie.\+cpp 第 227 行定义.
+
+
+
+参考自 Clever\+Optimize().
+
+
+\begin{DoxyCode}
+228 \{
+229     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classCleverOptimize_a84307b644b9fafa57d21042e02e9cdd3}{CleverOptimize}(*\textcolor{keyword}{this});
+230 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCleverOptimize_a64e5717a9e8090ccf6aecd185fbc9054_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Clever\+Optimize@{Clever\+Optimize}!get\+Last\+Direction@{get\+Last\+Direction}}
+\index{get\+Last\+Direction@{get\+Last\+Direction}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{get\+Last\+Direction(const int k) const }{getLastDirection(const int k) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Clever\+Optimize\+::get\+Last\+Direction (
+\begin{DoxyParamCaption}
+\item[{const int}]{k}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCleverOptimize_ac1cf58abb7c91bbabffde680d06226af}{}\label{classCleverOptimize_ac1cf58abb7c91bbabffde680d06226af}
+
+
+在文件 Clever\+Optimizie.\+cpp 第 116 行定义.
+
+
+\begin{DoxyCode}
+117 \{
+118     \textcolor{keywordflow}{if} (k == 1) \textcolor{keywordflow}{return} 3;
+119     \textcolor{keywordflow}{if} (k == 2) \textcolor{keywordflow}{return} 4;
+120     \textcolor{keywordflow}{if} (k == 3) \textcolor{keywordflow}{return} 1;
+121     \textcolor{keywordflow}{if} (k == 4) \textcolor{keywordflow}{return} 2;
+122     \textcolor{keywordflow}{return} 0;
+123 \}
+\end{DoxyCode}
+\index{Clever\+Optimize@{Clever\+Optimize}!get\+Map@{get\+Map}}
+\index{get\+Map@{get\+Map}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{get\+Map(\+Bit\+Matrix \&\+\_\+map, const Point \&start, Bit\+Matrix \&\+\_\+origin\+Map) const }{getMap(BitMatrix &_map, const Point &start, BitMatrix &_originMap) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Clever\+Optimize\+::get\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Matrix} \&}]{\+\_\+map, }
+\item[{const {\bf Point} \&}]{start, }
+\item[{{\bf Bit\+Matrix} \&}]{\+\_\+origin\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCleverOptimize_a616cb7ecce678bca75c693230c7415ce}{}\label{classCleverOptimize_a616cb7ecce678bca75c693230c7415ce}
+
+
+在文件 Clever\+Optimizie.\+cpp 第 125 行定义.
+
+
+
+参考 Bit\+Matrix\+::get(), Bit\+Matrix\+::height, Matrix$<$ T $>$\+::resize(), Bit\+Matrix\+::set(), Bit\+Matrix\+::width, X, Point\+::x, Y , 以及 Point\+::y.
+
+
+\begin{DoxyCode}
+126 \{
+127     \hyperlink{classMatrix}{Matrix<int>} visited;
+128     visited.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(\_map.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height},\_map.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width});
+129     list<Point> waitingPoints;
+130     waitingPoints.push\_back(start);
+131     visited[start.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}][start.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}] = 1;
+132     \textcolor{comment}{// cout<<start.x<<' '<<start.y<<endl;}
+133     \_map.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(start.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x},start.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y});
+134     \textcolor{comment}{// cout<<"start"<<\_map<<endl;}
+135     \textcolor{keywordflow}{while} (!waitingPoints.empty())
+136     \{
+137         \hyperlink{classPoint}{Point} currentPoint = waitingPoints.front();
+138         waitingPoints.pop\_front();
+139         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <= 4;++i)
+140         \{
+141             \textcolor{keywordtype}{int} currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[i] + currentPoint.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x};
+142             \textcolor{keywordtype}{int} currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[i] + currentPoint.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y};
+143             \textcolor{keywordflow}{if} (currenty >= 0 && currenty < \_map.width && currentx >= 0 && currentx < \_map.
+      \hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height})
+144             \{
+145                 \textcolor{keywordflow}{if} (!visited[currentx][currenty] && \_originMap.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(currentx,currenty) == 1)
+146                 \{
+147                     waitingPoints.push\_back(\hyperlink{classPoint}{Point}(currentx,currenty));
+148                     \_map.\hyperlink{classBitMatrix_ad26dd2e93e9d24d70834d6d79e29c81e}{set}(currentx,currenty);
+149                     visited[currentx][currenty] = 1;
+150                 \}
+151             \}
+152         \}
+153     \}
+154 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCleverOptimize_a616cb7ecce678bca75c693230c7415ce_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Clever\+Optimize@{Clever\+Optimize}!optimize@{optimize}}
+\index{optimize@{optimize}!Clever\+Optimize@{Clever\+Optimize}}
+\subsubsection[{\texorpdfstring{optimize(const Solution \&solution) const }{optimize(const Solution &solution) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} Clever\+Optimize\+::optimize (
+\begin{DoxyParamCaption}
+\item[{const {\bf Solution} \&}]{solution}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCleverOptimize_ab3cc46af7f8e30d264c2f737870ab9e6}{}\label{classCleverOptimize_ab3cc46af7f8e30d264c2f737870ab9e6}
+
+
+实现了 \hyperlink{classOptimizeStrategy_a2ac1b1c33fa54a59e6f3a9daffcbf4eb}{Optimize\+Strategy}.
+
+
+
+在文件 Clever\+Optimizie.\+cpp 第 10 行定义.
+
+
+
+参考 Solution\+::board, Solution\+::compute\+Map(), Board\+::map, Solution\+::trees, X, Point\+::x, Y , 以及 Point\+::y.
+
+
+
+参考自 T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+11 \{
+12     \hyperlink{classSolution}{Solution} temp(solution);
+13     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 1;i < temp.trees.size();++i)
+14     \{
+15         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} j = 0;j < temp.trees[i]->terminalSet->points.size();++j)
+16         \{
+17             \textcolor{keywordtype}{int} degree = 0,lastDirection = 0;
+18             \textcolor{keywordtype}{bool} noNeedToChange = \textcolor{keyword}{true};
+19             \hyperlink{classPoint}{Point} currentPoint(temp.trees[i]->terminalSet->points[j].x,temp.trees[i]->terminalSet->
+      points[j].y);
+20             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 1;k <= 4; ++k)
+21             \{
+22                 \textcolor{comment}{// cout<<currentPoint.x<<currentPoint.y<<endl;  }
+23                 \textcolor{keywordtype}{int} currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[k] + currentPoint.x;
+24                 \textcolor{keywordtype}{int} currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[k] + currentPoint.y;
+25                 \textcolor{comment}{// cout<<"cur"<<currentx<<currenty<<endl;}
+26                 \textcolor{keywordflow}{if} (currenty >= 0 && currenty < temp.trees[i]->map.width && currentx >= 0 && currentx < 
+      temp.trees[i]->map.height)
+27                 \{
+28                     \textcolor{keywordflow}{if} (temp.trees[i]->map.get(currentx,currenty) == 1) 
+29                     \{
+30                         vector<Point>  resetedPoints;
+31                         lastDirection = k;
+32                         \textcolor{comment}{// cout<<k<<' '<<currentPoint.x<<' '<<currentPoint.y<<endl;}
+33                         \hyperlink{classPoint}{Point} tempPoint(currentx,currenty);
+34                         \textcolor{keywordflow}{while} (degree <= 2)
+35                         \{
+36                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} u = 1;u <= 4; ++u)
+37                             \{
+38                                 currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[u] + tempPoint.x;
+39                                 currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[u] + tempPoint.y;
+40                                 \textcolor{keywordflow}{if} (currenty >= 0 && currenty < temp.trees[i]->map.width && currentx >= 0 
+      && currentx < temp.trees[i]->map.height)
+41                                 \{
+42                                     \textcolor{keywordflow}{if} (temp.trees[i]->map.get(currentx,currenty) == 1 
+43                                     && !(temp.board->map[currentx][currenty] > 0)) 
+44                                     \{
+45                                         \textcolor{keywordflow}{if} (u != \hyperlink{classCleverOptimize_ac1cf58abb7c91bbabffde680d06226af}{getLastDirection}(lastDirection))
+46                                         \{
+47                                             degree++;
+48                                             \textcolor{comment}{// cout<<tempPoint.x<<' '<<tempPoint.y<<' '<<currentx<<'
+       '<<currenty<<endl;}
+49                                         \}
+50                                     \}
+51                                 \}
+52                             \}
+53                             \textcolor{comment}{// cout<<"degree : "<<degree<<endl;}
+54                             \textcolor{keywordflow}{if} (degree >= 2)
+55                             \{
+56                                 noNeedToChange = \textcolor{keyword}{false};
+57                                 \textcolor{keywordflow}{break};
+58                             \}
+59                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (degree == 0) \textcolor{keywordflow}{break};
+60                             \textcolor{keywordflow}{else}
+61                             \{
+62                                 \textcolor{keywordflow}{if} (temp.board->map[tempPoint.x][tempPoint.y] != 0) \textcolor{keywordflow}{break};
+63                                 temp.trees[i]->map.reset(tempPoint.x,tempPoint.y);
+64                                 temp.computeMap();
+65                                 resetedPoints.push\_back(tempPoint);
+66                                 degree = 0;
+67                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} u = 1;u <= 4; ++u)
+68                                 \{
+69                                     currentx = \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[u] + tempPoint.x;
+70                                     currenty = \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[u] + tempPoint.y;
+71                                     \textcolor{keywordflow}{if} (currenty >= 0 && currenty < temp.trees[i]->map.width && currentx >=
+       0 && currentx < temp.trees[i]->map.height)
+72                                     \{
+73                                         \textcolor{keywordflow}{if} (temp.trees[i]->map.get(currentx,currenty) == 1) 
+74                                         \{
+75                                             \textcolor{comment}{// cout<<u<<' '<<lastDirection<<endl;}
+76                                             \textcolor{keywordflow}{if} (u != \hyperlink{classCleverOptimize_ac1cf58abb7c91bbabffde680d06226af}{getLastDirection}(lastDirection))
+77                                             \{
+78                                                 lastDirection = u;
+79                                                 \textcolor{keywordflow}{break};
+80                                             \}
+81                                         \}
+82                                     \}
+83                                 \}
+84                                 tempPoint.x += \hyperlink{CleverOptimizie_8cpp_a34adaf40bb2f109e151ba28ccc73c677}{X}[lastDirection];
+85                                 tempPoint.y += \hyperlink{CleverOptimizie_8cpp_a86f15c23d2ab23bfebe784c368885663}{Y}[lastDirection];
+86                             \}
+87                             \textcolor{comment}{// cout<<i<<' '<<j<<' '<<degree<<endl;}
+88                         \}
+89                         \textcolor{keywordflow}{if} (!noNeedToChange)
+90                         \{
+91                             \textcolor{comment}{// cout<<temp<<endl;}
+92                             \hyperlink{classBitMatrix}{BitMatrix} \_map(temp.trees[i]->map.height,temp.trees[i]->map.width);
+93                             \hyperlink{classCleverOptimize_a616cb7ecce678bca75c693230c7415ce}{getMap}(\_map,tempPoint,temp.trees[i]->map);
+94                             \textcolor{comment}{// cout<<\_map;}
+95                             \hyperlink{classCleverOptimize_a4b53de9bec3e3bbfd176ab68562a0df6}{bfs}(temp.trees[i]->terminalSet->points[j],temp.trees[i]->map,\_map,temp);
+96                             temp.computeMap();
+97                             \textcolor{comment}{// cout<<temp.trees[i]->map<<endl;}
+98                             \textcolor{comment}{// cout<<temp<<endl;}
+99                         \}
+100                         \textcolor{keywordflow}{else}
+101                         \{
+102                             \textcolor{comment}{// cout<<"reseting..."<<endl;}
+103                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} u = 0;u < resetedPoints.size();++u)
+104                                 temp.trees[i]->map.set(resetedPoints[u].x,resetedPoints[u].y);
+105                             temp.computeMap();
+106                         \}
+107                         \textcolor{comment}{// cout<<temp<<endl;}
+108                     \}
+109                 \}
+110             \}   
+111         \}
+112     \}
+113     \textcolor{keywordflow}{return} temp;
+114 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCleverOptimize_ab3cc46af7f8e30d264c2f737870ab9e6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCleverOptimize_ab3cc46af7f8e30d264c2f737870ab9e6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{CleverOptimize_8h}{Clever\+Optimize.\+h}\item 
+src/\hyperlink{CleverOptimizie_8cpp}{Clever\+Optimizie.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,196 @@
+\hypertarget{classTest}{}\section{Test类 参考}
+\label{classTest}\index{Test@{Test}}
+
+
+{\ttfamily \#include \char`\"{}test.\+h\char`\"{}}
+
+
+
+Test 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classTest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classTest_ac9dcc51f46141d9ed1e8206ca0011b8c}{$\sim$\+Test} ()
+\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classTest_a50697b06fcd7021c126a5bceceb6757c}{run\+Tests} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTest_a8a7783520b34172d4c6a2722c1a5c0d5}{Test} (const char $\ast$name\+\_\+)
+\item 
+virtual void \hyperlink{classTest_a203ca6c43b72403db54c8bdffb6efae9}{run} () const  =0
+\end{DoxyCompactItemize}
+\subsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \hyperlink{classTest_a55a121f22f5a6365a27758307c0340fa}{name}
+\end{DoxyCompactItemize}
+\subsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTest}{Test} \& \hyperlink{classTest_a8952e21f4fe561f61fdc501a917a8aed}{operator=} (const \hyperlink{classTest}{Test} \&)
+\end{DoxyCompactItemize}
+\subsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classVector}{Vector}$<$ \hyperlink{classTest}{Test} $\ast$ $>$ \hyperlink{classTest_ad03939a08980e2a62dd1d1cbcb13914c}{tests}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 test.\+h 第 6 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Test@{Test}!Test@{Test}}
+\index{Test@{Test}!Test@{Test}}
+\subsubsection[{\texorpdfstring{Test(const char $\ast$name\+\_\+)}{Test(const char *name_)}}]{\setlength{\rightskip}{0pt plus 5cm}Test\+::\+Test (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classTest_a8a7783520b34172d4c6a2722c1a5c0d5}{}\label{classTest_a8a7783520b34172d4c6a2722c1a5c0d5}
+
+
+在文件 test.\+h 第 12 行定义.
+
+
+\begin{DoxyCode}
+12                            : \hyperlink{classTest_a55a121f22f5a6365a27758307c0340fa}{name}(name\_)
+13     \{
+14         \hyperlink{classTest_ad03939a08980e2a62dd1d1cbcb13914c}{tests}.push\_back(\textcolor{keyword}{this});
+15     \}
+\end{DoxyCode}
+\index{Test@{Test}!````~Test@{$\sim$\+Test}}
+\index{````~Test@{$\sim$\+Test}!Test@{Test}}
+\subsubsection[{\texorpdfstring{$\sim$\+Test()}{~Test()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Test\+::$\sim$\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classTest_ac9dcc51f46141d9ed1e8206ca0011b8c}{}\label{classTest_ac9dcc51f46141d9ed1e8206ca0011b8c}
+
+
+在文件 test.\+h 第 19 行定义.
+
+
+
+参考 run\+Tests().
+
+
+\begin{DoxyCode}
+19 \{\}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classTest_ac9dcc51f46141d9ed1e8206ca0011b8c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{成员函数说明}
+\index{Test@{Test}!operator=@{operator=}}
+\index{operator=@{operator=}!Test@{Test}}
+\subsubsection[{\texorpdfstring{operator=(const Test \&)}{operator=(const Test &)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Test}\& Test\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Test} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classTest_a8952e21f4fe561f61fdc501a917a8aed}{}\label{classTest_a8952e21f4fe561f61fdc501a917a8aed}
+\index{Test@{Test}!run@{run}}
+\index{run@{run}!Test@{Test}}
+\subsubsection[{\texorpdfstring{run() const  =0}{run() const  =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Test\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classTest_a203ca6c43b72403db54c8bdffb6efae9}{}\label{classTest_a203ca6c43b72403db54c8bdffb6efae9}
+\index{Test@{Test}!run\+Tests@{run\+Tests}}
+\index{run\+Tests@{run\+Tests}!Test@{Test}}
+\subsubsection[{\texorpdfstring{run\+Tests()}{runTests()}}]{\setlength{\rightskip}{0pt plus 5cm}void Test\+::run\+Tests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classTest_a50697b06fcd7021c126a5bceceb6757c}{}\label{classTest_a50697b06fcd7021c126a5bceceb6757c}
+
+
+在文件 test.\+cpp 第 5 行定义.
+
+
+
+参考 tests.
+
+
+
+参考自 main() , 以及 $\sim$\+Test().
+
+
+\begin{DoxyCode}
+6 \{
+7     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} test: \hyperlink{classTest_ad03939a08980e2a62dd1d1cbcb13914c}{tests})
+8     \{
+9         cout << \textcolor{stringliteral}{"Running test "} << test->name << \textcolor{stringliteral}{"\(\backslash\)n"};
+10         \textcolor{keyword}{auto} clkBegin = clock();
+11         test->run();
+12         \textcolor{keyword}{auto} clkEnd = clock();
+13         cout << \textcolor{stringliteral}{"Test "} << test->name << \textcolor{stringliteral}{" finished in "}
+14             << (double) (clkEnd - clkBegin) / CLOCKS\_PER\_SEC << \textcolor{stringliteral}{" seconds.\(\backslash\)n"};
+15     \}
+16 \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classTest_a50697b06fcd7021c126a5bceceb6757c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{类成员变量说明}
+\index{Test@{Test}!name@{name}}
+\index{name@{name}!Test@{Test}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const Test\+::name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classTest_a55a121f22f5a6365a27758307c0340fa}{}\label{classTest_a55a121f22f5a6365a27758307c0340fa}
+
+
+在文件 test.\+h 第 16 行定义.
+
+\index{Test@{Test}!tests@{tests}}
+\index{tests@{tests}!Test@{Test}}
+\subsubsection[{\texorpdfstring{tests}{tests}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<$ {\bf Test} $\ast$ $>$ Test\+::tests\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classTest_ad03939a08980e2a62dd1d1cbcb13914c}{}\label{classTest_ad03939a08980e2a62dd1d1cbcb13914c}
+
+
+在文件 test.\+h 第 9 行定义.
+
+
+
+参考自 run\+Tests().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{test_8h}{test.\+h}\item 
+src/\hyperlink{test_8cpp}{test.\+cpp}\end{DoxyCompactItemize}

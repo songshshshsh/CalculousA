@@ -1,0 +1,11 @@
+<map id="BitMatrix::resize" name="BitMatrix::resize">
+<area shape="rect" id="node2" href="$classBitMatrix.html#ab15c012d5aa86228f2cf19e758fed178" title="BitMatrix::BitMatrix" alt="" coords="217,5,351,32"/>
+<area shape="rect" id="node3" href="$classColumnGenSolve.html#a9f9ca7d65c0e42d18ea422ff136d52d0" title="ColumnGenSolve::suggestTree" alt="" coords="455,81,655,108"/>
+<area shape="rect" id="node4" href="$classTree.html#a7c8567f1cd838f15d83f312edcf571d3" title="Tree::Tree" alt="" coords="244,107,324,133"/>
+<area shape="rect" id="node5" href="$classColumnGenSolve.html#acbcc78e94e4a6e59ceb7da2357ddb87a" title="ColumnGenSolve::treeGetBranches" alt="" coords="171,157,397,184"/>
+<area shape="rect" id="node6" href="$classColumnGenSolve.html#a6c08d317e692a357d49ee56184a9db22" title="ColumnGenSolve::removeNonCuts" alt="" coords="445,157,665,184"/>
+<area shape="rect" id="node7" href="$classColumnGenSolve.html#a4ec729b2184612495e657f7ec2d644fa" title="ColumnGenSolve::suggestTree" alt="" coords="713,157,913,184"/>
+<area shape="rect" id="node8" href="$classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="961,157,1120,184"/>
+<area shape="rect" id="node9" href="$classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="1168,157,1327,184"/>
+<area shape="rect" id="node10" href="$classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="1375,150,1580,191"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SolveStrategy" name="SolveStrategy">
+<area shape="rect" id="node2" href="$classColumnGenSolve.html" title="{ColumnGenSolve\n|+ M\l# THREAD_CNT\l# threads\l# paramsList\l# parDijkstraInitRes\l|+ ColumnGenSolve()\l+ ~ColumnGenSolve()\l+ solve()\l+ clone()\l# route()\l# solveLP()\l# dijkstra()\l# suggestTree()\l# suggestTree()\l# dfsEdge()\l# dfsFather()\l# removeNonCuts()\l# removeNonCuts()\l# pushTreeSet()\l# treeBranches()\l# treeDFSBranches()\l# treeGetBranches()\l# treeDFSGetBranches()\l# treeIsCut()\l# sync()\l# parDijkstraAtExit()\l# parDijkstra()\l# parDijkstraInit()\l}" alt="" coords="5,175,171,633"/>
+<area shape="rect" id="node3" href="$classDACSolve.html" title="{DACSolve\n|+ subSolve\l|+ DACSolve()\l+ ~DACSolve()\l+ solve()\l+ clone()\l# divide()\l}" alt="" coords="195,336,303,472"/>
+<area shape="rect" id="node4" href="$classStupidSolve.html" title="{StupidSolve\n||+ StupidSolve()\l+ ~StupidSolve()\l+ solve()\l+ clone()\l}" alt="" coords="327,343,446,465"/>
+</map>
