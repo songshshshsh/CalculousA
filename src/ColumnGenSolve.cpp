@@ -323,7 +323,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		
 		// Output current colution info
-		if(n * m >= 20000)
+		if(n * m >= 20)
 		{
 			cout << "iteration " << T << "\n";
 			cout << "current time: "
@@ -334,7 +334,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				cout << treeset.size() << " ";
 			cout << "\n";
 			cout.flush();
-			if(n * m >= 80000)
+			if(n * m >= 80)
 			{
 				Solution solution;
 				solution.board = solver->board;

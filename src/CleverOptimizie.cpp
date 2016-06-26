@@ -9,9 +9,13 @@ static const int Y[] = {0,0,1,0,-1};
 
 Solution CleverOptimize::optimize(const Solution& solution) const 
 {
+	cout << "paole\n";
+	cout.flush();
 	Solution temp(solution);
 	for (unsigned i = 1;i < temp.trees.size();++i)
 	{
+		if(temp.trees[i] == NULL)
+			continue;
 		for (unsigned j = 0;j < temp.trees[i]->terminalSet->points.size();++j)
 		{
 			int degree = 0,lastDirection = 0;
@@ -19,17 +23,14 @@ Solution CleverOptimize::optimize(const Solution& solution) const
 			Point currentPoint(temp.trees[i]->terminalSet->points[j].x,temp.trees[i]->terminalSet->points[j].y);
 			for (int k = 1;k <= 4; ++k)
 			{
-				// cout<<currentPoint.x<<currentPoint.y<<endl;	
 				int currentx = X[k] + currentPoint.x;
 				int currenty = Y[k] + currentPoint.y;
-				// cout<<"cur"<<currentx<<currenty<<endl;
 				if (currenty >= 0 && currenty < temp.trees[i]->map.width && currentx >= 0 && currentx < temp.trees[i]->map.height)
 				{
 					if (temp.trees[i]->map.get(currentx,currenty) == 1) 
 					{
 						vector<Point>  resetedPoints;
 						lastDirection = k;
-						// cout<<k<<' '<<currentPoint.x<<' '<<currentPoint.y<<endl;
 						Point tempPoint(currentx,currenty);
 						while (degree <= 2)
 						{
@@ -45,12 +46,10 @@ Solution CleverOptimize::optimize(const Solution& solution) const
 										if (u != getLastDirection(lastDirection))
 										{
 											degree++;
-											// cout<<tempPoint.x<<' '<<tempPoint.y<<' '<<currentx<<' '<<currenty<<endl;
 										}
 									}
 								}
 							}
-							// cout<<"degree : "<<degree<<endl;
 							if (degree >= 2)
 							{
 								noNeedToChange = false;
@@ -72,7 +71,6 @@ Solution CleverOptimize::optimize(const Solution& solution) const
 									{
 										if (temp.trees[i]->map.get(currentx,currenty) == 1) 
 										{
-											// cout<<u<<' '<<lastDirection<<endl;
 											if (u != getLastDirection(lastDirection))
 											{
 												lastDirection = u;
@@ -84,27 +82,20 @@ Solution CleverOptimize::optimize(const Solution& solution) const
 								tempPoint.x += X[lastDirection];
 								tempPoint.y += Y[lastDirection];
 							}
-							// cout<<i<<' '<<j<<' '<<degree<<endl;
 						}
 						if (!noNeedToChange)
 						{
-							// cout<<temp<<endl;
 							BitMatrix _map(temp.trees[i]->map.height,temp.trees[i]->map.width);
 							getMap(_map,tempPoint,temp.trees[i]->map);
-							// cout<<_map;
 							bfs(temp.trees[i]->terminalSet->points[j],temp.trees[i]->map,_map,temp);
 							temp.computeMap();
-							// cout<<temp.trees[i]->map<<endl;
-							// cout<<temp<<endl;
 						}
 						else
 						{
-							// cout<<"reseting..."<<endl;
 							for (unsigned int u = 0;u < resetedPoints.size();++u)
 								temp.trees[i]->map.set(resetedPoints[u].x,resetedPoints[u].y);
 							temp.computeMap();
 						}
-						// cout<<temp<<endl;
 					}
 				}
 			}	
@@ -129,9 +120,7 @@ void CleverOptimize::getMap(BitMatrix& _map,const Point& start,BitMatrix& _origi
 	list<Point> waitingPoints;
 	waitingPoints.push_back(start);
 	visited[start.x][start.y] = 1;
-	// cout<<start.x<<' '<<start.y<<endl;
 	_map.set(start.x,start.y);
-	// cout<<"start"<<_map<<endl;
 	while (!waitingPoints.empty())
 	{
 		Point currentPoint = waitingPoints.front();
@@ -176,23 +165,12 @@ void CleverOptimize::bfs(const Point& start,BitMatrix& _map,BitMatrix& _computed
 				if (!visited[currentx][currenty] && !(temp.board->map[currentx][currenty] == -1) 
 					&& ((_map.get(currentx,currenty)^(temp.map[currentx][currenty] > 0)) == 0))
 				{
-					// cout<<currentx<<"now"<<currenty<<endl;
 					visited[currentx][currenty] = step;
 					waitingPoints.push_back(Point(currentx,currenty));
 					if (_computedMap.get(currentx,currenty) == 1)
 					{
-						// cout<<"true"<<currentx<<' '<<currenty<<endl;
-						// cout<<"currentPoint"<<currentPoint.x<<' '<<currentPoint.y<<endl;
 						find  = true;
-						// cout<<"bfs completed"<<endl;
-						for (int i = 0;i < _map.width; ++i)
-						{
-							for (int j = 0;j < _map.height; ++j)
-								cout<<visited[i][j]<<' ';
-							// cout<<endl;
-						}
 						backtrace(start,_map,visited,Point(currentx,currenty),step);
-						// cout<<_map<<endl;
 						find = true;
 						break;
 					}

@@ -15,7 +15,8 @@
 #include "../include/Solution.h"
 #include "../include/CleverOptimize.h"
 	
-TEST(CleverOptimizeTest)
+// TEST(CleverOptimizeTest)
+void _233()
 {
 	String ins =
 		"5 6 \n"
@@ -152,7 +153,7 @@ void StupidStrategyTest()
 	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
 	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
 	solver.setCheckStrategy(new StupidCheck(&solver));
-	solver.setOptimizeStrategy(new StupidOptimize(&solver));
+	solver.setOptimizeStrategy(new CleverOptimize(&solver));
 	Solution solution = solver.run();
 	cout << solution;
 }
@@ -201,10 +202,10 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 350, m = 350, t = 10, tl = 5, tr = 5, ob = 10000;
+	int n = 300, m = 300, t = 10, tl = 3, tr = 3, ob = rand() % 10086;
 	StringStream inf;
 	
-	srand(23456789);
+	srand(time(0));
 	inf << n << ' ' << m << ' ';
 	for(int i = 1; i <= t; i++)
 	{

@@ -130,7 +130,8 @@ void Solution::computeMap()
 				{
 					bool find = false;
 					for (int p = 1;p < (int) trees.size(); ++p)
-					if (trees[p]->map.get(j,k) == 1) find = true;
+						if(trees[p] != NULL)
+							if (trees[p]->map.get(j,k) == 1) find = true;
 					if (!find) map[j][k] = 0;
 				}
 		}
