@@ -12,6 +12,62 @@
 	Test *testname::instance = new testname;\
 	void testname::run() const
 
+#include "../include/Solution.h"
+#include "../include/CleverOptimize.h"
+	
+TEST(CleverOptimizeTest)
+{
+	String ins =
+		"5 6 \n"
+		"1 0 0 0 0 0 \n"
+		"0 0 0 0 0 0 \n"
+		"1 0 0 0 2 1 \n"
+		"2 0 0 0 0 0 \n"
+		"0 0 0 0 0 0 \n"
+	;
+	StringStream inf(ins);
+	Board board;
+	board.input(0, inf);
+	Solution solution;
+	solution.board = &board;
+	TerminalSet &terminalSet1 = *board.terminalSets[1];
+	TerminalSet &terminalSet2 = *board.terminalSets[2];
+	Tree tree1(&terminalSet1);
+	Tree tree2(&terminalSet2);
+	BitMatrix bitMatrix1(5,6);
+	BitMatrix bitMatrix2(5,6);
+	bitMatrix1.set(0,0);
+	bitMatrix1.set(0,3);
+	bitMatrix1.set(0,2);
+	bitMatrix1.set(0,4);
+	bitMatrix1.set(1,0);
+	bitMatrix1.set(1,2);
+	bitMatrix1.set(1,1);
+	bitMatrix1.set(1,4);
+	bitMatrix1.set(1,5);
+	bitMatrix1.set(2,0);
+	bitMatrix1.set(2,5);
+	bitMatrix2.set(2,4);
+	bitMatrix2.set(3,1);
+	bitMatrix2.set(3,0);
+	bitMatrix2.set(3,4);
+	bitMatrix2.set(3,3);
+	bitMatrix2.set(4,3);
+	bitMatrix2.set(4,2);
+	bitMatrix2.set(4,1);
+	tree1.map = bitMatrix1;
+	tree1.computeLength();
+	tree2.map = bitMatrix2;
+	tree2.computeLength();
+	solution.trees.push_back(NULL);
+	solution.trees.push_back(new Tree(tree1));
+	solution.trees.push_back(new Tree(tree2));
+	solution.computeMap();
+	CleverOptimize cleverOptimize(NULL);
+	Solution cleverSolution = cleverOptimize.optimize(solution);
+	cout<<cleverSolution;
+}
+
 TEST(PlusTest)
 {
 	assert(1 + 1 == 2);
@@ -116,7 +172,7 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 300, m = 300, t = 20, tl = 3, tr = 3, ob = 0;
+	int n = 50, m = 50, t = 5, tl = 5, tr = 5, ob = 50;
 	StringStream inf;
 	
 	srand(2345678);

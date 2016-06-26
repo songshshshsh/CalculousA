@@ -22,7 +22,7 @@ Solution::Solution(const Solution& _solution)
 Solution::~Solution()
 {
 	for (unsigned i = 0;i < this->trees.size();++i)
-		if (this->trees[i])
+		if (this->trees[i] != NULL)
 		delete this->trees[i];
 }
 
@@ -79,7 +79,15 @@ void Solution::computeMap()
 		{
 			for (int j = 0;j < board->height; ++j)
 				for (int k = 0;k < board->width; ++k)
-					map[j][k] += trees[i]->map.get(j,k) * i;
+					if (trees[i]->map.get(j,k) != 0)
+					map[j][k] = trees[i]->map.get(j,k) * i;
+				else
+				{
+					bool find = false;
+					for (int p = 1;p < (int) trees.size(); ++p)
+					if (trees[p]->map.get(j,k) == 1) find = true;
+					if (!find) map[j][k] = 0;
+				}
 		}
 	}
 	for(auto block: board->blocks)

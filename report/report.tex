@@ -1,0 +1,170 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage[slantfont, boldfont]{xeCJK}
+\usepackage{ulem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{colortbl}
+% \usepackage[top = 1.0in, bottom = 1.0in, left = 1.0in, right = 1.0in]{geometry}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% \newcommand{\texttt}[1]{\texttt{\hyphenchar\font=\defaulthyphenchar #1}}
+% \DeclareFontFamily{\encodingdefault}{\ttdefault}{\hyphenchar\font=`\-}
+% \usepackage[htt]{hyphenat}
+% \newcommand{\origttfamily}{}%
+% \let\origttfamily=\ttfamily%
+% \renewcommand{\ttfamily}{\origttfamily \hyphenchar\font=45\relax}
+% \setCJKmainfont{SimSun}
+% \setCJKmonofont{SimSun}
+
+% \setmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+% \setsansfont[BoldFont=SimHei]{KaiTi}
+% \setmonofont{NSimSun}
+
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parindent}{2em}
+
+\newcolumntype{Y}{>{\columncolor{red}}p{12pt}}
+\newcolumntype{N}{>{\columncolor{white}}p{12pt}}
+% \title{???}
+% \author{???}
+
+
+% \lstset{numbers=left,
+% numberstyle=\tiny,
+% keywordstyle=\color{blue!70}, commentstyle=\color{red!50!green!50!blue!50},
+% frame=shadowbox,
+% rulesepcolor=\color{red!20!green!20!blue!20}
+% }
+
+\lstset{
+  % language=[ANSI]c,
+  basicstyle=\ttfamily,
+  % basicstyle=\small,
+  numbers=left,
+  keywordstyle=\color{blue},
+  numberstyle={\tiny\color{lightgray}},
+  stepnumber=1, %行号会逐行往上递增
+  numbersep=5pt,
+  commentstyle=\small\color{red},
+  backgroundcolor=\color[rgb]{0.95,1.0,1.0},
+  % showspaces=false,
+  % showtabs=false,
+  frame=shadowbox, framexleftmargin=5mm, rulesepcolor=\color{red!20!green!20!blue!20!},
+% frame=single,
+%  TABframe=single,
+  tabsize=4,
+  breaklines=tr,
+  extendedchars=false %这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
+}
+			
+\newcommand{\fullimage}[1]{
+	\begin{flushleft}
+		\includegraphics[width=\textwidth]{#1}
+	\end{flushleft}
+}
+
+\newcommand{\pause}[0]{}
+
+
+\title{LiquidFun Code Reading Report V1}
+\author{YU Jiping, 2015011265}
+% \date{2016年4月}
+
+\begin{document}
+
+	\sloppypar
+
+	\maketitle
+	
+	\tableofcontents
+	\newpage
+	
+	\section{Overview}
+	
+	\section{Header Files and System Architecture}
+	
+		\subsection{Board.h}
+		
+			This class is used to describe the unsolved graph given by users. It has several attributes: height, width, the points in terminal sets which need to be connected, a map describing the points given by the users in the graph, and the points of blocks which the routes cannot go through. The board has two input methods: taking a set of points as input and taking a two-dimension array sized height * width. Both the two input methods will automatically generate the terminal sets and the map of the board. The output function is used to output the board.
+		
+		\subsection{TerminalSet.h}
+		
+			TerminalSet is the set of the terminal points which have the index. That is to say, the points with the same index will be in the same terminal set. TerminalSet has a const Board indicating which board it belongs to, a vector of points which are the terminal points, a const int id showing its index in the graph. Users can add points to this terminal set using AddPoint function.
+				
+		\subsection{Tree.h}
+		
+		\subsection{global.h}
+		
+		\subsection{BitMatrix.h}
+		
+		\subsection{Solution.h}
+		
+		\subsection{Solver.h}
+		
+		\subsection{SolveStrategy.h}
+		
+		\subsection{StupidStrategy.h}
+		
+		\subsection{ColumnGenSolve.h}
+		
+		\subsection{CleverOptimize.h}
+		
+		\subsection{DACSolve.h}
+		
+		\subsection{test.h}
+		
+		\subsection{GRBFactory.h}
+		
+		\subsection{gurobi_c++.h}
+		
+		\subsection{gurobi_c.h}
+
+	\section{Algorithm}
+	
+	\section{OOP Design}
+	
+	\section{Experiment Results}
+	
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

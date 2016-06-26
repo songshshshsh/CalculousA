@@ -7,6 +7,25 @@ Board::~Board()
 		delete pointer;
 }
 
+Board::Board(const Board& _board)
+{
+	this->height = _board.height;
+	this->width = _board.width;
+	this->map = _board.map;
+	this->blocks = _board.blocks;
+	for (unsigned int i = 0;i < _board.terminalSets.size();++i)
+		if (_board.terminalSets[i] == NULL)
+			this->terminalSets.push_back(NULL);
+		else
+		{
+			TerminalSet* temp = new TerminalSet(_board.terminalSets[i]->id,this);
+			for (unsigned int j = 0;j < _board.terminalSets[i]->points.size();++j)
+				temp->AddPoint(_board.terminalSets[i]->points[j]);
+			this->terminalSets.push_back(temp);
+		}
+			
+}
+
 void Board::input(int mode, IStream & ifs)
 {
 	if (mode == 0)
