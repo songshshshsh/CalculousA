@@ -1,0 +1,45 @@
+\contentsline {section}{\numberline {1}Problem Description}{3}{section.1}
+\contentsline {section}{\numberline {2}Overview}{3}{section.2}
+\contentsline {section}{\numberline {3}Header Files and System Architecture}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Board.h}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}TerminalSet.h}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Tree.h}{4}{subsection.3.3}
+<<<<<<< HEAD
+\contentsline {subsection}{\numberline {3.4}global.h}{5}{subsection.3.4}
+=======
+\contentsline {subsection}{\numberline {3.4}global.h}{4}{subsection.3.4}
+>>>>>>> a33bf05f9c0d3d34f6f0adf5f4e3b4923b14dfa9
+\contentsline {subsection}{\numberline {3.5}BitMatrix.h}{5}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Solution.h}{5}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Solver.h}{5}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}SolveStrategy.h}{5}{subsection.3.8}
+<<<<<<< HEAD
+\contentsline {subsection}{\numberline {3.9}StupidStrategy.h}{6}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}ColumnGenSolve.h}{6}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}CleverOptimize.h}{6}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}DACSolve.h}{6}{subsection.3.12}
+\contentsline {subsection}{\numberline {3.13}test.h}{6}{subsection.3.13}
+\contentsline {subsection}{\numberline {3.14}IntArray2bmp.h}{6}{subsection.3.14}
+\contentsline {subsection}{\numberline {3.15}GRBFactory.h}{6}{subsection.3.15}
+\contentsline {subsection}{\numberline {3.16}gurobi\_c++.h and gurobi\_c.h}{7}{subsection.3.16}
+\contentsline {section}{\numberline {4}Algorithm}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Column Generation}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Divide and Conquer}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}CleverOptimize}{8}{subsection.4.3}
+\contentsline {section}{\numberline {5}OOP Design}{9}{section.5}
+\contentsline {section}{\numberline {6}Experiment Results}{9}{section.6}
+=======
+\contentsline {subsection}{\numberline {3.9}StupidStrategy.h}{5}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}ColumnGenSolve.h}{5}{subsection.3.10}
+\contentsline {subsection}{\numberline {3.11}CleverOptimize.h}{6}{subsection.3.11}
+\contentsline {subsection}{\numberline {3.12}DACSolve.h}{6}{subsection.3.12}
+\contentsline {subsection}{\numberline {3.13}test.h}{6}{subsection.3.13}
+\contentsline {subsection}{\numberline {3.14}GRBFactory.h}{6}{subsection.3.14}
+\contentsline {subsection}{\numberline {3.15}gurobi\_c++.h and gurobi\_c.h}{6}{subsection.3.15}
+\contentsline {section}{\numberline {4}Algorithm}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}Column Generation}{6}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Divide and Conquer}{7}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}CleverOptimize}{8}{subsection.4.3}
+\contentsline {section}{\numberline {5}OOP Design}{8}{section.5}
+\contentsline {section}{\numberline {6}Experiment Results}{8}{section.6}
+>>>>>>> a33bf05f9c0d3d34f6f0adf5f4e3b4923b14dfa9
