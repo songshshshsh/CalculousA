@@ -8,8 +8,8 @@
 class ColumnGenSolve: public SolveStrategy
 {
 public:
-	static const double M;
-	ColumnGenSolve(Solver *solver_): SolveStrategy(solver_){}
+	const double M;
+	ColumnGenSolve(Solver *solver_): SolveStrategy(solver_), M(solver_->board->width * solver_->board->height){}
 	virtual ~ColumnGenSolve(){}
 	virtual Solution solve() const;
 	virtual SolveStrategy *clone() const

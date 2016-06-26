@@ -1,7 +1,6 @@
 #include "../include/ColumnGenSolve.h"
 #include "../include/GRBFactory.h"
 
-const double ColumnGenSolve::M = 100000;
 Thread ColumnGenSolve::threads[THREAD_CNT];
 ColumnGenSolve::parDijkstraParams ColumnGenSolve::paramsList[THREAD_CNT];
 const void *ColumnGenSolve::parDijkstraInitRes = ColumnGenSolve::parDijkstraInit();
@@ -335,6 +334,20 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				cout << treeset.size() << " ";
 			cout << "\n";
 			cout.flush();
+			if(n * m >= 80000)
+			{
+				Solution solution;
+				solution.board = solver->board;
+				solution.trees.push_back(NULL);
+				for(auto tree: ans)
+					if(tree)
+						solution.trees.push_back(new Tree(*tree));
+					else
+						solution.trees.push_back(NULL);
+				solution.computeMap();
+				con << solution;
+				con.flush();
+			}
 		}
 		/*
 		// Solve LP
@@ -692,6 +705,7 @@ bool ColumnGenSolve::suggestTree(
 {
 	auto &treeset = treesets[idx - 1];
 	Tree tree = suggestTree(termsets[idx], mapW, n, m);
+	// if(termsets[idx]->points.size() > 3)
 	removeNonCuts(solver->board->map, idx, tree.map, n, m, &mapW);
 	// The tree may have some useless grids
 	return pushTreeSet(treeset, tree);

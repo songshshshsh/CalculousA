@@ -145,10 +145,10 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 300, m = 300, t = 10, tl = 5, tr = 5, ob = 0;
+	int n = 300, m = 300, t = 10, tl = 3, tr = 3, ob = 10000;
 	StringStream inf;
 	
-	srand(2345678);
+	srand(23456789);
 	inf << n << ' ' << m << ' ';
 	for(int i = 1; i <= t; i++)
 	{
@@ -173,7 +173,8 @@ TEST(LargeTest2)
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();
-	// cout << solution;
+	OFStream fileOut("result.txt");
+	fileOut << solution;
 	// cout << solution.map;
 }
 
