@@ -1,51 +1,177 @@
-Solution
-                  [5]                                          [2] 2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2 [2] 2  2  2  2  2    
-                   5                                                                                                                             2    
-                   5                                                                                                                             2    
-                   5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  5  2    
-                                                          5                                         5                       9  9  9  9  9 [9] 5  2    
-                                                          5                                         5                       9                 5  2    
-                                                         [5]                                        5                       9                 5  2    
- 4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4        5                   [4] 9                 5  2    
- 4    [3]                                                                              [9] 4        5                    4  9                 5  2    
- 4     3                                                                                9  4        5                    4  9                 5  2    
- 4     3                                                                                9  4        5                    4  9                 5  2    
- 4     3                                                                                9  4        5                    4  9                 5  2    
- 4     3                                                                                9  4        5                    4  9                 5  2    
- 4     3                                                                                9  4        5  4  4  4  4  4  4  4  9                 5  2    
- 4    [3]                                                                               9  4        5  4                    9                 5  2    
- 4     3                                                                                9  4        5  4                    9                 5  2    
- 4     3                                                                                9  4       [5] 4                    9                 5  2    
- 4     3                                                                                9  4  4  4  4  4                    9                 5  2    
- 4     3                                      9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9  9                 5  2    
- 4     3                                      9                                                                       9                       5  2    
- 4     3                                      9                                                                       9                       5  2    
- 4     3                                      9                                                                       9                       5  2    
- 4  3  3  3  3  3  3  3  3  3  3  3  3  3 [3] 9                                                                       9                       5  2    
- 4  3 [9] 9  9  9  9  9  9  9  9  9  9  9  9  9                                                                       9                       5  2    
- 4  3        9                                                                                                        9                       5  2    
- 4  3  3  3  9                                                                                                        9                       5  2    
- 4  4  4  3  9                                                                                                        9                       5  2    
-      [4] 3  9                               [3]                                                                     [9]                      5  2    
-       4  3  9                                3                                                                                               5  2    
-       4  3  9              3  3  3  3  3  3  3                                                                                         5  5  5  2    
-       4  3  9              3                                                                                                           5 [2] 2  2    
-       4  3 [9]             3                                                                                                           5     2       
-       4  3  3  3  3  3  3  3                                                                [4]            [4]                         5     2       
-       4  4  4  4  4  4  4  3                                                                 4              4                          5     2       
-                         4  3                                                                 4              4                          5     2       
-                         4  3                                                                 4              4                          5     2       
-                         4 [3]                                                                4              4                          5     2       
-                         4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4 [2]                  [5] 5 [5] 2       
-                                                                            4                    2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2       
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                            4                    2                                                    
-                                                                           [4]                   2                                                    
-                                                                                                 2                                                    
-                                                                                                [2]                                                   
+Running test LargeTest2
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 150 * 150
+iteration 0
+current time: 0 seconds
+curAns 1e+06
+column sizes:
+1 1 1 1 1 1 1 0 1 1 
+iteration 1
+current time: 4 seconds
+curAns 100058
+column sizes:
+1 4 1 1 1 1 1 0 1 1 
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 150 * 150
+iteration 0
+current time: 1 seconds
+curAns 1e+06
+column sizes:
+1 1 1 1 1 1 1 1 1 1 
+iteration 1
+current time: 4 seconds
+curAns 100373
+column sizes:
+4 1 2 1 3 4 1 1 1 1 
+iteration 2
+current time: 9 seconds
+curAns 493
+column sizes:
+6 1 5 1 5 7 1 1 1 1 
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 150 * 150
+iteration 0
+current time: 0 seconds
+curAns 900000
+column sizes:
+0 1 1 1 1 0 0 1 1 
+iteration 1
+current time: 3 seconds
+curAns 400236
+column sizes:
+0 4 1 1 4 0 0 2 4 
+iteration 2
+current time: 5 seconds
+curAns 300338
+column sizes:
+0 7 1 1 7 0 0 5 7 
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 37 * 37
+solving subproblem 37 * 38
+solving subproblem 38 * 37
+solving subproblem 38 * 38
+solving subproblem 75 * 75
+solving subproblem 150 * 150
+iteration 0
+current time: 0 seconds
+curAns 1e+06
+column sizes:
+1 0 0 1 0 1 1 1 1 1 
+iteration 1
+current time: 3 seconds
+curAns 500139
+column sizes:
+1 0 0 2 0 1 1 1 1 2 
+iteration 2
+current time: 6 seconds
+curAns 300390
+column sizes:
+1 0 0 5 0 1 1 1 1 5 
+solving subproblem 300 * 300
+iteration 0
+current time: 11 seconds
+curAns 1e+06
+column sizes:
+1 1 1 1 1 1 1 1 1 1 
+iteration 1
+current time: 28 seconds
+curAns 800644
+column sizes:
+4 2 2 4 2 2 2 2 2 2 
+iteration 2
+current time: 53 seconds
+curAns 601465
+column sizes:
+7 4 3 7 3 5 3 3 3 3 
+iteration 3
+current time: 81 seconds
+curAns 502143
+column sizes:
+9 6 4 10 4 8 5 4 4 4 
+iteration 4
+current time: 112 seconds
+curAns 402798
+column sizes:
+11 9 5 13 6 10 8 5 5 5 
+iteration 5
+current time: 147 seconds
+curAns 303570
+column sizes:
+11 11 6 15 8 11 11 6 6 8 
+iteration 6
+current time: 182 seconds
+curAns 303526
+column sizes:
+13 12 7 18 8 13 13 7 7 9 
+Test LargeTest2 finished in 268.984 seconds.

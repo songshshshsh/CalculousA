@@ -1,4 +1,6 @@
 #include "../include/Solution.h"
+#include "../include/IntArray2bmp.h"
+#include "../include/global.h"
 
 Solution::Solution(const Solution& _solution)
 {
@@ -28,6 +30,15 @@ Solution::~Solution()
 
 OStream &operator <<(OStream &ost, const Solution &solution)
 {
+	int treeCnt = 0, totLen = 0;
+	for(auto tree: solution.trees)
+		if(tree != NULL)
+		{
+			++treeCnt;
+			totLen += tree->length;
+		}
+	cout << "successfully routed " << treeCnt << " sets of terminals with " << totLen << " grids\n";
+	cout.flush();
 	ost << "Solution\n";
 	// for(auto &row: solution.map)
 	// {
@@ -67,6 +78,40 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 		}
 		ost << "\n";
 	}
+	std::set<int> index;
+	index.insert(-1);
+	int** pic = new int*[n];
+	for (int i = 0;i < n; ++i) 
+		pic[i] = new int[m];
+	for (int i = 0;i < n; ++i)
+		for (int j = 0;j < m; ++j)
+		{
+			int &p = pic[i][j];
+			if(solution.map[i][j] == -1)
+				p = -1;
+			else if(solution.map[i][j] == 0)
+				p = 0;
+			else if(map[i][j] == solution.map[i][j])
+				p = solution.map[i][j];
+			else
+				p = solution.map[i][j] + 100;
+			index.insert(p);
+		}
+	for (int i = 0;i < n; ++i)
+		for (int j = 0;j < m; ++j)
+			++pic[i][j];
+			// pic[i][j] = std::distance(index.begin(),index.find(pic[i][j]));
+	int min = 0,max = index.size() - 1;
+	char fileName[256];
+	time_t cTime = time(NULL);
+	int len = strftime(fileName, sizeof(fileName), "%Y%m%d%H%M%S", localtime(&cTime));
+	sprintf(fileName + len, "_%010d.bmp", (int) clock());
+	if (intarray2bmp::intarray2bmp(fileName,pic,n,m,min,max))
+		cout<<"picture saved to " << fileName << "\n";
+	for (int i = 0;i < n; ++i) 
+		delete[] pic[i];
+	delete[] pic;
+	cout.flush();
 	return ost;
 }
 

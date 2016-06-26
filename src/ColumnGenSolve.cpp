@@ -1,7 +1,9 @@
 #include "../include/ColumnGenSolve.h"
 #include "../include/GRBFactory.h"
 
-const double ColumnGenSolve::M = 100000;
+Thread ColumnGenSolve::threads[THREAD_CNT];
+ColumnGenSolve::parDijkstraParams ColumnGenSolve::paramsList[THREAD_CNT];
+const void *ColumnGenSolve::parDijkstraInitRes = ColumnGenSolve::parDijkstraInit();
 
 double ColumnGenSolve::solveLP(
 	Vector<Vector<Pair<Tree, GRBVar>>> &treesets,
@@ -114,6 +116,8 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	const int t = termsets.size() - 1;
 	const int n = board->height;
 	const int m = board->width;
+	if(n * m >= 1250)
+		cout << "solving subproblem " << n << " * " << m << "\n";
 	
 	// Two useful Vectors
 	/*
@@ -172,11 +176,9 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	// Answer history
 	Vector<double> tarAns;
 	for(int T = 0;; T++){
-		cout << "LP " << T << endl;
+		// cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
 		double curAns = solveLP(treesets, 1);
-		cout << "curAns " << curAns << endl;
-		con << "curAns " << curAns << endl;
 		tarAns.push_back(curAns);
 		
 		// Construct current best answer
@@ -307,13 +309,13 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		}
 		
 		auto clkNow = clock();
-		if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
+		/*if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
 		{
 			con << "time up, aborting\n";
 			con << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC)
 				<< " seconds passed\n";
 			//return ans;
-		}
+		}*/
 		
 		// If solution didn't improve recently,
 		// cut!
@@ -321,18 +323,32 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			return ans;
 		
 		// Output current colution info
-		cout << "iteration " << T << "\n";
-		con << "current time: "
-			<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
-		con << "iteration " << T << "\ncolumn sizes: ";
-		for(const auto &treeset: treesets)
+		if(n * m >= 20000)
 		{
-			cout << "size " << treeset.size() << "\n";
-			con << treeset.size() << " ";
+			cout << "iteration " << T << "\n";
+			cout << "current time: "
+				<< (int) ((clkNow - clkStart) / CLOCKS_PER_SEC) << " seconds\n";
+			cout << "curAns " << curAns << endl;
+			cout << "column sizes:\n";
+			for(const auto &treeset: treesets)
+				cout << treeset.size() << " ";
+			cout << "\n";
+			cout.flush();
+			if(n * m >= 80000)
+			{
+				Solution solution;
+				solution.board = solver->board;
+				solution.trees.push_back(NULL);
+				for(auto tree: ans)
+					if(tree)
+						solution.trees.push_back(new Tree(*tree));
+					else
+						solution.trees.push_back(NULL);
+				solution.computeMap();
+				con << solution;
+				con.flush();
+			}
 		}
-		con << "\n";
-		con.flush();
-		fflush(stdout);
 		/*
 		// Solve LP
 		Matrix<double> mapPi;
@@ -500,86 +516,185 @@ void ColumnGenSolve::expand(
 		throw expandFinished();
 }
 */
-Matrix<Pair<double, Point>> ColumnGenSolve::dijkstra(
-	const BitMatrix &base, const Matrix<double> &mapW, int n, int m
-) const
+
+void ColumnGenSolve::parDijkstraAtExit()
 {
-	// simple Dijkstra algorithm
-	Matrix<Pair<double, Point>> dist;
-	dist.resize(n, m);
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
-			if(base.get(i, j))
-				dist[i][j].second = Point(-1, -1);
-			else
-				dist[i][j].first = 1e30;
-	// Matrix<bool> visited;
-	// visited.resize(n, m);
-	int dx[4] = {1, -1, 0, 0};
-	int dy[4] = {0, 0, 1, -1};
-	int EX = 1;
-	while(n * m > EX)
-		EX <<= 1;
-	vector<double> sgt;
-	sgt.resize(EX << 1, 1e30);
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
-			if(base.get(i, j))
-				sgt[EX + i * m + j] = 0;
-	for(int i = EX - 1; i >= 1; i--)
-		sgt[i] = min(sgt[i << 1], sgt[i << 1 | 1]);
-	// cout << "core dij begin\n";
+	// cout << "atexit\n";
+	// cout.flush();
+	for(int i = 0; i < THREAD_CNT; i++){
+		paramsList[i].exiting = true;
+		threads[i].join();
+	}
+	// cout << "atexit finished\n";
+	// cout.flush();
+}
+
+void *ColumnGenSolve::parDijkstraInit()
+{
+	for(int i = 0; i < THREAD_CNT; i++)
+	{
+		paramsList[i].exiting = false;
+		paramsList[i].finished = true;
+		threads[i] = Thread(parDijkstra, std::ref(paramsList[i]));
+	}
+	while(atexit(ColumnGenSolve::parDijkstraAtExit));
+	return (void *) 0x23333333;
+}
+
+void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
+{
 	for(;;)
 	{
-		// cout << "cur " << sgt[1] << endl;
-		if(sgt[1] >= 1e25) break;
-		int sgtIdx = 1;
-		while(sgtIdx < EX)
-			if(sgt[sgtIdx] == sgt[sgtIdx << 1])
-				sgtIdx <<= 1;
-			else
-				sgtIdx = (sgtIdx << 1 | 1);
-		sgtIdx -= EX;
-		int cx = sgtIdx / m, cy = sgtIdx % m;
-		sgt[sgtIdx += EX] = 1e30;
-		for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
-			sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
-		// visited[cx][cy] = 1;
-		const Pair<double, Point> &cd = dist[cx][cy];
-		for(int d = 0; d < 4; d++)
+		// params.mutex.lock();
+		if(params.exiting)
+			return;
+		if(params.finished)
 		{
-			int tx = cx + dx[d], ty = cy + dy[d];
-			if(tx < 0 || tx >= n || ty < 0 || ty >= m)
-				continue;
-			double tdFirst = cd.first + mapW[tx][ty];
-			if(tdFirst < dist[tx][ty].first)
-			{
-				dist[tx][ty].first = tdFirst;
-				dist[tx][ty].second = Point(cx, cy);
-				sgt[sgtIdx = EX + tx * m + ty] = tdFirst;
-				for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
-					sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
-			}
+			// std::this_thread::sleep_for(std::chrono::microseconds(1));
+			// params.mutex.unlock();
+			continue;
 		}
-	}
-	// cout << "core dij end\n";
-	Matrix<Pair<double, Point>> ans = dist;
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
+		// cout << "run!\n";
+		// cout.flush();
+		const BitMatrix &base = *params.baseStar;
+		const Matrix<double> &mapW = *params.mapWStar;
+		int n = params.n, m = params.m;
+		Matrix<Pair<double, Point>> &ans = *params.ansStar;
+		// simple Dijkstra algorithm
+		Matrix<Pair<double, Point>> dist;
+		dist.resize(n, m);
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+				if(base.get(i, j))
+					dist[i][j].second = Point(-1, -1);
+				else
+					dist[i][j].first = 1e30;
+		// Matrix<bool> visited;
+		// visited.resize(n, m);
+		int dx[4] = {1, -1, 0, 0};
+		int dy[4] = {0, 0, 1, -1};
+		int EX = 1;
+		while(n * m > EX)
+			EX <<= 1;
+		vector<double> sgt;
+		sgt.resize(EX << 1, 1e30);
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+				if(base.get(i, j))
+					sgt[EX + i * m + j] = 0;
+		for(int i = EX - 1; i >= 1; i--)
+			sgt[i] = min(sgt[i << 1], sgt[i << 1 | 1]);
+		// cout << "core dij begin\n";
+		for(;;)
 		{
-			for(int d = 3; d >= 0; d--)
+			// cout << "cur " << sgt[1] << endl;
+			if(sgt[1] >= 1e25) break;
+			int sgtIdx = 1;
+			while(sgtIdx < EX)
+				if(sgt[sgtIdx] == sgt[sgtIdx << 1])
+					sgtIdx <<= 1;
+				else
+					sgtIdx = (sgtIdx << 1 | 1);
+			sgtIdx -= EX;
+			int cx = sgtIdx / m, cy = sgtIdx % m;
+			sgt[sgtIdx += EX] = 1e30;
+			for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+				sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
+			// visited[cx][cy] = 1;
+			const Pair<double, Point> &cd = dist[cx][cy];
+			for(int d = 0; d < 4; d++)
 			{
-				int tx = i + dx[d], ty = j + dy[d];
+				int tx = cx + dx[d], ty = cy + dy[d];
 				if(tx < 0 || tx >= n || ty < 0 || ty >= m)
 					continue;
-				if(dist[tx][ty].first < ans[i][j].first)
+				double tdFirst = cd.first + mapW[tx][ty];
+				if(tdFirst < dist[tx][ty].first)
 				{
-					ans[i][j].first = dist[tx][ty].first;
-					ans[i][j].second = Point(tx, ty);
+					dist[tx][ty].first = tdFirst;
+					dist[tx][ty].second = Point(cx, cy);
+					sgt[sgtIdx = EX + tx * m + ty] = tdFirst;
+					for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
+						sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
 				}
 			}
 		}
-	return ans;
+		// cout << "core dij end\n";
+		ans = dist;
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+			{
+				for(int d = 3; d >= 0; d--)
+				{
+					int tx = i + dx[d], ty = j + dy[d];
+					if(tx < 0 || tx >= n || ty < 0 || ty >= m)
+						continue;
+					if(dist[tx][ty].first < ans[i][j].first)
+					{
+						ans[i][j].first = dist[tx][ty].first;
+						ans[i][j].second = Point(tx, ty);
+					}
+				}
+			}
+		params.finished = true;
+		// params.mutex.unlock();
+	}
+}
+
+void ColumnGenSolve::dijkstra(
+	const BitMatrix &base, const Matrix<double> &mapW, int n, int m,
+	Matrix<Pair<double, Point>> &ans
+) const
+{
+	int id = -1;
+	for(;;)
+	{
+		for(int i = 0; i < THREAD_CNT; i++)
+			// if(paramsList[i].mutex.try_lock())
+			// {
+				if(paramsList[i].finished)
+				{
+					id = i;
+					goto foundThread;
+				}
+				// paramsList[i].mutex.unlock();
+			// }
+		std::this_thread::sleep_for(std::chrono::microseconds(1));
+	}
+	foundThread:;
+	// cout << "id = " << id << '\n';
+	static int a = 0;
+	static int b = 0;
+	a += id; ++b;
+	// cout << "p " << a << "/" << b << "\n";
+	// cout.flush();
+	parDijkstraParams &params = paramsList[id];
+	params.baseStar = &base;
+	params.mapWStar = &mapW;
+	params.n = n; params.m = m;
+	params.ansStar = &ans;
+	// cout << "createthread begin" << '\n';
+	// cout.flush();
+	params.finished = false;
+	// cout << "createthread end" << '\n';
+	// cout.flush();
+	// params.mutex.unlock();
+}
+
+void ColumnGenSolve::sync()
+{
+	// cout << "sync begin" << '\n';
+	// cout.flush();
+	for(;;)
+	{
+		for(int i = 0; i < THREAD_CNT; i++)
+			if(!paramsList[i].finished)
+				goto fail;
+		break;
+		fail:
+		std::this_thread::sleep_for(std::chrono::microseconds(100));
+	}
+	// cout << "sync end" << '\n';
+	// cout.flush();
 }
 
 bool ColumnGenSolve::suggestTree(
@@ -590,6 +705,7 @@ bool ColumnGenSolve::suggestTree(
 {
 	auto &treeset = treesets[idx - 1];
 	Tree tree = suggestTree(termsets[idx], mapW, n, m);
+	// if(termsets[idx]->points.size() > 3)
 	removeNonCuts(solver->board->map, idx, tree.map, n, m, &mapW);
 	// The tree may have some useless grids
 	return pushTreeSet(treeset, tree);
@@ -606,8 +722,10 @@ Tree ColumnGenSolve::suggestTree(
 		base.set(term);
 	Vector<BitMatrix> branches = treeGetBranches(base, n, m);
 	Vector<Matrix<Pair<double, Point>>> dijMatrices;
-	for(const auto &branch: branches)
-		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
+	dijMatrices.resize(branches.size());
+	for(unsigned i = 0; i < branches.size(); i++)
+		dijkstra(branches[i], mapW, n, m, dijMatrices[i]);
+	sync();
 	double bestw = 1e40;
 	Tree btree(terminalSet);
 	int T = max(n, m);
@@ -819,8 +937,9 @@ void ColumnGenSolve::removeNonCuts(
 			Vector<BitMatrix> branches = treeGetBranches(newTree, n, m);
 			// cout << "branchsize " << (int) branches.size() << '\n';
 			if((int) branches.size() != 2) continue;
-			Matrix<Pair<double, Point>> dijResult
-				= dijkstra(branches[0], *mapW, n, m);
+			Matrix<Pair<double, Point>> dijResult;
+			dijkstra(branches[0], *mapW, n, m, dijResult);
+			sync();
 			Point bestPoint1(-1, -1); double dist = 1e30;
 			for(int i = 0; i < n; i++)
 				for(int j = 0; j < m; j++)
@@ -833,6 +952,11 @@ void ColumnGenSolve::removeNonCuts(
 			for(auto point: edge->points)
 				dist -= (*mapW)[point];
 			// cout << "dist " << dist << '\n';
+			static int a = 0;
+			static int b = 0;
+			a += (int) (dist >= 0); b++;
+			// cout << "q " << a << "/" << b << "\n";
+			// cout.flush();
 			if(dist >= 0)
 				continue;
 			while(bestPoint1 != Point(-1, -1))

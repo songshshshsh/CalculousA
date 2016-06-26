@@ -68,14 +68,41 @@ TEST(CleverOptimizeTest)
 	cout<<cleverSolution;
 }
 
+/*
 TEST(PlusTest)
 {
 	assert(1 + 1 == 2);
 	assert(1 + 2 != 4);
 }
 
+#include <thread>
+
+void output(int x)
+{
+	int ans = 0;
+	for(int i = 0; i < x; i++)
+		for(int j = 0; j < x; j++)
+			ans += i * j;
+	printf("%d\n", ans);
+}
+TEST(ThreadTest)
+{
+	using std::thread;
+	Vector<thread> th;
+	for(int i = 0; i < 2; i++)
+		th.push_back(thread(output, 100000));
+	for(auto &x: th)
+		x.join();
+}
+
+TEST(PXTest)
+{
+	output(100000);
+}
+*/
 #include "../include/BitMatrix.h"
-TEST(BitMatrixTest)
+// TEST(BitMatrixTest)
+void BitMatrixTest()
 {
 	BitMatrix bmx(2, 3);
 	cout << bmx;
@@ -88,7 +115,8 @@ TEST(BitMatrixTest)
 }
 
 #include "../include/Board.h"
-TEST(BoardIOTest)
+// TEST(BoardIOTest)
+void BoardIOTest()
 {
 	String ins =
 		"3 4\n"
@@ -161,10 +189,11 @@ typedef std::pair<int, int> PII;
 void rp(OStream &ost, int n, int m){
 	static std::set<PII> S;
 	int x, y;
-	do{
+	do
+	{
 		x = rand() % n;
 		y = rand() % m;
-	}while(S.count(PII(x, y)));
+	} while(S.count(PII(x, y)));
 	S.insert(PII(x, y));
 	ost << x << ' ' << y << ' ';
 }
@@ -172,10 +201,10 @@ void rp(OStream &ost, int n, int m){
 TEST(LargeTest2)
 // void LargeTest2()
 {
-	int n = 50, m = 50, t = 5, tl = 5, tr = 5, ob = 50;
+	int n = 300, m = 300, t = 10, tl = 3, tr = 3, ob = 10000;
 	StringStream inf;
 	
-	srand(2345678);
+	srand(23456789);
 	inf << n << ' ' << m << ' ';
 	for(int i = 1; i <= t; i++)
 	{
@@ -188,24 +217,26 @@ TEST(LargeTest2)
 	while(ob--)
 		rp(inf, n, m);
 	
-	cout << inf.str();
+	// cout << inf.str();
 	
 	Board board;
 	board.input(1, inf);
-	board.output();
-	cout.flush();
+	// board.output();
+	// cout.flush();
 	Solver solver(&board);
 	// solver.setSolveStrategy(new ColumnGenSolve(&solver));
 	solver.setSolveStrategy(new DACSolve(&solver, new ColumnGenSolve(&solver)));
 	solver.setCheckStrategy(new StupidCheck(&solver));
 	solver.setOptimizeStrategy(new StupidOptimize(&solver));
 	Solution solution = solver.run();
-	cout << solution;
-	cout << solution.map;
+	OFStream fileOut("result.txt");
+	fileOut << solution;
+	// cout << solution.map;
 }
 
 #include "../include/GRBFactory.h"
-TEST(GurobiTest)
+// TEST(GurobiTest)
+void GurobiTest()
 {
   try {
     GRBModel &model = GRBFactory::createModel();
