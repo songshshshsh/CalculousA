@@ -1,0 +1,133 @@
+\hypertarget{classGRBColumn}{}\section{G\+R\+B\+Column类 参考}
+\label{classGRBColumn}\index{G\+R\+B\+Column@{G\+R\+B\+Column}}
+
+
+{\ttfamily \#include \char`\"{}gurobi\+\_\+c++.\+h\char`\"{}}
+
+
+
+G\+R\+B\+Column 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classGRBColumn__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classGRBColumn_a6eccdebcb0f2398ea9f4052d02556edb}{size} (void) const 
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBColumn_ace7f5fa402631a190e05d748d4419785}{get\+Constr} (int i) const 
+\item 
+double \hyperlink{classGRBColumn_ae80d8a00cfd2f8ed08b4b568c4200e92}{get\+Coeff} (int i) const 
+\item 
+void \hyperlink{classGRBColumn_a362319584df999c5b3c307c753470dca}{add\+Term} (double coeff, \hyperlink{classGRBConstr}{G\+R\+B\+Constr} constr)
+\item 
+void \hyperlink{classGRBColumn_af09eb19173fed76d7bbb5a5fc3412a1e}{add\+Terms} (const double $\ast$coeff, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$constr, int cnt)
+\item 
+void \hyperlink{classGRBColumn_a98e7b3e9d0f41ff6735e0a4fcb320524}{remove} (int i)
+\item 
+bool \hyperlink{classGRBColumn_a144b23ac50865047d13d124194425ab3}{remove} (\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c})
+\item 
+void \hyperlink{classGRBColumn_ab85ab11f2a7c07c555e79a28c3d817e5}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ \hyperlink{classGRBColumn_a566867c00e843b07d5f190207750ade7}{coeffs}
+\item 
+vector$<$ \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $>$ \hyperlink{classGRBColumn_a301819481446b8cf0b0b106febb678c4}{constrs}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 777 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!add\+Term@{add\+Term}}
+\index{add\+Term@{add\+Term}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{add\+Term(double coeff, G\+R\+B\+Constr constr)}{addTerm(double coeff, GRBConstr constr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Column\+::add\+Term (
+\begin{DoxyParamCaption}
+\item[{double}]{coeff, }
+\item[{{\bf G\+R\+B\+Constr}}]{constr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBColumn_a362319584df999c5b3c307c753470dca}{}\label{classGRBColumn_a362319584df999c5b3c307c753470dca}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!add\+Terms@{add\+Terms}}
+\index{add\+Terms@{add\+Terms}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{add\+Terms(const double $\ast$coeff, const G\+R\+B\+Constr $\ast$constr, int cnt)}{addTerms(const double *coeff, const GRBConstr *constr, int cnt)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Column\+::add\+Terms (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{coeff, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{constr, }
+\item[{int}]{cnt}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBColumn_af09eb19173fed76d7bbb5a5fc3412a1e}{}\label{classGRBColumn_af09eb19173fed76d7bbb5a5fc3412a1e}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!clear@{clear}}
+\index{clear@{clear}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Column\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBColumn_ab85ab11f2a7c07c555e79a28c3d817e5}{}\label{classGRBColumn_ab85ab11f2a7c07c555e79a28c3d817e5}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!get\+Coeff@{get\+Coeff}}
+\index{get\+Coeff@{get\+Coeff}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{get\+Coeff(int i) const }{getCoeff(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Column\+::get\+Coeff (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBColumn_ae80d8a00cfd2f8ed08b4b568c4200e92}{}\label{classGRBColumn_ae80d8a00cfd2f8ed08b4b568c4200e92}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!get\+Constr@{get\+Constr}}
+\index{get\+Constr@{get\+Constr}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{get\+Constr(int i) const }{getConstr(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Column\+::get\+Constr (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBColumn_ace7f5fa402631a190e05d748d4419785}{}\label{classGRBColumn_ace7f5fa402631a190e05d748d4419785}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{remove(int i)}{remove(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Column\+::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBColumn_a98e7b3e9d0f41ff6735e0a4fcb320524}{}\label{classGRBColumn_a98e7b3e9d0f41ff6735e0a4fcb320524}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Constr c)}{remove(GRBConstr c)}}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+R\+B\+Column\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Constr}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBColumn_a144b23ac50865047d13d124194425ab3}{}\label{classGRBColumn_a144b23ac50865047d13d124194425ab3}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!size@{size}}
+\index{size@{size}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{size(void) const }{size(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int G\+R\+B\+Column\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBColumn_a6eccdebcb0f2398ea9f4052d02556edb}{}\label{classGRBColumn_a6eccdebcb0f2398ea9f4052d02556edb}
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!coeffs@{coeffs}}
+\index{coeffs@{coeffs}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{coeffs}{coeffs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ G\+R\+B\+Column\+::coeffs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBColumn_a566867c00e843b07d5f190207750ade7}{}\label{classGRBColumn_a566867c00e843b07d5f190207750ade7}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 781 行定义.
+
+\index{G\+R\+B\+Column@{G\+R\+B\+Column}!constrs@{constrs}}
+\index{constrs@{constrs}!G\+R\+B\+Column@{G\+R\+B\+Column}}
+\subsubsection[{\texorpdfstring{constrs}{constrs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Constr}$>$ G\+R\+B\+Column\+::constrs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBColumn_a301819481446b8cf0b0b106febb678c4}{}\label{classGRBColumn_a301819481446b8cf0b0b106febb678c4}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 782 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{gurobi__c_09_09_8h}{gurobi\+\_\+c++.\+h}\end{DoxyCompactItemize}

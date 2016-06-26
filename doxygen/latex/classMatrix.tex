@@ -1,0 +1,155 @@
+\hypertarget{classMatrix}{}\section{Matrix$<$ T $>$ 模板类 参考}
+\label{classMatrix}\index{Matrix$<$ T $>$@{Matrix$<$ T $>$}}
+
+
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}
+
+
+
+类 Matrix$<$ T $>$ 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classMatrix__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Matrix$<$ T $>$ 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classMatrix__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize} (int n, int m)
+\item 
+T \& \hyperlink{classMatrix_a8a7de06bb121fe2d6fe32708057a5f29}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classPoint}{Point} pii)
+\item 
+const T \& \hyperlink{classMatrix_a26b02431e20f8d21a66aec834effcca1}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classPoint}{Point} pii) const 
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \& \hyperlink{classMatrix_a27b4e4fa201d8e7b0eec27a409108518}{operator$<$$<$} (\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ost, const \hyperlink{classMatrix}{Matrix}$<$ T $>$ \&mat)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$class T$>$\\*
+class Matrix$<$ T $>$}
+
+
+
+在文件 global.\+h 第 85 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{Matrix@{Matrix}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator[](\+Point pii)}{operator[](Point pii)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf Matrix}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}}]{pii}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMatrix_a8a7de06bb121fe2d6fe32708057a5f29}{}\label{classMatrix_a8a7de06bb121fe2d6fe32708057a5f29}
+
+
+在文件 global.\+h 第 96 行定义.
+
+
+\begin{DoxyCode}
+97     \{
+98         \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[pii.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}][pii.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}];
+99     \}
+\end{DoxyCode}
+\index{Matrix@{Matrix}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator[](\+Point pii) const }{operator[](Point pii) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf Matrix}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}}]{pii}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMatrix_a26b02431e20f8d21a66aec834effcca1}{}\label{classMatrix_a26b02431e20f8d21a66aec834effcca1}
+
+
+在文件 global.\+h 第 100 行定义.
+
+
+\begin{DoxyCode}
+101     \{
+102         \textcolor{keywordflow}{return} (*\textcolor{keyword}{this})[pii.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}][pii.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}];
+103     \}
+\end{DoxyCode}
+\index{Matrix@{Matrix}!resize@{resize}}
+\index{resize@{resize}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{resize(int n, int m)}{resize(int n, int m)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Matrix}$<$ T $>$\+::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{}\label{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}
+
+
+在文件 global.\+h 第 90 行定义.
+
+
+
+参考自 Clever\+Optimize\+::bfs(), Solution\+::compute\+Map(), Clever\+Optimize\+::get\+Map(), Board\+::input(), Column\+Gen\+Solve\+::par\+Dijkstra(), Column\+Gen\+Solve\+::route() , 以及 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+\begin{DoxyCode}
+91     \{
+92         this->\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(n);
+93         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} &row: *\textcolor{keyword}{this})
+94             row.resize(m);
+95     \}
+\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{友元及相关函数文档}
+\index{Matrix@{Matrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf O\+Stream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+Stream} \&}]{ost, }
+\item[{const {\bf Matrix}$<$ T $>$ \&}]{mat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classMatrix_a27b4e4fa201d8e7b0eec27a409108518}{}\label{classMatrix_a27b4e4fa201d8e7b0eec27a409108518}
+
+
+在文件 global.\+h 第 104 行定义.
+
+
+\begin{DoxyCode}
+105     \{
+106         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} &row: mat)
+107         \{
+108             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} col: row)
+109                 ost << col << \textcolor{charliteral}{' '};
+110             ost << \textcolor{charliteral}{'\(\backslash\)n'};
+111         \}
+112         \textcolor{keywordflow}{return} ost;
+113     \}
+\end{DoxyCode}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{global_8h}{global.\+h}\end{DoxyCompactItemize}

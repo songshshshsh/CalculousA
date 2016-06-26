@@ -1,0 +1,235 @@
+\hypertarget{namespaceintarray2bmp}{}\section{intarray2bmp 命名空间参考}
+\label{namespaceintarray2bmp}\index{intarray2bmp@{intarray2bmp}}
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structintarray2bmp_1_1lwrite}{lwrite}
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{namespaceintarray2bmp_a427bc6d7c8a53613eff03c28fce442ba}{operator$<$$<$} (std\+::ostream \&outs, const \hyperlink{structintarray2bmp_1_1lwrite}{lwrite} \&v)
+\item 
+{\footnotesize template$<$typename Int\+Type $>$ }\\bool \hyperlink{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49}{intarray2bmp} (const std\+::string \&filename, Int\+Type $\ast$$\ast$intarray, unsigned rows, unsigned columns, Int\+Type min\+\_\+value, Int\+Type max\+\_\+value)
+\item 
+{\footnotesize template$<$typename Int\+Type $>$ }\\bool \hyperlink{namespaceintarray2bmp_af95c6110f71199e05a9997b17957da22}{intarray2bmp} (const std\+::string \&filename, Int\+Type $\ast$intarray, unsigned rows, unsigned columns, Int\+Type min\+\_\+value, Int\+Type max\+\_\+value)
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{intarray2bmp@{intarray2bmp}!intarray2bmp@{intarray2bmp}}
+\index{intarray2bmp@{intarray2bmp}!intarray2bmp@{intarray2bmp}}
+\subsubsection[{\texorpdfstring{intarray2bmp(const std\+::string \&filename, Int\+Type $\ast$$\ast$intarray, unsigned rows, unsigned columns, Int\+Type min\+\_\+value, Int\+Type max\+\_\+value)}{intarray2bmp(const std::string &filename, IntType **intarray, unsigned rows, unsigned columns, IntType min_value, IntType max_value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Int\+Type $>$ bool intarray2bmp\+::intarray2bmp (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{Int\+Type $\ast$$\ast$}]{intarray, }
+\item[{unsigned}]{rows, }
+\item[{unsigned}]{columns, }
+\item[{Int\+Type}]{min\+\_\+value, }
+\item[{Int\+Type}]{max\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49}{}\label{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49}
+
+
+在文件 Int\+Array2bmp.\+h 第 72 行定义.
+
+
+
+参考 c , 以及 intarray2bmp\+::lwrite\+::lwrite().
+
+
+
+参考自 intarray2bmp() , 以及 operator$<$$<$().
+
+
+\begin{DoxyCode}
+79       \{
+80     \textcolor{comment}{// This is the difference between each color based upon}
+81     \textcolor{comment}{// the number of distinct values in the input array.}
+82     \textcolor{keywordtype}{double} granularity = 360.0 / ((double)( max\_value - min\_value ) + 1);
+83 
+84     \textcolor{comment}{// Open the output BMP file}
+85     std::ofstream f( filename.c\_str(),
+86                      std::ios::out | std::ios::trunc | std::ios::binary );
+87     \textcolor{keywordflow}{if} (!f) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+88 
+89     \textcolor{comment}{// Some basic}
+90     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} headers\_size    = 14  \textcolor{comment}{// sizeof( BITMAPFILEHEADER )}
+91                                   + 40; \textcolor{comment}{// sizeof( BITMAPINFOHEADER )}
+92     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} padding\_size    = (4 - ((columns * 3) % 4)) % 4;
+93     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} pixel\_data\_size = rows * ((columns * 3) + padding\_size);
+94 
+95     \textcolor{comment}{// Write the BITMAPFILEHEADER}
+96     f.put( \textcolor{charliteral}{'B'} ).put( \textcolor{charliteral}{'M'} );                           \textcolor{comment}{// bfType}
+97     f << lwrite( headers\_size + pixel\_data\_size, 4 );  \textcolor{comment}{// bfSize}
+98     f << lwrite( 0,                              2 );  \textcolor{comment}{// bfReserved1}
+99     f << lwrite( 0,                              2 );  \textcolor{comment}{// bfReserved2}
+100     f << lwrite( headers\_size,                   4 );  \textcolor{comment}{// bfOffBits}
+101 
+102     \textcolor{comment}{// Write the BITMAPINFOHEADER}
+103     f << lwrite( 40,                             4 );  \textcolor{comment}{// biSize}
+104     f << lwrite( columns,                        4 );  \textcolor{comment}{// biWidth}
+105     f << lwrite( rows,                           4 );  \textcolor{comment}{// biHeight}
+106     f << lwrite( 1,                              2 );  \textcolor{comment}{// biPlanes}
+107     f << lwrite( 24,                             2 );  \textcolor{comment}{// biBitCount}
+108     f << lwrite( 0,                              4 );  \textcolor{comment}{// biCompression=BI\_RGB}
+109     f << lwrite( pixel\_data\_size,                4 );  \textcolor{comment}{// biSizeImage}
+110     f << lwrite( 0,                              4 );  \textcolor{comment}{// biXPelsPerMeter}
+111     f << lwrite( 0,                              4 );  \textcolor{comment}{// biYPelsPerMeter}
+112     f << lwrite( 0,                              4 );  \textcolor{comment}{// biClrUsed}
+113     f << lwrite( 0,                              4 );  \textcolor{comment}{// biClrImportant}
+114 
+115     \textcolor{comment}{// Write the pixel data}
+116     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} row = rows; row; row--)           \textcolor{comment}{// bottom-to-top}
+117       \{
+118       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} col = 0; col < columns; col++)  \textcolor{comment}{// left-to-right}
+119         \{
+120         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} red, green, blue;
+121         \textcolor{comment}{//}
+122         \textcolor{comment}{// This is how we convert an integer value to a color:}
+123         \textcolor{comment}{// by mapping it evenly along the CIECAM02 hue color domain.}
+124         \textcolor{comment}{//}
+125         \textcolor{comment}{// http://en.wikipedia.org/wiki/Hue}
+126         \textcolor{comment}{// http://en.wikipedia.org/wiki/hsl\_and\_hsv#conversion\_from\_hsv\_to\_rgb}
+127         \textcolor{comment}{//}
+128         \textcolor{comment}{// The following algorithm takes a few shortcuts since}
+129         \textcolor{comment}{// both 'value' and 'saturation' are always 1.0.}
+130         \textcolor{comment}{//}
+131         \textcolor{keywordtype}{double} hue = (intarray[ row - 1 ][ col ] - min\_value) * granularity;
+132         \textcolor{keywordtype}{int}    H = (int)( hue / 60 ) % 6;
+133         \textcolor{keywordtype}{double} F = (hue / 60) - H;
+134         \textcolor{keywordtype}{double} Q = 1.0 - F;
+135 
+136 \textcolor{preprocessor}{        #define c( x ) (255 * x)}
+137         \textcolor{keywordflow}{switch} (H)
+138           \{
+139           \textcolor{keywordflow}{case} 0:  red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(F);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  \textcolor{keywordflow}{break};
+140           \textcolor{keywordflow}{case} 1:  red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(Q);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  \textcolor{keywordflow}{break};
+141           \textcolor{keywordflow}{case} 2:  red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(F);  \textcolor{keywordflow}{break};
+142           \textcolor{keywordflow}{case} 3:  red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(Q);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  \textcolor{keywordflow}{break};
+143           \textcolor{keywordflow}{case} 4:  red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(F);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  \textcolor{keywordflow}{break};
+144           \textcolor{keywordflow}{default}: red = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(1);  green = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(0);  blue = \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}(Q);
+145           \}
+146 \textcolor{preprocessor}{        #undef c}
+147 
+148           red = 128; blue = 128; green = 128;
+149           \textcolor{keywordtype}{int} T\_T = intarray[ row - 1 ][ col ];
+150           \textcolor{keywordflow}{while}(T\_T--)
+151           \{
+152             red = (red * 3 + 117) % 256;
+153             green = (green * 5 + 111) % 256;
+154             blue = (blue * 7 + 103) % 256;
+155             \textcolor{keywordflow}{if}(red+green+blue<192 || red+green+blue>768-192 || (red+green-blue >256))\textcolor{comment}{// ||
+       !(red>blue+green||blue>red+green||green>red+blue))}
+156               \textcolor{keywordflow}{if}(red+green+blue!=128*3+127+121+113-30)
+157                 T\_T++;
+158           \}
+159 
+160         f.put( static\_cast <char> (blue)  )
+161          .put( static\_cast <char> (green) )
+162          .put( static\_cast <char> (red)   );
+163         \}
+164 
+165       \textcolor{keywordflow}{if} (padding\_size) f << lwrite( 0, padding\_size );
+166       \}
+167 
+168     \textcolor{comment}{// All done!}
+169     \textcolor{keywordflow}{return} f.good();
+170     \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{intarray2bmp@{intarray2bmp}!intarray2bmp@{intarray2bmp}}
+\index{intarray2bmp@{intarray2bmp}!intarray2bmp@{intarray2bmp}}
+\subsubsection[{\texorpdfstring{intarray2bmp(const std\+::string \&filename, Int\+Type $\ast$intarray, unsigned rows, unsigned columns, Int\+Type min\+\_\+value, Int\+Type max\+\_\+value)}{intarray2bmp(const std::string &filename, IntType *intarray, unsigned rows, unsigned columns, IntType min_value, IntType max_value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Int\+Type $>$ bool intarray2bmp\+::intarray2bmp (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{Int\+Type $\ast$}]{intarray, }
+\item[{unsigned}]{rows, }
+\item[{unsigned}]{columns, }
+\item[{Int\+Type}]{min\+\_\+value, }
+\item[{Int\+Type}]{max\+\_\+value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceintarray2bmp_af95c6110f71199e05a9997b17957da22}{}\label{namespaceintarray2bmp_af95c6110f71199e05a9997b17957da22}
+
+
+在文件 Int\+Array2bmp.\+h 第 174 行定义.
+
+
+
+参考 intarray2bmp().
+
+
+\begin{DoxyCode}
+181       \{
+182     IntType** ia = \textcolor{keyword}{new}( std::nothrow ) IntType* [ rows ];
+183     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} row = 0; row < rows; row++)
+184       \{
+185       ia[ row ] = intarray + (row * columns);
+186       \}
+187     \textcolor{keywordtype}{bool} result = \hyperlink{namespaceintarray2bmp_af95c6110f71199e05a9997b17957da22}{intarray2bmp}(
+188                     filename, ia, rows, columns, min\_value, max\_value
+189                     );
+190     \textcolor{keyword}{delete} [] ia;
+191     \textcolor{keywordflow}{return} result;
+192     \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceintarray2bmp_af95c6110f71199e05a9997b17957da22_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{intarray2bmp@{intarray2bmp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!intarray2bmp@{intarray2bmp}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&outs, const lwrite \&v)}{operator<<(std::ostream &outs, const lwrite &v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& intarray2bmp\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outs, }
+\item[{const {\bf lwrite} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespaceintarray2bmp_a427bc6d7c8a53613eff03c28fce442ba}{}\label{namespaceintarray2bmp_a427bc6d7c8a53613eff03c28fce442ba}
+
+
+在文件 Int\+Array2bmp.\+h 第 54 行定义.
+
+
+
+参考 intarray2bmp\+::lwrite\+::size , 以及 intarray2bmp\+::lwrite\+::value.
+
+
+\begin{DoxyCode}
+55     \{
+56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} value = v.value;
+57     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} cntr = 0; cntr < v.size; cntr++, value >>= 8)
+58       outs.put( static\_cast <char> (value & 0xFF) );
+59     \textcolor{keywordflow}{return} outs;
+60     \}
+\end{DoxyCode}

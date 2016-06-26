@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: include/CleverOptimize.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CleverOptimize.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="CleverOptimize_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CLEVEROPTIMIZE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CLEVEROPTIMIZE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SolveStrategy_8h.html">SolveStrategy.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classCleverOptimize.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCleverOptimize.html">CleverOptimize</a> : <span class="keyword">public</span> <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCleverOptimize.html#a4b53de9bec3e3bbfd176ab68562a0df6">bfs</a>(<span class="keyword">const</span> <a class="code" href="classPoint.html">Point</a>&amp; start,<a class="code" href="classBitMatrix.html">BitMatrix</a>&amp; _map,<a class="code" href="classBitMatrix.html">BitMatrix</a>&amp; _computeMap,<span class="keyword">const</span> <a class="code" href="classSolution.html">Solution</a>&amp; temp) <span class="keyword">const</span>; </div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCleverOptimize.html#ad4df8b31e69546d22b2066d33ef57c81">backtrace</a>(<span class="keyword">const</span> <a class="code" href="classPoint.html">Point</a>&amp; start,<a class="code" href="classBitMatrix.html">BitMatrix</a>&amp; <a class="code" href="classes_8txt.html#a0a12e395730487ab04f7f11cbc4d2132">map</a>,<a class="code" href="classMatrix.html">Matrix&lt;int&gt;</a>&amp; visited,<span class="keyword">const</span> <a class="code" href="classPoint.html">Point</a>&amp; end,<span class="keywordtype">int</span> step) <span class="keyword">const</span>;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCleverOptimize.html#ac1cf58abb7c91bbabffde680d06226af">getLastDirection</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> k) <span class="keyword">const</span>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCleverOptimize.html#a616cb7ecce678bca75c693230c7415ce">getMap</a>(<a class="code" href="classBitMatrix.html">BitMatrix</a>&amp; _map,<span class="keyword">const</span> <a class="code" href="classPoint.html">Point</a>&amp; start,<a class="code" href="classBitMatrix.html">BitMatrix</a>&amp; _originMap) <span class="keyword">const</span>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classSolution.html">Solution</a> <a class="code" href="classCleverOptimize.html#ab3cc46af7f8e30d264c2f737870ab9e6">optimize</a>(<span class="keyword">const</span> <a class="code" href="classSolution.html">Solution</a> &amp;<a class="code" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>) <span class="keyword">const</span>;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCleverOptimize.html#a84307b644b9fafa57d21042e02e9cdd3">   15</a></span>&#160;    <a class="code" href="classCleverOptimize.html#a84307b644b9fafa57d21042e02e9cdd3">CleverOptimize</a>(<a class="code" href="classSolver.html">Solver</a> *solver_): <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a>(solver_){}</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classOptimizeStrategy.html">OptimizeStrategy</a> *<a class="code" href="classCleverOptimize.html#a64e5717a9e8090ccf6aecd185fbc9054">clone</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classes_8txt_html_aa43d5190bbc491d9c9134146e01a248e"><div class="ttname"><a href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a></div><div class="ttdeci">Vector&lt; Tree * &gt; solution</div><div class="ttdef"><b>Definition:</b> <a href="classes_8txt_source.html#l00033">classes.txt:33</a></div></div>
+<div class="ttc" id="classCleverOptimize_html"><div class="ttname"><a href="classCleverOptimize.html">CleverOptimize</a></div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimize_8h_source.html#l00006">CleverOptimize.h:6</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_ad4df8b31e69546d22b2066d33ef57c81"><div class="ttname"><a href="classCleverOptimize.html#ad4df8b31e69546d22b2066d33ef57c81">CleverOptimize::backtrace</a></div><div class="ttdeci">void backtrace(const Point &amp;start, BitMatrix &amp;map, Matrix&lt; int &gt; &amp;visited, const Point &amp;end, int step) const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00204">CleverOptimizie.cpp:204</a></div></div>
+<div class="ttc" id="classBitMatrix_html"><div class="ttname"><a href="classBitMatrix.html">BitMatrix</a></div><div class="ttdef"><b>Definition:</b> <a href="BitMatrix_8h_source.html#l00006">BitMatrix.h:6</a></div></div>
+<div class="ttc" id="classOptimizeStrategy_html"><div class="ttname"><a href="classOptimizeStrategy.html">OptimizeStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00037">SolveStrategy.h:37</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_ac1cf58abb7c91bbabffde680d06226af"><div class="ttname"><a href="classCleverOptimize.html#ac1cf58abb7c91bbabffde680d06226af">CleverOptimize::getLastDirection</a></div><div class="ttdeci">int getLastDirection(const int k) const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00116">CleverOptimizie.cpp:116</a></div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="classPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00068">global.h:68</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_ab3cc46af7f8e30d264c2f737870ab9e6"><div class="ttname"><a href="classCleverOptimize.html#ab3cc46af7f8e30d264c2f737870ab9e6">CleverOptimize::optimize</a></div><div class="ttdeci">Solution optimize(const Solution &amp;solution) const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00010">CleverOptimizie.cpp:10</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_a84307b644b9fafa57d21042e02e9cdd3"><div class="ttname"><a href="classCleverOptimize.html#a84307b644b9fafa57d21042e02e9cdd3">CleverOptimize::CleverOptimize</a></div><div class="ttdeci">CleverOptimize(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimize_8h_source.html#l00015">CleverOptimize.h:15</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_a4b53de9bec3e3bbfd176ab68562a0df6"><div class="ttname"><a href="classCleverOptimize.html#a4b53de9bec3e3bbfd176ab68562a0df6">CleverOptimize::bfs</a></div><div class="ttdeci">void bfs(const Point &amp;start, BitMatrix &amp;_map, BitMatrix &amp;_computeMap, const Solution &amp;temp) const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00156">CleverOptimizie.cpp:156</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_a616cb7ecce678bca75c693230c7415ce"><div class="ttname"><a href="classCleverOptimize.html#a616cb7ecce678bca75c693230c7415ce">CleverOptimize::getMap</a></div><div class="ttdeci">void getMap(BitMatrix &amp;_map, const Point &amp;start, BitMatrix &amp;_originMap) const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00125">CleverOptimizie.cpp:125</a></div></div>
+<div class="ttc" id="classCleverOptimize_html_a64e5717a9e8090ccf6aecd185fbc9054"><div class="ttname"><a href="classCleverOptimize.html#a64e5717a9e8090ccf6aecd185fbc9054">CleverOptimize::clone</a></div><div class="ttdeci">virtual OptimizeStrategy * clone() const </div><div class="ttdef"><b>Definition:</b> <a href="CleverOptimizie_8cpp_source.html#l00227">CleverOptimizie.cpp:227</a></div></div>
+<div class="ttc" id="classMatrix_html"><div class="ttname"><a href="classMatrix.html">Matrix&lt; int &gt;</a></div></div>
+<div class="ttc" id="classSolver_html"><div class="ttname"><a href="classSolver.html">Solver</a></div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00009">Solver.h:9</a></div></div>
+<div class="ttc" id="classSolution_html"><div class="ttname"><a href="classSolution.html">Solution</a></div><div class="ttdef"><b>Definition:</b> <a href="Solution_8h_source.html#l00008">Solution.h:8</a></div></div>
+<div class="ttc" id="classes_8txt_html_a0a12e395730487ab04f7f11cbc4d2132"><div class="ttname"><a href="classes_8txt.html#a0a12e395730487ab04f7f11cbc4d2132">map</a></div><div class="ttdeci">Matrix&lt; int &gt; map</div><div class="ttdef"><b>Definition:</b> <a href="classes_8txt_source.html#l00017">classes.txt:17</a></div></div>
+<div class="ttc" id="SolveStrategy_8h_html"><div class="ttname"><a href="SolveStrategy_8h.html">SolveStrategy.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

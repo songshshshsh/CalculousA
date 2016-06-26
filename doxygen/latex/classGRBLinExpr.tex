@@ -1,0 +1,437 @@
+\hypertarget{classGRBLinExpr}{}\section{G\+R\+B\+Lin\+Expr类 参考}
+\label{classGRBLinExpr}\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+
+
+{\ttfamily \#include \char`\"{}gurobi\+\_\+c++.\+h\char`\"{}}
+
+
+
+类 G\+R\+B\+Lin\+Expr 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classGRBLinExpr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+G\+R\+B\+Lin\+Expr 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBLinExpr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBLinExpr_a6d308acfca68887dac4843925aa2ab06}{G\+R\+B\+Lin\+Expr} (double \hyperlink{classGRBLinExpr_a3cbf5b4a570659fab686d349584d5614}{constant}=0.\+0)
+\item 
+\hyperlink{classGRBLinExpr_a2c5be71c7868c786460f723c7570ee61}{G\+R\+B\+Lin\+Expr} (\hyperlink{classGRBVar}{G\+R\+B\+Var} var, double coeff=1.\+0)
+\item 
+unsigned int \hyperlink{classGRBLinExpr_a02ac38b252b1848f20b8276321b2248f}{size} (void) const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBLinExpr_ad73e24304c81a6b003c950cd71db9af2}{get\+Var} (int i) const 
+\item 
+double \hyperlink{classGRBLinExpr_a1434367b8a05b14ad06b1342c74b7a5a}{get\+Coeff} (int i) const 
+\item 
+double \hyperlink{classGRBLinExpr_a4fb39d2dafff31f7bbc02db2cc5dc079}{get\+Constant} () const 
+\item 
+double \hyperlink{classGRBLinExpr_aec9ba00d4ef639332048bc2e38bbb27f}{get\+Value} () const 
+\item 
+void \hyperlink{classGRBLinExpr_a8518bb8a516ce7257d87caf1c970c2e5}{add\+Terms} (const double $\ast$coeff, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$var, int cnt)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_aefd20a3bbfff0cf823998d4fe945aaad}{operator=} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&rhs)
+\item 
+void \hyperlink{classGRBLinExpr_a7489ab064252b75fe5a0637911adc448}{operator+=} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr)
+\item 
+void \hyperlink{classGRBLinExpr_a695a03ddb2ca3c36c5b58937072d171c}{operator-\/=} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr)
+\item 
+void \hyperlink{classGRBLinExpr_ab71f95ab71f47f698eafa01d582cb549}{operator$\ast$=} (double mult)
+\item 
+void \hyperlink{classGRBLinExpr_a0fded896dc63c3316dd3866ae5cb018c}{operator/=} (double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a706e746f7ab762191964594cc8530c82}{operator+} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&rhs)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a2bd54ff49c976ffe9dc7764d6f732d90}{operator-\/} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&rhs)
+\item 
+void \hyperlink{classGRBLinExpr_a112f03db7d72c70e1d35ff0a5d0197e3}{remove} (int i)
+\item 
+bool \hyperlink{classGRBLinExpr_ac5d17e62d9f3a918270d6dfe81d157f1}{remove} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v)
+\item 
+void \hyperlink{classGRBLinExpr_aae564561808839e6b72327a3dda1417b}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classGRBLinExpr_a3cbf5b4a570659fab686d349584d5614}{constant}
+\item 
+vector$<$ double $>$ \hyperlink{classGRBLinExpr_ae1b3b0796efe5b47e4607b56ce87ca1c}{coeffs}
+\item 
+vector$<$ \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$ \hyperlink{classGRBLinExpr_a0cfef12c4fdb11e4c623007b03a61993}{vars}
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGRBLinExpr_a009c524a57973d6bb8fe064cf7546546}{G\+R\+B\+Quad\+Expr}
+\item 
+ostream \& \hyperlink{classGRBLinExpr_aad1fe067e7a53c06483bef11b7b112da}{operator$<$$<$} (ostream \&stream, \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} expr)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a0d1ccf674f3672f07a87ed4b9a9432c4}{operator+} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a369f98a2a7d72242ef8f9f063c863529}{operator+} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_ae61d5781d4b5794478e7148411754662}{operator+} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, \hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a0ac4e6cc05b18a223b617798c1422fc0}{operator+} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a362f19526ca0509aec663da3e5e57ca1}{operator+} (double a, \hyperlink{classGRBVar}{G\+R\+B\+Var} x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_aca32b6ededf483179d4ec832f041b9bc}{operator-\/} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a381a06d1de784c063a1558593b25d1ef}{operator-\/} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a220e01acbc110d26decc3eb9b9f2f707}{operator-\/} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a00944c21db97e06c57a32a8a44b17fcb}{operator-\/} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, \hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a1c6d619403b25212a24e445d35692d08}{operator-\/} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a9e69f993bbdb9da3c094f3b6913c8c20}{operator-\/} (double a, \hyperlink{classGRBVar}{G\+R\+B\+Var} x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a2e9c9bf7dda6aa982287c8f3f99ef943}{operator$\ast$} (double a, \hyperlink{classGRBVar}{G\+R\+B\+Var} x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_afbfcc44d81eac4b5898f9dbfca6e1a2a}{operator$\ast$} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_ade32ef36fef6dfa0b9fa542ea425d775}{operator$\ast$} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x, double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_a49ea44a25db94396a530a8ad89114a36}{operator$\ast$} (double a, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_ab9ee71ce5a0f6cb380df2ef3c5d42370}{operator/} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, double a)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBLinExpr_aa1b365e3f8c7f2f13fb4c9d335b7e79b}{operator/} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x, double a)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 613 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Lin\+Expr(double constant=0.\+0)}{GRBLinExpr(double constant=0.0)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Lin\+Expr\+::\+G\+R\+B\+Lin\+Expr (
+\begin{DoxyParamCaption}
+\item[{double}]{constant = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a6d308acfca68887dac4843925aa2ab06}{}\label{classGRBLinExpr_a6d308acfca68887dac4843925aa2ab06}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Lin\+Expr(\+G\+R\+B\+Var var, double coeff=1.\+0)}{GRBLinExpr(GRBVar var, double coeff=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Lin\+Expr\+::\+G\+R\+B\+Lin\+Expr (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{var, }
+\item[{double}]{coeff = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a2c5be71c7868c786460f723c7570ee61}{}\label{classGRBLinExpr_a2c5be71c7868c786460f723c7570ee61}
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!add\+Terms@{add\+Terms}}
+\index{add\+Terms@{add\+Terms}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Terms(const double $\ast$coeff, const G\+R\+B\+Var $\ast$var, int cnt)}{addTerms(const double *coeff, const GRBVar *var, int cnt)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::add\+Terms (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{coeff, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{var, }
+\item[{int}]{cnt}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a8518bb8a516ce7257d87caf1c970c2e5}{}\label{classGRBLinExpr_a8518bb8a516ce7257d87caf1c970c2e5}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!clear@{clear}}
+\index{clear@{clear}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_aae564561808839e6b72327a3dda1417b}{}\label{classGRBLinExpr_aae564561808839e6b72327a3dda1417b}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!get\+Coeff@{get\+Coeff}}
+\index{get\+Coeff@{get\+Coeff}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Coeff(int i) const }{getCoeff(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Lin\+Expr\+::get\+Coeff (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBLinExpr_a1434367b8a05b14ad06b1342c74b7a5a}{}\label{classGRBLinExpr_a1434367b8a05b14ad06b1342c74b7a5a}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!get\+Constant@{get\+Constant}}
+\index{get\+Constant@{get\+Constant}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Constant() const }{getConstant() const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Lin\+Expr\+::get\+Constant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBLinExpr_a4fb39d2dafff31f7bbc02db2cc5dc079}{}\label{classGRBLinExpr_a4fb39d2dafff31f7bbc02db2cc5dc079}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Value() const }{getValue() const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Lin\+Expr\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBLinExpr_aec9ba00d4ef639332048bc2e38bbb27f}{}\label{classGRBLinExpr_aec9ba00d4ef639332048bc2e38bbb27f}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!get\+Var@{get\+Var}}
+\index{get\+Var@{get\+Var}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Var(int i) const }{getVar(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Lin\+Expr\+::get\+Var (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBLinExpr_ad73e24304c81a6b003c950cd71db9af2}{}\label{classGRBLinExpr_ad73e24304c81a6b003c950cd71db9af2}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(double mult)}{operator*=(double mult)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{double}]{mult}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_ab71f95ab71f47f698eafa01d582cb549}{}\label{classGRBLinExpr_ab71f95ab71f47f698eafa01d582cb549}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+(const G\+R\+B\+Lin\+Expr \&rhs)}{operator+(const GRBLinExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Lin\+Expr\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a706e746f7ab762191964594cc8530c82}{}\label{classGRBLinExpr_a706e746f7ab762191964594cc8530c82}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+=(const G\+R\+B\+Lin\+Expr \&expr)}{operator+=(const GRBLinExpr &expr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a7489ab064252b75fe5a0637911adc448}{}\label{classGRBLinExpr_a7489ab064252b75fe5a0637911adc448}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/(const G\+R\+B\+Lin\+Expr \&rhs)}{operator-(const GRBLinExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Lin\+Expr\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a2bd54ff49c976ffe9dc7764d6f732d90}{}\label{classGRBLinExpr_a2bd54ff49c976ffe9dc7764d6f732d90}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/=(const G\+R\+B\+Lin\+Expr \&expr)}{operator-=(const GRBLinExpr &expr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a695a03ddb2ca3c36c5b58937072d171c}{}\label{classGRBLinExpr_a695a03ddb2ca3c36c5b58937072d171c}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator/=(double a)}{operator/=(double a)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a0fded896dc63c3316dd3866ae5cb018c}{}\label{classGRBLinExpr_a0fded896dc63c3316dd3866ae5cb018c}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator=@{operator=}}
+\index{operator=@{operator=}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator=(const G\+R\+B\+Lin\+Expr \&rhs)}{operator=(const GRBLinExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Lin\+Expr\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_aefd20a3bbfff0cf823998d4fe945aaad}{}\label{classGRBLinExpr_aefd20a3bbfff0cf823998d4fe945aaad}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{remove(int i)}{remove(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Lin\+Expr\+::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_a112f03db7d72c70e1d35ff0a5d0197e3}{}\label{classGRBLinExpr_a112f03db7d72c70e1d35ff0a5d0197e3}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Var v)}{remove(GRBVar v)}}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+R\+B\+Lin\+Expr\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBLinExpr_ac5d17e62d9f3a918270d6dfe81d157f1}{}\label{classGRBLinExpr_ac5d17e62d9f3a918270d6dfe81d157f1}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!size@{size}}
+\index{size@{size}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{size(void) const }{size(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int G\+R\+B\+Lin\+Expr\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBLinExpr_a02ac38b252b1848f20b8276321b2248f}{}\label{classGRBLinExpr_a02ac38b252b1848f20b8276321b2248f}
+
+
+\subsection{友元及相关函数文档}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Quad\+Expr}{GRBQuadExpr}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf G\+R\+B\+Quad\+Expr}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a009c524a57973d6bb8fe064cf7546546}{}\label{classGRBLinExpr_a009c524a57973d6bb8fe064cf7546546}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 625 行定义.
+
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{{\bf G\+R\+B\+Var}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a2e9c9bf7dda6aa982287c8f3f99ef943}{}\label{classGRBLinExpr_a2e9c9bf7dda6aa982287c8f3f99ef943}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_afbfcc44d81eac4b5898f9dbfca6e1a2a}{}\label{classGRBLinExpr_afbfcc44d81eac4b5898f9dbfca6e1a2a}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_ade32ef36fef6dfa0b9fa542ea425d775}{}\label{classGRBLinExpr_ade32ef36fef6dfa0b9fa542ea425d775}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a49ea44a25db94396a530a8ad89114a36}{}\label{classGRBLinExpr_a49ea44a25db94396a530a8ad89114a36}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a0d1ccf674f3672f07a87ed4b9a9432c4}{}\label{classGRBLinExpr_a0d1ccf674f3672f07a87ed4b9a9432c4}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a369f98a2a7d72242ef8f9f063c863529}{}\label{classGRBLinExpr_a369f98a2a7d72242ef8f9f063c863529}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{{\bf G\+R\+B\+Var}}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_ae61d5781d4b5794478e7148411754662}{}\label{classGRBLinExpr_ae61d5781d4b5794478e7148411754662}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a0ac4e6cc05b18a223b617798c1422fc0}{}\label{classGRBLinExpr_a0ac4e6cc05b18a223b617798c1422fc0}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{{\bf G\+R\+B\+Var}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a362f19526ca0509aec663da3e5e57ca1}{}\label{classGRBLinExpr_a362f19526ca0509aec663da3e5e57ca1}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_aca32b6ededf483179d4ec832f041b9bc}{}\label{classGRBLinExpr_aca32b6ededf483179d4ec832f041b9bc}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a381a06d1de784c063a1558593b25d1ef}{}\label{classGRBLinExpr_a381a06d1de784c063a1558593b25d1ef}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a220e01acbc110d26decc3eb9b9f2f707}{}\label{classGRBLinExpr_a220e01acbc110d26decc3eb9b9f2f707}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{{\bf G\+R\+B\+Var}}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a00944c21db97e06c57a32a8a44b17fcb}{}\label{classGRBLinExpr_a00944c21db97e06c57a32a8a44b17fcb}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a1c6d619403b25212a24e445d35692d08}{}\label{classGRBLinExpr_a1c6d619403b25212a24e445d35692d08}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{{\bf G\+R\+B\+Var}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_a9e69f993bbdb9da3c094f3b6913c8c20}{}\label{classGRBLinExpr_a9e69f993bbdb9da3c094f3b6913c8c20}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator/@{operator/}}
+\index{operator/@{operator/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator/ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_ab9ee71ce5a0f6cb380df2ef3c5d42370}{}\label{classGRBLinExpr_ab9ee71ce5a0f6cb380df2ef3c5d42370}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator/@{operator/}}
+\index{operator/@{operator/}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_aa1b365e3f8c7f2f13fb4c9d335b7e79b}{}\label{classGRBLinExpr_aa1b365e3f8c7f2f13fb4c9d335b7e79b}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{stream, }
+\item[{{\bf G\+R\+B\+Lin\+Expr}}]{expr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBLinExpr_aad1fe067e7a53c06483bef11b7b112da}{}\label{classGRBLinExpr_aad1fe067e7a53c06483bef11b7b112da}
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!coeffs@{coeffs}}
+\index{coeffs@{coeffs}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{coeffs}{coeffs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ G\+R\+B\+Lin\+Expr\+::coeffs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBLinExpr_ae1b3b0796efe5b47e4607b56ce87ca1c}{}\label{classGRBLinExpr_ae1b3b0796efe5b47e4607b56ce87ca1c}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 618 行定义.
+
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!constant@{constant}}
+\index{constant@{constant}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{constant}{constant}}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Lin\+Expr\+::constant\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBLinExpr_a3cbf5b4a570659fab686d349584d5614}{}\label{classGRBLinExpr_a3cbf5b4a570659fab686d349584d5614}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 617 行定义.
+
+\index{G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}!vars@{vars}}
+\index{vars@{vars}!G\+R\+B\+Lin\+Expr@{G\+R\+B\+Lin\+Expr}}
+\subsubsection[{\texorpdfstring{vars}{vars}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Var}$>$ G\+R\+B\+Lin\+Expr\+::vars\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBLinExpr_a0cfef12c4fdb11e4c623007b03a61993}{}\label{classGRBLinExpr_a0cfef12c4fdb11e4c623007b03a61993}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 619 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{gurobi__c_09_09_8h}{gurobi\+\_\+c++.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,3 @@
+<map id="GRBModel" name="GRBModel">
+<area shape="rect" id="node5" href="$classGRBCallback.html" title="{GRBCallback\n|# where\l&#45; Cmodel\l&#45; cols\l&#45; cbdata\l&#45; x\l&#45; newx\l&#45; relx\l|+ GRBCallback()\l+ ~GRBCallback()\l# callback()\l# getDoubleInfo()\l# getIntInfo()\l# getStringInfo()\l# getSolution()\l# getSolution()\l# getNodeRel()\l# getNodeRel()\l# setSolution()\l# setSolution()\l# addCut()\l# addCut()\l# addLazy()\l# addLazy()\l# abort()\l}" alt="" coords="509,5,637,405"/>
+</map>

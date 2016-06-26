@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: StupidCheck类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classStupidCheck-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">StupidCheck类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a>&quot;</code></p>
+<div class="dynheader">
+类 StupidCheck 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStupidCheck__inherit__graph.png" border="0" usemap="#StupidCheck_inherit__map" alt="Inheritance graph"/></div>
+<map name="StupidCheck_inherit__map" id="StupidCheck_inherit__map">
+<area shape="rect" id="node2" href="classCheckStrategy.html" title="{CheckStrategy\n|+ solver\l|+ CheckStrategy()\l+ ~CheckStrategy()\l+ check()\l+ clone()\l}" alt="" coords="5,5,141,127"/>
+</map>
+</div>
+<div class="dynheader">
+StupidCheck 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStupidCheck__coll__graph.png" border="0" usemap="#StupidCheck_coll__map" alt="Collaboration graph"/></div>
+<map name="StupidCheck_coll__map" id="StupidCheck_coll__map">
+<area shape="rect" id="node2" href="classCheckStrategy.html" title="{CheckStrategy\n||+ CheckStrategy()\l+ ~CheckStrategy()\l+ check()\l+ clone()\l}" alt="" coords="67,457,203,579"/>
+<area shape="rect" id="node3" href="classSolver.html" title="{Solver\n||+ Solver()\l+ clone()\l+ ~Solver()\l+ run()\l+ setSolveStrategy()\l+ setCheckStrategy()\l+ setOptimizeStrategy()\l}" alt="" coords="153,656,315,821"/>
+<area shape="rect" id="node4" href="classOptimizeStrategy.html" title="{OptimizeStrategy\n||+ OptimizeStrategy()\l+ ~OptimizeStrategy()\l+ optimize()\l+ clone()\l}" alt="" coords="76,884,227,1005"/>
+<area shape="rect" id="node5" href="classSolveStrategy.html" title="{SolveStrategy\n||+ SolveStrategy()\l+ ~SolveStrategy()\l+ solve()\l+ clone()\l}" alt="" coords="270,884,401,1005"/>
+<area shape="rect" id="node6" href="classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="244,443,328,593"/>
+<area shape="rect" id="node7" href="classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="31,288,194,365"/>
+<area shape="rect" id="node9" href="classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="229,288,343,365"/>
+<area shape="rect" id="node11" href="classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="379,273,476,380"/>
+<area shape="rect" id="node12" href="classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="378,147,538,224"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5d9cfbf24ede46fe72f85817996081d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">StupidCheck</a> (<a class="el" href="classSolver.html">Solver</a> *solver_)</td></tr>
+<tr class="separator:a5d9cfbf24ede46fe72f85817996081d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0518b4d64dd33ef27f9af0117f9dd2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStupidCheck.html#a8f0518b4d64dd33ef27f9af0117f9dd2">~StupidCheck</a> ()</td></tr>
+<tr class="separator:a8f0518b4d64dd33ef27f9af0117f9dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6291b52893e1caf4dc84e195dc79e534"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStupidCheck.html#a6291b52893e1caf4dc84e195dc79e534">check</a> (const <a class="el" href="classSolution.html">Solution</a> &amp;<a class="el" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a>) const </td></tr>
+<tr class="separator:a6291b52893e1caf4dc84e195dc79e534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2425603803daf7d190771623c78bcd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCheckStrategy.html">CheckStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStupidCheck.html#a5c2425603803daf7d190771623c78bcd">clone</a> () const </td></tr>
+<tr class="separator:a5c2425603803daf7d190771623c78bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCheckStrategy"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCheckStrategy')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classCheckStrategy.html">CheckStrategy</a></td></tr>
+<tr class="memitem:afdfa5dca2aecaccd079a765a1fb52690 inherit pub_methods_classCheckStrategy"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckStrategy.html#afdfa5dca2aecaccd079a765a1fb52690">CheckStrategy</a> (<a class="el" href="classSolver.html">Solver</a> *solver_)</td></tr>
+<tr class="separator:afdfa5dca2aecaccd079a765a1fb52690 inherit pub_methods_classCheckStrategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15162688463374268c2a008ba70b7327 inherit pub_methods_classCheckStrategy"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckStrategy.html#a15162688463374268c2a008ba70b7327">~CheckStrategy</a> ()</td></tr>
+<tr class="separator:a15162688463374268c2a008ba70b7327 inherit pub_methods_classCheckStrategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_attribs_classCheckStrategy"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classCheckStrategy')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="classCheckStrategy.html">CheckStrategy</a></td></tr>
+<tr class="memitem:a2adc667c9f5fe299ef7fa0a01781448b inherit pub_attribs_classCheckStrategy"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolver.html">Solver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckStrategy.html#a2adc667c9f5fe299ef7fa0a01781448b">solver</a></td></tr>
+<tr class="separator:a2adc667c9f5fe299ef7fa0a01781448b inherit pub_attribs_classCheckStrategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a> 第 <a class="el" href="StupidStrategy_8h_source.html#l00018">18</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a5d9cfbf24ede46fe72f85817996081d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">StupidCheck::StupidCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSolver.html">Solver</a> *&#160;</td>
+          <td class="paramname"><em>solver_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a> 第 <a class="el" href="StupidStrategy_8h_source.html#l00021">21</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;: <a class="code" href="classCheckStrategy.html#afdfa5dca2aecaccd079a765a1fb52690">CheckStrategy</a>(solver_){}</div><div class="ttc" id="classCheckStrategy_html_afdfa5dca2aecaccd079a765a1fb52690"><div class="ttname"><a href="classCheckStrategy.html#afdfa5dca2aecaccd079a765a1fb52690">CheckStrategy::CheckStrategy</a></div><div class="ttdeci">CheckStrategy(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00028">SolveStrategy.h:28</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8f0518b4d64dd33ef27f9af0117f9dd2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual StupidCheck::~StupidCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a> 第 <a class="el" href="StupidStrategy_8h_source.html#l00022">22</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{}</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a6291b52893e1caf4dc84e195dc79e534"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool StupidCheck::check </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSolution.html">Solution</a> &amp;&#160;</td>
+          <td class="paramname"><em>solution</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11">CheckStrategy</a>.</p>
+
+<p>在文件 <a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a> 第 <a class="el" href="StupidStrategy_8h_source.html#l00023">23</a> 行定义.</p>
+
+<p>参考 <a class="el" href="global_8h_source.html#l00066">NOT_USED</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="global_8h.html#a05a7b30aaf65db56c27346272aa681e5">NOT_USED</a>(solution);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="ttc" id="global_8h_html_a05a7b30aaf65db56c27346272aa681e5"><div class="ttname"><a href="global_8h.html#a05a7b30aaf65db56c27346272aa681e5">NOT_USED</a></div><div class="ttdeci">#define NOT_USED(x)</div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00066">global.h:66</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5c2425603803daf7d190771623c78bcd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classCheckStrategy.html">CheckStrategy</a>* StupidCheck::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classCheckStrategy.html#ae3d41d899831bf33314db410d7f2f947">CheckStrategy</a>.</p>
+
+<p>在文件 <a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a> 第 <a class="el" href="StupidStrategy_8h_source.html#l00028">28</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">StupidCheck</a>(*<span class="keyword">this</span>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="ttc" id="classStupidCheck_html_a5d9cfbf24ede46fe72f85817996081d2"><div class="ttname"><a href="classStupidCheck.html#a5d9cfbf24ede46fe72f85817996081d2">StupidCheck::StupidCheck</a></div><div class="ttdeci">StupidCheck(Solver *solver_)</div><div class="ttdef"><b>Definition:</b> <a href="StupidStrategy_8h_source.html#l00021">StupidStrategy.h:21</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="StupidStrategy_8h_source.html">StupidStrategy.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

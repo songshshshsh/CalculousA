@@ -1,0 +1,11 @@
+<map id="StupidOptimize" name="StupidOptimize">
+<area shape="rect" id="node2" href="$classOptimizeStrategy.html" title="{OptimizeStrategy\n||+ OptimizeStrategy()\l+ ~OptimizeStrategy()\l+ optimize()\l+ clone()\l}" alt="" coords="65,457,215,579"/>
+<area shape="rect" id="node3" href="$classSolver.html" title="{Solver\n||+ Solver()\l+ clone()\l+ ~Solver()\l+ run()\l+ setSolveStrategy()\l+ setCheckStrategy()\l+ setOptimizeStrategy()\l}" alt="" coords="169,656,330,821"/>
+<area shape="rect" id="node4" href="$classSolveStrategy.html" title="{SolveStrategy\n||+ SolveStrategy()\l+ ~SolveStrategy()\l+ solve()\l+ clone()\l}" alt="" coords="105,884,236,1005"/>
+<area shape="rect" id="node5" href="$classCheckStrategy.html" title="{CheckStrategy\n||+ CheckStrategy()\l+ ~CheckStrategy()\l+ check()\l+ clone()\l}" alt="" coords="276,884,412,1005"/>
+<area shape="rect" id="node6" href="$classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="262,443,346,593"/>
+<area shape="rect" id="node7" href="$classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="49,288,212,365"/>
+<area shape="rect" id="node9" href="$classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="247,288,361,365"/>
+<area shape="rect" id="node11" href="$classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="397,273,494,380"/>
+<area shape="rect" id="node12" href="$classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="396,147,556,224"/>
+</map>

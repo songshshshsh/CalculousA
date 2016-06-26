@@ -1,0 +1,1313 @@
+\hypertarget{classGRBModel}{}\section{G\+R\+B\+Model类 参考}
+\label{classGRBModel}\index{G\+R\+B\+Model@{G\+R\+B\+Model}}
+
+
+{\ttfamily \#include \char`\"{}gurobi\+\_\+c++.\+h\char`\"{}}
+
+
+
+G\+R\+B\+Model 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBModel_a026d67cfd0800caceb46aacb08edf2ef}{G\+R\+B\+Model} (const \hyperlink{classGRBEnv}{G\+R\+B\+Env} \&env)
+\item 
+\hyperlink{classGRBModel_ab3f639bddd431df6a898cb3dd08f30d2}{G\+R\+B\+Model} (const \hyperlink{classGRBEnv}{G\+R\+B\+Env} \&env, const string \&filename)
+\item 
+\hyperlink{classGRBModel_ace55e91735a6583c414c8e1268848fc2}{G\+R\+B\+Model} (const \hyperlink{classGRBModel}{G\+R\+B\+Model} \&xmodel)
+\item 
+\hyperlink{classGRBModel_ab896389fae051821a84dc914cb1bbb3d}{$\sim$\+G\+R\+B\+Model} ()
+\item 
+void \hyperlink{classGRBModel_a576fef8ddfcd26755547e715b25bc047}{read} (const string \&filename)
+\item 
+void \hyperlink{classGRBModel_a0e9bcc54f46939c7e55987c594645533}{write} (const string \&filename)
+\item 
+void \hyperlink{classGRBModel_a33c526935bc1c6fa329e28d74d132d64}{sync} ()
+\item 
+\hyperlink{classGRBModel}{G\+R\+B\+Model} \hyperlink{classGRBModel_adc85a6f51fb2b1847bdbfdcffc0c8154}{relax} ()
+\item 
+\hyperlink{classGRBModel}{G\+R\+B\+Model} \hyperlink{classGRBModel_ad696fc9087efbb57f3e1f4974c709bb7}{fixed\+Model} ()
+\item 
+\hyperlink{classGRBModel}{G\+R\+B\+Model} \hyperlink{classGRBModel_ac864af8e2453f73995890c62f403fe10}{presolve} ()
+\item 
+\hyperlink{classGRBModel}{G\+R\+B\+Model} \hyperlink{classGRBModel_a14e4d07e39aa57662a33e5c098777068}{feasibility} ()
+\item 
+double \hyperlink{classGRBModel_a0082e0bba4d3dbff4db471c49e0cf69e}{feas\+Relax} (int relaxobjtype, bool minrelax, bool vrelax, bool crelax)
+\item 
+double \hyperlink{classGRBModel_adc968bc539fe3ee0bd95baf44ed03697}{feas\+Relax} (int relaxobjtype, bool minrelax, int vlen, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$\hyperlink{classGRBModel_a96d3ba518278642c7b13b74ad9bc7f7e}{vars}, const double $\ast$lbpen, const double $\ast$ubpen, int clen, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$\hyperlink{classGRBModel_a755e1d5f050c0244720ccca9610a1e02}{constrs}, const double $\ast$rhspen)
+\item 
+void \hyperlink{classGRBModel_a7662994a5e461c9fa82345f93985e043}{update} ()
+\item 
+void \hyperlink{classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d}{optimize} ()
+\item 
+void \hyperlink{classGRBModel_adf9fd231decbafd1bbd06c6488a53b36}{optimizeasync} ()
+\item 
+void \hyperlink{classGRBModel_a233ec1462a249c1494cee66445319a02}{compute\+I\+IS} ()
+\item 
+void \hyperlink{classGRBModel_a60b71c3d7a2dbcd8594c3d1fa901e3dd}{tune} ()
+\item 
+void \hyperlink{classGRBModel_ab9ce968b8366f363a3dca98c2f829947}{reset} ()
+\item 
+void \hyperlink{classGRBModel_a1c187df2f9bcf41d20687d79d14cd7c0}{check} ()
+\item 
+void \hyperlink{classGRBModel_a5950fc4eedb549dc38f2f504d6bc8224}{terminate} ()
+\item 
+void \hyperlink{classGRBModel_a5bc61abf65ff7bce782bfbe822525c06}{get\+Tune\+Result} (int i)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBModel_a101e9eb73e8b2bc384117f8fa1eca662}{get\+Objective} () const 
+\item 
+int \hyperlink{classGRBModel_a88a22d02a6af050943884a5140a5a45a}{get\+P\+W\+L\+Obj} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v, double $\ast$x, double $\ast$\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}) const 
+\item 
+void \hyperlink{classGRBModel_a408a224373e26cb163510c5352577d51}{set\+Objective} (\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} obje, int sense=0)
+\item 
+void \hyperlink{classGRBModel_a487c992f4b9c14eb6b2348f487765fbe}{set\+Objective} (\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} obje, int sense=0)
+\item 
+void \hyperlink{classGRBModel_a5b717d74dbef2ce72e7eef2b84316709}{set\+P\+W\+L\+Obj} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v, int \hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}, double $\ast$x, double $\ast$\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBModel_ac27b8102164a63e3c5d1b3e49a36fd54}{get\+Var} (int i) const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$ \hyperlink{classGRBModel_a10f0d8daaf5fde5084c4f0536a6b42f0}{get\+Vars} () const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBModel_a98af5f146886bb892341df82c51e4dba}{get\+Var\+By\+Name} (const string \&name)
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a8505c2a2068a9dcfef060975840c5d7a}{get\+Constr} (int i) const 
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$ \hyperlink{classGRBModel_a0cf32507e437dfcd579c6ba865525281}{get\+Constrs} () const 
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a2d4b3c0b05bcfbd94e4e5537db318569}{get\+Constr\+By\+Name} (const string \&name)
+\item 
+\hyperlink{classGRBSOS}{G\+R\+B\+S\+OS} $\ast$ \hyperlink{classGRBModel_aff890e0663bd4e6ab03374924c7bbd94}{get\+S\+O\+Ss} () const 
+\item 
+\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$ \hyperlink{classGRBModel_a5feaa08937f3d4aad2fa1a84efc23cef}{get\+Q\+Constrs} () const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98}{add\+Var} (double lb, double ub, double obj, char vtype, string vname=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBModel_a99ff5e30497fae9e6b5d0e7fc67754d4}{add\+Var} (double lb, double ub, double obj, char vtype, int nonzeros, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const double $\ast$coeffs=N\+U\+LL, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBModel_aff71d21d540bc2938d4154022b22efb9}{add\+Var} (double lb, double ub, double obj, char vtype, const \hyperlink{classGRBColumn}{G\+R\+B\+Column} \&col, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$ \hyperlink{classGRBModel_ab66da570bb1582d82cfce21dfa2d4587}{add\+Vars} (int cnt, char type=\hyperlink{gurobi__c_8h_a6cc9be6c5a5942fae165ac67f0b55c09}{G\+R\+B\+\_\+\+C\+O\+N\+T\+I\+N\+U\+O\+US})
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$ \hyperlink{classGRBModel_aeae91a0fadbbfdc452a3d17ff5c68f6f}{add\+Vars} (const double $\ast$lb, const double $\ast$ub, const double $\ast$obj, const char $\ast$type, const string $\ast$name, int len)
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$ \hyperlink{classGRBModel_af8a3a9fc35892c314be155e243601192}{add\+Vars} (const double $\ast$lb, const double $\ast$ub, const double $\ast$obj, const char $\ast$type, const string $\ast$name, const \hyperlink{classGRBColumn}{G\+R\+B\+Column} $\ast$col, int len)
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}{add\+Constr} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr1, char sense, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr2, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a3605e2d163ba6ca2fc31586874b057f3}{add\+Constr} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr, char sense, \hyperlink{classGRBVar}{G\+R\+B\+Var} v, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a245f9547c916fa83d65e91863c5f10cd}{add\+Constr} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v1, char sense, \hyperlink{classGRBVar}{G\+R\+B\+Var} v2, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_abb54387d2110a52ad5bbe14c92c0f077}{add\+Constr} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v, char sense, double rhs, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a3bba6ea074b2b285092f965adc4ade63}{add\+Constr} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr, char sense, double rhs, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_ab5db9d63232f37b13834e0fbd5ea665c}{add\+Constr} (const \hyperlink{classGRBTempConstr}{G\+R\+B\+Temp\+Constr} \&tc, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{classGRBModel_a8d7c5b467a6f17c130a5c51a33051d08}{add\+Range} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&expr, double lower, double upper, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$ \hyperlink{classGRBModel_a648968e99d4f92774f28fea67719b393}{add\+Constrs} (int cnt)
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$ \hyperlink{classGRBModel_a89c52e6cbb11932bafd3a79dfee7d6bd}{add\+Constrs} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} $\ast$expr, const char $\ast$sense, const double $\ast$rhs, const string $\ast$name, int len)
+\item 
+\hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$ \hyperlink{classGRBModel_a7d398eb440616e3ab7438ccb1dcd3624}{add\+Ranges} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} $\ast$expr, const double $\ast$lower, const double $\ast$upper, const string $\ast$name, int len)
+\item 
+\hyperlink{classGRBSOS}{G\+R\+B\+S\+OS} \hyperlink{classGRBModel_a8a127afa0ed029c7dff13c03ab66bc07}{add\+S\+OS} (const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const double $\ast$weight, int len, int type)
+\item 
+\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} \hyperlink{classGRBModel_a85a2af8c63488d161906f7e29c976306}{add\+Q\+Constr} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&expr1, char sense, const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&expr2, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} \hyperlink{classGRBModel_a8f1c1cd83d74ae931b1a2e8b941011a1}{add\+Q\+Constr} (const \hyperlink{classGRBTempConstr}{G\+R\+B\+Temp\+Constr} \&tc, string name=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} \hyperlink{classGRBModel_abcb46d2d8b02d714e4359c1c57ffc15c}{add\+Q\+Constr} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&expr, char sense, double rhs, string cname)
+\item 
+void \hyperlink{classGRBModel_a9465c542f5e612f028b669f18e074a8c}{remove} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v)
+\item 
+void \hyperlink{classGRBModel_aa53fa2a1da135e40b106594fa9f50c27}{remove} (\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c})
+\item 
+void \hyperlink{classGRBModel_aee6ae45e2945292f0e900473e24b08f6}{remove} (\hyperlink{classGRBSOS}{G\+R\+B\+S\+OS} xsos)
+\item 
+void \hyperlink{classGRBModel_af4b9518f82d0ae65f0f5f0cbb0301cc2}{remove} (\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} xqconstr)
+\item 
+void \hyperlink{classGRBModel_a91417ce8780706480b40e095b4bc0d87}{chg\+Coeff} (\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}, \hyperlink{classGRBVar}{G\+R\+B\+Var} v, double val)
+\item 
+void \hyperlink{classGRBModel_a17d9363c54c8f81f3110bf7d4a8905be}{chg\+Coeffs} (const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const double $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a3e467e1a46fd96658f5fb4483f69c561}{chg\+Coeffs} (const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const double $\ast$val, size\+\_\+t len)
+\item 
+double \hyperlink{classGRBModel_a7a70806a3c68d0bff5a232914eaedea7}{get\+Coeff} (\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c}, \hyperlink{classGRBVar}{G\+R\+B\+Var} v) const 
+\item 
+\hyperlink{classGRBColumn}{G\+R\+B\+Column} \hyperlink{classGRBModel_aab9b448afc20566ab7945548f4b05bf9}{get\+Col} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v)
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBModel_a8f65fe39e6a6ede1387ea977cc12ed66}{get\+Row} (\hyperlink{classGRBConstr}{G\+R\+B\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c})
+\item 
+int \hyperlink{classGRBModel_a58b991efcdc6f6bb179a1c267bf12f42}{get\+S\+OS} (\hyperlink{classGRBSOS}{G\+R\+B\+S\+OS} xsos, \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, double $\ast$weight, int $\ast$typeP)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBModel_a8824331442db733b68bac9745fb38317}{get\+Q\+C\+Row} (\hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c})
+\item 
+\hyperlink{classGRBEnv}{G\+R\+B\+Env} \hyperlink{classGRBModel_aa5dfd23b74bf0936a22a5b5f58a7c34b}{get\+Env} ()
+\item 
+\hyperlink{classGRBEnv}{G\+R\+B\+Env} \hyperlink{classGRBModel_ab285776b9bb6b59bd31f7f38bc371909}{get\+Concurrent\+Env} (int num)
+\item 
+void \hyperlink{classGRBModel_a19b5f355d4c80da959bfa597e268d3d0}{discard\+Concurrent\+Envs} ()
+\item 
+int \hyperlink{classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20}{get} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr) const 
+\item 
+double \hyperlink{classGRBModel_ab088618084ec2f3d81dbcba0cdafb03b}{get} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr) const 
+\item 
+string \hyperlink{classGRBModel_a95f9ec06673910a083b6ff76551172d2}{get} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr) const 
+\item 
+void \hyperlink{classGRBModel_a8df5e3c25795f50163511d383a460b98}{set} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr, int val)
+\item 
+void \hyperlink{classGRBModel_a42c9aad88b3d2afd75e0fe547c69cfeb}{set} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, double val)
+\item 
+void \hyperlink{classGRBModel_af14524414b1b608e2dedc89d699ba090}{set} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const string \&val)
+\item 
+int $\ast$ \hyperlink{classGRBModel_ad65bb0a90763bd68c29d62da6fcd6c06}{get} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, int len)
+\item 
+char $\ast$ \hyperlink{classGRBModel_a6af098708900c06369dadb51d6d8d343}{get} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, int len)
+\item 
+double $\ast$ \hyperlink{classGRBModel_ac82e98ad043965288391dfc8a65f0b5d}{get} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, int len)
+\item 
+string $\ast$ \hyperlink{classGRBModel_a8a32496eb7dd5ff5b0cd4483f29bd37a}{get} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, int len)
+\item 
+int $\ast$ \hyperlink{classGRBModel_ac78d23b5a697701a5195ae6247e4fa89}{get} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, int len)
+\item 
+char $\ast$ \hyperlink{classGRBModel_a27cf7cac2d485a0addffaab547194e97}{get} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, int len)
+\item 
+double $\ast$ \hyperlink{classGRBModel_af6b4bfca41c2a82541b770e69377902f}{get} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, int len)
+\item 
+string $\ast$ \hyperlink{classGRBModel_a0478e3e64996775c023038059cdf19a1}{get} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, int len)
+\item 
+char $\ast$ \hyperlink{classGRBModel_a4974083812ee67881c9052f7cac7ca2f}{get} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xqconstrs, int len)
+\item 
+double $\ast$ \hyperlink{classGRBModel_a3664633bfe524de118f432bc011b61ed}{get} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xqconstrs, int len)
+\item 
+string $\ast$ \hyperlink{classGRBModel_abdac5cb1ebe0e610216fc255ec521c7e}{get} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xqconstrs, int len)
+\item 
+void \hyperlink{classGRBModel_a45636b2c5aed29cf096eb65cafa656a8}{set} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const int $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_afd103bc2bfefc1bcf2ac3840d5863c7b}{set} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const char $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_acd3dde73f8f2d44bb21454069bbaa2a5}{set} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const double $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_af88c5e400af5f8e86e088633e3bc97c5}{set} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$xvars, const string $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a5ebf4f2bfd9dc58740c3cb1cf3a97e61}{set} (\hyperlink{gurobi__c_09_09_8h_acfc136f6822be3d3e36ac84bd76b0900}{G\+R\+B\+\_\+\+Int\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const int $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a25a9c48cecb1591882ef210d9d0e4194}{set} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const char $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a47bc449b8837a5934c714053e1f68d26}{set} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const double $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a5e9935cfc3dab2e22c7c7cb44ca2777c}{set} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $\ast$xconstrs, const string $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a8b062eb2cbef1d7ea95b97583643bf40}{set} (\hyperlink{gurobi__c_09_09_8h_a590e6aa44289cb0563eb6a382794dace}{G\+R\+B\+\_\+\+Char\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xconstrs, const char $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a3208e1d73da529cbb25be520081c136b}{set} (\hyperlink{gurobi__c_09_09_8h_a2f43cc28447ce1778973a1f7961e8180}{G\+R\+B\+\_\+\+Double\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xconstrs, const double $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a64fb0b201ae8dfb6aafb6beb288df157}{set} (\hyperlink{gurobi__c_09_09_8h_a08ffa110d9b1684d689ae53300bb7ec1}{G\+R\+B\+\_\+\+String\+Attr} attr, const \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $\ast$xconstrs, const string $\ast$val, int len)
+\item 
+void \hyperlink{classGRBModel_a0e46642edd2a421500e84ea10dc17008}{set\+Callback} (\hyperlink{classGRBCallback}{G\+R\+B\+Callback} $\ast$xcb)
+\end{DoxyCompactItemize}
+\subsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classGRBModel}{G\+R\+B\+Model} \& \hyperlink{classGRBModel_ab2e7ffcd6632246a35fc3a05cb02f29b}{operator=} (const \hyperlink{classGRBModel}{G\+R\+B\+Model} \&xmodel)
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gurobi__c_8h_a865e461c79c88bc5c0d5f56087ae4876}{G\+R\+Bmodel} $\ast$ \hyperlink{classGRBModel_a8eedf4d4f2c9cd3159bd965d4595191f}{Cmodel}
+\item 
+\hyperlink{gurobi__c_8h_a2963ba0c46b86ac4680fb3bb4ca8b2f3}{G\+R\+Benv} $\ast$ \hyperlink{classGRBModel_ac46ee318ff2a26ddae94dd45480ae1dc}{Cenv}
+\item 
+\hyperlink{classGRBCallback}{G\+R\+B\+Callback} $\ast$ \hyperlink{classGRBModel_aa23c57adb09b4579dd70d32e517efe21}{cb}
+\item 
+int \hyperlink{classGRBModel_ada5c8e80ac12d437788ccad6c1f42b24}{rows}
+\item 
+int \hyperlink{classGRBModel_a7451154c68d35f13d44232c253d52fa8}{cols}
+\item 
+int \hyperlink{classGRBModel_a0743eafebda885b7df2c2b5923f6b8b1}{numsos}
+\item 
+int \hyperlink{classGRBModel_aad59ddf2475017a4828a22e08e52b59a}{numqconstrs}
+\item 
+int \hyperlink{classGRBModel_a358db0bf3a8f9bebcadc9403af27551f}{newranges}
+\item 
+int \hyperlink{classGRBModel_a717756c5b80328a48913e94986ba65fa}{updatemode}
+\item 
+vector$<$ \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$ \hyperlink{classGRBModel_a96d3ba518278642c7b13b74ad9bc7f7e}{vars}
+\item 
+vector$<$ \hyperlink{classGRBConstr}{G\+R\+B\+Constr} $>$ \hyperlink{classGRBModel_a755e1d5f050c0244720ccca9610a1e02}{constrs}
+\item 
+vector$<$ \hyperlink{classGRBSOS}{G\+R\+B\+S\+OS} $>$ \hyperlink{classGRBModel_a61a1fbf3b90e08e1c149b2081ea9b847}{sos}
+\item 
+vector$<$ \hyperlink{classGRBQConstr}{G\+R\+B\+Q\+Constr} $>$ \hyperlink{classGRBModel_ab999e528d40409141a1db990e6277806}{qconstrs}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 361 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Model(const G\+R\+B\+Env \&env)}{GRBModel(const GRBEnv &env)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model\+::\+G\+R\+B\+Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Env} \&}]{env}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a026d67cfd0800caceb46aacb08edf2ef}{}\label{classGRBModel_a026d67cfd0800caceb46aacb08edf2ef}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Model(const G\+R\+B\+Env \&env, const string \&filename)}{GRBModel(const GRBEnv &env, const string &filename)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model\+::\+G\+R\+B\+Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Env} \&}]{env, }
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab3f639bddd431df6a898cb3dd08f30d2}{}\label{classGRBModel_ab3f639bddd431df6a898cb3dd08f30d2}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Model(const G\+R\+B\+Model \&xmodel)}{GRBModel(const GRBModel &xmodel)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model\+::\+G\+R\+B\+Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Model} \&}]{xmodel}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ace55e91735a6583c414c8e1268848fc2}{}\label{classGRBModel_ace55e91735a6583c414c8e1268848fc2}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!````~G\+R\+B\+Model@{$\sim$\+G\+R\+B\+Model}}
+\index{````~G\+R\+B\+Model@{$\sim$\+G\+R\+B\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{$\sim$\+G\+R\+B\+Model()}{~GRBModel()}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Model\+::$\sim$\+G\+R\+B\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab896389fae051821a84dc914cb1bbb3d}{}\label{classGRBModel_ab896389fae051821a84dc914cb1bbb3d}
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr \&expr1, char sense, const G\+R\+B\+Lin\+Expr \&expr2, string name="""")}{addConstr(const GRBLinExpr &expr1, char sense, const GRBLinExpr &expr2, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr1, }
+\item[{char}]{sense, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr2, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}{}\label{classGRBModel_a95e9bc35355e800ebdf87ba618153d27}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_a95e9bc35355e800ebdf87ba618153d27_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr \&expr, char sense, G\+R\+B\+Var v, string name="""")}{addConstr(const GRBLinExpr &expr, char sense, GRBVar v, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr, }
+\item[{char}]{sense, }
+\item[{{\bf G\+R\+B\+Var}}]{v, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a3605e2d163ba6ca2fc31586874b057f3}{}\label{classGRBModel_a3605e2d163ba6ca2fc31586874b057f3}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(\+G\+R\+B\+Var v1, char sense, G\+R\+B\+Var v2, string name="""")}{addConstr(GRBVar v1, char sense, GRBVar v2, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v1, }
+\item[{char}]{sense, }
+\item[{{\bf G\+R\+B\+Var}}]{v2, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a245f9547c916fa83d65e91863c5f10cd}{}\label{classGRBModel_a245f9547c916fa83d65e91863c5f10cd}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(\+G\+R\+B\+Var v, char sense, double rhs, string name="""")}{addConstr(GRBVar v, char sense, double rhs, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v, }
+\item[{char}]{sense, }
+\item[{double}]{rhs, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_abb54387d2110a52ad5bbe14c92c0f077}{}\label{classGRBModel_abb54387d2110a52ad5bbe14c92c0f077}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Lin\+Expr \&expr, char sense, double rhs, string name="""")}{addConstr(const GRBLinExpr &expr, char sense, double rhs, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr, }
+\item[{char}]{sense, }
+\item[{double}]{rhs, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a3bba6ea074b2b285092f965adc4ade63}{}\label{classGRBModel_a3bba6ea074b2b285092f965adc4ade63}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constr@{add\+Constr}}
+\index{add\+Constr@{add\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constr(const G\+R\+B\+Temp\+Constr \&tc, string name="""")}{addConstr(const GRBTempConstr &tc, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Temp\+Constr} \&}]{tc, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab5db9d63232f37b13834e0fbd5ea665c}{}\label{classGRBModel_ab5db9d63232f37b13834e0fbd5ea665c}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constrs@{add\+Constrs}}
+\index{add\+Constrs@{add\+Constrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constrs(int cnt)}{addConstrs(int cnt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr}$\ast$ G\+R\+B\+Model\+::add\+Constrs (
+\begin{DoxyParamCaption}
+\item[{int}]{cnt}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a648968e99d4f92774f28fea67719b393}{}\label{classGRBModel_a648968e99d4f92774f28fea67719b393}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Constrs@{add\+Constrs}}
+\index{add\+Constrs@{add\+Constrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Constrs(const G\+R\+B\+Lin\+Expr $\ast$expr, const char $\ast$sense, const double $\ast$rhs, const string $\ast$name, int len)}{addConstrs(const GRBLinExpr *expr, const char *sense, const double *rhs, const string *name, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr}$\ast$ G\+R\+B\+Model\+::add\+Constrs (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} $\ast$}]{expr, }
+\item[{const char $\ast$}]{sense, }
+\item[{const double $\ast$}]{rhs, }
+\item[{const string $\ast$}]{name, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a89c52e6cbb11932bafd3a79dfee7d6bd}{}\label{classGRBModel_a89c52e6cbb11932bafd3a79dfee7d6bd}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Q\+Constr@{add\+Q\+Constr}}
+\index{add\+Q\+Constr@{add\+Q\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Q\+Constr(const G\+R\+B\+Quad\+Expr \&expr1, char sense, const G\+R\+B\+Quad\+Expr \&expr2, string name="""")}{addQConstr(const GRBQuadExpr &expr1, char sense, const GRBQuadExpr &expr2, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Q\+Constr} G\+R\+B\+Model\+::add\+Q\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{expr1, }
+\item[{char}]{sense, }
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{expr2, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a85a2af8c63488d161906f7e29c976306}{}\label{classGRBModel_a85a2af8c63488d161906f7e29c976306}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Q\+Constr@{add\+Q\+Constr}}
+\index{add\+Q\+Constr@{add\+Q\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Q\+Constr(const G\+R\+B\+Temp\+Constr \&tc, string name="""")}{addQConstr(const GRBTempConstr &tc, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Q\+Constr} G\+R\+B\+Model\+::add\+Q\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Temp\+Constr} \&}]{tc, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8f1c1cd83d74ae931b1a2e8b941011a1}{}\label{classGRBModel_a8f1c1cd83d74ae931b1a2e8b941011a1}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Q\+Constr@{add\+Q\+Constr}}
+\index{add\+Q\+Constr@{add\+Q\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Q\+Constr(const G\+R\+B\+Quad\+Expr \&expr, char sense, double rhs, string cname)}{addQConstr(const GRBQuadExpr &expr, char sense, double rhs, string cname)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Q\+Constr} G\+R\+B\+Model\+::add\+Q\+Constr (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{expr, }
+\item[{char}]{sense, }
+\item[{double}]{rhs, }
+\item[{string}]{cname}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_abcb46d2d8b02d714e4359c1c57ffc15c}{}\label{classGRBModel_abcb46d2d8b02d714e4359c1c57ffc15c}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Range@{add\+Range}}
+\index{add\+Range@{add\+Range}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Range(const G\+R\+B\+Lin\+Expr \&expr, double lower, double upper, string name="""")}{addRange(const GRBLinExpr &expr, double lower, double upper, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::add\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{expr, }
+\item[{double}]{lower, }
+\item[{double}]{upper, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8d7c5b467a6f17c130a5c51a33051d08}{}\label{classGRBModel_a8d7c5b467a6f17c130a5c51a33051d08}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Ranges@{add\+Ranges}}
+\index{add\+Ranges@{add\+Ranges}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Ranges(const G\+R\+B\+Lin\+Expr $\ast$expr, const double $\ast$lower, const double $\ast$upper, const string $\ast$name, int len)}{addRanges(const GRBLinExpr *expr, const double *lower, const double *upper, const string *name, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr}$\ast$ G\+R\+B\+Model\+::add\+Ranges (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} $\ast$}]{expr, }
+\item[{const double $\ast$}]{lower, }
+\item[{const double $\ast$}]{upper, }
+\item[{const string $\ast$}]{name, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a7d398eb440616e3ab7438ccb1dcd3624}{}\label{classGRBModel_a7d398eb440616e3ab7438ccb1dcd3624}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+S\+OS@{add\+S\+OS}}
+\index{add\+S\+OS@{add\+S\+OS}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+S\+O\+S(const G\+R\+B\+Var $\ast$xvars, const double $\ast$weight, int len, int type)}{addSOS(const GRBVar *xvars, const double *weight, int len, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+S\+OS} G\+R\+B\+Model\+::add\+S\+OS (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const double $\ast$}]{weight, }
+\item[{int}]{len, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8a127afa0ed029c7dff13c03ab66bc07}{}\label{classGRBModel_a8a127afa0ed029c7dff13c03ab66bc07}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Var@{add\+Var}}
+\index{add\+Var@{add\+Var}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Var(double lb, double ub, double obj, char vtype, string vname="""")}{addVar(double lb, double ub, double obj, char vtype, string vname="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Model\+::add\+Var (
+\begin{DoxyParamCaption}
+\item[{double}]{lb, }
+\item[{double}]{ub, }
+\item[{double}]{obj, }
+\item[{char}]{vtype, }
+\item[{string}]{vname = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98}{}\label{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_af31f99d256c700fa34ef0c9efdd76d98_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Var@{add\+Var}}
+\index{add\+Var@{add\+Var}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Var(double lb, double ub, double obj, char vtype, int nonzeros, const G\+R\+B\+Constr $\ast$xconstrs, const double $\ast$coeffs=\+N\+U\+L\+L, string name="""")}{addVar(double lb, double ub, double obj, char vtype, int nonzeros, const GRBConstr *xconstrs, const double *coeffs=NULL, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Model\+::add\+Var (
+\begin{DoxyParamCaption}
+\item[{double}]{lb, }
+\item[{double}]{ub, }
+\item[{double}]{obj, }
+\item[{char}]{vtype, }
+\item[{int}]{nonzeros, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const double $\ast$}]{coeffs = {\ttfamily NULL}, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a99ff5e30497fae9e6b5d0e7fc67754d4}{}\label{classGRBModel_a99ff5e30497fae9e6b5d0e7fc67754d4}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Var@{add\+Var}}
+\index{add\+Var@{add\+Var}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Var(double lb, double ub, double obj, char vtype, const G\+R\+B\+Column \&col, string name="""")}{addVar(double lb, double ub, double obj, char vtype, const GRBColumn &col, string name="")}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Model\+::add\+Var (
+\begin{DoxyParamCaption}
+\item[{double}]{lb, }
+\item[{double}]{ub, }
+\item[{double}]{obj, }
+\item[{char}]{vtype, }
+\item[{const {\bf G\+R\+B\+Column} \&}]{col, }
+\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aff71d21d540bc2938d4154022b22efb9}{}\label{classGRBModel_aff71d21d540bc2938d4154022b22efb9}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Vars@{add\+Vars}}
+\index{add\+Vars@{add\+Vars}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Vars(int cnt, char type=\+G\+R\+B\+\_\+\+C\+O\+N\+T\+I\+N\+U\+O\+U\+S)}{addVars(int cnt, char type=GRB_CONTINUOUS)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var}$\ast$ G\+R\+B\+Model\+::add\+Vars (
+\begin{DoxyParamCaption}
+\item[{int}]{cnt, }
+\item[{char}]{type = {\ttfamily {\bf G\+R\+B\+\_\+\+C\+O\+N\+T\+I\+N\+U\+O\+US}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab66da570bb1582d82cfce21dfa2d4587}{}\label{classGRBModel_ab66da570bb1582d82cfce21dfa2d4587}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Vars@{add\+Vars}}
+\index{add\+Vars@{add\+Vars}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Vars(const double $\ast$lb, const double $\ast$ub, const double $\ast$obj, const char $\ast$type, const string $\ast$name, int len)}{addVars(const double *lb, const double *ub, const double *obj, const char *type, const string *name, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var}$\ast$ G\+R\+B\+Model\+::add\+Vars (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{lb, }
+\item[{const double $\ast$}]{ub, }
+\item[{const double $\ast$}]{obj, }
+\item[{const char $\ast$}]{type, }
+\item[{const string $\ast$}]{name, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aeae91a0fadbbfdc452a3d17ff5c68f6f}{}\label{classGRBModel_aeae91a0fadbbfdc452a3d17ff5c68f6f}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!add\+Vars@{add\+Vars}}
+\index{add\+Vars@{add\+Vars}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{add\+Vars(const double $\ast$lb, const double $\ast$ub, const double $\ast$obj, const char $\ast$type, const string $\ast$name, const G\+R\+B\+Column $\ast$col, int len)}{addVars(const double *lb, const double *ub, const double *obj, const char *type, const string *name, const GRBColumn *col, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var}$\ast$ G\+R\+B\+Model\+::add\+Vars (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{lb, }
+\item[{const double $\ast$}]{ub, }
+\item[{const double $\ast$}]{obj, }
+\item[{const char $\ast$}]{type, }
+\item[{const string $\ast$}]{name, }
+\item[{const {\bf G\+R\+B\+Column} $\ast$}]{col, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af8a3a9fc35892c314be155e243601192}{}\label{classGRBModel_af8a3a9fc35892c314be155e243601192}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!check@{check}}
+\index{check@{check}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{check()}{check()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a1c187df2f9bcf41d20687d79d14cd7c0}{}\label{classGRBModel_a1c187df2f9bcf41d20687d79d14cd7c0}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!chg\+Coeff@{chg\+Coeff}}
+\index{chg\+Coeff@{chg\+Coeff}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{chg\+Coeff(\+G\+R\+B\+Constr c, G\+R\+B\+Var v, double val)}{chgCoeff(GRBConstr c, GRBVar v, double val)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::chg\+Coeff (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Constr}}]{c, }
+\item[{{\bf G\+R\+B\+Var}}]{v, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a91417ce8780706480b40e095b4bc0d87}{}\label{classGRBModel_a91417ce8780706480b40e095b4bc0d87}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!chg\+Coeffs@{chg\+Coeffs}}
+\index{chg\+Coeffs@{chg\+Coeffs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{chg\+Coeffs(const G\+R\+B\+Constr $\ast$xconstrs, const G\+R\+B\+Var $\ast$xvars, const double $\ast$val, int len)}{chgCoeffs(const GRBConstr *xconstrs, const GRBVar *xvars, const double *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::chg\+Coeffs (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a17d9363c54c8f81f3110bf7d4a8905be}{}\label{classGRBModel_a17d9363c54c8f81f3110bf7d4a8905be}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!chg\+Coeffs@{chg\+Coeffs}}
+\index{chg\+Coeffs@{chg\+Coeffs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{chg\+Coeffs(const G\+R\+B\+Constr $\ast$xconstrs, const G\+R\+B\+Var $\ast$xvars, const double $\ast$val, size\+\_\+t len)}{chgCoeffs(const GRBConstr *xconstrs, const GRBVar *xvars, const double *val, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::chg\+Coeffs (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const double $\ast$}]{val, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a3e467e1a46fd96658f5fb4483f69c561}{}\label{classGRBModel_a3e467e1a46fd96658f5fb4483f69c561}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!compute\+I\+IS@{compute\+I\+IS}}
+\index{compute\+I\+IS@{compute\+I\+IS}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{compute\+I\+I\+S()}{computeIIS()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::compute\+I\+IS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a233ec1462a249c1494cee66445319a02}{}\label{classGRBModel_a233ec1462a249c1494cee66445319a02}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!discard\+Concurrent\+Envs@{discard\+Concurrent\+Envs}}
+\index{discard\+Concurrent\+Envs@{discard\+Concurrent\+Envs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{discard\+Concurrent\+Envs()}{discardConcurrentEnvs()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::discard\+Concurrent\+Envs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a19b5f355d4c80da959bfa597e268d3d0}{}\label{classGRBModel_a19b5f355d4c80da959bfa597e268d3d0}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!feasibility@{feasibility}}
+\index{feasibility@{feasibility}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{feasibility()}{feasibility()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Model} G\+R\+B\+Model\+::feasibility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a14e4d07e39aa57662a33e5c098777068}{}\label{classGRBModel_a14e4d07e39aa57662a33e5c098777068}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!feas\+Relax@{feas\+Relax}}
+\index{feas\+Relax@{feas\+Relax}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{feas\+Relax(int relaxobjtype, bool minrelax, bool vrelax, bool crelax)}{feasRelax(int relaxobjtype, bool minrelax, bool vrelax, bool crelax)}}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Model\+::feas\+Relax (
+\begin{DoxyParamCaption}
+\item[{int}]{relaxobjtype, }
+\item[{bool}]{minrelax, }
+\item[{bool}]{vrelax, }
+\item[{bool}]{crelax}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a0082e0bba4d3dbff4db471c49e0cf69e}{}\label{classGRBModel_a0082e0bba4d3dbff4db471c49e0cf69e}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!feas\+Relax@{feas\+Relax}}
+\index{feas\+Relax@{feas\+Relax}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{feas\+Relax(int relaxobjtype, bool minrelax, int vlen, const G\+R\+B\+Var $\ast$vars, const double $\ast$lbpen, const double $\ast$ubpen, int clen, const G\+R\+B\+Constr $\ast$constrs, const double $\ast$rhspen)}{feasRelax(int relaxobjtype, bool minrelax, int vlen, const GRBVar *vars, const double *lbpen, const double *ubpen, int clen, const GRBConstr *constrs, const double *rhspen)}}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Model\+::feas\+Relax (
+\begin{DoxyParamCaption}
+\item[{int}]{relaxobjtype, }
+\item[{bool}]{minrelax, }
+\item[{int}]{vlen, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{vars, }
+\item[{const double $\ast$}]{lbpen, }
+\item[{const double $\ast$}]{ubpen, }
+\item[{int}]{clen, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{constrs, }
+\item[{const double $\ast$}]{rhspen}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_adc968bc539fe3ee0bd95baf44ed03697}{}\label{classGRBModel_adc968bc539fe3ee0bd95baf44ed03697}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!fixed\+Model@{fixed\+Model}}
+\index{fixed\+Model@{fixed\+Model}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{fixed\+Model()}{fixedModel()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Model} G\+R\+B\+Model\+::fixed\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ad696fc9087efbb57f3e1f4974c709bb7}{}\label{classGRBModel_ad696fc9087efbb57f3e1f4974c709bb7}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Int\+Attr attr) const }{get(GRB_IntAttr attr) const }}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20}{}\label{classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Attr attr) const }{get(GRB_DoubleAttr attr) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_ab088618084ec2f3d81dbcba0cdafb03b}{}\label{classGRBModel_ab088618084ec2f3d81dbcba0cdafb03b}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Attr attr) const }{get(GRB_StringAttr attr) const }}]{\setlength{\rightskip}{0pt plus 5cm}string G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a95f9ec06673910a083b6ff76551172d2}{}\label{classGRBModel_a95f9ec06673910a083b6ff76551172d2}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Int\+Attr attr, const G\+R\+B\+Var $\ast$xvars, int len)}{get(GRB_IntAttr attr, const GRBVar *xvars, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ad65bb0a90763bd68c29d62da6fcd6c06}{}\label{classGRBModel_ad65bb0a90763bd68c29d62da6fcd6c06}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Var $\ast$xvars, int len)}{get(GRB_CharAttr attr, const GRBVar *xvars, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a6af098708900c06369dadb51d6d8d343}{}\label{classGRBModel_a6af098708900c06369dadb51d6d8d343}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Var $\ast$xvars, int len)}{get(GRB_DoubleAttr attr, const GRBVar *xvars, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ac82e98ad043965288391dfc8a65f0b5d}{}\label{classGRBModel_ac82e98ad043965288391dfc8a65f0b5d}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Var $\ast$xvars, int len)}{get(GRB_StringAttr attr, const GRBVar *xvars, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}string$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8a32496eb7dd5ff5b0cd4483f29bd37a}{}\label{classGRBModel_a8a32496eb7dd5ff5b0cd4483f29bd37a}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Int\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, int len)}{get(GRB_IntAttr attr, const GRBConstr *xconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ac78d23b5a697701a5195ae6247e4fa89}{}\label{classGRBModel_ac78d23b5a697701a5195ae6247e4fa89}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, int len)}{get(GRB_CharAttr attr, const GRBConstr *xconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a27cf7cac2d485a0addffaab547194e97}{}\label{classGRBModel_a27cf7cac2d485a0addffaab547194e97}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, int len)}{get(GRB_DoubleAttr attr, const GRBConstr *xconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af6b4bfca41c2a82541b770e69377902f}{}\label{classGRBModel_af6b4bfca41c2a82541b770e69377902f}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, int len)}{get(GRB_StringAttr attr, const GRBConstr *xconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}string$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a0478e3e64996775c023038059cdf19a1}{}\label{classGRBModel_a0478e3e64996775c023038059cdf19a1}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xqconstrs, int len)}{get(GRB_CharAttr attr, const GRBQConstr *xqconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xqconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a4974083812ee67881c9052f7cac7ca2f}{}\label{classGRBModel_a4974083812ee67881c9052f7cac7ca2f}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xqconstrs, int len)}{get(GRB_DoubleAttr attr, const GRBQConstr *xqconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xqconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a3664633bfe524de118f432bc011b61ed}{}\label{classGRBModel_a3664633bfe524de118f432bc011b61ed}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get@{get}}
+\index{get@{get}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xqconstrs, int len)}{get(GRB_StringAttr attr, const GRBQConstr *xqconstrs, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}string$\ast$ G\+R\+B\+Model\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xqconstrs, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_abdac5cb1ebe0e610216fc255ec521c7e}{}\label{classGRBModel_abdac5cb1ebe0e610216fc255ec521c7e}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Coeff@{get\+Coeff}}
+\index{get\+Coeff@{get\+Coeff}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Coeff(\+G\+R\+B\+Constr c, G\+R\+B\+Var v) const }{getCoeff(GRBConstr c, GRBVar v) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Model\+::get\+Coeff (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Constr}}]{c, }
+\item[{{\bf G\+R\+B\+Var}}]{v}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a7a70806a3c68d0bff5a232914eaedea7}{}\label{classGRBModel_a7a70806a3c68d0bff5a232914eaedea7}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Col@{get\+Col}}
+\index{get\+Col@{get\+Col}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Col(\+G\+R\+B\+Var v)}{getCol(GRBVar v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Column} G\+R\+B\+Model\+::get\+Col (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aab9b448afc20566ab7945548f4b05bf9}{}\label{classGRBModel_aab9b448afc20566ab7945548f4b05bf9}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Concurrent\+Env@{get\+Concurrent\+Env}}
+\index{get\+Concurrent\+Env@{get\+Concurrent\+Env}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Concurrent\+Env(int num)}{getConcurrentEnv(int num)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Env} G\+R\+B\+Model\+::get\+Concurrent\+Env (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab285776b9bb6b59bd31f7f38bc371909}{}\label{classGRBModel_ab285776b9bb6b59bd31f7f38bc371909}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Constr@{get\+Constr}}
+\index{get\+Constr@{get\+Constr}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Constr(int i) const }{getConstr(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::get\+Constr (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a8505c2a2068a9dcfef060975840c5d7a}{}\label{classGRBModel_a8505c2a2068a9dcfef060975840c5d7a}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Constr\+By\+Name@{get\+Constr\+By\+Name}}
+\index{get\+Constr\+By\+Name@{get\+Constr\+By\+Name}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Constr\+By\+Name(const string \&name)}{getConstrByName(const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr} G\+R\+B\+Model\+::get\+Constr\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a2d4b3c0b05bcfbd94e4e5537db318569}{}\label{classGRBModel_a2d4b3c0b05bcfbd94e4e5537db318569}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Constrs@{get\+Constrs}}
+\index{get\+Constrs@{get\+Constrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Constrs() const }{getConstrs() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Constr}$\ast$ G\+R\+B\+Model\+::get\+Constrs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a0cf32507e437dfcd579c6ba865525281}{}\label{classGRBModel_a0cf32507e437dfcd579c6ba865525281}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Env@{get\+Env}}
+\index{get\+Env@{get\+Env}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Env()}{getEnv()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Env} G\+R\+B\+Model\+::get\+Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aa5dfd23b74bf0936a22a5b5f58a7c34b}{}\label{classGRBModel_aa5dfd23b74bf0936a22a5b5f58a7c34b}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Objective@{get\+Objective}}
+\index{get\+Objective@{get\+Objective}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Objective() const }{getObjective() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} G\+R\+B\+Model\+::get\+Objective (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a101e9eb73e8b2bc384117f8fa1eca662}{}\label{classGRBModel_a101e9eb73e8b2bc384117f8fa1eca662}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+P\+W\+L\+Obj@{get\+P\+W\+L\+Obj}}
+\index{get\+P\+W\+L\+Obj@{get\+P\+W\+L\+Obj}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+P\+W\+L\+Obj(\+G\+R\+B\+Var v, double $\ast$x, double $\ast$y) const }{getPWLObj(GRBVar v, double *x, double *y) const }}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::get\+P\+W\+L\+Obj (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v, }
+\item[{double $\ast$}]{x, }
+\item[{double $\ast$}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a88a22d02a6af050943884a5140a5a45a}{}\label{classGRBModel_a88a22d02a6af050943884a5140a5a45a}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Q\+Constrs@{get\+Q\+Constrs}}
+\index{get\+Q\+Constrs@{get\+Q\+Constrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Q\+Constrs() const }{getQConstrs() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Q\+Constr}$\ast$ G\+R\+B\+Model\+::get\+Q\+Constrs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a5feaa08937f3d4aad2fa1a84efc23cef}{}\label{classGRBModel_a5feaa08937f3d4aad2fa1a84efc23cef}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Q\+C\+Row@{get\+Q\+C\+Row}}
+\index{get\+Q\+C\+Row@{get\+Q\+C\+Row}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Q\+C\+Row(\+G\+R\+B\+Q\+Constr c)}{getQCRow(GRBQConstr c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} G\+R\+B\+Model\+::get\+Q\+C\+Row (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Q\+Constr}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8824331442db733b68bac9745fb38317}{}\label{classGRBModel_a8824331442db733b68bac9745fb38317}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Row@{get\+Row}}
+\index{get\+Row@{get\+Row}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Row(\+G\+R\+B\+Constr c)}{getRow(GRBConstr c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Model\+::get\+Row (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Constr}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8f65fe39e6a6ede1387ea977cc12ed66}{}\label{classGRBModel_a8f65fe39e6a6ede1387ea977cc12ed66}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+S\+OS@{get\+S\+OS}}
+\index{get\+S\+OS@{get\+S\+OS}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+S\+O\+S(\+G\+R\+B\+S\+O\+S xsos, G\+R\+B\+Var $\ast$xvars, double $\ast$weight, int $\ast$type\+P)}{getSOS(GRBSOS xsos, GRBVar *xvars, double *weight, int *typeP)}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::get\+S\+OS (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+S\+OS}}]{xsos, }
+\item[{{\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{double $\ast$}]{weight, }
+\item[{int $\ast$}]{typeP}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a58b991efcdc6f6bb179a1c267bf12f42}{}\label{classGRBModel_a58b991efcdc6f6bb179a1c267bf12f42}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+S\+O\+Ss@{get\+S\+O\+Ss}}
+\index{get\+S\+O\+Ss@{get\+S\+O\+Ss}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+S\+O\+Ss() const }{getSOSs() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+S\+OS}$\ast$ G\+R\+B\+Model\+::get\+S\+O\+Ss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_aff890e0663bd4e6ab03374924c7bbd94}{}\label{classGRBModel_aff890e0663bd4e6ab03374924c7bbd94}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Tune\+Result@{get\+Tune\+Result}}
+\index{get\+Tune\+Result@{get\+Tune\+Result}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Tune\+Result(int i)}{getTuneResult(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::get\+Tune\+Result (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a5bc61abf65ff7bce782bfbe822525c06}{}\label{classGRBModel_a5bc61abf65ff7bce782bfbe822525c06}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Var@{get\+Var}}
+\index{get\+Var@{get\+Var}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Var(int i) const }{getVar(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Model\+::get\+Var (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_ac27b8102164a63e3c5d1b3e49a36fd54}{}\label{classGRBModel_ac27b8102164a63e3c5d1b3e49a36fd54}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Var\+By\+Name@{get\+Var\+By\+Name}}
+\index{get\+Var\+By\+Name@{get\+Var\+By\+Name}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Var\+By\+Name(const string \&name)}{getVarByName(const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Model\+::get\+Var\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a98af5f146886bb892341df82c51e4dba}{}\label{classGRBModel_a98af5f146886bb892341df82c51e4dba}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!get\+Vars@{get\+Vars}}
+\index{get\+Vars@{get\+Vars}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{get\+Vars() const }{getVars() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var}$\ast$ G\+R\+B\+Model\+::get\+Vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBModel_a10f0d8daaf5fde5084c4f0536a6b42f0}{}\label{classGRBModel_a10f0d8daaf5fde5084c4f0536a6b42f0}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!operator=@{operator=}}
+\index{operator=@{operator=}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{operator=(const G\+R\+B\+Model \&xmodel)}{operator=(const GRBModel &xmodel)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf G\+R\+B\+Model}\& G\+R\+B\+Model\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Model} \&}]{xmodel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_ab2e7ffcd6632246a35fc3a05cb02f29b}{}\label{classGRBModel_ab2e7ffcd6632246a35fc3a05cb02f29b}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!optimize@{optimize}}
+\index{optimize@{optimize}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{optimize()}{optimize()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::optimize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d}{}\label{classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!optimizeasync@{optimizeasync}}
+\index{optimizeasync@{optimizeasync}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{optimizeasync()}{optimizeasync()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::optimizeasync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_adf9fd231decbafd1bbd06c6488a53b36}{}\label{classGRBModel_adf9fd231decbafd1bbd06c6488a53b36}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!presolve@{presolve}}
+\index{presolve@{presolve}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{presolve()}{presolve()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Model} G\+R\+B\+Model\+::presolve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ac864af8e2453f73995890c62f403fe10}{}\label{classGRBModel_ac864af8e2453f73995890c62f403fe10}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!read@{read}}
+\index{read@{read}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{read(const string \&filename)}{read(const string &filename)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::read (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a576fef8ddfcd26755547e715b25bc047}{}\label{classGRBModel_a576fef8ddfcd26755547e715b25bc047}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!relax@{relax}}
+\index{relax@{relax}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{relax()}{relax()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Model} G\+R\+B\+Model\+::relax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_adc85a6f51fb2b1847bdbfdcffc0c8154}{}\label{classGRBModel_adc85a6f51fb2b1847bdbfdcffc0c8154}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Var v)}{remove(GRBVar v)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a9465c542f5e612f028b669f18e074a8c}{}\label{classGRBModel_a9465c542f5e612f028b669f18e074a8c}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Constr c)}{remove(GRBConstr c)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Constr}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aa53fa2a1da135e40b106594fa9f50c27}{}\label{classGRBModel_aa53fa2a1da135e40b106594fa9f50c27}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+S\+O\+S xsos)}{remove(GRBSOS xsos)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+S\+OS}}]{xsos}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_aee6ae45e2945292f0e900473e24b08f6}{}\label{classGRBModel_aee6ae45e2945292f0e900473e24b08f6}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Q\+Constr xqconstr)}{remove(GRBQConstr xqconstr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Q\+Constr}}]{xqconstr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af4b9518f82d0ae65f0f5f0cbb0301cc2}{}\label{classGRBModel_af4b9518f82d0ae65f0f5f0cbb0301cc2}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!reset@{reset}}
+\index{reset@{reset}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_ab9ce968b8366f363a3dca98c2f829947}{}\label{classGRBModel_ab9ce968b8366f363a3dca98c2f829947}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Attr attr, int val)}{set(GRB_IntAttr attr, int val)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr, }
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8df5e3c25795f50163511d383a460b98}{}\label{classGRBModel_a8df5e3c25795f50163511d383a460b98}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Attr attr, double val)}{set(GRB_DoubleAttr attr, double val)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a42c9aad88b3d2afd75e0fe547c69cfeb}{}\label{classGRBModel_a42c9aad88b3d2afd75e0fe547c69cfeb}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Attr attr, const string \&val)}{set(GRB_StringAttr attr, const string &val)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const string \&}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af14524414b1b608e2dedc89d699ba090}{}\label{classGRBModel_af14524414b1b608e2dedc89d699ba090}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Attr attr, const G\+R\+B\+Var $\ast$xvars, const int $\ast$val, int len)}{set(GRB_IntAttr attr, const GRBVar *xvars, const int *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const int $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a45636b2c5aed29cf096eb65cafa656a8}{}\label{classGRBModel_a45636b2c5aed29cf096eb65cafa656a8}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Var $\ast$xvars, const char $\ast$val, int len)}{set(GRB_CharAttr attr, const GRBVar *xvars, const char *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const char $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_afd103bc2bfefc1bcf2ac3840d5863c7b}{}\label{classGRBModel_afd103bc2bfefc1bcf2ac3840d5863c7b}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Var $\ast$xvars, const double $\ast$val, int len)}{set(GRB_DoubleAttr attr, const GRBVar *xvars, const double *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_acd3dde73f8f2d44bb21454069bbaa2a5}{}\label{classGRBModel_acd3dde73f8f2d44bb21454069bbaa2a5}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Var $\ast$xvars, const string $\ast$val, int len)}{set(GRB_StringAttr attr, const GRBVar *xvars, const string *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{xvars, }
+\item[{const string $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_af88c5e400af5f8e86e088633e3bc97c5}{}\label{classGRBModel_af88c5e400af5f8e86e088633e3bc97c5}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Int\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, const int $\ast$val, int len)}{set(GRB_IntAttr attr, const GRBConstr *xconstrs, const int *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Int\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const int $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a5ebf4f2bfd9dc58740c3cb1cf3a97e61}{}\label{classGRBModel_a5ebf4f2bfd9dc58740c3cb1cf3a97e61}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, const char $\ast$val, int len)}{set(GRB_CharAttr attr, const GRBConstr *xconstrs, const char *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const char $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a25a9c48cecb1591882ef210d9d0e4194}{}\label{classGRBModel_a25a9c48cecb1591882ef210d9d0e4194}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, const double $\ast$val, int len)}{set(GRB_DoubleAttr attr, const GRBConstr *xconstrs, const double *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a47bc449b8837a5934c714053e1f68d26}{}\label{classGRBModel_a47bc449b8837a5934c714053e1f68d26}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Constr $\ast$xconstrs, const string $\ast$val, int len)}{set(GRB_StringAttr attr, const GRBConstr *xconstrs, const string *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Constr} $\ast$}]{xconstrs, }
+\item[{const string $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a5e9935cfc3dab2e22c7c7cb44ca2777c}{}\label{classGRBModel_a5e9935cfc3dab2e22c7c7cb44ca2777c}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Char\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xconstrs, const char $\ast$val, int len)}{set(GRB_CharAttr attr, const GRBQConstr *xconstrs, const char *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Char\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xconstrs, }
+\item[{const char $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a8b062eb2cbef1d7ea95b97583643bf40}{}\label{classGRBModel_a8b062eb2cbef1d7ea95b97583643bf40}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+Double\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xconstrs, const double $\ast$val, int len)}{set(GRB_DoubleAttr attr, const GRBQConstr *xconstrs, const double *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+Double\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xconstrs, }
+\item[{const double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a3208e1d73da529cbb25be520081c136b}{}\label{classGRBModel_a3208e1d73da529cbb25be520081c136b}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set@{set}}
+\index{set@{set}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set(\+G\+R\+B\+\_\+\+String\+Attr attr, const G\+R\+B\+Q\+Constr $\ast$xconstrs, const string $\ast$val, int len)}{set(GRB_StringAttr attr, const GRBQConstr *xconstrs, const string *val, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+\_\+\+String\+Attr}}]{attr, }
+\item[{const {\bf G\+R\+B\+Q\+Constr} $\ast$}]{xconstrs, }
+\item[{const string $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a64fb0b201ae8dfb6aafb6beb288df157}{}\label{classGRBModel_a64fb0b201ae8dfb6aafb6beb288df157}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set\+Callback@{set\+Callback}}
+\index{set\+Callback@{set\+Callback}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set\+Callback(\+G\+R\+B\+Callback $\ast$xcb)}{setCallback(GRBCallback *xcb)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set\+Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Callback} $\ast$}]{xcb}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a0e46642edd2a421500e84ea10dc17008}{}\label{classGRBModel_a0e46642edd2a421500e84ea10dc17008}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set\+Objective@{set\+Objective}}
+\index{set\+Objective@{set\+Objective}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set\+Objective(\+G\+R\+B\+Lin\+Expr obje, int sense=0)}{setObjective(GRBLinExpr obje, int sense=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set\+Objective (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Lin\+Expr}}]{obje, }
+\item[{int}]{sense = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a408a224373e26cb163510c5352577d51}{}\label{classGRBModel_a408a224373e26cb163510c5352577d51}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_a408a224373e26cb163510c5352577d51_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set\+Objective@{set\+Objective}}
+\index{set\+Objective@{set\+Objective}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set\+Objective(\+G\+R\+B\+Quad\+Expr obje, int sense=0)}{setObjective(GRBQuadExpr obje, int sense=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set\+Objective (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Quad\+Expr}}]{obje, }
+\item[{int}]{sense = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a487c992f4b9c14eb6b2348f487765fbe}{}\label{classGRBModel_a487c992f4b9c14eb6b2348f487765fbe}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!set\+P\+W\+L\+Obj@{set\+P\+W\+L\+Obj}}
+\index{set\+P\+W\+L\+Obj@{set\+P\+W\+L\+Obj}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{set\+P\+W\+L\+Obj(\+G\+R\+B\+Var v, int points, double $\ast$x, double $\ast$y)}{setPWLObj(GRBVar v, int points, double *x, double *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::set\+P\+W\+L\+Obj (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v, }
+\item[{int}]{points, }
+\item[{double $\ast$}]{x, }
+\item[{double $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a5b717d74dbef2ce72e7eef2b84316709}{}\label{classGRBModel_a5b717d74dbef2ce72e7eef2b84316709}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!sync@{sync}}
+\index{sync@{sync}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{sync()}{sync()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a33c526935bc1c6fa329e28d74d132d64}{}\label{classGRBModel_a33c526935bc1c6fa329e28d74d132d64}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!terminate@{terminate}}
+\index{terminate@{terminate}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{terminate()}{terminate()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a5950fc4eedb549dc38f2f504d6bc8224}{}\label{classGRBModel_a5950fc4eedb549dc38f2f504d6bc8224}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!tune@{tune}}
+\index{tune@{tune}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{tune()}{tune()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::tune (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a60b71c3d7a2dbcd8594c3d1fa901e3dd}{}\label{classGRBModel_a60b71c3d7a2dbcd8594c3d1fa901e3dd}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!update@{update}}
+\index{update@{update}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{update()}{update()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a7662994a5e461c9fa82345f93985e043}{}\label{classGRBModel_a7662994a5e461c9fa82345f93985e043}
+
+
+参考自 Column\+Gen\+Solve\+::solve\+L\+P().
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBModel_a7662994a5e461c9fa82345f93985e043_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!write@{write}}
+\index{write@{write}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{write(const string \&filename)}{write(const string &filename)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Model\+::write (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBModel_a0e9bcc54f46939c7e55987c594645533}{}\label{classGRBModel_a0e9bcc54f46939c7e55987c594645533}
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!cb@{cb}}
+\index{cb@{cb}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{cb}{cb}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Callback}$\ast$ G\+R\+B\+Model\+::cb\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_aa23c57adb09b4579dd70d32e517efe21}{}\label{classGRBModel_aa23c57adb09b4579dd70d32e517efe21}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 367 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!Cenv@{Cenv}}
+\index{Cenv@{Cenv}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{Cenv}{Cenv}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+Benv}$\ast$ G\+R\+B\+Model\+::\+Cenv\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_ac46ee318ff2a26ddae94dd45480ae1dc}{}\label{classGRBModel_ac46ee318ff2a26ddae94dd45480ae1dc}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 366 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!Cmodel@{Cmodel}}
+\index{Cmodel@{Cmodel}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{Cmodel}{Cmodel}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+Bmodel}$\ast$ G\+R\+B\+Model\+::\+Cmodel\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a8eedf4d4f2c9cd3159bd965d4595191f}{}\label{classGRBModel_a8eedf4d4f2c9cd3159bd965d4595191f}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 365 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!cols@{cols}}
+\index{cols@{cols}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{cols}{cols}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::cols\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a7451154c68d35f13d44232c253d52fa8}{}\label{classGRBModel_a7451154c68d35f13d44232c253d52fa8}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 370 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!constrs@{constrs}}
+\index{constrs@{constrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{constrs}{constrs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Constr}$>$ G\+R\+B\+Model\+::constrs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a755e1d5f050c0244720ccca9610a1e02}{}\label{classGRBModel_a755e1d5f050c0244720ccca9610a1e02}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 378 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!newranges@{newranges}}
+\index{newranges@{newranges}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{newranges}{newranges}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::newranges\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a358db0bf3a8f9bebcadc9403af27551f}{}\label{classGRBModel_a358db0bf3a8f9bebcadc9403af27551f}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 373 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!numqconstrs@{numqconstrs}}
+\index{numqconstrs@{numqconstrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{numqconstrs}{numqconstrs}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::numqconstrs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_aad59ddf2475017a4828a22e08e52b59a}{}\label{classGRBModel_aad59ddf2475017a4828a22e08e52b59a}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 372 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!numsos@{numsos}}
+\index{numsos@{numsos}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{numsos}{numsos}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::numsos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a0743eafebda885b7df2c2b5923f6b8b1}{}\label{classGRBModel_a0743eafebda885b7df2c2b5923f6b8b1}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 371 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!qconstrs@{qconstrs}}
+\index{qconstrs@{qconstrs}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{qconstrs}{qconstrs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Q\+Constr}$>$ G\+R\+B\+Model\+::qconstrs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_ab999e528d40409141a1db990e6277806}{}\label{classGRBModel_ab999e528d40409141a1db990e6277806}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 380 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!rows@{rows}}
+\index{rows@{rows}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{rows}{rows}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::rows\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_ada5c8e80ac12d437788ccad6c1f42b24}{}\label{classGRBModel_ada5c8e80ac12d437788ccad6c1f42b24}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 369 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!sos@{sos}}
+\index{sos@{sos}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{sos}{sos}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+S\+OS}$>$ G\+R\+B\+Model\+::sos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a61a1fbf3b90e08e1c149b2081ea9b847}{}\label{classGRBModel_a61a1fbf3b90e08e1c149b2081ea9b847}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 379 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!updatemode@{updatemode}}
+\index{updatemode@{updatemode}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{updatemode}{updatemode}}]{\setlength{\rightskip}{0pt plus 5cm}int G\+R\+B\+Model\+::updatemode\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a717756c5b80328a48913e94986ba65fa}{}\label{classGRBModel_a717756c5b80328a48913e94986ba65fa}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 375 行定义.
+
+\index{G\+R\+B\+Model@{G\+R\+B\+Model}!vars@{vars}}
+\index{vars@{vars}!G\+R\+B\+Model@{G\+R\+B\+Model}}
+\subsubsection[{\texorpdfstring{vars}{vars}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Var}$>$ G\+R\+B\+Model\+::vars\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBModel_a96d3ba518278642c7b13b74ad9bc7f7e}{}\label{classGRBModel_a96d3ba518278642c7b13b74ad9bc7f7e}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 377 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{gurobi__c_09_09_8h}{gurobi\+\_\+c++.\+h}\end{DoxyCompactItemize}

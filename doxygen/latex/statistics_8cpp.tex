@@ -1,0 +1,43 @@
+\hypertarget{statistics_8cpp}{}\section{statistics.\+cpp 文件参考}
+\label{statistics_8cpp}\index{statistics.\+cpp@{statistics.\+cpp}}
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+statistics.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{statistics_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{statistics_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{statistics.\+cpp@{statistics.\+cpp}!main@{main}}
+\index{main@{main}!statistics.\+cpp@{statistics.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{statistics_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{statistics_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+在文件 statistics.\+cpp 第 6 行定义.
+
+
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <= 30; ++i)
+9     \{
+10         \textcolor{keywordtype}{char} command[233];
+11         sprintf(command, \textcolor{stringliteral}{"./main.exe > statistics/%d"}, i);
+12         printf(\textcolor{stringliteral}{"%s\(\backslash\)n"}, command);
+13         system(command);
+14     \}
+15     \textcolor{keywordflow}{return} 0;
+16 \}\end{DoxyCode}

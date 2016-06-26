@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: Solver类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classSolver-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Solver类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="Solver_8h_source.html">Solver.h</a>&quot;</code></p>
+<div class="dynheader">
+Solver 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver__coll__graph.png" border="0" usemap="#Solver_coll__map" alt="Collaboration graph"/></div>
+<map name="Solver_coll__map" id="Solver_coll__map">
+<area shape="rect" id="node2" href="classOptimizeStrategy.html" title="{OptimizeStrategy\n||+ OptimizeStrategy()\l+ ~OptimizeStrategy()\l+ optimize()\l+ clone()\l}" alt="" coords="35,884,186,1005"/>
+<area shape="rect" id="node3" href="classSolveStrategy.html" title="{SolveStrategy\n||+ SolveStrategy()\l+ ~SolveStrategy()\l+ solve()\l+ clone()\l}" alt="" coords="225,884,356,1005"/>
+<area shape="rect" id="node4" href="classCheckStrategy.html" title="{CheckStrategy\n||+ CheckStrategy()\l+ ~CheckStrategy()\l+ check()\l+ clone()\l}" alt="" coords="388,884,524,1005"/>
+<area shape="rect" id="node5" href="classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="239,443,323,593"/>
+<area shape="rect" id="node6" href="classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="27,288,189,365"/>
+<area shape="rect" id="node8" href="classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="224,288,339,365"/>
+<area shape="rect" id="node10" href="classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="374,273,471,380"/>
+<area shape="rect" id="node11" href="classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="373,147,533,224"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa700448cac8f07eda6adccc6c79c4b9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#aa700448cac8f07eda6adccc6c79c4b9e">Solver</a> (const <a class="el" href="classBoard.html">Board</a> *board_)</td></tr>
+<tr class="separator:aa700448cac8f07eda6adccc6c79c4b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6f0075358685b01c83188d206e41a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolver.html">Solver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a1a6f0075358685b01c83188d206e41a5">clone</a> () const </td></tr>
+<tr class="separator:a1a6f0075358685b01c83188d206e41a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba52d3c92fafceb6fe39f937f2d73db3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#aba52d3c92fafceb6fe39f937f2d73db3">~Solver</a> ()</td></tr>
+<tr class="separator:aba52d3c92fafceb6fe39f937f2d73db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b51cb3578988fe9c461ea3fc424bef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolution.html">Solution</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef">run</a> ()</td></tr>
+<tr class="separator:ac0b51cb3578988fe9c461ea3fc424bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b07dd3c581eeb3207036430082cb2f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a2b07dd3c581eeb3207036430082cb2f9">setSolveStrategy</a> (<a class="el" href="classSolveStrategy.html">SolveStrategy</a> *solve_)</td></tr>
+<tr class="separator:a2b07dd3c581eeb3207036430082cb2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0ef339f8da3d56acea8b5a0d50d701"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a1a0ef339f8da3d56acea8b5a0d50d701">setCheckStrategy</a> (<a class="el" href="classCheckStrategy.html">CheckStrategy</a> *check_)</td></tr>
+<tr class="separator:a1a0ef339f8da3d56acea8b5a0d50d701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9917ba104c1daf8d9104e1892b480c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a9917ba104c1daf8d9104e1892b480c2f">setOptimizeStrategy</a> (<a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a> *optimize_)</td></tr>
+<tr class="separator:a9917ba104c1daf8d9104e1892b480c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a8966a22c2f247addc8ce453d119bc54e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classBoard.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a8966a22c2f247addc8ce453d119bc54e">board</a></td></tr>
+<tr class="separator:a8966a22c2f247addc8ce453d119bc54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a2da9746bdd69a8ae76bb519bb1bc95b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolveStrategy.html">SolveStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a></td></tr>
+<tr class="separator:a2da9746bdd69a8ae76bb519bb1bc95b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c1ccc9336ccdee35dcc7c1c0e39a95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCheckStrategy.html">CheckStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a></td></tr>
+<tr class="separator:af9c1ccc9336ccdee35dcc7c1c0e39a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030d66f9899352a9c96313801ae58b8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a></td></tr>
+<tr class="separator:a030d66f9899352a9c96313801ae58b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00009">9</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="aa700448cac8f07eda6adccc6c79c4b9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Solver::Solver </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBoard.html">Board</a> *&#160;</td>
+          <td class="paramname"><em>board_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00013">13</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00076">check</a>, <a class="el" href="Solver_8h_source.html#l00077">optimize</a> , 以及 <a class="el" href="Solver_8h_source.html#l00075">solve</a>.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">clone()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classSolver.html#a8966a22c2f247addc8ce453d119bc54e">board</a> = board_;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a> = NULL;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a> = NULL;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a> = NULL;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div><div class="ttc" id="classSolver_html_a2da9746bdd69a8ae76bb519bb1bc95b3"><div class="ttname"><a href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">Solver::solve</a></div><div class="ttdeci">SolveStrategy * solve</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00075">Solver.h:75</a></div></div>
+<div class="ttc" id="classSolver_html_a030d66f9899352a9c96313801ae58b8a"><div class="ttname"><a href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">Solver::optimize</a></div><div class="ttdeci">OptimizeStrategy * optimize</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00077">Solver.h:77</a></div></div>
+<div class="ttc" id="classSolver_html_af9c1ccc9336ccdee35dcc7c1c0e39a95"><div class="ttname"><a href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">Solver::check</a></div><div class="ttdeci">CheckStrategy * check</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00076">Solver.h:76</a></div></div>
+<div class="ttc" id="classSolver_html_a8966a22c2f247addc8ce453d119bc54e"><div class="ttname"><a href="classSolver.html#a8966a22c2f247addc8ce453d119bc54e">Solver::board</a></div><div class="ttdeci">const Board * board</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00012">Solver.h:12</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_aa700448cac8f07eda6adccc6c79c4b9e_icgraph.png" border="0" usemap="#classSolver_aa700448cac8f07eda6adccc6c79c4b9e_icgraph" alt=""/></div>
+<map name="classSolver_aa700448cac8f07eda6adccc6c79c4b9e_icgraph" id="classSolver_aa700448cac8f07eda6adccc6c79c4b9e_icgraph">
+<area shape="rect" id="node2" href="classSolver.html#a1a6f0075358685b01c83188d206e41a5" title="Solver::clone" alt="" coords="153,5,249,32"/>
+<area shape="rect" id="node3" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="465,5,583,32"/>
+<area shape="rect" id="node5" href="classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="297,31,417,57"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="631,5,785,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aba52d3c92fafceb6fe39f937f2d73db3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Solver::~Solver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00046">46</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00076">check</a>, <a class="el" href="Solver_8h_source.html#l00077">optimize</a>, <a class="el" href="Solver_8cpp_source.html#l00003">run()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00075">solve</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">delete</span> <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div><div class="ttc" id="classSolver_html_a2da9746bdd69a8ae76bb519bb1bc95b3"><div class="ttname"><a href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">Solver::solve</a></div><div class="ttdeci">SolveStrategy * solve</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00075">Solver.h:75</a></div></div>
+<div class="ttc" id="classSolver_html_a030d66f9899352a9c96313801ae58b8a"><div class="ttname"><a href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">Solver::optimize</a></div><div class="ttdeci">OptimizeStrategy * optimize</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00077">Solver.h:77</a></div></div>
+<div class="ttc" id="classSolver_html_af9c1ccc9336ccdee35dcc7c1c0e39a95"><div class="ttname"><a href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">Solver::check</a></div><div class="ttdeci">CheckStrategy * check</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00076">Solver.h:76</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_aba52d3c92fafceb6fe39f937f2d73db3_cgraph.png" border="0" usemap="#classSolver_aba52d3c92fafceb6fe39f937f2d73db3_cgraph" alt=""/></div>
+<map name="classSolver_aba52d3c92fafceb6fe39f937f2d73db3_cgraph" id="classSolver_aba52d3c92fafceb6fe39f937f2d73db3_cgraph">
+<area shape="rect" id="node2" href="classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef" title="Solver::run" alt="" coords="161,56,244,83"/>
+<area shape="rect" id="node3" href="classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500" title="SolveStrategy::solve" alt="" coords="313,5,451,32"/>
+<area shape="rect" id="node4" href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11" title="CheckStrategy::check" alt="" coords="307,56,457,83"/>
+<area shape="rect" id="node5" href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb" title="OptimizeStrategy::optimize" alt="" coords="292,107,472,133"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a1a6f0075358685b01c83188d206e41a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolver.html">Solver</a>* Solver::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00020">20</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00076">check</a>, <a class="el" href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247">SolveStrategy::clone()</a>, <a class="el" href="classCheckStrategy.html#ae3d41d899831bf33314db410d7f2f947">CheckStrategy::clone()</a>, <a class="el" href="classOptimizeStrategy.html#a3cf14f98ef8800d2e6c67ddd610edcbd">OptimizeStrategy::clone()</a>, <a class="el" href="Solver_8h_source.html#l00077">optimize</a>, <a class="el" href="Solver_8h_source.html#l00075">solve</a>, <a class="el" href="Solver_8h_source.html#l00013">Solver()</a>, <a class="el" href="SolveStrategy_8h_source.html#l00013">SolveStrategy::solver</a>, <a class="el" href="SolveStrategy_8h_source.html#l00027">CheckStrategy::solver</a> , 以及 <a class="el" href="SolveStrategy_8h_source.html#l00041">OptimizeStrategy::solver</a>.</p>
+
+<p>参考自 <a class="el" href="DACSolve_8cpp_source.html#l00034">DACSolve::divide()</a> , 以及 <a class="el" href="DACSolve_8cpp_source.html#l00003">DACSolve::solve()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classSolver.html">Solver</a> *ans = <span class="keyword">new</span> <a class="code" href="classSolver.html#aa700448cac8f07eda6adccc6c79c4b9e">Solver</a>(<a class="code" href="classSolver.html#a8966a22c2f247addc8ce453d119bc54e">board</a>);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>)</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a> = <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>-&gt;<a class="code" href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247">clone</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>-&gt;<a class="code" href="classSolveStrategy.html#a94d43c47305176d0d3858697d3410443">solver</a> = ans;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">else</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a> = NULL;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a> = <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>-&gt;<a class="code" href="classCheckStrategy.html#ae3d41d899831bf33314db410d7f2f947">clone</a>();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>-&gt;<a class="code" href="classCheckStrategy.html#a2adc667c9f5fe299ef7fa0a01781448b">solver</a> = ans;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">else</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a> = NULL;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a> = <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>-&gt;<a class="code" href="classOptimizeStrategy.html#a3cf14f98ef8800d2e6c67ddd610edcbd">clone</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>-&gt;<a class="code" href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">solver</a> = ans;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">else</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            ans-&gt;<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a> = NULL;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> ans;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="ttc" id="classSolver_html_a2da9746bdd69a8ae76bb519bb1bc95b3"><div class="ttname"><a href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">Solver::solve</a></div><div class="ttdeci">SolveStrategy * solve</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00075">Solver.h:75</a></div></div>
+<div class="ttc" id="classSolveStrategy_html_a49d51ab69b0c47648638819c2f61f247"><div class="ttname"><a href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247">SolveStrategy::clone</a></div><div class="ttdeci">virtual SolveStrategy * clone() const  =0</div></div>
+<div class="ttc" id="classOptimizeStrategy_html_a3954aa31d0f832b79a52648ef295b379"><div class="ttname"><a href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">OptimizeStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00041">SolveStrategy.h:41</a></div></div>
+<div class="ttc" id="classOptimizeStrategy_html_a3cf14f98ef8800d2e6c67ddd610edcbd"><div class="ttname"><a href="classOptimizeStrategy.html#a3cf14f98ef8800d2e6c67ddd610edcbd">OptimizeStrategy::clone</a></div><div class="ttdeci">virtual OptimizeStrategy * clone() const  =0</div></div>
+<div class="ttc" id="classSolveStrategy_html_a94d43c47305176d0d3858697d3410443"><div class="ttname"><a href="classSolveStrategy.html#a94d43c47305176d0d3858697d3410443">SolveStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00013">SolveStrategy.h:13</a></div></div>
+<div class="ttc" id="classSolver_html_a030d66f9899352a9c96313801ae58b8a"><div class="ttname"><a href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">Solver::optimize</a></div><div class="ttdeci">OptimizeStrategy * optimize</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00077">Solver.h:77</a></div></div>
+<div class="ttc" id="classSolver_html_af9c1ccc9336ccdee35dcc7c1c0e39a95"><div class="ttname"><a href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">Solver::check</a></div><div class="ttdeci">CheckStrategy * check</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00076">Solver.h:76</a></div></div>
+<div class="ttc" id="classSolver_html_a8966a22c2f247addc8ce453d119bc54e"><div class="ttname"><a href="classSolver.html#a8966a22c2f247addc8ce453d119bc54e">Solver::board</a></div><div class="ttdeci">const Board * board</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00012">Solver.h:12</a></div></div>
+<div class="ttc" id="classSolver_html"><div class="ttname"><a href="classSolver.html">Solver</a></div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00009">Solver.h:9</a></div></div>
+<div class="ttc" id="classCheckStrategy_html_a2adc667c9f5fe299ef7fa0a01781448b"><div class="ttname"><a href="classCheckStrategy.html#a2adc667c9f5fe299ef7fa0a01781448b">CheckStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00027">SolveStrategy.h:27</a></div></div>
+<div class="ttc" id="classCheckStrategy_html_ae3d41d899831bf33314db410d7f2f947"><div class="ttname"><a href="classCheckStrategy.html#ae3d41d899831bf33314db410d7f2f947">CheckStrategy::clone</a></div><div class="ttdeci">virtual CheckStrategy * clone() const  =0</div></div>
+<div class="ttc" id="classSolver_html_aa700448cac8f07eda6adccc6c79c4b9e"><div class="ttname"><a href="classSolver.html#aa700448cac8f07eda6adccc6c79c4b9e">Solver::Solver</a></div><div class="ttdeci">Solver(const Board *board_)</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00013">Solver.h:13</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a1a6f0075358685b01c83188d206e41a5_cgraph.png" border="0" usemap="#classSolver_a1a6f0075358685b01c83188d206e41a5_cgraph" alt=""/></div>
+<map name="classSolver_a1a6f0075358685b01c83188d206e41a5_cgraph" id="classSolver_a1a6f0075358685b01c83188d206e41a5_cgraph">
+<area shape="rect" id="node2" href="classSolveStrategy.html#a49d51ab69b0c47648638819c2f61f247" title="SolveStrategy::clone" alt="" coords="160,5,301,32"/>
+<area shape="rect" id="node3" href="classCheckStrategy.html#ae3d41d899831bf33314db410d7f2f947" title="CheckStrategy::clone" alt="" coords="157,56,304,83"/>
+<area shape="rect" id="node4" href="classOptimizeStrategy.html#a3cf14f98ef8800d2e6c67ddd610edcbd" title="OptimizeStrategy::clone" alt="" coords="149,107,312,133"/>
+<area shape="rect" id="node5" href="classSolver.html#aa700448cac8f07eda6adccc6c79c4b9e" title="Solver::Solver" alt="" coords="181,157,281,184"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a1a6f0075358685b01c83188d206e41a5_icgraph.png" border="0" usemap="#classSolver_a1a6f0075358685b01c83188d206e41a5_icgraph" alt=""/></div>
+<map name="classSolver_a1a6f0075358685b01c83188d206e41a5_icgraph" id="classSolver_a1a6f0075358685b01c83188d206e41a5_icgraph">
+<area shape="rect" id="node2" href="classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="149,5,269,32"/>
+<area shape="rect" id="node3" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="317,31,435,57"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="483,31,637,57"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0b51cb3578988fe9c461ea3fc424bef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolution.html">Solution</a> Solver::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8cpp_source.html">Solver.cpp</a> 第 <a class="el" href="Solver_8cpp_source.html#l00003">3</a> 行定义.</p>
+
+<p>参考 <a class="el" href="global_8h_source.html#l00063">assert</a>, <a class="el" href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11">CheckStrategy::check()</a>, <a class="el" href="Solver_8h_source.html#l00076">check</a>, <a class="el" href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb">OptimizeStrategy::optimize()</a>, <a class="el" href="Solver_8h_source.html#l00077">optimize</a>, <a class="el" href="classes_8txt_source.html#l00033">solution</a>, <a class="el" href="classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500">SolveStrategy::solve()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00075">solve</a>.</p>
+
+<p>参考自 <a class="el" href="DACSolve_8cpp_source.html#l00034">DACSolve::divide()</a>, <a class="el" href="tests_8cpp_source.html#l00161">LargeTest()</a>, <a class="el" href="DACSolve_8cpp_source.html#l00003">DACSolve::solve()</a>, <a class="el" href="tests_8cpp_source.html#l00145">StupidStrategyTest()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00046">~Solver()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                    {</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <a class="code" href="global_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a> != NULL);</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="global_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a> != NULL);</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="global_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a> != NULL);</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classSolution.html">Solution</a> <a class="code" href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a> = <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>-&gt;<a class="code" href="classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500">solve</a>();</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="global_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>-&gt;<a class="code" href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11">check</a>(solution));</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">/*if(board-&gt;width * board-&gt;height &gt;= 500)</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    {</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">        board-&gt;output();</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        cout &lt;&lt; solution;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">        cout.flush();</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">    }*/</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>-&gt;<a class="code" href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb">optimize</a>(solution);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div><div class="ttc" id="classSolveStrategy_html_ad3c3800be3e04570b466c3d8d054c500"><div class="ttname"><a href="classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500">SolveStrategy::solve</a></div><div class="ttdeci">virtual Solution solve() const  =0</div></div>
+<div class="ttc" id="classSolver_html_a2da9746bdd69a8ae76bb519bb1bc95b3"><div class="ttname"><a href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">Solver::solve</a></div><div class="ttdeci">SolveStrategy * solve</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00075">Solver.h:75</a></div></div>
+<div class="ttc" id="classes_8txt_html_aa43d5190bbc491d9c9134146e01a248e"><div class="ttname"><a href="classes_8txt.html#aa43d5190bbc491d9c9134146e01a248e">solution</a></div><div class="ttdeci">Vector&lt; Tree * &gt; solution</div><div class="ttdef"><b>Definition:</b> <a href="classes_8txt_source.html#l00033">classes.txt:33</a></div></div>
+<div class="ttc" id="global_8h_html_af576bf8ffa22a44e53018c67095ffbf0"><div class="ttname"><a href="global_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a></div><div class="ttdeci">#define assert(x)</div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00063">global.h:63</a></div></div>
+<div class="ttc" id="classSolver_html_a030d66f9899352a9c96313801ae58b8a"><div class="ttname"><a href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">Solver::optimize</a></div><div class="ttdeci">OptimizeStrategy * optimize</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00077">Solver.h:77</a></div></div>
+<div class="ttc" id="classSolver_html_af9c1ccc9336ccdee35dcc7c1c0e39a95"><div class="ttname"><a href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">Solver::check</a></div><div class="ttdeci">CheckStrategy * check</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00076">Solver.h:76</a></div></div>
+<div class="ttc" id="classCheckStrategy_html_a4ea49fe480604a34b1a4604f61e34b11"><div class="ttname"><a href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11">CheckStrategy::check</a></div><div class="ttdeci">virtual bool check(const Solution &amp;solution) const  =0</div></div>
+<div class="ttc" id="classOptimizeStrategy_html_a2ac1b1c33fa54a59e6f3a9daffcbf4eb"><div class="ttname"><a href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb">OptimizeStrategy::optimize</a></div><div class="ttdeci">virtual Solution optimize(const Solution &amp;solution) const  =0</div></div>
+<div class="ttc" id="classSolution_html"><div class="ttname"><a href="classSolution.html">Solution</a></div><div class="ttdef"><b>Definition:</b> <a href="Solution_8h_source.html#l00008">Solution.h:8</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_cgraph.png" border="0" usemap="#classSolver_ac0b51cb3578988fe9c461ea3fc424bef_cgraph" alt=""/></div>
+<map name="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_cgraph" id="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_cgraph">
+<area shape="rect" id="node2" href="classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11" title="CheckStrategy::check" alt="" coords="151,5,301,32"/>
+<area shape="rect" id="node3" href="classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb" title="OptimizeStrategy::optimize" alt="" coords="136,56,316,83"/>
+<area shape="rect" id="node4" href="classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500" title="SolveStrategy::solve" alt="" coords="157,107,295,133"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_icgraph.png" border="0" usemap="#classSolver_ac0b51cb3578988fe9c461ea3fc424bef_icgraph" alt=""/></div>
+<map name="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_icgraph" id="classSolver_ac0b51cb3578988fe9c461ea3fc424bef_icgraph">
+<area shape="rect" id="node2" href="classDACSolve.html#ac9ccf5c5fe3102bac8b34d7d90492841" title="DACSolve::divide" alt="" coords="143,5,263,32"/>
+<area shape="rect" id="node3" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="317,31,435,57"/>
+<area shape="rect" id="node5" href="tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="163,107,242,133"/>
+<area shape="rect" id="node6" href="tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="136,157,269,184"/>
+<area shape="rect" id="node7" href="classSolver.html#aba52d3c92fafceb6fe39f937f2d73db3" title="Solver::~Solver" alt="" coords="149,208,257,235"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="483,31,637,57"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a0ef339f8da3d56acea8b5a0d50d701"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Solver::setCheckStrategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCheckStrategy.html">CheckStrategy</a> *&#160;</td>
+          <td class="paramname"><em>check_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00060">60</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00076">check</a> , 以及 <a class="el" href="SolveStrategy_8h_source.html#l00027">CheckStrategy::solver</a>.</p>
+
+<p>参考自 <a class="el" href="tests_8cpp_source.html#l00161">LargeTest()</a> , 以及 <a class="el" href="tests_8cpp_source.html#l00145">StupidStrategyTest()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a> = check_;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">check</a>-&gt;<a class="code" href="classCheckStrategy.html#a2adc667c9f5fe299ef7fa0a01781448b">solver</a> = <span class="keyword">this</span>;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div><div class="ttc" id="classSolver_html_af9c1ccc9336ccdee35dcc7c1c0e39a95"><div class="ttname"><a href="classSolver.html#af9c1ccc9336ccdee35dcc7c1c0e39a95">Solver::check</a></div><div class="ttdeci">CheckStrategy * check</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00076">Solver.h:76</a></div></div>
+<div class="ttc" id="classCheckStrategy_html_a2adc667c9f5fe299ef7fa0a01781448b"><div class="ttname"><a href="classCheckStrategy.html#a2adc667c9f5fe299ef7fa0a01781448b">CheckStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00027">SolveStrategy.h:27</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a1a0ef339f8da3d56acea8b5a0d50d701_icgraph.png" border="0" usemap="#classSolver_a1a0ef339f8da3d56acea8b5a0d50d701_icgraph" alt=""/></div>
+<map name="classSolver_a1a0ef339f8da3d56acea8b5a0d50d701_icgraph" id="classSolver_a1a0ef339f8da3d56acea8b5a0d50d701_icgraph">
+<area shape="rect" id="node2" href="tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="250,5,329,32"/>
+<area shape="rect" id="node3" href="tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="223,56,356,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9917ba104c1daf8d9104e1892b480c2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Solver::setOptimizeStrategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a> *&#160;</td>
+          <td class="paramname"><em>optimize_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00067">67</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00077">optimize</a> , 以及 <a class="el" href="SolveStrategy_8h_source.html#l00041">OptimizeStrategy::solver</a>.</p>
+
+<p>参考自 <a class="el" href="tests_8cpp_source.html#l00161">LargeTest()</a> , 以及 <a class="el" href="tests_8cpp_source.html#l00145">StupidStrategyTest()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>)</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a> = optimize_;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">optimize</a>-&gt;<a class="code" href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">solver</a> = <span class="keyword">this</span>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div><div class="ttc" id="classOptimizeStrategy_html_a3954aa31d0f832b79a52648ef295b379"><div class="ttname"><a href="classOptimizeStrategy.html#a3954aa31d0f832b79a52648ef295b379">OptimizeStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00041">SolveStrategy.h:41</a></div></div>
+<div class="ttc" id="classSolver_html_a030d66f9899352a9c96313801ae58b8a"><div class="ttname"><a href="classSolver.html#a030d66f9899352a9c96313801ae58b8a">Solver::optimize</a></div><div class="ttdeci">OptimizeStrategy * optimize</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00077">Solver.h:77</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a9917ba104c1daf8d9104e1892b480c2f_icgraph.png" border="0" usemap="#classSolver_a9917ba104c1daf8d9104e1892b480c2f_icgraph" alt=""/></div>
+<map name="classSolver_a9917ba104c1daf8d9104e1892b480c2f_icgraph" id="classSolver_a9917ba104c1daf8d9104e1892b480c2f_icgraph">
+<area shape="rect" id="node2" href="tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="265,5,343,32"/>
+<area shape="rect" id="node3" href="tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="237,56,371,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b07dd3c581eeb3207036430082cb2f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Solver::setSolveStrategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSolveStrategy.html">SolveStrategy</a> *&#160;</td>
+          <td class="paramname"><em>solve_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00053">53</a> 行定义.</p>
+
+<p>参考 <a class="el" href="Solver_8h_source.html#l00075">solve</a> , 以及 <a class="el" href="SolveStrategy_8h_source.html#l00013">SolveStrategy::solver</a>.</p>
+
+<p>参考自 <a class="el" href="tests_8cpp_source.html#l00161">LargeTest()</a>, <a class="el" href="DACSolve_8cpp_source.html#l00003">DACSolve::solve()</a> , 以及 <a class="el" href="tests_8cpp_source.html#l00145">StupidStrategyTest()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">delete</span> <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a> = solve_;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">solve</a>-&gt;<a class="code" href="classSolveStrategy.html#a94d43c47305176d0d3858697d3410443">solver</a> = <span class="keyword">this</span>;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div><div class="ttc" id="classSolver_html_a2da9746bdd69a8ae76bb519bb1bc95b3"><div class="ttname"><a href="classSolver.html#a2da9746bdd69a8ae76bb519bb1bc95b3">Solver::solve</a></div><div class="ttdeci">SolveStrategy * solve</div><div class="ttdef"><b>Definition:</b> <a href="Solver_8h_source.html#l00075">Solver.h:75</a></div></div>
+<div class="ttc" id="classSolveStrategy_html_a94d43c47305176d0d3858697d3410443"><div class="ttname"><a href="classSolveStrategy.html#a94d43c47305176d0d3858697d3410443">SolveStrategy::solver</a></div><div class="ttdeci">Solver * solver</div><div class="ttdef"><b>Definition:</b> <a href="SolveStrategy_8h_source.html#l00013">SolveStrategy.h:13</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSolver_a2b07dd3c581eeb3207036430082cb2f9_icgraph.png" border="0" usemap="#classSolver_a2b07dd3c581eeb3207036430082cb2f9_icgraph" alt=""/></div>
+<map name="classSolver_a2b07dd3c581eeb3207036430082cb2f9_icgraph" id="classSolver_a2b07dd3c581eeb3207036430082cb2f9_icgraph">
+<area shape="rect" id="node2" href="tests_8cpp.html#a95ab05e912ce2da242f167395141cb1e" title="LargeTest" alt="" coords="243,5,322,32"/>
+<area shape="rect" id="node3" href="classDACSolve.html#a45deda5b055671bbcee609cbf1500fdc" title="DACSolve::solve" alt="" coords="224,56,341,83"/>
+<area shape="rect" id="node5" href="tests_8cpp.html#a4ad1eecdf21f57184d350b6c9f1711c1" title="StupidStrategyTest" alt="" coords="216,107,349,133"/>
+<area shape="rect" id="node4" href="classDACSolve.html#a45f18555266f27ff24938f513f416e94" title="DACSolve::~DACSolve" alt="" coords="397,56,552,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="a8966a22c2f247addc8ce453d119bc54e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classBoard.html">Board</a>* Solver::board</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00012">12</a> 行定义.</p>
+
+<p>参考自 <a class="el" href="DACSolve_8cpp_source.html#l00034">DACSolve::divide()</a>, <a class="el" href="ColumnGenSolve_8cpp_source.html#l00106">ColumnGenSolve::route()</a>, <a class="el" href="StupidStrategy_8cpp_source.html#l00003">StupidSolve::solve()</a>, <a class="el" href="ColumnGenSolve_8cpp_source.html#l01087">ColumnGenSolve::solve()</a>, <a class="el" href="DACSolve_8cpp_source.html#l00003">DACSolve::solve()</a>, <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a> , 以及 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00700">ColumnGenSolve::suggestTree()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9c1ccc9336ccdee35dcc7c1c0e39a95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCheckStrategy.html">CheckStrategy</a>* Solver::check</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00076">76</a> 行定义.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">clone()</a>, <a class="el" href="Solver_8cpp_source.html#l00003">run()</a>, <a class="el" href="Solver_8h_source.html#l00060">setCheckStrategy()</a>, <a class="el" href="Solver_8h_source.html#l00013">Solver()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00046">~Solver()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a030d66f9899352a9c96313801ae58b8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOptimizeStrategy.html">OptimizeStrategy</a>* Solver::optimize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00077">77</a> 行定义.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">clone()</a>, <a class="el" href="Solver_8cpp_source.html#l00003">run()</a>, <a class="el" href="Solver_8h_source.html#l00067">setOptimizeStrategy()</a>, <a class="el" href="Solver_8h_source.html#l00013">Solver()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00046">~Solver()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2da9746bdd69a8ae76bb519bb1bc95b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSolveStrategy.html">SolveStrategy</a>* Solver::solve</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="Solver_8h_source.html">Solver.h</a> 第 <a class="el" href="Solver_8h_source.html#l00075">75</a> 行定义.</p>
+
+<p>参考自 <a class="el" href="Solver_8h_source.html#l00020">clone()</a>, <a class="el" href="Solver_8cpp_source.html#l00003">run()</a>, <a class="el" href="Solver_8h_source.html#l00053">setSolveStrategy()</a>, <a class="el" href="Solver_8h_source.html#l00013">Solver()</a> , 以及 <a class="el" href="Solver_8h_source.html#l00046">~Solver()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="Solver_8h_source.html">Solver.h</a></li>
+<li>src/<a class="el" href="Solver_8cpp_source.html">Solver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

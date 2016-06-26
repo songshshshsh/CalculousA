@@ -1,0 +1,4 @@
+<map id="OptimizeStrategy" name="OptimizeStrategy">
+<area shape="rect" id="node2" href="$classCleverOptimize.html" title="{CleverOptimize\n||+ optimize()\l+ CleverOptimize()\l+ clone()\l&#45; bfs()\l&#45; backtrace()\l&#45; getLastDirection()\l&#45; getMap()\l}" alt="" coords="5,175,137,340"/>
+<area shape="rect" id="node3" href="$classStupidOptimize.html" title="{StupidOptimize\n||+ StupidOptimize()\l+ ~StupidOptimize()\l+ optimize()\l+ clone()\l}" alt="" coords="162,197,301,318"/>
+</map>

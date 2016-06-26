@@ -1,0 +1,447 @@
+\hypertarget{classGRBQuadExpr}{}\section{G\+R\+B\+Quad\+Expr类 参考}
+\label{classGRBQuadExpr}\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+
+
+{\ttfamily \#include \char`\"{}gurobi\+\_\+c++.\+h\char`\"{}}
+
+
+
+类 G\+R\+B\+Quad\+Expr 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classGRBQuadExpr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+G\+R\+B\+Quad\+Expr 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGRBQuadExpr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBQuadExpr_a43fa63987ac20f99ef122955b6ede096}{G\+R\+B\+Quad\+Expr} (double constant=0.\+0)
+\item 
+\hyperlink{classGRBQuadExpr_a3ecdf9ca3557a24525052867fc2c8f8b}{G\+R\+B\+Quad\+Expr} (\hyperlink{classGRBVar}{G\+R\+B\+Var} var, double coeff=1.\+0)
+\item 
+\hyperlink{classGRBQuadExpr_ab093b03a58f322abb0f40ccbdbe4805f}{G\+R\+B\+Quad\+Expr} (\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} le)
+\item 
+unsigned int \hyperlink{classGRBQuadExpr_a08a8a51e2a8c717cb9e59c98a5e457d9}{size} (void) const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBQuadExpr_afdfbcdd9eddea5f9edd11194340c1160}{get\+Var1} (int i) const 
+\item 
+\hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classGRBQuadExpr_a8add7ef778921b5b1313be1ec922fe14}{get\+Var2} (int i) const 
+\item 
+double \hyperlink{classGRBQuadExpr_ad23aedddc02ca8de6cf8844ce7e29f7d}{get\+Coeff} (int i) const 
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBQuadExpr_ac5d385d68bc55c9e5f2268e9f002597f}{get\+Lin\+Expr} () const 
+\item 
+double \hyperlink{classGRBQuadExpr_ac7541e6b49aa38df71ff29b86b2514d2}{get\+Value} () const 
+\item 
+void \hyperlink{classGRBQuadExpr_adff49561f4598a301c077c848d13b415}{add\+Constant} (double \hyperlink{IntArray2bmp_8h_ae9d8014c37dbf37873bdee6b8497a065}{c})
+\item 
+void \hyperlink{classGRBQuadExpr_a3aa68c6db417e3391eee1e364aff8a2f}{add\+Term} (double coeff, \hyperlink{classGRBVar}{G\+R\+B\+Var} var)
+\item 
+void \hyperlink{classGRBQuadExpr_aa4d8679d1401bff1264d591dd5f856a6}{add\+Term} (double coeff, \hyperlink{classGRBVar}{G\+R\+B\+Var} var1, \hyperlink{classGRBVar}{G\+R\+B\+Var} var2)
+\item 
+void \hyperlink{classGRBQuadExpr_af3a9b6bccd8445f9adf93348acf73b15}{add\+Terms} (const double $\ast$coeff, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$var, int cnt)
+\item 
+void \hyperlink{classGRBQuadExpr_a0c409ad1da9b6f4aa96223344e21d4aa}{add\+Terms} (const double $\ast$coeff, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$var1, const \hyperlink{classGRBVar}{G\+R\+B\+Var} $\ast$var2, int cnt)
+\item 
+void \hyperlink{classGRBQuadExpr_a2110c8afc03887b079cee94bb118ed5b}{add} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} le)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a23c661bee78a6710e0cf0d0c81fb49b1}{operator=} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&rhs)
+\item 
+void \hyperlink{classGRBQuadExpr_a1953215e8ddf053f6be72483bae1b795}{operator+=} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&expr)
+\item 
+void \hyperlink{classGRBQuadExpr_a1fb9651a3653b70fd17682fe70b4fe7f}{operator-\/=} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&expr)
+\item 
+void \hyperlink{classGRBQuadExpr_aebe85e0385f8770d3324e1b9ba6d8301}{operator$\ast$=} (double mult)
+\item 
+void \hyperlink{classGRBQuadExpr_a20c235f27fe3abfa7ed64b5f30864c80}{operator/=} (double a)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a2ccc50627ecaa66a10963aed9e666f38}{operator+} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&rhs)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a47a14ad704161d27c0bbaf939ccbfe52}{operator-\/} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&rhs)
+\item 
+void \hyperlink{classGRBQuadExpr_adf78f93dfa684779f589e4a7f955dd30}{remove} (int i)
+\item 
+bool \hyperlink{classGRBQuadExpr_adb5762320abe8033eb91ae7f764c5f51}{remove} (\hyperlink{classGRBVar}{G\+R\+B\+Var} v)
+\item 
+void \hyperlink{classGRBQuadExpr_a1ab3de2a1d0b102c2df9f79a2587b043}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \hyperlink{classGRBQuadExpr_a64271f5613f18c638c5151135924a5c4}{linexpr}
+\item 
+vector$<$ double $>$ \hyperlink{classGRBQuadExpr_ad76d7cc3a36808156873d166da9383bd}{coeffs}
+\item 
+vector$<$ \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$ \hyperlink{classGRBQuadExpr_a37c9db4ad0b8f77e99e9305e52f9f44c}{vars1}
+\item 
+vector$<$ \hyperlink{classGRBVar}{G\+R\+B\+Var} $>$ \hyperlink{classGRBQuadExpr_a3a8446260dbb63555ab6bc4bf9e2fd1d}{vars2}
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classGRBQuadExpr_a7f706660078044ff3455e1aee30e3efd}{operator$<$$<$} (ostream \&stream, \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} expr)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_ad6605abfc8a5cef7dd87f27763c58b1b}{operator+} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x, const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a8fbf2b063848eacd45ec75367f67ee22}{operator-\/} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x, const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_ae0d5fe423dee4abd52ada4a39a0fdd58}{operator+} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a1ff9c32f10a2d3d9f436b9795a2f3e6c}{operator-\/} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_aaf8f02a342ae05dfa30e8dea524b33c1}{operator$\ast$} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x, double a)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a608da5b524fe50b076f9d0550061cbdc}{operator$\ast$} (double a, const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a59d20d5a9262153ac5570a9a9c4ea281}{operator$\ast$} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, \hyperlink{classGRBVar}{G\+R\+B\+Var} \hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a5257312977e80efa2652ee13b0e2fd23}{operator$\ast$} (\hyperlink{classGRBVar}{G\+R\+B\+Var} x, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_abaa939acb2648def48b9ed27528535d7}{operator$\ast$} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}, \hyperlink{classGRBVar}{G\+R\+B\+Var} x)
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a43c69f0b027005c1a0be602e79f0b92d}{operator$\ast$} (const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&x, const \hyperlink{classGRBLinExpr}{G\+R\+B\+Lin\+Expr} \&\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y})
+\item 
+\hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \hyperlink{classGRBQuadExpr_a834494efa8a8602c3136b7346c947553}{operator/} (const \hyperlink{classGRBQuadExpr}{G\+R\+B\+Quad\+Expr} \&x, double a)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 666 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Quad\+Expr(double constant=0.\+0)}{GRBQuadExpr(double constant=0.0)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Quad\+Expr\+::\+G\+R\+B\+Quad\+Expr (
+\begin{DoxyParamCaption}
+\item[{double}]{constant = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a43fa63987ac20f99ef122955b6ede096}{}\label{classGRBQuadExpr_a43fa63987ac20f99ef122955b6ede096}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Quad\+Expr(\+G\+R\+B\+Var var, double coeff=1.\+0)}{GRBQuadExpr(GRBVar var, double coeff=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Quad\+Expr\+::\+G\+R\+B\+Quad\+Expr (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{var, }
+\item[{double}]{coeff = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a3ecdf9ca3557a24525052867fc2c8f8b}{}\label{classGRBQuadExpr_a3ecdf9ca3557a24525052867fc2c8f8b}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{G\+R\+B\+Quad\+Expr(\+G\+R\+B\+Lin\+Expr le)}{GRBQuadExpr(GRBLinExpr le)}}]{\setlength{\rightskip}{0pt plus 5cm}G\+R\+B\+Quad\+Expr\+::\+G\+R\+B\+Quad\+Expr (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Lin\+Expr}}]{le}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_ab093b03a58f322abb0f40ccbdbe4805f}{}\label{classGRBQuadExpr_ab093b03a58f322abb0f40ccbdbe4805f}
+
+
+\subsection{成员函数说明}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add@{add}}
+\index{add@{add}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add(const G\+R\+B\+Lin\+Expr le)}{add(const GRBLinExpr le)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr}}]{le}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a2110c8afc03887b079cee94bb118ed5b}{}\label{classGRBQuadExpr_a2110c8afc03887b079cee94bb118ed5b}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add\+Constant@{add\+Constant}}
+\index{add\+Constant@{add\+Constant}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Constant(double c)}{addConstant(double c)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add\+Constant (
+\begin{DoxyParamCaption}
+\item[{double}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_adff49561f4598a301c077c848d13b415}{}\label{classGRBQuadExpr_adff49561f4598a301c077c848d13b415}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add\+Term@{add\+Term}}
+\index{add\+Term@{add\+Term}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Term(double coeff, G\+R\+B\+Var var)}{addTerm(double coeff, GRBVar var)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add\+Term (
+\begin{DoxyParamCaption}
+\item[{double}]{coeff, }
+\item[{{\bf G\+R\+B\+Var}}]{var}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a3aa68c6db417e3391eee1e364aff8a2f}{}\label{classGRBQuadExpr_a3aa68c6db417e3391eee1e364aff8a2f}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add\+Term@{add\+Term}}
+\index{add\+Term@{add\+Term}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Term(double coeff, G\+R\+B\+Var var1, G\+R\+B\+Var var2)}{addTerm(double coeff, GRBVar var1, GRBVar var2)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add\+Term (
+\begin{DoxyParamCaption}
+\item[{double}]{coeff, }
+\item[{{\bf G\+R\+B\+Var}}]{var1, }
+\item[{{\bf G\+R\+B\+Var}}]{var2}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_aa4d8679d1401bff1264d591dd5f856a6}{}\label{classGRBQuadExpr_aa4d8679d1401bff1264d591dd5f856a6}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add\+Terms@{add\+Terms}}
+\index{add\+Terms@{add\+Terms}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Terms(const double $\ast$coeff, const G\+R\+B\+Var $\ast$var, int cnt)}{addTerms(const double *coeff, const GRBVar *var, int cnt)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add\+Terms (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{coeff, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{var, }
+\item[{int}]{cnt}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_af3a9b6bccd8445f9adf93348acf73b15}{}\label{classGRBQuadExpr_af3a9b6bccd8445f9adf93348acf73b15}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!add\+Terms@{add\+Terms}}
+\index{add\+Terms@{add\+Terms}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{add\+Terms(const double $\ast$coeff, const G\+R\+B\+Var $\ast$var1, const G\+R\+B\+Var $\ast$var2, int cnt)}{addTerms(const double *coeff, const GRBVar *var1, const GRBVar *var2, int cnt)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::add\+Terms (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{coeff, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{var1, }
+\item[{const {\bf G\+R\+B\+Var} $\ast$}]{var2, }
+\item[{int}]{cnt}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a0c409ad1da9b6f4aa96223344e21d4aa}{}\label{classGRBQuadExpr_a0c409ad1da9b6f4aa96223344e21d4aa}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!clear@{clear}}
+\index{clear@{clear}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a1ab3de2a1d0b102c2df9f79a2587b043}{}\label{classGRBQuadExpr_a1ab3de2a1d0b102c2df9f79a2587b043}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!get\+Coeff@{get\+Coeff}}
+\index{get\+Coeff@{get\+Coeff}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Coeff(int i) const }{getCoeff(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Quad\+Expr\+::get\+Coeff (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_ad23aedddc02ca8de6cf8844ce7e29f7d}{}\label{classGRBQuadExpr_ad23aedddc02ca8de6cf8844ce7e29f7d}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!get\+Lin\+Expr@{get\+Lin\+Expr}}
+\index{get\+Lin\+Expr@{get\+Lin\+Expr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Lin\+Expr() const }{getLinExpr() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Quad\+Expr\+::get\+Lin\+Expr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_ac5d385d68bc55c9e5f2268e9f002597f}{}\label{classGRBQuadExpr_ac5d385d68bc55c9e5f2268e9f002597f}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Value() const }{getValue() const }}]{\setlength{\rightskip}{0pt plus 5cm}double G\+R\+B\+Quad\+Expr\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_ac7541e6b49aa38df71ff29b86b2514d2}{}\label{classGRBQuadExpr_ac7541e6b49aa38df71ff29b86b2514d2}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!get\+Var1@{get\+Var1}}
+\index{get\+Var1@{get\+Var1}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Var1(int i) const }{getVar1(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Quad\+Expr\+::get\+Var1 (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_afdfbcdd9eddea5f9edd11194340c1160}{}\label{classGRBQuadExpr_afdfbcdd9eddea5f9edd11194340c1160}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!get\+Var2@{get\+Var2}}
+\index{get\+Var2@{get\+Var2}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{get\+Var2(int i) const }{getVar2(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Var} G\+R\+B\+Quad\+Expr\+::get\+Var2 (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_a8add7ef778921b5b1313be1ec922fe14}{}\label{classGRBQuadExpr_a8add7ef778921b5b1313be1ec922fe14}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(double mult)}{operator*=(double mult)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{double}]{mult}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_aebe85e0385f8770d3324e1b9ba6d8301}{}\label{classGRBQuadExpr_aebe85e0385f8770d3324e1b9ba6d8301}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator+(const G\+R\+B\+Quad\+Expr \&rhs)}{operator+(const GRBQuadExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} G\+R\+B\+Quad\+Expr\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a2ccc50627ecaa66a10963aed9e666f38}{}\label{classGRBQuadExpr_a2ccc50627ecaa66a10963aed9e666f38}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator+=(const G\+R\+B\+Quad\+Expr \&expr)}{operator+=(const GRBQuadExpr &expr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{expr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a1953215e8ddf053f6be72483bae1b795}{}\label{classGRBQuadExpr_a1953215e8ddf053f6be72483bae1b795}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/(const G\+R\+B\+Quad\+Expr \&rhs)}{operator-(const GRBQuadExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} G\+R\+B\+Quad\+Expr\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a47a14ad704161d27c0bbaf939ccbfe52}{}\label{classGRBQuadExpr_a47a14ad704161d27c0bbaf939ccbfe52}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/=(const G\+R\+B\+Quad\+Expr \&expr)}{operator-=(const GRBQuadExpr &expr)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{expr}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a1fb9651a3653b70fd17682fe70b4fe7f}{}\label{classGRBQuadExpr_a1fb9651a3653b70fd17682fe70b4fe7f}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator/=(double a)}{operator/=(double a)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a20c235f27fe3abfa7ed64b5f30864c80}{}\label{classGRBQuadExpr_a20c235f27fe3abfa7ed64b5f30864c80}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator=@{operator=}}
+\index{operator=@{operator=}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator=(const G\+R\+B\+Quad\+Expr \&rhs)}{operator=(const GRBQuadExpr &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} G\+R\+B\+Quad\+Expr\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_a23c661bee78a6710e0cf0d0c81fb49b1}{}\label{classGRBQuadExpr_a23c661bee78a6710e0cf0d0c81fb49b1}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{remove(int i)}{remove(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+R\+B\+Quad\+Expr\+::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_adf78f93dfa684779f589e4a7f955dd30}{}\label{classGRBQuadExpr_adf78f93dfa684779f589e4a7f955dd30}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!remove@{remove}}
+\index{remove@{remove}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{remove(\+G\+R\+B\+Var v)}{remove(GRBVar v)}}]{\setlength{\rightskip}{0pt plus 5cm}bool G\+R\+B\+Quad\+Expr\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classGRBQuadExpr_adb5762320abe8033eb91ae7f764c5f51}{}\label{classGRBQuadExpr_adb5762320abe8033eb91ae7f764c5f51}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!size@{size}}
+\index{size@{size}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{size(void) const }{size(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int G\+R\+B\+Quad\+Expr\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classGRBQuadExpr_a08a8a51e2a8c717cb9e59c98a5e457d9}{}\label{classGRBQuadExpr_a08a8a51e2a8c717cb9e59c98a5e457d9}
+
+
+\subsection{友元及相关函数文档}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_aaf8f02a342ae05dfa30e8dea524b33c1}{}\label{classGRBQuadExpr_aaf8f02a342ae05dfa30e8dea524b33c1}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a608da5b524fe50b076f9d0550061cbdc}{}\label{classGRBQuadExpr_a608da5b524fe50b076f9d0550061cbdc}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{{\bf G\+R\+B\+Var}}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a59d20d5a9262153ac5570a9a9c4ea281}{}\label{classGRBQuadExpr_a59d20d5a9262153ac5570a9a9c4ea281}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+R\+B\+Var}}]{x, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a5257312977e80efa2652ee13b0e2fd23}{}\label{classGRBQuadExpr_a5257312977e80efa2652ee13b0e2fd23}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{y, }
+\item[{{\bf G\+R\+B\+Var}}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_abaa939acb2648def48b9ed27528535d7}{}\label{classGRBQuadExpr_abaa939acb2648def48b9ed27528535d7}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{x, }
+\item[{const {\bf G\+R\+B\+Lin\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a43c69f0b027005c1a0be602e79f0b92d}{}\label{classGRBQuadExpr_a43c69f0b027005c1a0be602e79f0b92d}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x, }
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_ad6605abfc8a5cef7dd87f27763c58b1b}{}\label{classGRBQuadExpr_ad6605abfc8a5cef7dd87f27763c58b1b}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator+@{operator+}}
+\index{operator+@{operator+}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_ae0d5fe423dee4abd52ada4a39a0fdd58}{}\label{classGRBQuadExpr_ae0d5fe423dee4abd52ada4a39a0fdd58}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x, }
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a8fbf2b063848eacd45ec75367f67ee22}{}\label{classGRBQuadExpr_a8fbf2b063848eacd45ec75367f67ee22}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a1ff9c32f10a2d3d9f436b9795a2f3e6c}{}\label{classGRBQuadExpr_a1ff9c32f10a2d3d9f436b9795a2f3e6c}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator/@{operator/}}
+\index{operator/@{operator/}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Quad\+Expr} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf G\+R\+B\+Quad\+Expr} \&}]{x, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a834494efa8a8602c3136b7346c947553}{}\label{classGRBQuadExpr_a834494efa8a8602c3136b7346c947553}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{stream, }
+\item[{{\bf G\+R\+B\+Quad\+Expr}}]{expr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classGRBQuadExpr_a7f706660078044ff3455e1aee30e3efd}{}\label{classGRBQuadExpr_a7f706660078044ff3455e1aee30e3efd}
+
+
+\subsection{类成员变量说明}
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!coeffs@{coeffs}}
+\index{coeffs@{coeffs}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{coeffs}{coeffs}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ G\+R\+B\+Quad\+Expr\+::coeffs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBQuadExpr_ad76d7cc3a36808156873d166da9383bd}{}\label{classGRBQuadExpr_ad76d7cc3a36808156873d166da9383bd}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 671 行定义.
+
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!linexpr@{linexpr}}
+\index{linexpr@{linexpr}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{linexpr}{linexpr}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+R\+B\+Lin\+Expr} G\+R\+B\+Quad\+Expr\+::linexpr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBQuadExpr_a64271f5613f18c638c5151135924a5c4}{}\label{classGRBQuadExpr_a64271f5613f18c638c5151135924a5c4}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 670 行定义.
+
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!vars1@{vars1}}
+\index{vars1@{vars1}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{vars1}{vars1}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Var}$>$ G\+R\+B\+Quad\+Expr\+::vars1\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBQuadExpr_a37c9db4ad0b8f77e99e9305e52f9f44c}{}\label{classGRBQuadExpr_a37c9db4ad0b8f77e99e9305e52f9f44c}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 672 行定义.
+
+\index{G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}!vars2@{vars2}}
+\index{vars2@{vars2}!G\+R\+B\+Quad\+Expr@{G\+R\+B\+Quad\+Expr}}
+\subsubsection[{\texorpdfstring{vars2}{vars2}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf G\+R\+B\+Var}$>$ G\+R\+B\+Quad\+Expr\+::vars2\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classGRBQuadExpr_a3a8446260dbb63555ab6bc4bf9e2fd1d}{}\label{classGRBQuadExpr_a3a8446260dbb63555ab6bc4bf9e2fd1d}
+
+
+在文件 gurobi\+\_\+c++.\+h 第 673 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{gurobi__c_09_09_8h}{gurobi\+\_\+c++.\+h}\end{DoxyCompactItemize}

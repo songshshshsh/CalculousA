@@ -1,0 +1,134 @@
+\hypertarget{BitMatrix_8cpp}{}\section{src/\+Bit\+Matrix.cpp 文件参考}
+\label{BitMatrix_8cpp}\index{src/\+Bit\+Matrix.\+cpp@{src/\+Bit\+Matrix.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Bit\+Matrix.\+h\char`\"{}}\\*
+Bit\+Matrix.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BitMatrix_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \& \hyperlink{BitMatrix_8cpp_ab6451c309fb63e3ef335e931f5918834}{operator$<$$<$} (\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ost, const \hyperlink{classBitMatrix}{Bit\+Matrix} \&bmx)
+\item 
+bool \hyperlink{BitMatrix_8cpp_af1c93f67e106dfcba871486f3a5c3312}{operator==} (const \hyperlink{classBitMatrix}{Bit\+Matrix} \&lhs, const \hyperlink{classBitMatrix}{Bit\+Matrix} \&rhs)
+\item 
+bool \hyperlink{BitMatrix_8cpp_a57e43b3edc6cb3a9d083d4bf6af9045c}{operator$<$} (const \hyperlink{classBitMatrix}{Bit\+Matrix} \&lhs, const \hyperlink{classBitMatrix}{Bit\+Matrix} \&rhs)
+\item 
+bool \hyperlink{BitMatrix_8cpp_a61fcfe2623514f269a51fd57d199c66a}{operator!=} (const \hyperlink{classBitMatrix}{Bit\+Matrix} \&lhs, const \hyperlink{classBitMatrix}{Bit\+Matrix} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}}
+\subsubsection[{\texorpdfstring{operator"!=(const Bit\+Matrix \&lhs, const Bit\+Matrix \&rhs)}{operator!=(const BitMatrix &lhs, const BitMatrix &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bit\+Matrix} \&}]{lhs, }
+\item[{const {\bf Bit\+Matrix} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{BitMatrix_8cpp_a61fcfe2623514f269a51fd57d199c66a}{}\label{BitMatrix_8cpp_a61fcfe2623514f269a51fd57d199c66a}
+
+
+在文件 Bit\+Matrix.\+cpp 第 41 行定义.
+
+
+\begin{DoxyCode}
+42 \{
+43     \textcolor{keywordflow}{return} !(lhs == rhs);
+44 \}
+\end{DoxyCode}
+\index{Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$(const Bit\+Matrix \&lhs, const Bit\+Matrix \&rhs)}{operator<(const BitMatrix &lhs, const BitMatrix &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bit\+Matrix} \&}]{lhs, }
+\item[{const {\bf Bit\+Matrix} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{BitMatrix_8cpp_a57e43b3edc6cb3a9d083d4bf6af9045c}{}\label{BitMatrix_8cpp_a57e43b3edc6cb3a9d083d4bf6af9045c}
+
+
+在文件 Bit\+Matrix.\+cpp 第 33 行定义.
+
+
+
+参考 Bit\+Matrix\+::data, Bit\+Matrix\+::height , 以及 Bit\+Matrix\+::width.
+
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordtype}{int} sz = lhs.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} * lhs.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width};
+36     \textcolor{keywordflow}{if}(sz != rhs.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} * rhs.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width})
+37         \textcolor{keywordflow}{return} sz < rhs.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} * rhs.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width};
+38     \textcolor{keywordflow}{return} lhs.\hyperlink{classBitMatrix_a8a914444d9945c79a7e3cc88a49ef928}{data} < rhs.\hyperlink{classBitMatrix_a8a914444d9945c79a7e3cc88a49ef928}{data};
+39 \}
+\end{DoxyCode}
+\index{Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(\+O\+Stream \&ost, const Bit\+Matrix \&bmx)}{operator<<(OStream &ost, const BitMatrix &bmx)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+Stream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+Stream} \&}]{ost, }
+\item[{const {\bf Bit\+Matrix} \&}]{bmx}
+\end{DoxyParamCaption}
+)}\hypertarget{BitMatrix_8cpp_ab6451c309fb63e3ef335e931f5918834}{}\label{BitMatrix_8cpp_ab6451c309fb63e3ef335e931f5918834}
+
+
+在文件 Bit\+Matrix.\+cpp 第 13 行定义.
+
+
+
+参考 Bit\+Matrix\+::get(), Bit\+Matrix\+::height , 以及 Bit\+Matrix\+::width.
+
+
+\begin{DoxyCode}
+14 \{
+15     ost << \textcolor{stringliteral}{"BitMatrix "} << bmx.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} << \textcolor{stringliteral}{" * "} << bmx.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width} << \textcolor{stringliteral}{"\(\backslash\)n"};
+16     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < bmx.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height}; i++)
+17     \{
+18         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < bmx.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width}; j++)
+19             ost << (\textcolor{keywordtype}{int}) bmx.\hyperlink{classBitMatrix_ad19d1045b54ccc8a99d70d38305b4ca6}{get}(i, j);
+20         ost << \textcolor{stringliteral}{"\(\backslash\)n"};
+21     \}
+22     \textcolor{keywordflow}{return} ost;
+23 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BitMatrix_8cpp_ab6451c309fb63e3ef335e931f5918834_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!Bit\+Matrix.\+cpp@{Bit\+Matrix.\+cpp}}
+\subsubsection[{\texorpdfstring{operator==(const Bit\+Matrix \&lhs, const Bit\+Matrix \&rhs)}{operator==(const BitMatrix &lhs, const BitMatrix &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bit\+Matrix} \&}]{lhs, }
+\item[{const {\bf Bit\+Matrix} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{BitMatrix_8cpp_af1c93f67e106dfcba871486f3a5c3312}{}\label{BitMatrix_8cpp_af1c93f67e106dfcba871486f3a5c3312}
+
+
+在文件 Bit\+Matrix.\+cpp 第 25 行定义.
+
+
+
+参考 Bit\+Matrix\+::data, Bit\+Matrix\+::height , 以及 Bit\+Matrix\+::width.
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordtype}{int} sz = lhs.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} * lhs.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width};
+28     \textcolor{keywordflow}{if}(sz != rhs.\hyperlink{classBitMatrix_a3b7a1be96313cacfd3b2a08661dd919c}{height} * rhs.\hyperlink{classBitMatrix_ac271de23ac5446a0a75ee457a385d882}{width})
+29         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+30     \textcolor{keywordflow}{return} lhs.\hyperlink{classBitMatrix_a8a914444d9945c79a7e3cc88a49ef928}{data} == rhs.\hyperlink{classBitMatrix_a8a914444d9945c79a7e3cc88a49ef928}{data};
+31 \}
+\end{DoxyCode}

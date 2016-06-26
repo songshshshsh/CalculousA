@@ -1,0 +1,372 @@
+\hypertarget{classBoard}{}\section{Board类 参考}
+\label{classBoard}\index{Board@{Board}}
+
+
+{\ttfamily \#include \char`\"{}Board.\+h\char`\"{}}
+
+
+
+Board 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBoard__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}{Board} ()
+\item 
+\hyperlink{classBoard_a19e2c1f6c2baf8ab04cbd02f0cd2aebc}{Board} (const \hyperlink{classBoard}{Board} \&)
+\item 
+\hyperlink{classBoard_af73f45730119a1fd8f6670f53f959e68}{$\sim$\+Board} ()
+\item 
+void \hyperlink{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{input} (int mode=0, \hyperlink{global_8h_a3ae955d826788591b03995dc737012c7}{I\+Stream} \&ifs=cin)
+\item 
+void \hyperlink{classBoard_a88190948cb3ed605cb54355de513cfa6}{output} (int mode=0, \hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ofs=cout) const 
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}
+\item 
+int \hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classTerminalSet}{Terminal\+Set} $\ast$ $>$ \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminal\+Sets}
+\item 
+\hyperlink{classMatrix}{Matrix}$<$ int $>$ \hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{classPoint}{Point} $>$ \hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Board.\+h 第 7 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{\texorpdfstring{Board()}{Board()}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}{}\label{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}
+
+
+在文件 Board.\+h 第 10 行定义.
+
+
+\begin{DoxyCode}
+10 \{\}
+\end{DoxyCode}
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{\texorpdfstring{Board(const Board \&)}{Board(const Board &)}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
+\begin{DoxyParamCaption}
+\item[{const {\bf Board} \&}]{\+\_\+board}
+\end{DoxyParamCaption}
+)}\hypertarget{classBoard_a19e2c1f6c2baf8ab04cbd02f0cd2aebc}{}\label{classBoard_a19e2c1f6c2baf8ab04cbd02f0cd2aebc}
+
+
+在文件 Board.\+cpp 第 10 行定义.
+
+
+
+参考 Terminal\+Set\+::\+Add\+Point(), blocks, height, map, terminal\+Sets , 以及 width.
+
+
+\begin{DoxyCode}
+11 \{
+12     this->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height} = \_board.\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height};
+13     this->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width} = \_board.\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+14     this->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map} = \_board.\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map};
+15     this->\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks} = \_board.\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks};
+16     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0;i < \_board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.size();++i)
+17         \textcolor{keywordflow}{if} (\_board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i] == NULL)
+18             this->\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.push\_back(NULL);
+19         \textcolor{keywordflow}{else}
+20         \{
+21             \hyperlink{classTerminalSet}{TerminalSet}* temp = \textcolor{keyword}{new} \hyperlink{classTerminalSet}{TerminalSet}(\_board.
+      \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->id,\textcolor{keyword}{this});
+22             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0;j < \_board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->points.size();++j)
+23                 temp->\hyperlink{classTerminalSet_a405cff3b74573b5459da6ffd387f347a}{AddPoint}(\_board.\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->points[j]);
+24             this->\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.push\_back(temp);
+25         \}
+26             
+27 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classBoard_a19e2c1f6c2baf8ab04cbd02f0cd2aebc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Board@{Board}!````~Board@{$\sim$\+Board}}
+\index{````~Board@{$\sim$\+Board}!Board@{Board}}
+\subsubsection[{\texorpdfstring{$\sim$\+Board()}{~Board()}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::$\sim$\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classBoard_af73f45730119a1fd8f6670f53f959e68}{}\label{classBoard_af73f45730119a1fd8f6670f53f959e68}
+
+
+在文件 Board.\+cpp 第 4 行定义.
+
+
+
+参考 terminal\+Sets.
+
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} pointer: \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets})
+7         \textcolor{keyword}{delete} pointer;
+8 \}
+\end{DoxyCode}
+
+
+\subsection{成员函数说明}
+\index{Board@{Board}!input@{input}}
+\index{input@{input}!Board@{Board}}
+\subsubsection[{\texorpdfstring{input(int mode=0, I\+Stream \&ifs=cin)}{input(int mode=0, IStream &ifs=cin)}}]{\setlength{\rightskip}{0pt plus 5cm}void Board\+::input (
+\begin{DoxyParamCaption}
+\item[{int}]{mode = {\ttfamily 0}, }
+\item[{{\bf I\+Stream} \&}]{ifs = {\ttfamily cin}}
+\end{DoxyParamCaption}
+)}\hypertarget{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}{}\label{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1}
+
+
+在文件 Board.\+cpp 第 29 行定义.
+
+
+
+参考 Terminal\+Set\+::\+Add\+Point(), blocks, height, id, map, Matrix$<$ T $>$\+::resize(), terminal\+Sets, width , 以及 y.
+
+
+
+参考自 Board\+I\+O\+Test(), D\+A\+C\+Solve\+::divide(), Large\+Test(), D\+A\+C\+Solve\+::solve(), Stupid\+Strategy\+Test() , 以及 T\+E\+S\+T().
+
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{if} (mode == 0)
+32     \{
+33         \textcolor{comment}{//input the size of the board}
+34         ifs>>\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}>>\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+35         \hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height},width);
+36         \textcolor{comment}{//input every element of the board}
+37         \textcolor{keywordtype}{int} maxindex = 0;
+38         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < \hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}; ++i)
+39             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}; ++j)
+40             \{
+41                 ifs>>\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j];
+42                 maxindex = max(maxindex,map[i][j]);
+43             \}
+44     \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.resize(maxindex+1);
+45     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < (int)\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.size(); ++i)
+46         \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i] = \textcolor{keyword}{new} \hyperlink{classTerminalSet}{TerminalSet}(i,\textcolor{keyword}{this});
+47     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < \hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}; ++i)
+48         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}; ++j)
+49         \{
+50             \textcolor{keywordflow}{if} (\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j] == -1) \hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}.push\_back(\hyperlink{classPoint}{Point}(i,j));
+51             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j] > 0)
+52             \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j]]->AddPoint(\hyperlink{classPoint}{Point}(i,j));
+53         \}   
+54     \}
+55     \textcolor{keywordflow}{else}
+56     \{
+57         \textcolor{keywordtype}{int} \hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id};
+58         ifs>>height>>\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+59         \hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}.\hyperlink{classMatrix_a15ce96c8af4c7a982c2c10b96f29cea1}{resize}(height,width);
+60         \hyperlink{classTerminalSet}{TerminalSet} *terminal0 = \textcolor{keyword}{new} \hyperlink{classTerminalSet}{TerminalSet}(0,\textcolor{keyword}{this});
+61         \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.push\_back(terminal0);
+62         \textcolor{keywordflow}{while} (ifs>>\textcolor{keywordtype}{id})
+63         \{
+64             \textcolor{keywordtype}{int} x,\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y};
+65             \textcolor{keywordtype}{int} n;
+66             ifs>>n;
+67             \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} > 0)
+68             \{
+69                 \hyperlink{classTerminalSet}{TerminalSet} *terminal = \textcolor{keyword}{new} \hyperlink{classTerminalSet}{TerminalSet}(\textcolor{keywordtype}{id},\textcolor{keyword}{this});
+70                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <= n; ++i)
+71                 \{
+72                     ifs>>x>>\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y};
+73                     terminal->\hyperlink{classTerminalSet_a405cff3b74573b5459da6ffd387f347a}{AddPoint}(\hyperlink{classPoint}{Point}(x,y));
+74                     \hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[x][\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}] = \hyperlink{classes_8txt_a7441ef0865bcb3db9b8064dd7375c1ea}{id};
+75                 \}
+76                 \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.push\_back(terminal);
+77             \}
+78             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} == -1)
+79             \{
+80                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i <=n; ++i)
+81                 \{
+82                     ifs>>x>>\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y};
+83                     \hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}.push\_back(\hyperlink{classPoint}{Point}(x,y));
+84                     \hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[x][\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}] = -1;
+85                 \}
+86             \}
+87                 
+88         \}
+89     \}
+90 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBoard_ace215dfac6b741c9fb51cc40a6fe6ab1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Board@{Board}!output@{output}}
+\index{output@{output}!Board@{Board}}
+\subsubsection[{\texorpdfstring{output(int mode=0, O\+Stream \&ofs=cout) const }{output(int mode=0, OStream &ofs=cout) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Board\+::output (
+\begin{DoxyParamCaption}
+\item[{int}]{mode = {\ttfamily 0}, }
+\item[{{\bf O\+Stream} \&}]{ofs = {\ttfamily cout}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classBoard_a88190948cb3ed605cb54355de513cfa6}{}\label{classBoard_a88190948cb3ed605cb54355de513cfa6}
+
+
+在文件 Board.\+cpp 第 92 行定义.
+
+
+
+参考 blocks, height, map, points, terminal\+Sets, width , 以及 y.
+
+
+
+参考自 Board\+I\+O\+Test().
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{keywordflow}{if} (mode == 0)
+95     \{
+96         ofs<<\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}<<\textcolor{charliteral}{' '}<<\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}<<\textcolor{charliteral}{'\(\backslash\)n'};
+97         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < \hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}; ++i)
+98         \{
+99             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < \hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width}; ++j)
+100                 ofs<<\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map}[i][j]<<\textcolor{charliteral}{' '};
+101             ofs<<\textcolor{charliteral}{'\(\backslash\)n'};
+102         \}
+103     \}
+104     \textcolor{keywordflow}{else}
+105     \{
+106         ofs<<height<<\textcolor{charliteral}{' '}<<width<<\textcolor{charliteral}{'\(\backslash\)n'};
+107         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1;i < (int)\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}.size(); ++i)
+108         \{
+109             ofs<<i<<\textcolor{charliteral}{' '}<<\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->points.size()<<\textcolor{charliteral}{'\(\backslash\)n'};
+110             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < (int)\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->\hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}.size(); ++j)
+111                 ofs<<\hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->\hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}[j].x<<\textcolor{charliteral}{' '}<<
+      \hyperlink{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{terminalSets}[i]->\hyperlink{classes_8txt_ae368e6252d0add75ea011d5d90db68ed}{points}[j].\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}<<\textcolor{charliteral}{' '}<<\textcolor{charliteral}{'\(\backslash\)n'};
+112         \}
+113         ofs<<-1<<\textcolor{charliteral}{' '}<<\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}.size()<<\textcolor{charliteral}{'\(\backslash\)n'};
+114         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < (int)\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}.size(); ++i)
+115             ofs<<\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}[i].x<<\textcolor{charliteral}{' '}<<\hyperlink{classBoard_abd553dee0125b79f672dbfa74f86c52b}{blocks}[i].\hyperlink{classes_8txt_a52673b1e0cce0104e52dcd12727f211e}{y}<<\textcolor{charliteral}{'\(\backslash\)n'};
+116     \}
+117 \}\end{DoxyCode}
+
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classBoard_a88190948cb3ed605cb54355de513cfa6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{类成员变量说明}
+\index{Board@{Board}!blocks@{blocks}}
+\index{blocks@{blocks}!Board@{Board}}
+\subsubsection[{\texorpdfstring{blocks}{blocks}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<${\bf Point}$>$ Board\+::blocks}\hypertarget{classBoard_abd553dee0125b79f672dbfa74f86c52b}{}\label{classBoard_abd553dee0125b79f672dbfa74f86c52b}
+
+
+在文件 Board.\+h 第 15 行定义.
+
+
+
+参考自 Board(), Solution\+::compute\+Map(), input() , 以及 output().
+
+\index{Board@{Board}!height@{height}}
+\index{height@{height}!Board@{Board}}
+\subsubsection[{\texorpdfstring{height}{height}}]{\setlength{\rightskip}{0pt plus 5cm}int Board\+::height}\hypertarget{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{}\label{classBoard_aa0cb8de0254520dc08dab5796643c8e5}
+
+
+在文件 Board.\+h 第 11 行定义.
+
+
+
+参考自 Board(), Solution\+::compute\+Map(), input(), operator$<$$<$(), output(), Column\+Gen\+Solve\+::route(), Column\+Gen\+Solve\+::solve(), D\+A\+C\+Solve\+::solve(), Column\+Gen\+Solve\+::solve\+L\+P() , 以及 Tree\+::\+Tree().
+
+\index{Board@{Board}!map@{map}}
+\index{map@{map}!Board@{Board}}
+\subsubsection[{\texorpdfstring{map}{map}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}$<$int$>$ Board\+::map}\hypertarget{classBoard_a191ff45df9151b8fee0c32877f582165}{}\label{classBoard_a191ff45df9151b8fee0c32877f582165}
+
+
+在文件 Board.\+h 第 14 行定义.
+
+
+
+参考自 Clever\+Optimize\+::bfs(), Board(), input(), operator$<$$<$(), Clever\+Optimize\+::optimize(), output(), Column\+Gen\+Solve\+::route(), Stupid\+Solve\+::solve(), D\+A\+C\+Solve\+::solve(), Column\+Gen\+Solve\+::solve\+L\+P() , 以及 Column\+Gen\+Solve\+::suggest\+Tree().
+
+\index{Board@{Board}!terminal\+Sets@{terminal\+Sets}}
+\index{terminal\+Sets@{terminal\+Sets}!Board@{Board}}
+\subsubsection[{\texorpdfstring{terminal\+Sets}{terminalSets}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<${\bf Terminal\+Set} $\ast$$>$ Board\+::terminal\+Sets}\hypertarget{classBoard_a6683a9c042af7113f55c5bc1b9656b69}{}\label{classBoard_a6683a9c042af7113f55c5bc1b9656b69}
+
+
+在文件 Board.\+h 第 13 行定义.
+
+
+
+参考自 Board(), input(), output(), Column\+Gen\+Solve\+::route(), Stupid\+Solve\+::solve(), T\+E\+S\+T() , 以及 $\sim$\+Board().
+
+\index{Board@{Board}!width@{width}}
+\index{width@{width}!Board@{Board}}
+\subsubsection[{\texorpdfstring{width}{width}}]{\setlength{\rightskip}{0pt plus 5cm}int Board\+::width}\hypertarget{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{}\label{classBoard_a90a8efaa4736af25511ac948bdd27d6c}
+
+
+在文件 Board.\+h 第 11 行定义.
+
+
+
+参考自 Board(), Solution\+::compute\+Map(), input(), operator$<$$<$(), output(), Column\+Gen\+Solve\+::route(), Column\+Gen\+Solve\+::solve(), D\+A\+C\+Solve\+::solve(), Column\+Gen\+Solve\+::solve\+L\+P() , 以及 Tree\+::\+Tree().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Board_8h}{Board.\+h}\item 
+src/\hyperlink{Board_8cpp}{Board.\+cpp}\end{DoxyCompactItemize}

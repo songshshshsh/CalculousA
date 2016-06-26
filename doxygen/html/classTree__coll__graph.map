@@ -1,0 +1,10 @@
+<map id="Tree" name="Tree">
+<area shape="rect" id="node2" href="$classBitMatrix.html" title="{BitMatrix\n|+ height\l+ width\l|+ BitMatrix()\l+ resize()\l+ set()\l+ set()\l+ reset()\l+ reset()\l+ get()\l+ popcnt()\l+ operator\|=()\l}" alt="" coords="94,656,194,865"/>
+<area shape="rect" id="node3" href="$classVector.html" title="{Vector\&lt; unsigned int \&gt;\n||}" alt="" coords="11,479,165,557"/>
+<area shape="rect" id="node5" href="$classTerminalSet.html" title="{TerminalSet\n|+ id\l|+ TerminalSet()\l+ AddPoint()\l&#45; operator=()\l}" alt="" coords="227,707,338,814"/>
+<area shape="rect" id="node6" href="$classBoard.html" title="{Board\n|+ height\l+ width\l|+ Board()\l+ Board()\l+ ~Board()\l+ input()\l+ output()\l}" alt="" coords="355,443,439,593"/>
+<area shape="rect" id="node7" href="$classVector.html" title="{Vector\&lt; TerminalSet * \&gt;\n||}" alt="" coords="459,288,621,365"/>
+<area shape="rect" id="node9" href="$classVector.html" title="{Vector\&lt; Point \&gt;\n||}" alt="" coords="309,288,424,365"/>
+<area shape="rect" id="node11" href="$classMatrix.html" title="{Matrix\&lt; int \&gt;\n||+ resize()\l+ operator[]()\l+ operator[]()\l}" alt="" coords="177,273,274,380"/>
+<area shape="rect" id="node12" href="$classVector.html" title="{Vector\&lt; Vector\&lt; int \&gt; \&gt;\n||}" alt="" coords="115,147,275,224"/>
+</map>

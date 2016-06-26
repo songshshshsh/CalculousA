@@ -1,0 +1,137 @@
+\hypertarget{Solution_8cpp}{}\section{src/\+Solution.cpp 文件参考}
+\label{Solution_8cpp}\index{src/\+Solution.\+cpp@{src/\+Solution.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Solution.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Int\+Array2bmp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/global.\+h\char`\"{}}\\*
+Solution.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Solution_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \& \hyperlink{Solution_8cpp_a5af0fc266ffa02e4ca1231a71aca1873}{operator$<$$<$} (\hyperlink{global_8h_a4fcce0eedf9be71754b55a7e7a6d7f50}{O\+Stream} \&ost, const \hyperlink{classSolution}{Solution} \&\hyperlink{classes_8txt_aa43d5190bbc491d9c9134146e01a248e}{solution})
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{Solution.\+cpp@{Solution.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Solution.\+cpp@{Solution.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(\+O\+Stream \&ost, const Solution \&solution)}{operator<<(OStream &ost, const Solution &solution)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+Stream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+Stream} \&}]{ost, }
+\item[{const {\bf Solution} \&}]{solution}
+\end{DoxyParamCaption}
+)}\hypertarget{Solution_8cpp_a5af0fc266ffa02e4ca1231a71aca1873}{}\label{Solution_8cpp_a5af0fc266ffa02e4ca1231a71aca1873}
+
+
+在文件 Solution.\+cpp 第 31 行定义.
+
+
+
+参考 Solution\+::board, Board\+::height, intarray2bmp\+::intarray2bmp(), Board\+::map, Solution\+::map, Solution\+::trees , 以及 Board\+::width.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordtype}{int} treeCnt = 0, totLen = 0;
+34     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} tree: solution.\hyperlink{classSolution_a554205b5c578add14d2d7836042215d8}{trees})
+35         \textcolor{keywordflow}{if}(tree != NULL)
+36         \{
+37             ++treeCnt;
+38             totLen += tree->length;
+39         \}
+40     cout << \textcolor{stringliteral}{"successfully routed "} << treeCnt << \textcolor{stringliteral}{" sets of terminals with "} << totLen << \textcolor{stringliteral}{" grids\(\backslash\)n"};
+41     cout.flush();
+42     ost << \textcolor{stringliteral}{"Solution\(\backslash\)n"};
+43     \textcolor{comment}{// for(auto &row: solution.map)}
+44     \textcolor{comment}{// \{}
+45         \textcolor{comment}{// for(auto col: row)}
+46             \textcolor{comment}{// ost << col << " ";}
+47         \textcolor{comment}{// ost << "\(\backslash\)n";}
+48     \textcolor{comment}{// \}}
+49     \textcolor{keywordtype}{int} n = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_aa0cb8de0254520dc08dab5796643c8e5}{height}, m = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a90a8efaa4736af25511ac948bdd27d6c}{width};
+50     \textcolor{keyword}{const} \hyperlink{classMatrix}{Matrix<int>} &\hyperlink{classes_8txt_a0a12e395730487ab04f7f11cbc4d2132}{map} = solution.\hyperlink{classSolution_ac4f88cd3aa0713e8900f33eb9f1f15bf}{board}->\hyperlink{classBoard_a191ff45df9151b8fee0c32877f582165}{map};
+51     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+52     \{
+53         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+54         \{
+55             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+56                 ost << \textcolor{stringliteral}{" X "};
+57             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+58                 ost << \textcolor{stringliteral}{"   "};
+59             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+60                 ost << \textcolor{stringliteral}{"["} << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] - 1 << \textcolor{stringliteral}{"]"};
+61             \textcolor{keywordflow}{else}
+62                 ost << \textcolor{stringliteral}{" "} << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] - 1 << \textcolor{stringliteral}{" "};
+63         \}
+64         ost << \textcolor{stringliteral}{"\(\backslash\)n"};
+65     \}
+66     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+67     \{
+68         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < m; j++)
+69         \{
+70             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+71                 ost << \textcolor{stringliteral}{"-1 "};
+72             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+73                 ost << \textcolor{stringliteral}{"0 "};
+74             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+75                 ost << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] << \textcolor{stringliteral}{" "};
+76             \textcolor{keywordflow}{else}
+77                 ost << solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] + 100000 << \textcolor{stringliteral}{" "};
+78         \}
+79         ost << \textcolor{stringliteral}{"\(\backslash\)n"};
+80     \}
+81     std::set<int> index;
+82     index.insert(-1);
+83     \textcolor{keywordtype}{int}** pic = \textcolor{keyword}{new} \textcolor{keywordtype}{int}*[n];
+84     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i) 
+85         pic[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[m];
+86     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i)
+87         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < m; ++j)
+88         \{
+89             \textcolor{keywordtype}{int} &p = pic[i][j];
+90             \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == -1)
+91                 p = -1;
+92             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] == 0)
+93                 p = 0;
+94             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j])
+95                 p = solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j];
+96             \textcolor{keywordflow}{else}
+97                 p = solution.\hyperlink{classSolution_ae89ccd74484f2c87afa05b16f8ee5bf6}{map}[i][j] + 100;
+98             index.insert(p);
+99         \}
+100     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i)
+101         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0;j < m; ++j)
+102             ++pic[i][j];
+103             \textcolor{comment}{// pic[i][j] = std::distance(index.begin(),index.find(pic[i][j]));}
+104     \textcolor{keywordtype}{int} min = 0,max = index.size() - 1;
+105     \textcolor{keywordtype}{char} fileName[256];
+106     time\_t cTime = time(NULL);
+107     \textcolor{keywordtype}{int} len = strftime(fileName, \textcolor{keyword}{sizeof}(fileName), \textcolor{stringliteral}{"%Y%m%d%H%M%S"}, localtime(&cTime));
+108     sprintf(fileName + len, \textcolor{stringliteral}{"\_%010d.bmp"}, (\textcolor{keywordtype}{int}) clock());
+109     \textcolor{keywordflow}{if} (\hyperlink{namespaceintarray2bmp_a504dc3b703d9a772b4d6bf1017234f49}{intarray2bmp::intarray2bmp}(fileName,pic,n,m,min,max))
+110         cout<<\textcolor{stringliteral}{"picture saved to "} << fileName << \textcolor{stringliteral}{"\(\backslash\)n"};
+111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < n; ++i) 
+112         \textcolor{keyword}{delete}[] pic[i];
+113     \textcolor{keyword}{delete}[] pic;
+114     cout.flush();
+115     \textcolor{keywordflow}{return} ost;
+116 \}
+\end{DoxyCode}
+
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Solution_8cpp_a5af0fc266ffa02e4ca1231a71aca1873_cgraph}
+\end{center}
+\end{figure}
+
+

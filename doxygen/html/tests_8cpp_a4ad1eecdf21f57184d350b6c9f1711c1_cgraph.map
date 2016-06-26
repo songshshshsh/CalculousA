@@ -1,0 +1,12 @@
+<map id="StupidStrategyTest" name="StupidStrategyTest">
+<area shape="rect" id="node2" href="$classBoard.html#ace215dfac6b741c9fb51cc40a6fe6ab1" title="Board::input" alt="" coords="233,56,325,83"/>
+<area shape="rect" id="node5" href="$classSolver.html#ac0b51cb3578988fe9c461ea3fc424bef" title="Solver::run" alt="" coords="237,132,320,159"/>
+<area shape="rect" id="node9" href="$classSolver.html#a1a0ef339f8da3d56acea8b5a0d50d701" title="Solver::setCheckStrategy" alt="" coords="194,183,363,209"/>
+<area shape="rect" id="node10" href="$classSolver.html#a9917ba104c1daf8d9104e1892b480c2f" title="Solver::setOptimizeStrategy" alt="" coords="187,233,371,260"/>
+<area shape="rect" id="node11" href="$classSolver.html#a2b07dd3c581eeb3207036430082cb2f9" title="Solver::setSolveStrategy" alt="" coords="197,284,360,311"/>
+<area shape="rect" id="node3" href="$classMatrix.html#a15ce96c8af4c7a982c2c10b96f29cea1" title="Matrix::resize" alt="" coords="458,5,559,32"/>
+<area shape="rect" id="node4" href="$classTerminalSet.html#a405cff3b74573b5459da6ffd387f347a" title="TerminalSet::AddPoint" alt="" coords="433,56,585,83"/>
+<area shape="rect" id="node6" href="$classSolveStrategy.html#ad3c3800be3e04570b466c3d8d054c500" title="SolveStrategy::solve" alt="" coords="439,107,578,133"/>
+<area shape="rect" id="node7" href="$classCheckStrategy.html#a4ea49fe480604a34b1a4604f61e34b11" title="CheckStrategy::check" alt="" coords="433,157,584,184"/>
+<area shape="rect" id="node8" href="$classOptimizeStrategy.html#a2ac1b1c33fa54a59e6f3a9daffcbf4eb" title="OptimizeStrategy::optimize" alt="" coords="419,208,599,235"/>
+</map>

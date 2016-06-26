@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: src/Tree.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Tree.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Tree_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../include/Tree.h&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classTree.html#a7c8567f1cd838f15d83f312edcf571d3">    3</a></span>&#160;<a class="code" href="classTree.html#ad376a7c639d857312f5de2ef47482f68">Tree::Tree</a>(<span class="keyword">const</span> <a class="code" href="classTerminalSet.html">TerminalSet</a>* terminalSet_)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">terminalSet</a> = terminalSet_;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="classTree.html#a1e3b10da468444e998120389f271d6b1">map</a>.<a class="code" href="classBitMatrix.html#ab09face4935598cf90705d6e8f8d1cfa">resize</a>(<a class="code" href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">terminalSet</a>-&gt;<a class="code" href="classTerminalSet.html#a597ed851001800b6f5ff420b612ecbe1">board</a>-&gt;<a class="code" href="classBoard.html#aa0cb8de0254520dc08dab5796643c8e5">height</a>, <a class="code" href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">terminalSet</a>-&gt;<a class="code" href="classTerminalSet.html#a597ed851001800b6f5ff420b612ecbe1">board</a>-&gt;<a class="code" href="classBoard.html#a90a8efaa4736af25511ac948bdd27d6c">width</a>);</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classTree.html#abd2590a324518ea612aeeebd16ca3b19">length</a> = 0;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="Tree_8cpp.html#ad56ecc1d0ca3804eee80fadc45195294">   10</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classTree.html#ad56ecc1d0ca3804eee80fadc45195294">operator ==</a>(<span class="keyword">const</span> <a class="code" href="classTree.html">Tree</a> &amp;lhs, <span class="keyword">const</span> <a class="code" href="classTree.html">Tree</a> &amp;rhs)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> lhs.<a class="code" href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">terminalSet</a> == rhs.<a class="code" href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">terminalSet</a> &amp;&amp; lhs.<a class="code" href="classTree.html#a1e3b10da468444e998120389f271d6b1">map</a> == rhs.<a class="code" href="classTree.html#a1e3b10da468444e998120389f271d6b1">map</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="classTree_html_a1e3b10da468444e998120389f271d6b1"><div class="ttname"><a href="classTree.html#a1e3b10da468444e998120389f271d6b1">Tree::map</a></div><div class="ttdeci">BitMatrix map</div><div class="ttdef"><b>Definition:</b> <a href="Tree_8h_source.html#l00013">Tree.h:13</a></div></div>
+<div class="ttc" id="classBoard_html_a90a8efaa4736af25511ac948bdd27d6c"><div class="ttname"><a href="classBoard.html#a90a8efaa4736af25511ac948bdd27d6c">Board::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="Board_8h_source.html#l00011">Board.h:11</a></div></div>
+<div class="ttc" id="classTree_html_a83a3dcb8167164b3086d1f52c5b7b3eb"><div class="ttname"><a href="classTree.html#a83a3dcb8167164b3086d1f52c5b7b3eb">Tree::terminalSet</a></div><div class="ttdeci">const TerminalSet * terminalSet</div><div class="ttdef"><b>Definition:</b> <a href="Tree_8h_source.html#l00012">Tree.h:12</a></div></div>
+<div class="ttc" id="classTerminalSet_html_a597ed851001800b6f5ff420b612ecbe1"><div class="ttname"><a href="classTerminalSet.html#a597ed851001800b6f5ff420b612ecbe1">TerminalSet::board</a></div><div class="ttdeci">const Board * board</div><div class="ttdef"><b>Definition:</b> <a href="TerminalSet_8h_source.html#l00012">TerminalSet.h:12</a></div></div>
+<div class="ttc" id="classTree_html_ad56ecc1d0ca3804eee80fadc45195294"><div class="ttname"><a href="classTree.html#ad56ecc1d0ca3804eee80fadc45195294">Tree::operator==</a></div><div class="ttdeci">friend bool operator==(const Tree &amp;lhs, const Tree &amp;rhs)</div><div class="ttdef"><b>Definition:</b> <a href="Tree_8cpp_source.html#l00010">Tree.cpp:10</a></div></div>
+<div class="ttc" id="classBoard_html_aa0cb8de0254520dc08dab5796643c8e5"><div class="ttname"><a href="classBoard.html#aa0cb8de0254520dc08dab5796643c8e5">Board::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> <a href="Board_8h_source.html#l00011">Board.h:11</a></div></div>
+<div class="ttc" id="classTree_html"><div class="ttname"><a href="classTree.html">Tree</a></div><div class="ttdef"><b>Definition:</b> <a href="Tree_8h_source.html#l00007">Tree.h:7</a></div></div>
+<div class="ttc" id="classTree_html_ad376a7c639d857312f5de2ef47482f68"><div class="ttname"><a href="classTree.html#ad376a7c639d857312f5de2ef47482f68">Tree::Tree</a></div><div class="ttdeci">Tree()</div><div class="ttdef"><b>Definition:</b> <a href="Tree_8h_source.html#l00010">Tree.h:10</a></div></div>
+<div class="ttc" id="classTree_html_abd2590a324518ea612aeeebd16ca3b19"><div class="ttname"><a href="classTree.html#abd2590a324518ea612aeeebd16ca3b19">Tree::length</a></div><div class="ttdeci">int length</div><div class="ttdef"><b>Definition:</b> <a href="Tree_8h_source.html#l00014">Tree.h:14</a></div></div>
+<div class="ttc" id="classBitMatrix_html_ab09face4935598cf90705d6e8f8d1cfa"><div class="ttname"><a href="classBitMatrix.html#ab09face4935598cf90705d6e8f8d1cfa">BitMatrix::resize</a></div><div class="ttdeci">void resize(int h, int w)</div><div class="ttdef"><b>Definition:</b> <a href="BitMatrix_8h_source.html#l00016">BitMatrix.h:16</a></div></div>
+<div class="ttc" id="classTerminalSet_html"><div class="ttname"><a href="classTerminalSet.html">TerminalSet</a></div><div class="ttdef"><b>Definition:</b> <a href="TerminalSet_8h_source.html#l00007">TerminalSet.h:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

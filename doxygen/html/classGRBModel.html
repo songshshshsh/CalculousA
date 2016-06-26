@@ -1,0 +1,3470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Team Project: GRBModel类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Team Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classGRBModel-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GRBModel类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a>&quot;</code></p>
+<div class="dynheader">
+GRBModel 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel__coll__graph.png" border="0" usemap="#GRBModel_coll__map" alt="Collaboration graph"/></div>
+<map name="GRBModel_coll__map" id="GRBModel_coll__map">
+<area shape="rect" id="node5" href="classGRBCallback.html" title="{GRBCallback\n|# where\l&#45; Cmodel\l&#45; cols\l&#45; cbdata\l&#45; x\l&#45; newx\l&#45; relx\l|+ GRBCallback()\l+ ~GRBCallback()\l# callback()\l# getDoubleInfo()\l# getIntInfo()\l# getStringInfo()\l# getSolution()\l# getSolution()\l# getNodeRel()\l# getNodeRel()\l# setSolution()\l# setSolution()\l# addCut()\l# addCut()\l# addLazy()\l# addLazy()\l# abort()\l}" alt="" coords="509,5,637,405"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a026d67cfd0800caceb46aacb08edf2ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a026d67cfd0800caceb46aacb08edf2ef">GRBModel</a> (const <a class="el" href="classGRBEnv.html">GRBEnv</a> &amp;env)</td></tr>
+<tr class="separator:a026d67cfd0800caceb46aacb08edf2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f639bddd431df6a898cb3dd08f30d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab3f639bddd431df6a898cb3dd08f30d2">GRBModel</a> (const <a class="el" href="classGRBEnv.html">GRBEnv</a> &amp;env, const string &amp;filename)</td></tr>
+<tr class="separator:ab3f639bddd431df6a898cb3dd08f30d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace55e91735a6583c414c8e1268848fc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ace55e91735a6583c414c8e1268848fc2">GRBModel</a> (const <a class="el" href="classGRBModel.html">GRBModel</a> &amp;xmodel)</td></tr>
+<tr class="separator:ace55e91735a6583c414c8e1268848fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab896389fae051821a84dc914cb1bbb3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab896389fae051821a84dc914cb1bbb3d">~GRBModel</a> ()</td></tr>
+<tr class="separator:ab896389fae051821a84dc914cb1bbb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576fef8ddfcd26755547e715b25bc047"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a576fef8ddfcd26755547e715b25bc047">read</a> (const string &amp;filename)</td></tr>
+<tr class="separator:a576fef8ddfcd26755547e715b25bc047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9bcc54f46939c7e55987c594645533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0e9bcc54f46939c7e55987c594645533">write</a> (const string &amp;filename)</td></tr>
+<tr class="separator:a0e9bcc54f46939c7e55987c594645533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c526935bc1c6fa329e28d74d132d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a33c526935bc1c6fa329e28d74d132d64">sync</a> ()</td></tr>
+<tr class="separator:a33c526935bc1c6fa329e28d74d132d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc85a6f51fb2b1847bdbfdcffc0c8154"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBModel.html">GRBModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#adc85a6f51fb2b1847bdbfdcffc0c8154">relax</a> ()</td></tr>
+<tr class="separator:adc85a6f51fb2b1847bdbfdcffc0c8154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad696fc9087efbb57f3e1f4974c709bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBModel.html">GRBModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ad696fc9087efbb57f3e1f4974c709bb7">fixedModel</a> ()</td></tr>
+<tr class="separator:ad696fc9087efbb57f3e1f4974c709bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac864af8e2453f73995890c62f403fe10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBModel.html">GRBModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ac864af8e2453f73995890c62f403fe10">presolve</a> ()</td></tr>
+<tr class="separator:ac864af8e2453f73995890c62f403fe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e4d07e39aa57662a33e5c098777068"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBModel.html">GRBModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a14e4d07e39aa57662a33e5c098777068">feasibility</a> ()</td></tr>
+<tr class="separator:a14e4d07e39aa57662a33e5c098777068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0082e0bba4d3dbff4db471c49e0cf69e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0082e0bba4d3dbff4db471c49e0cf69e">feasRelax</a> (int relaxobjtype, bool minrelax, bool vrelax, bool crelax)</td></tr>
+<tr class="separator:a0082e0bba4d3dbff4db471c49e0cf69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc968bc539fe3ee0bd95baf44ed03697"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#adc968bc539fe3ee0bd95baf44ed03697">feasRelax</a> (int relaxobjtype, bool minrelax, int vlen, const <a class="el" href="classGRBVar.html">GRBVar</a> *<a class="el" href="classGRBModel.html#a96d3ba518278642c7b13b74ad9bc7f7e">vars</a>, const double *lbpen, const double *ubpen, int clen, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *<a class="el" href="classGRBModel.html#a755e1d5f050c0244720ccca9610a1e02">constrs</a>, const double *rhspen)</td></tr>
+<tr class="separator:adc968bc539fe3ee0bd95baf44ed03697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7662994a5e461c9fa82345f93985e043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a7662994a5e461c9fa82345f93985e043">update</a> ()</td></tr>
+<tr class="separator:a7662994a5e461c9fa82345f93985e043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261ee3d0ea71fe57fd484d3c93e4388d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a261ee3d0ea71fe57fd484d3c93e4388d">optimize</a> ()</td></tr>
+<tr class="separator:a261ee3d0ea71fe57fd484d3c93e4388d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9fd231decbafd1bbd06c6488a53b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#adf9fd231decbafd1bbd06c6488a53b36">optimizeasync</a> ()</td></tr>
+<tr class="separator:adf9fd231decbafd1bbd06c6488a53b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233ec1462a249c1494cee66445319a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a233ec1462a249c1494cee66445319a02">computeIIS</a> ()</td></tr>
+<tr class="separator:a233ec1462a249c1494cee66445319a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b71c3d7a2dbcd8594c3d1fa901e3dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a60b71c3d7a2dbcd8594c3d1fa901e3dd">tune</a> ()</td></tr>
+<tr class="separator:a60b71c3d7a2dbcd8594c3d1fa901e3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9ce968b8366f363a3dca98c2f829947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab9ce968b8366f363a3dca98c2f829947">reset</a> ()</td></tr>
+<tr class="separator:ab9ce968b8366f363a3dca98c2f829947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c187df2f9bcf41d20687d79d14cd7c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a1c187df2f9bcf41d20687d79d14cd7c0">check</a> ()</td></tr>
+<tr class="separator:a1c187df2f9bcf41d20687d79d14cd7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5950fc4eedb549dc38f2f504d6bc8224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5950fc4eedb549dc38f2f504d6bc8224">terminate</a> ()</td></tr>
+<tr class="separator:a5950fc4eedb549dc38f2f504d6bc8224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc61abf65ff7bce782bfbe822525c06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5bc61abf65ff7bce782bfbe822525c06">getTuneResult</a> (int i)</td></tr>
+<tr class="separator:a5bc61abf65ff7bce782bfbe822525c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101e9eb73e8b2bc384117f8fa1eca662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a101e9eb73e8b2bc384117f8fa1eca662">getObjective</a> () const </td></tr>
+<tr class="separator:a101e9eb73e8b2bc384117f8fa1eca662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a22d02a6af050943884a5140a5a45a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a88a22d02a6af050943884a5140a5a45a">getPWLObj</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v, double *x, double *<a class="el" href="classes_8txt.html#a52673b1e0cce0104e52dcd12727f211e">y</a>) const </td></tr>
+<tr class="separator:a88a22d02a6af050943884a5140a5a45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a408a224373e26cb163510c5352577d51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a408a224373e26cb163510c5352577d51">setObjective</a> (<a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> obje, int sense=0)</td></tr>
+<tr class="separator:a408a224373e26cb163510c5352577d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487c992f4b9c14eb6b2348f487765fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a487c992f4b9c14eb6b2348f487765fbe">setObjective</a> (<a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> obje, int sense=0)</td></tr>
+<tr class="separator:a487c992f4b9c14eb6b2348f487765fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b717d74dbef2ce72e7eef2b84316709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5b717d74dbef2ce72e7eef2b84316709">setPWLObj</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v, int <a class="el" href="classes_8txt.html#ae368e6252d0add75ea011d5d90db68ed">points</a>, double *x, double *<a class="el" href="classes_8txt.html#a52673b1e0cce0104e52dcd12727f211e">y</a>)</td></tr>
+<tr class="separator:a5b717d74dbef2ce72e7eef2b84316709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27b8102164a63e3c5d1b3e49a36fd54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ac27b8102164a63e3c5d1b3e49a36fd54">getVar</a> (int i) const </td></tr>
+<tr class="separator:ac27b8102164a63e3c5d1b3e49a36fd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f0d8daaf5fde5084c4f0536a6b42f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a10f0d8daaf5fde5084c4f0536a6b42f0">getVars</a> () const </td></tr>
+<tr class="separator:a10f0d8daaf5fde5084c4f0536a6b42f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98af5f146886bb892341df82c51e4dba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a98af5f146886bb892341df82c51e4dba">getVarByName</a> (const string &amp;name)</td></tr>
+<tr class="separator:a98af5f146886bb892341df82c51e4dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8505c2a2068a9dcfef060975840c5d7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8505c2a2068a9dcfef060975840c5d7a">getConstr</a> (int i) const </td></tr>
+<tr class="separator:a8505c2a2068a9dcfef060975840c5d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf32507e437dfcd579c6ba865525281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0cf32507e437dfcd579c6ba865525281">getConstrs</a> () const </td></tr>
+<tr class="separator:a0cf32507e437dfcd579c6ba865525281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4b3c0b05bcfbd94e4e5537db318569"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a2d4b3c0b05bcfbd94e4e5537db318569">getConstrByName</a> (const string &amp;name)</td></tr>
+<tr class="separator:a2d4b3c0b05bcfbd94e4e5537db318569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff890e0663bd4e6ab03374924c7bbd94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBSOS.html">GRBSOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aff890e0663bd4e6ab03374924c7bbd94">getSOSs</a> () const </td></tr>
+<tr class="separator:aff890e0663bd4e6ab03374924c7bbd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5feaa08937f3d4aad2fa1a84efc23cef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5feaa08937f3d4aad2fa1a84efc23cef">getQConstrs</a> () const </td></tr>
+<tr class="separator:a5feaa08937f3d4aad2fa1a84efc23cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31f99d256c700fa34ef0c9efdd76d98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af31f99d256c700fa34ef0c9efdd76d98">addVar</a> (double lb, double ub, double obj, char vtype, string vname=&quot;&quot;)</td></tr>
+<tr class="separator:af31f99d256c700fa34ef0c9efdd76d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99ff5e30497fae9e6b5d0e7fc67754d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a99ff5e30497fae9e6b5d0e7fc67754d4">addVar</a> (double lb, double ub, double obj, char vtype, int nonzeros, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const double *coeffs=NULL, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a99ff5e30497fae9e6b5d0e7fc67754d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff71d21d540bc2938d4154022b22efb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aff71d21d540bc2938d4154022b22efb9">addVar</a> (double lb, double ub, double obj, char vtype, const <a class="el" href="classGRBColumn.html">GRBColumn</a> &amp;col, string name=&quot;&quot;)</td></tr>
+<tr class="separator:aff71d21d540bc2938d4154022b22efb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab66da570bb1582d82cfce21dfa2d4587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab66da570bb1582d82cfce21dfa2d4587">addVars</a> (int cnt, char type=<a class="el" href="gurobi__c_8h.html#a6cc9be6c5a5942fae165ac67f0b55c09">GRB_CONTINUOUS</a>)</td></tr>
+<tr class="separator:ab66da570bb1582d82cfce21dfa2d4587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae91a0fadbbfdc452a3d17ff5c68f6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aeae91a0fadbbfdc452a3d17ff5c68f6f">addVars</a> (const double *lb, const double *ub, const double *obj, const char *type, const string *name, int len)</td></tr>
+<tr class="separator:aeae91a0fadbbfdc452a3d17ff5c68f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a3a9fc35892c314be155e243601192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af8a3a9fc35892c314be155e243601192">addVars</a> (const double *lb, const double *ub, const double *obj, const char *type, const string *name, const <a class="el" href="classGRBColumn.html">GRBColumn</a> *col, int len)</td></tr>
+<tr class="separator:af8a3a9fc35892c314be155e243601192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e9bc35355e800ebdf87ba618153d27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a95e9bc35355e800ebdf87ba618153d27">addConstr</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;expr1, char sense, const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;expr2, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a95e9bc35355e800ebdf87ba618153d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3605e2d163ba6ca2fc31586874b057f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a3605e2d163ba6ca2fc31586874b057f3">addConstr</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;expr, char sense, <a class="el" href="classGRBVar.html">GRBVar</a> v, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a3605e2d163ba6ca2fc31586874b057f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245f9547c916fa83d65e91863c5f10cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a245f9547c916fa83d65e91863c5f10cd">addConstr</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v1, char sense, <a class="el" href="classGRBVar.html">GRBVar</a> v2, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a245f9547c916fa83d65e91863c5f10cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb54387d2110a52ad5bbe14c92c0f077"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#abb54387d2110a52ad5bbe14c92c0f077">addConstr</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v, char sense, double rhs, string name=&quot;&quot;)</td></tr>
+<tr class="separator:abb54387d2110a52ad5bbe14c92c0f077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bba6ea074b2b285092f965adc4ade63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a3bba6ea074b2b285092f965adc4ade63">addConstr</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;expr, char sense, double rhs, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a3bba6ea074b2b285092f965adc4ade63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5db9d63232f37b13834e0fbd5ea665c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab5db9d63232f37b13834e0fbd5ea665c">addConstr</a> (const <a class="el" href="classGRBTempConstr.html">GRBTempConstr</a> &amp;tc, string name=&quot;&quot;)</td></tr>
+<tr class="separator:ab5db9d63232f37b13834e0fbd5ea665c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7c5b467a6f17c130a5c51a33051d08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8d7c5b467a6f17c130a5c51a33051d08">addRange</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;expr, double lower, double upper, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a8d7c5b467a6f17c130a5c51a33051d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648968e99d4f92774f28fea67719b393"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a648968e99d4f92774f28fea67719b393">addConstrs</a> (int cnt)</td></tr>
+<tr class="separator:a648968e99d4f92774f28fea67719b393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c52e6cbb11932bafd3a79dfee7d6bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a89c52e6cbb11932bafd3a79dfee7d6bd">addConstrs</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> *expr, const char *sense, const double *rhs, const string *name, int len)</td></tr>
+<tr class="separator:a89c52e6cbb11932bafd3a79dfee7d6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d398eb440616e3ab7438ccb1dcd3624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a7d398eb440616e3ab7438ccb1dcd3624">addRanges</a> (const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> *expr, const double *lower, const double *upper, const string *name, int len)</td></tr>
+<tr class="separator:a7d398eb440616e3ab7438ccb1dcd3624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a127afa0ed029c7dff13c03ab66bc07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBSOS.html">GRBSOS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8a127afa0ed029c7dff13c03ab66bc07">addSOS</a> (const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const double *weight, int len, int type)</td></tr>
+<tr class="separator:a8a127afa0ed029c7dff13c03ab66bc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a2af8c63488d161906f7e29c976306"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a85a2af8c63488d161906f7e29c976306">addQConstr</a> (const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;expr1, char sense, const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;expr2, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a85a2af8c63488d161906f7e29c976306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1c1cd83d74ae931b1a2e8b941011a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8f1c1cd83d74ae931b1a2e8b941011a1">addQConstr</a> (const <a class="el" href="classGRBTempConstr.html">GRBTempConstr</a> &amp;tc, string name=&quot;&quot;)</td></tr>
+<tr class="separator:a8f1c1cd83d74ae931b1a2e8b941011a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb46d2d8b02d714e4359c1c57ffc15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#abcb46d2d8b02d714e4359c1c57ffc15c">addQConstr</a> (const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;expr, char sense, double rhs, string cname)</td></tr>
+<tr class="separator:abcb46d2d8b02d714e4359c1c57ffc15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9465c542f5e612f028b669f18e074a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a9465c542f5e612f028b669f18e074a8c">remove</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v)</td></tr>
+<tr class="separator:a9465c542f5e612f028b669f18e074a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa53fa2a1da135e40b106594fa9f50c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aa53fa2a1da135e40b106594fa9f50c27">remove</a> (<a class="el" href="classGRBConstr.html">GRBConstr</a> <a class="el" href="IntArray2bmp_8h.html#ae9d8014c37dbf37873bdee6b8497a065">c</a>)</td></tr>
+<tr class="separator:aa53fa2a1da135e40b106594fa9f50c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6ae45e2945292f0e900473e24b08f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aee6ae45e2945292f0e900473e24b08f6">remove</a> (<a class="el" href="classGRBSOS.html">GRBSOS</a> xsos)</td></tr>
+<tr class="separator:aee6ae45e2945292f0e900473e24b08f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b9518f82d0ae65f0f5f0cbb0301cc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af4b9518f82d0ae65f0f5f0cbb0301cc2">remove</a> (<a class="el" href="classGRBQConstr.html">GRBQConstr</a> xqconstr)</td></tr>
+<tr class="separator:af4b9518f82d0ae65f0f5f0cbb0301cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91417ce8780706480b40e095b4bc0d87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a91417ce8780706480b40e095b4bc0d87">chgCoeff</a> (<a class="el" href="classGRBConstr.html">GRBConstr</a> <a class="el" href="IntArray2bmp_8h.html#ae9d8014c37dbf37873bdee6b8497a065">c</a>, <a class="el" href="classGRBVar.html">GRBVar</a> v, double val)</td></tr>
+<tr class="separator:a91417ce8780706480b40e095b4bc0d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d9363c54c8f81f3110bf7d4a8905be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a17d9363c54c8f81f3110bf7d4a8905be">chgCoeffs</a> (const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const double *val, int len)</td></tr>
+<tr class="separator:a17d9363c54c8f81f3110bf7d4a8905be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e467e1a46fd96658f5fb4483f69c561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a3e467e1a46fd96658f5fb4483f69c561">chgCoeffs</a> (const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const double *val, size_t len)</td></tr>
+<tr class="separator:a3e467e1a46fd96658f5fb4483f69c561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a70806a3c68d0bff5a232914eaedea7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a7a70806a3c68d0bff5a232914eaedea7">getCoeff</a> (<a class="el" href="classGRBConstr.html">GRBConstr</a> <a class="el" href="IntArray2bmp_8h.html#ae9d8014c37dbf37873bdee6b8497a065">c</a>, <a class="el" href="classGRBVar.html">GRBVar</a> v) const </td></tr>
+<tr class="separator:a7a70806a3c68d0bff5a232914eaedea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9b448afc20566ab7945548f4b05bf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBColumn.html">GRBColumn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aab9b448afc20566ab7945548f4b05bf9">getCol</a> (<a class="el" href="classGRBVar.html">GRBVar</a> v)</td></tr>
+<tr class="separator:aab9b448afc20566ab7945548f4b05bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f65fe39e6a6ede1387ea977cc12ed66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBLinExpr.html">GRBLinExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8f65fe39e6a6ede1387ea977cc12ed66">getRow</a> (<a class="el" href="classGRBConstr.html">GRBConstr</a> <a class="el" href="IntArray2bmp_8h.html#ae9d8014c37dbf37873bdee6b8497a065">c</a>)</td></tr>
+<tr class="separator:a8f65fe39e6a6ede1387ea977cc12ed66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b991efcdc6f6bb179a1c267bf12f42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a58b991efcdc6f6bb179a1c267bf12f42">getSOS</a> (<a class="el" href="classGRBSOS.html">GRBSOS</a> xsos, <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, double *weight, int *typeP)</td></tr>
+<tr class="separator:a58b991efcdc6f6bb179a1c267bf12f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8824331442db733b68bac9745fb38317"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8824331442db733b68bac9745fb38317">getQCRow</a> (<a class="el" href="classGRBQConstr.html">GRBQConstr</a> <a class="el" href="IntArray2bmp_8h.html#ae9d8014c37dbf37873bdee6b8497a065">c</a>)</td></tr>
+<tr class="separator:a8824331442db733b68bac9745fb38317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dfd23b74bf0936a22a5b5f58a7c34b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBEnv.html">GRBEnv</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aa5dfd23b74bf0936a22a5b5f58a7c34b">getEnv</a> ()</td></tr>
+<tr class="separator:aa5dfd23b74bf0936a22a5b5f58a7c34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab285776b9bb6b59bd31f7f38bc371909"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBEnv.html">GRBEnv</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab285776b9bb6b59bd31f7f38bc371909">getConcurrentEnv</a> (int num)</td></tr>
+<tr class="separator:ab285776b9bb6b59bd31f7f38bc371909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b5f355d4c80da959bfa597e268d3d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a19b5f355d4c80da959bfa597e268d3d0">discardConcurrentEnvs</a> ()</td></tr>
+<tr class="separator:a19b5f355d4c80da959bfa597e268d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe021a9f145ee918ab1a7a1b326aa20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8fe021a9f145ee918ab1a7a1b326aa20">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr) const </td></tr>
+<tr class="separator:a8fe021a9f145ee918ab1a7a1b326aa20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab088618084ec2f3d81dbcba0cdafb03b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab088618084ec2f3d81dbcba0cdafb03b">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr) const </td></tr>
+<tr class="separator:ab088618084ec2f3d81dbcba0cdafb03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f9ec06673910a083b6ff76551172d2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a95f9ec06673910a083b6ff76551172d2">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr) const </td></tr>
+<tr class="separator:a95f9ec06673910a083b6ff76551172d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8df5e3c25795f50163511d383a460b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8df5e3c25795f50163511d383a460b98">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr, int val)</td></tr>
+<tr class="separator:a8df5e3c25795f50163511d383a460b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c9aad88b3d2afd75e0fe547c69cfeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a42c9aad88b3d2afd75e0fe547c69cfeb">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, double val)</td></tr>
+<tr class="separator:a42c9aad88b3d2afd75e0fe547c69cfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14524414b1b608e2dedc89d699ba090"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af14524414b1b608e2dedc89d699ba090">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const string &amp;val)</td></tr>
+<tr class="separator:af14524414b1b608e2dedc89d699ba090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65bb0a90763bd68c29d62da6fcd6c06"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ad65bb0a90763bd68c29d62da6fcd6c06">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, int len)</td></tr>
+<tr class="separator:ad65bb0a90763bd68c29d62da6fcd6c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af098708900c06369dadb51d6d8d343"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a6af098708900c06369dadb51d6d8d343">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, int len)</td></tr>
+<tr class="separator:a6af098708900c06369dadb51d6d8d343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82e98ad043965288391dfc8a65f0b5d"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ac82e98ad043965288391dfc8a65f0b5d">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, int len)</td></tr>
+<tr class="separator:ac82e98ad043965288391dfc8a65f0b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a32496eb7dd5ff5b0cd4483f29bd37a"><td class="memItemLeft" align="right" valign="top">string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8a32496eb7dd5ff5b0cd4483f29bd37a">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, int len)</td></tr>
+<tr class="separator:a8a32496eb7dd5ff5b0cd4483f29bd37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78d23b5a697701a5195ae6247e4fa89"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ac78d23b5a697701a5195ae6247e4fa89">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, int len)</td></tr>
+<tr class="separator:ac78d23b5a697701a5195ae6247e4fa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cf7cac2d485a0addffaab547194e97"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a27cf7cac2d485a0addffaab547194e97">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, int len)</td></tr>
+<tr class="separator:a27cf7cac2d485a0addffaab547194e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b4bfca41c2a82541b770e69377902f"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af6b4bfca41c2a82541b770e69377902f">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, int len)</td></tr>
+<tr class="separator:af6b4bfca41c2a82541b770e69377902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0478e3e64996775c023038059cdf19a1"><td class="memItemLeft" align="right" valign="top">string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0478e3e64996775c023038059cdf19a1">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, int len)</td></tr>
+<tr class="separator:a0478e3e64996775c023038059cdf19a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4974083812ee67881c9052f7cac7ca2f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a4974083812ee67881c9052f7cac7ca2f">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xqconstrs, int len)</td></tr>
+<tr class="separator:a4974083812ee67881c9052f7cac7ca2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3664633bfe524de118f432bc011b61ed"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a3664633bfe524de118f432bc011b61ed">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xqconstrs, int len)</td></tr>
+<tr class="separator:a3664633bfe524de118f432bc011b61ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdac5cb1ebe0e610216fc255ec521c7e"><td class="memItemLeft" align="right" valign="top">string *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#abdac5cb1ebe0e610216fc255ec521c7e">get</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xqconstrs, int len)</td></tr>
+<tr class="separator:abdac5cb1ebe0e610216fc255ec521c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45636b2c5aed29cf096eb65cafa656a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a45636b2c5aed29cf096eb65cafa656a8">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const int *val, int len)</td></tr>
+<tr class="separator:a45636b2c5aed29cf096eb65cafa656a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd103bc2bfefc1bcf2ac3840d5863c7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#afd103bc2bfefc1bcf2ac3840d5863c7b">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const char *val, int len)</td></tr>
+<tr class="separator:afd103bc2bfefc1bcf2ac3840d5863c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3dde73f8f2d44bb21454069bbaa2a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#acd3dde73f8f2d44bb21454069bbaa2a5">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const double *val, int len)</td></tr>
+<tr class="separator:acd3dde73f8f2d44bb21454069bbaa2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88c5e400af5f8e86e088633e3bc97c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#af88c5e400af5f8e86e088633e3bc97c5">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBVar.html">GRBVar</a> *xvars, const string *val, int len)</td></tr>
+<tr class="separator:af88c5e400af5f8e86e088633e3bc97c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ebf4f2bfd9dc58740c3cb1cf3a97e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5ebf4f2bfd9dc58740c3cb1cf3a97e61">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const int *val, int len)</td></tr>
+<tr class="separator:a5ebf4f2bfd9dc58740c3cb1cf3a97e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a9c48cecb1591882ef210d9d0e4194"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a25a9c48cecb1591882ef210d9d0e4194">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const char *val, int len)</td></tr>
+<tr class="separator:a25a9c48cecb1591882ef210d9d0e4194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47bc449b8837a5934c714053e1f68d26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a47bc449b8837a5934c714053e1f68d26">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const double *val, int len)</td></tr>
+<tr class="separator:a47bc449b8837a5934c714053e1f68d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9935cfc3dab2e22c7c7cb44ca2777c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a5e9935cfc3dab2e22c7c7cb44ca2777c">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBConstr.html">GRBConstr</a> *xconstrs, const string *val, int len)</td></tr>
+<tr class="separator:a5e9935cfc3dab2e22c7c7cb44ca2777c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b062eb2cbef1d7ea95b97583643bf40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8b062eb2cbef1d7ea95b97583643bf40">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xconstrs, const char *val, int len)</td></tr>
+<tr class="separator:a8b062eb2cbef1d7ea95b97583643bf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3208e1d73da529cbb25be520081c136b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a3208e1d73da529cbb25be520081c136b">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xconstrs, const double *val, int len)</td></tr>
+<tr class="separator:a3208e1d73da529cbb25be520081c136b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64fb0b201ae8dfb6aafb6beb288df157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a64fb0b201ae8dfb6aafb6beb288df157">set</a> (<a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a> attr, const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *xconstrs, const string *val, int len)</td></tr>
+<tr class="separator:a64fb0b201ae8dfb6aafb6beb288df157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e46642edd2a421500e84ea10dc17008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0e46642edd2a421500e84ea10dc17008">setCallback</a> (<a class="el" href="classGRBCallback.html">GRBCallback</a> *xcb)</td></tr>
+<tr class="separator:a0e46642edd2a421500e84ea10dc17008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ab2e7ffcd6632246a35fc3a05cb02f29b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classGRBModel.html">GRBModel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab2e7ffcd6632246a35fc3a05cb02f29b">operator=</a> (const <a class="el" href="classGRBModel.html">GRBModel</a> &amp;xmodel)</td></tr>
+<tr class="separator:ab2e7ffcd6632246a35fc3a05cb02f29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8eedf4d4f2c9cd3159bd965d4595191f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gurobi__c_8h.html#a865e461c79c88bc5c0d5f56087ae4876">GRBmodel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a8eedf4d4f2c9cd3159bd965d4595191f">Cmodel</a></td></tr>
+<tr class="separator:a8eedf4d4f2c9cd3159bd965d4595191f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46ee318ff2a26ddae94dd45480ae1dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gurobi__c_8h.html#a2963ba0c46b86ac4680fb3bb4ca8b2f3">GRBenv</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ac46ee318ff2a26ddae94dd45480ae1dc">Cenv</a></td></tr>
+<tr class="separator:ac46ee318ff2a26ddae94dd45480ae1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa23c57adb09b4579dd70d32e517efe21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGRBCallback.html">GRBCallback</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aa23c57adb09b4579dd70d32e517efe21">cb</a></td></tr>
+<tr class="separator:aa23c57adb09b4579dd70d32e517efe21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5c8e80ac12d437788ccad6c1f42b24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ada5c8e80ac12d437788ccad6c1f42b24">rows</a></td></tr>
+<tr class="separator:ada5c8e80ac12d437788ccad6c1f42b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7451154c68d35f13d44232c253d52fa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a7451154c68d35f13d44232c253d52fa8">cols</a></td></tr>
+<tr class="separator:a7451154c68d35f13d44232c253d52fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0743eafebda885b7df2c2b5923f6b8b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a0743eafebda885b7df2c2b5923f6b8b1">numsos</a></td></tr>
+<tr class="separator:a0743eafebda885b7df2c2b5923f6b8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad59ddf2475017a4828a22e08e52b59a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#aad59ddf2475017a4828a22e08e52b59a">numqconstrs</a></td></tr>
+<tr class="separator:aad59ddf2475017a4828a22e08e52b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358db0bf3a8f9bebcadc9403af27551f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a358db0bf3a8f9bebcadc9403af27551f">newranges</a></td></tr>
+<tr class="separator:a358db0bf3a8f9bebcadc9403af27551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717756c5b80328a48913e94986ba65fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a717756c5b80328a48913e94986ba65fa">updatemode</a></td></tr>
+<tr class="separator:a717756c5b80328a48913e94986ba65fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d3ba518278642c7b13b74ad9bc7f7e"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classGRBVar.html">GRBVar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a96d3ba518278642c7b13b74ad9bc7f7e">vars</a></td></tr>
+<tr class="separator:a96d3ba518278642c7b13b74ad9bc7f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755e1d5f050c0244720ccca9610a1e02"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classGRBConstr.html">GRBConstr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a755e1d5f050c0244720ccca9610a1e02">constrs</a></td></tr>
+<tr class="separator:a755e1d5f050c0244720ccca9610a1e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a1fbf3b90e08e1c149b2081ea9b847"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classGRBSOS.html">GRBSOS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#a61a1fbf3b90e08e1c149b2081ea9b847">sos</a></td></tr>
+<tr class="separator:a61a1fbf3b90e08e1c149b2081ea9b847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab999e528d40409141a1db990e6277806"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classGRBQConstr.html">GRBQConstr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGRBModel.html#ab999e528d40409141a1db990e6277806">qconstrs</a></td></tr>
+<tr class="separator:ab999e528d40409141a1db990e6277806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00361">361</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a026d67cfd0800caceb46aacb08edf2ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GRBModel::GRBModel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBEnv.html">GRBEnv</a> &amp;&#160;</td>
+          <td class="paramname"><em>env</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab3f639bddd431df6a898cb3dd08f30d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GRBModel::GRBModel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBEnv.html">GRBEnv</a> &amp;&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace55e91735a6583c414c8e1268848fc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GRBModel::GRBModel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBModel.html">GRBModel</a> &amp;&#160;</td>
+          <td class="paramname"><em>xmodel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab896389fae051821a84dc914cb1bbb3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GRBModel::~GRBModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a95e9bc35355e800ebdf87ba618153d27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_a95e9bc35355e800ebdf87ba618153d27_icgraph.png" border="0" usemap="#classGRBModel_a95e9bc35355e800ebdf87ba618153d27_icgraph" alt=""/></div>
+<map name="classGRBModel_a95e9bc35355e800ebdf87ba618153d27_icgraph" id="classGRBModel_a95e9bc35355e800ebdf87ba618153d27_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="205,13,380,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="428,13,587,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="635,13,793,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="841,5,1047,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3605e2d163ba6ca2fc31586874b057f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a245f9547c916fa83d65e91863c5f10cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb54387d2110a52ad5bbe14c92c0f077"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bba6ea074b2b285092f965adc4ade63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab5db9d63232f37b13834e0fbd5ea665c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBTempConstr.html">GRBTempConstr</a> &amp;&#160;</td>
+          <td class="paramname"><em>tc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a648968e99d4f92774f28fea67719b393"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a>* GRBModel::addConstrs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cnt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89c52e6cbb11932bafd3a79dfee7d6bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a>* GRBModel::addConstrs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> *&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85a2af8c63488d161906f7e29c976306"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQConstr.html">GRBQConstr</a> GRBModel::addQConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f1c1cd83d74ae931b1a2e8b941011a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQConstr.html">GRBQConstr</a> GRBModel::addQConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBTempConstr.html">GRBTempConstr</a> &amp;&#160;</td>
+          <td class="paramname"><em>tc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcb46d2d8b02d714e4359c1c57ffc15c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQConstr.html">GRBQConstr</a> GRBModel::addQConstr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8d7c5b467a6f17c130a5c51a33051d08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::addRange </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d398eb440616e3ab7438ccb1dcd3624"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a>* GRBModel::addRanges </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> *&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a127afa0ed029c7dff13c03ab66bc07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBSOS.html">GRBSOS</a> GRBModel::addSOS </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>weight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af31f99d256c700fa34ef0c9efdd76d98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a> GRBModel::addVar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ub</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>vtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>vname</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_af31f99d256c700fa34ef0c9efdd76d98_icgraph.png" border="0" usemap="#classGRBModel_af31f99d256c700fa34ef0c9efdd76d98_icgraph" alt=""/></div>
+<map name="classGRBModel_af31f99d256c700fa34ef0c9efdd76d98_icgraph" id="classGRBModel_af31f99d256c700fa34ef0c9efdd76d98_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="188,13,363,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="411,13,569,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="617,13,776,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="824,5,1029,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a99ff5e30497fae9e6b5d0e7fc67754d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a> GRBModel::addVar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ub</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>vtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nonzeros</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>coeffs</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff71d21d540bc2938d4154022b22efb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a> GRBModel::addVar </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ub</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>vtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBColumn.html">GRBColumn</a> &amp;&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab66da570bb1582d82cfce21dfa2d4587"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a>* GRBModel::addVars </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="gurobi__c_8h.html#a6cc9be6c5a5942fae165ac67f0b55c09">GRB_CONTINUOUS</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeae91a0fadbbfdc452a3d17ff5c68f6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a>* GRBModel::addVars </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>lb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>ub</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af8a3a9fc35892c314be155e243601192"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a>* GRBModel::addVars </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>lb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>ub</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBColumn.html">GRBColumn</a> *&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c187df2f9bcf41d20687d79d14cd7c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::check </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91417ce8780706480b40e095b4bc0d87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::chgCoeff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17d9363c54c8f81f3110bf7d4a8905be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::chgCoeffs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e467e1a46fd96658f5fb4483f69c561"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::chgCoeffs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a233ec1462a249c1494cee66445319a02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::computeIIS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a19b5f355d4c80da959bfa597e268d3d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::discardConcurrentEnvs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14e4d07e39aa57662a33e5c098777068"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBModel.html">GRBModel</a> GRBModel::feasibility </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0082e0bba4d3dbff4db471c49e0cf69e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GRBModel::feasRelax </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>relaxobjtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>minrelax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>vrelax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>crelax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc968bc539fe3ee0bd95baf44ed03697"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GRBModel::feasRelax </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>relaxobjtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>minrelax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vlen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>lbpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>ubpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>clen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>constrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>rhspen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad696fc9087efbb57f3e1f4974c709bb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBModel.html">GRBModel</a> GRBModel::fixedModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8fe021a9f145ee918ab1a7a1b326aa20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20_icgraph.png" border="0" usemap="#classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20_icgraph" alt=""/></div>
+<map name="classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20_icgraph" id="classGRBModel_a8fe021a9f145ee918ab1a7a1b326aa20_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="164,13,339,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="387,13,545,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="593,13,752,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="800,5,1005,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab088618084ec2f3d81dbcba0cdafb03b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95f9ec06673910a083b6ff76551172d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad65bb0a90763bd68c29d62da6fcd6c06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6af098708900c06369dadb51d6d8d343"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac82e98ad043965288391dfc8a65f0b5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a32496eb7dd5ff5b0cd4483f29bd37a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac78d23b5a697701a5195ae6247e4fa89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27cf7cac2d485a0addffaab547194e97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af6b4bfca41c2a82541b770e69377902f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0478e3e64996775c023038059cdf19a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4974083812ee67881c9052f7cac7ca2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xqconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3664633bfe524de118f432bc011b61ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xqconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abdac5cb1ebe0e610216fc255ec521c7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string* GRBModel::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xqconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7a70806a3c68d0bff5a232914eaedea7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GRBModel::getCoeff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab9b448afc20566ab7945548f4b05bf9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBColumn.html">GRBColumn</a> GRBModel::getCol </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab285776b9bb6b59bd31f7f38bc371909"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBEnv.html">GRBEnv</a> GRBModel::getConcurrentEnv </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8505c2a2068a9dcfef060975840c5d7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::getConstr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d4b3c0b05bcfbd94e4e5537db318569"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a> GRBModel::getConstrByName </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0cf32507e437dfcd579c6ba865525281"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBConstr.html">GRBConstr</a>* GRBModel::getConstrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa5dfd23b74bf0936a22a5b5f58a7c34b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBEnv.html">GRBEnv</a> GRBModel::getEnv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a101e9eb73e8b2bc384117f8fa1eca662"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> GRBModel::getObjective </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a88a22d02a6af050943884a5140a5a45a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::getPWLObj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5feaa08937f3d4aad2fa1a84efc23cef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>* GRBModel::getQConstrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8824331442db733b68bac9745fb38317"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a> GRBModel::getQCRow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f65fe39e6a6ede1387ea977cc12ed66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBLinExpr.html">GRBLinExpr</a> GRBModel::getRow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58b991efcdc6f6bb179a1c267bf12f42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::getSOS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBSOS.html">GRBSOS</a>&#160;</td>
+          <td class="paramname"><em>xsos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>weight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>typeP</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff890e0663bd4e6ab03374924c7bbd94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBSOS.html">GRBSOS</a>* GRBModel::getSOSs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5bc61abf65ff7bce782bfbe822525c06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::getTuneResult </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac27b8102164a63e3c5d1b3e49a36fd54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a> GRBModel::getVar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a98af5f146886bb892341df82c51e4dba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a> GRBModel::getVarByName </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10f0d8daaf5fde5084c4f0536a6b42f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBVar.html">GRBVar</a>* GRBModel::getVars </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab2e7ffcd6632246a35fc3a05cb02f29b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classGRBModel.html">GRBModel</a>&amp; GRBModel::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGRBModel.html">GRBModel</a> &amp;&#160;</td>
+          <td class="paramname"><em>xmodel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a261ee3d0ea71fe57fd484d3c93e4388d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::optimize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d_icgraph.png" border="0" usemap="#classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d_icgraph" alt=""/></div>
+<map name="classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d_icgraph" id="classGRBModel_a261ee3d0ea71fe57fd484d3c93e4388d_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="196,13,371,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="419,13,577,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="625,13,784,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="832,5,1037,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adf9fd231decbafd1bbd06c6488a53b36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::optimizeasync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac864af8e2453f73995890c62f403fe10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBModel.html">GRBModel</a> GRBModel::presolve </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a576fef8ddfcd26755547e715b25bc047"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::read </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc85a6f51fb2b1847bdbfdcffc0c8154"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBModel.html">GRBModel</a> GRBModel::relax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9465c542f5e612f028b669f18e074a8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa53fa2a1da135e40b106594fa9f50c27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBConstr.html">GRBConstr</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee6ae45e2945292f0e900473e24b08f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBSOS.html">GRBSOS</a>&#160;</td>
+          <td class="paramname"><em>xsos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4b9518f82d0ae65f0f5f0cbb0301cc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBQConstr.html">GRBQConstr</a>&#160;</td>
+          <td class="paramname"><em>xqconstr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab9ce968b8366f363a3dca98c2f829947"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8df5e3c25795f50163511d383a460b98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a42c9aad88b3d2afd75e0fe547c69cfeb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af14524414b1b608e2dedc89d699ba090"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a45636b2c5aed29cf096eb65cafa656a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd103bc2bfefc1bcf2ac3840d5863c7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd3dde73f8f2d44bb21454069bbaa2a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af88c5e400af5f8e86e088633e3bc97c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBVar.html">GRBVar</a> *&#160;</td>
+          <td class="paramname"><em>xvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ebf4f2bfd9dc58740c3cb1cf3a97e61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#acfc136f6822be3d3e36ac84bd76b0900">GRB_IntAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a25a9c48cecb1591882ef210d9d0e4194"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47bc449b8837a5934c714053e1f68d26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e9935cfc3dab2e22c7c7cb44ca2777c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBConstr.html">GRBConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b062eb2cbef1d7ea95b97583643bf40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a590e6aa44289cb0563eb6a382794dace">GRB_CharAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3208e1d73da529cbb25be520081c136b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a2f43cc28447ce1778973a1f7961e8180">GRB_DoubleAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a64fb0b201ae8dfb6aafb6beb288df157"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gurobi__c_09_09_8h.html#a08ffa110d9b1684d689ae53300bb7ec1">GRB_StringAttr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGRBQConstr.html">GRBQConstr</a> *&#160;</td>
+          <td class="paramname"><em>xconstrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e46642edd2a421500e84ea10dc17008"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::setCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBCallback.html">GRBCallback</a> *&#160;</td>
+          <td class="paramname"><em>xcb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a408a224373e26cb163510c5352577d51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::setObjective </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBLinExpr.html">GRBLinExpr</a>&#160;</td>
+          <td class="paramname"><em>obje</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sense</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_a408a224373e26cb163510c5352577d51_icgraph.png" border="0" usemap="#classGRBModel_a408a224373e26cb163510c5352577d51_icgraph" alt=""/></div>
+<map name="classGRBModel_a408a224373e26cb163510c5352577d51_icgraph" id="classGRBModel_a408a224373e26cb163510c5352577d51_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="217,13,392,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="440,13,599,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="647,13,805,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="853,5,1059,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a487c992f4b9c14eb6b2348f487765fbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::setObjective </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBQuadExpr.html">GRBQuadExpr</a>&#160;</td>
+          <td class="paramname"><em>obje</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sense</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b717d74dbef2ce72e7eef2b84316709"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::setPWLObj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGRBVar.html">GRBVar</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a33c526935bc1c6fa329e28d74d132d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::sync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5950fc4eedb549dc38f2f504d6bc8224"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::terminate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a60b71c3d7a2dbcd8594c3d1fa901e3dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::tune </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7662994a5e461c9fa82345f93985e043"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>参考自 <a class="el" href="ColumnGenSolve_8cpp_source.html#l00008">ColumnGenSolve::solveLP()</a>.</p>
+
+<p><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGRBModel_a7662994a5e461c9fa82345f93985e043_icgraph.png" border="0" usemap="#classGRBModel_a7662994a5e461c9fa82345f93985e043_icgraph" alt=""/></div>
+<map name="classGRBModel_a7662994a5e461c9fa82345f93985e043_icgraph" id="classGRBModel_a7662994a5e461c9fa82345f93985e043_icgraph">
+<area shape="rect" id="node2" href="classColumnGenSolve.html#aadb23efa531a3eb68651ba11f4d36c81" title="ColumnGenSolve::solveLP" alt="" coords="185,13,360,39"/>
+<area shape="rect" id="node3" href="classColumnGenSolve.html#af97cd5f1c4a7305b72e46971fdb85002" title="ColumnGenSolve::route" alt="" coords="408,13,567,39"/>
+<area shape="rect" id="node4" href="classColumnGenSolve.html#aad7c316627e7ea6de4138db1a33e66ee" title="ColumnGenSolve::solve" alt="" coords="615,13,773,39"/>
+<area shape="rect" id="node5" href="classColumnGenSolve.html#a04ccfc4d9676794aa5413590b41a07f4" title="ColumnGenSolve::~ColumnGen\lSolve" alt="" coords="821,5,1027,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e9bcc54f46939c7e55987c594645533"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GRBModel::write </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="aa23c57adb09b4579dd70d32e517efe21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGRBCallback.html">GRBCallback</a>* GRBModel::cb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00367">367</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac46ee318ff2a26ddae94dd45480ae1dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gurobi__c_8h.html#a2963ba0c46b86ac4680fb3bb4ca8b2f3">GRBenv</a>* GRBModel::Cenv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00366">366</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8eedf4d4f2c9cd3159bd965d4595191f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gurobi__c_8h.html#a865e461c79c88bc5c0d5f56087ae4876">GRBmodel</a>* GRBModel::Cmodel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00365">365</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7451154c68d35f13d44232c253d52fa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::cols</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00370">370</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a755e1d5f050c0244720ccca9610a1e02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classGRBConstr.html">GRBConstr</a>&gt; GRBModel::constrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00378">378</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a358db0bf3a8f9bebcadc9403af27551f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::newranges</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00373">373</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad59ddf2475017a4828a22e08e52b59a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::numqconstrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00372">372</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0743eafebda885b7df2c2b5923f6b8b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::numsos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00371">371</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab999e528d40409141a1db990e6277806"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classGRBQConstr.html">GRBQConstr</a>&gt; GRBModel::qconstrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00380">380</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada5c8e80ac12d437788ccad6c1f42b24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::rows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00369">369</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61a1fbf3b90e08e1c149b2081ea9b847"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classGRBSOS.html">GRBSOS</a>&gt; GRBModel::sos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00379">379</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a717756c5b80328a48913e94986ba65fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GRBModel::updatemode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00375">375</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96d3ba518278642c7b13b74ad9bc7f7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classGRBVar.html">GRBVar</a>&gt; GRBModel::vars</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a> 第 <a class="el" href="gurobi__c_09_09_8h_source.html#l00377">377</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="gurobi__c_09_09_8h_source.html">gurobi_c++.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

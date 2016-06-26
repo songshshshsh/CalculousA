@@ -1,0 +1,41 @@
+\hypertarget{global_8cpp}{}\section{src/global.cpp 文件参考}
+\label{global_8cpp}\index{src/global.\+cpp@{src/global.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/global.\+h\char`\"{}}\\*
+global.\+cpp 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{global_8cpp_a38bf9cfd3ca59bb335f11eebb0bee710}{do\+Assert} (bool x, const char $\ast$file, int line)
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\index{global.\+cpp@{global.\+cpp}!do\+Assert@{do\+Assert}}
+\index{do\+Assert@{do\+Assert}!global.\+cpp@{global.\+cpp}}
+\subsubsection[{\texorpdfstring{do\+Assert(bool x, const char $\ast$file, int line)}{doAssert(bool x, const char *file, int line)}}]{\setlength{\rightskip}{0pt plus 5cm}int do\+Assert (
+\begin{DoxyParamCaption}
+\item[{bool}]{x, }
+\item[{const char $\ast$}]{file, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\hypertarget{global_8cpp_a38bf9cfd3ca59bb335f11eebb0bee710}{}\label{global_8cpp_a38bf9cfd3ca59bb335f11eebb0bee710}
+
+
+在文件 global.\+cpp 第 3 行定义.
+
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keywordflow}{if}(x)
+6         \textcolor{keywordflow}{return} 0;
+7     cout << \textcolor{stringliteral}{"Assertion failed at file "} << file << \textcolor{stringliteral}{" line "} << line << \textcolor{stringliteral}{"\(\backslash\)n"};
+8     exit(1);
+9 \}
+\end{DoxyCode}

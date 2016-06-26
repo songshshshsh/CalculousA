@@ -1,0 +1,150 @@
+\hypertarget{classPoint}{}\section{Point类 参考}
+\label{classPoint}\index{Point@{Point}}
+
+
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}
+
+
+
+Point 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classPoint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPoint_a7733108bf07d2ef72e1b55aed68eb2fc}{Point} (int x\+\_\+, int y\+\_\+)
+\item 
+\hyperlink{classPoint_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()
+\item 
+bool \hyperlink{classPoint_a47584280150c7a90e86358b1edf8f810}{operator==} (const \hyperlink{classPoint}{Point} \&other) const 
+\item 
+bool \hyperlink{classPoint_aac8cc421b631fdeedfa084cf924c2164}{operator!=} (const \hyperlink{classPoint}{Point} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}
+\item 
+int \hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 global.\+h 第 68 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection[{\texorpdfstring{Point(int x\+\_\+, int y\+\_\+)}{Point(int x_, int y_)}}]{\setlength{\rightskip}{0pt plus 5cm}Point\+::\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+\_\+, }
+\item[{int}]{y\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPoint_a7733108bf07d2ef72e1b55aed68eb2fc}{}\label{classPoint_a7733108bf07d2ef72e1b55aed68eb2fc}
+
+
+在文件 global.\+h 第 72 行定义.
+
+
+\begin{DoxyCode}
+72 :\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}(x\_),\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}(y\_)\{\};
+\end{DoxyCode}
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection[{\texorpdfstring{Point()}{Point()}}]{\setlength{\rightskip}{0pt plus 5cm}Point\+::\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPoint_ad92f2337b839a94ce97dcdb439b4325a}{}\label{classPoint_ad92f2337b839a94ce97dcdb439b4325a}
+
+
+在文件 global.\+h 第 73 行定义.
+
+
+\begin{DoxyCode}
+73 :\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x}(0),\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}(0)\{\};
+\end{DoxyCode}
+
+
+\subsection{成员函数说明}
+\index{Point@{Point}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Point@{Point}}
+\subsubsection[{\texorpdfstring{operator"!=(const Point \&other) const }{operator!=(const Point &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Point\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPoint_aac8cc421b631fdeedfa084cf924c2164}{}\label{classPoint_aac8cc421b631fdeedfa084cf924c2164}
+
+
+在文件 global.\+h 第 78 行定义.
+
+
+
+参考 x , 以及 y.
+
+
+\begin{DoxyCode}
+79     \{
+80         \textcolor{keywordflow}{return} \hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x} != other.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x} || \hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y} != other.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y};
+81     \}
+\end{DoxyCode}
+\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\subsubsection[{\texorpdfstring{operator==(const Point \&other) const }{operator==(const Point &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Point\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classPoint_a47584280150c7a90e86358b1edf8f810}{}\label{classPoint_a47584280150c7a90e86358b1edf8f810}
+
+
+在文件 global.\+h 第 74 行定义.
+
+
+
+参考 x , 以及 y.
+
+
+\begin{DoxyCode}
+75     \{
+76         \textcolor{keywordflow}{return} \hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x} == other.\hyperlink{classPoint_a8c779e11e694b20e0946105a9f5de842}{x} && \hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y} == other.\hyperlink{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y};
+77     \}
+\end{DoxyCode}
+
+
+\subsection{类成员变量说明}
+\index{Point@{Point}!x@{x}}
+\index{x@{x}!Point@{Point}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}int Point\+::x}\hypertarget{classPoint_a8c779e11e694b20e0946105a9f5de842}{}\label{classPoint_a8c779e11e694b20e0946105a9f5de842}
+
+
+在文件 global.\+h 第 71 行定义.
+
+
+
+参考自 Clever\+Optimize\+::backtrace(), Clever\+Optimize\+::bfs(), Clever\+Optimize\+::get\+Map(), operator!=(), operator==(), Matrix$<$ Pair$<$ double, Point $>$ $>$\+::operator\mbox{[}$\,$\mbox{]}(), Clever\+Optimize\+::optimize(), Column\+Gen\+Solve\+::remove\+Non\+Cuts(), Bit\+Matrix\+::reset() , 以及 Column\+Gen\+Solve\+::suggest\+Tree().
+
+\index{Point@{Point}!y@{y}}
+\index{y@{y}!Point@{Point}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}int Point\+::y}\hypertarget{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{}\label{classPoint_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}
+
+
+在文件 global.\+h 第 71 行定义.
+
+
+
+参考自 Clever\+Optimize\+::backtrace(), Clever\+Optimize\+::bfs(), Clever\+Optimize\+::get\+Map(), operator!=(), operator==(), Matrix$<$ Pair$<$ double, Point $>$ $>$\+::operator\mbox{[}$\,$\mbox{]}(), Clever\+Optimize\+::optimize(), Column\+Gen\+Solve\+::remove\+Non\+Cuts() , 以及 Bit\+Matrix\+::reset().
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{global_8h}{global.\+h}\end{DoxyCompactItemize}
