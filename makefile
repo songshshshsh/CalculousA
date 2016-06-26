@@ -19,7 +19,6 @@ clean:
 
 $(TARGET): $(OBJECTS)
 	g++ -Wall -std=c++11 -O3 $(OBJECTS) libgurobi_c++.a -lgurobi65 -o $@
-# LINK $(OBJECTS) lib/gurobi_c++mt2012.lib lib/gurobi65.lib /OUT:$@ /STACK:268435456
 # LINK $(OBJECTS) lib/gurobi_c++mt2012.lib lib/gurobi65.lib /PROFILE /OUT:$@ /STACK:268435456 /DEBUG
 # cl $(OBJECTS) /Fe$@ /MT lib/gurobi_c++mt2012.lib lib/gurobi65.lib /F268435456
 	

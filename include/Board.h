@@ -7,7 +7,9 @@
 class Board
 {
 public:
+	Board(){}
 	int height, width;
+	Board(const Board&);
 	Vector<TerminalSet *> terminalSets;
 	Matrix<int> map;
 	Vector<Point> blocks;
