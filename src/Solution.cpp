@@ -40,12 +40,6 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 	cout << "successfully routed " << treeCnt << " sets of terminals with " << totLen << " grids\n";
 	cout.flush();
 	ost << "Solution\n";
-	// for(auto &row: solution.map)
-	// {
-		// for(auto col: row)
-			// ost << col << " ";
-		// ost << "\n";
-	// }
 	int n = solution.board->height, m = solution.board->width;
 	const Matrix<int> &map = solution.board->map;
 	for(int i = 0; i < n; i++)
@@ -100,7 +94,6 @@ OStream &operator <<(OStream &ost, const Solution &solution)
 	for (int i = 0;i < n; ++i)
 		for (int j = 0;j < m; ++j)
 			++pic[i][j];
-			// pic[i][j] = std::distance(index.begin(),index.find(pic[i][j]));
 	int min = 0,max = index.size() - 1;
 	char fileName[256];
 	time_t cTime = time(NULL);
@@ -138,6 +131,4 @@ void Solution::computeMap()
 	}
 	for(auto block: board->blocks)
 		map[block] = -1;
-	// for (int i = 0;i < (int)board->blocks.size(); ++i)
-		// map[board->blocks[i].x][board->blocks[i].y] = -1;
 }

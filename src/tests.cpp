@@ -187,7 +187,7 @@ void LargeTest()
 #include <set>
 typedef std::pair<int, int> PII;
 
-void rp(OStream &ost, int n, int m){
+static void rp(OStream &ost, int n, int m){
 	static std::set<PII> S;
 	int x, y;
 	do

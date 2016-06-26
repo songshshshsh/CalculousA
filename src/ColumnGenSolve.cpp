@@ -140,35 +140,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	{
 		// Current tree set
 		Vector<Pair<Tree, GRBVar>> vec;
-		/*
-		// If "Precise", all points can be joint
-		if(this->m_mode == "Precise")
-			for(auto joint: allPoints){
-				// Call Dijkstra
-				Matrix<bool> base;
-				base.resize(n, m);
-				base[joint.first][joint.second] = 1;
-				Matrix<Pair<double, Matrix<bool>>> dijRes
-					= this->dijkstra(base, all1, n, m);
-				// Generate a tree with Dijkstra
-				// result
-				Tree tree(this->m_board, idx);
-				tree.m_tree[joint.first][joint.second] = 1;
-				for(auto term: termsets[idx])
-				{
-					tree.m_tree[term.first][term.second] = 1;
-					for(int i = 0; i < n; i++)
-						for(int j = 0; j < m; j++)
-							if(dijRes[term].second[i][j])
-								tree.m_tree[i][j] = 1;
-				}
-				this->removeNonCuts(
-					map, idx, tree.m_tree, n, m, joint.first, joint.second
-				);
-				// Add the tree to the set
-				vec.push_back(tree);
-			}
-		*/
+
 		// Add the set to the set list
 		treesets.push_back(vec);
 	}
@@ -176,7 +148,6 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 	// Answer history
 	Vector<double> tarAns;
 	for(int T = 0;; T++){
-		// cout << "LP " << T << endl;
 		// Solve the integer (binary) programming problem
 		double curAns = solveLP(treesets, 1);
 		tarAns.push_back(curAns);
@@ -194,11 +165,6 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			ans.push_back(NULL);
 			found:;
 		}
-		
-		// if(T >= 3)
-			// return ans;
-		// output(ans, con);
-		// output(ans, cout);
 		
 		bool updated = false;
 		// Build weight map for unrouted set
@@ -309,14 +275,6 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 		}
 		
 		auto clkNow = clock();
-		/*if((int) ((clkNow - clkStart) / CLOCKS_PER_SEC) > tim)
-		{
-			con << "time up, aborting\n";
-			con << (int) ((clkNow - clkStart) / CLOCKS_PER_SEC)
-				<< " seconds passed\n";
-			//return ans;
-		}*/
-		
 		// If solution didn't improve recently,
 		// cut!
 		if(T >= 1 && fabs(tarAns[T - 1] - tarAns[T]) < 0.5)
@@ -349,38 +307,7 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 				con.flush();
 			}
 		}
-		/*
-		// Solve LP
-		Matrix<double> mapPi;
-		Vector<double> vecLambda;
 		
-		tarAns.push_back(solveLP(treesets, 0, &mapPi, &vecLambda));
-		
-		// Only try to expand when Dijkstra cannot find any solution
-		if(!updated)
-			for(int i = 0; i < t; i++){
-				if(termsets[i + 1]->points.empty())
-					continue;
-				int oldSize = treesets[i].size();
-				sort(
-					treesets[i].begin(), treesets[i].end(),
-					[](const Pair<Tree, GRBVar> &l, const Pair<Tree, GRBVar> &r)
-					{
-						return l.second.get(GRB_DoubleAttr_X)
-							> r.second.get(GRB_DoubleAttr_X);
-					}
-				);
-				try
-				{
-					// int r = 10;
-					// expand(mapPi, vecLambda[i], treesets[i], n, m, i + 1, r);
-				}
-				catch(expandFinished){}
-				if((int) treesets[i].size() != oldSize)
-					updated = true;
-			}
-			
-		*/
 		
 		// Still cannot generate, cut
 		if(!updated)
@@ -391,142 +318,14 @@ Vector<Tree *> ColumnGenSolve::route(int tim) const
 			delete tree;
 	}
 }
-/*
-void ColumnGenSolve::expand(
-	const Matrix<double> &mapPi, double lambda,
-	Vector<Pair<Tree, GRBVar>> &treeset, int n, int m, int idx, int &r
-) const
-{
-	for(int i = 0; i < (int) treeset.size(); i++)
-		expand(mapPi, lambda, treeset, treeset[i].first, n, m, idx, r);
-}
 
-void ColumnGenSolve::expand(
-	const Matrix<double> &mapPi, double lambda,
-	Vector<Pair<Tree, GRBVar>> &treeset, const Tree &tree,
-	int n, int m, int idx, int &r
-) const
-{
-	const Matrix<int> &map = solver->board->map;
-	
-	Matrix<bool> visited, fakeVisited;
-	visited.resize(n, m);
-	fakeVisited.resize(n, m);
-	Matrix<double> mapW;
-	mapW.resize(n, m);
-	
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
-			mapW[i][j] = 1 - mapPi[i][j];
-	
-	// base with weight
-	Vector<Pair<double, BitMatrix>> wbases;
-	
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
-			if(tree.map.get(i, j) && !visited[i][j])
-			{
-				visited[i][j] = 1;
-				int pos = map[i][j];
-				// can't remove a terminal
-				if(pos == idx)
-					continue;
-				// calculate current degree
-				int deg = 0;
-				if(i > 0 && tree.map.get(i - 1, j))
-					++deg;
-				if(i + 1 < n && tree.map.get(i + 1, j))
-					++deg;
-				if(j > 0 && tree.map.get(i, j - 1))
-					++deg;
-				if(j + 1 < m && tree.map.get(i, j + 1))
-					++deg;
-				// remove current grid
-				BitMatrix newTree = tree.map;
-				newTree.reset(i, j);
-				double cw = mapW[i][j];
-				// remove non-cut grids
-				if(deg == 2)
-					cw += removeNonCuts(visited, map, idx, mapW, newTree, n, m);
-				else
-					cw += removeNonCuts(
-						fakeVisited, map, idx, mapW, newTree, n, m
-					);
-				wbases.push_back(Pair<double, BitMatrix>(cw, newTree));
-			}
-	
-	sort(
-		wbases.begin(), wbases.end(),
-		[](const Pair<double, BitMatrix> &l, const Pair<double, BitMatrix> &r)
-		{
-			return l.first > r.first;
-		}
-	);
-	// reverse(wbases.begin(), wbases.end());
-	
-	// for each remove solution, try it
-	for(const auto &wbase: wbases)
-		expand(mapW, lambda, treeset, wbase.second, n, m, idx, r);
-}
-
-void ColumnGenSolve::expand(
-	const Matrix<double> &mapW, double lambda,
-	Vector<Pair<Tree, GRBVar>> &treeset, const BitMatrix &base,
-	int n, int m, int idx, int &r
-) const
-{
-	// split the branch
-	Vector<BitMatrix> branches = treeGetBranches(base, n, m);
-	// Dijkstra from each branch
-	Vector<Matrix<Pair<double, BitMatrix>>> dijMatrices;
-	for(const auto &branch: branches)
-		dijMatrices.push_back(dijkstra(branch, mapW, n, m));
-	
-	double bestw = 1e40;
-	TerminalSet *termset = solver->board->terminalSets[idx];
-	Tree btree(termset);
-	// enumerate the joint
-	for(int i = 0; i < n; i++)
-		for(int j = 0; j < m; j++)
-		{
-			double cw = 0;
-			// construct the tree
-			Tree tree(termset);
-			tree.map = base;
-			for(const auto &dijMatrix: dijMatrices)
-			{
-				if(dijMatrix[i][j].first >= 1e20)
-					goto fail;
-				tree.map |= dijMatrix[i][j].second;
-			}
-			tree.map.set(i, j);
-			removeNonCuts(solver->board->map, idx, tree.map, n, m);
-			for(int i1 = 0; i1 < n; i1++)
-				for(int j1 = 0; j1 < m; j1++)
-					if(tree.map.get(i1, j1))
-						cw += mapW[i1][j1];
-			if(cw < bestw)
-			{
-				bestw = cw; btree = tree;
-			}
-			fail:;
-		}
-	// if the tree is sufficiently good, add it!
-	if(bestw < lambda && pushTreeSet(treeset, btree) && (--r) <= 0)
-		throw expandFinished();
-}
-*/
 
 void ColumnGenSolve::parDijkstraAtExit()
 {
-	// cout << "atexit\n";
-	// cout.flush();
 	for(int i = 0; i < THREAD_CNT; i++){
 		paramsList[i].exiting = true;
 		threads[i].join();
 	}
-	// cout << "atexit finished\n";
-	// cout.flush();
 }
 
 void *ColumnGenSolve::parDijkstraInit()
@@ -554,8 +353,7 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 			// params.mutex.unlock();
 			continue;
 		}
-		// cout << "run!\n";
-		// cout.flush();
+
 		const BitMatrix &base = *params.baseStar;
 		const Matrix<double> &mapW = *params.mapWStar;
 		int n = params.n, m = params.m;
@@ -569,8 +367,7 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 					dist[i][j].second = Point(-1, -1);
 				else
 					dist[i][j].first = 1e30;
-		// Matrix<bool> visited;
-		// visited.resize(n, m);
+
 		int dx[4] = {1, -1, 0, 0};
 		int dy[4] = {0, 0, 1, -1};
 		int EX = 1;
@@ -584,10 +381,8 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 					sgt[EX + i * m + j] = 0;
 		for(int i = EX - 1; i >= 1; i--)
 			sgt[i] = min(sgt[i << 1], sgt[i << 1 | 1]);
-		// cout << "core dij begin\n";
 		for(;;)
 		{
-			// cout << "cur " << sgt[1] << endl;
 			if(sgt[1] >= 1e25) break;
 			int sgtIdx = 1;
 			while(sgtIdx < EX)
@@ -600,7 +395,6 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 			sgt[sgtIdx += EX] = 1e30;
 			for(sgtIdx >>= 1; sgtIdx; sgtIdx >>= 1)
 				sgt[sgtIdx] = min(sgt[sgtIdx << 1], sgt[sgtIdx << 1 | 1]);
-			// visited[cx][cy] = 1;
 			const Pair<double, Point> &cd = dist[cx][cy];
 			for(int d = 0; d < 4; d++)
 			{
@@ -618,7 +412,6 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 				}
 			}
 		}
-		// cout << "core dij end\n";
 		ans = dist;
 		for(int i = 0; i < n; i++)
 			for(int j = 0; j < m; j++)
@@ -636,7 +429,6 @@ void ColumnGenSolve::parDijkstra(ColumnGenSolve::parDijkstraParams &params)
 				}
 			}
 		params.finished = true;
-		// params.mutex.unlock();
 	}
 }
 
@@ -649,41 +441,27 @@ void ColumnGenSolve::dijkstra(
 	for(;;)
 	{
 		for(int i = 0; i < THREAD_CNT; i++)
-			// if(paramsList[i].mutex.try_lock())
-			// {
 				if(paramsList[i].finished)
 				{
 					id = i;
 					goto foundThread;
 				}
-				// paramsList[i].mutex.unlock();
-			// }
 		std::this_thread::sleep_for(std::chrono::microseconds(1));
 	}
 	foundThread:;
-	// cout << "id = " << id << '\n';
 	static int a = 0;
 	static int b = 0;
 	a += id; ++b;
-	// cout << "p " << a << "/" << b << "\n";
-	// cout.flush();
 	parDijkstraParams &params = paramsList[id];
 	params.baseStar = &base;
 	params.mapWStar = &mapW;
 	params.n = n; params.m = m;
 	params.ansStar = &ans;
-	// cout << "createthread begin" << '\n';
-	// cout.flush();
 	params.finished = false;
-	// cout << "createthread end" << '\n';
-	// cout.flush();
-	// params.mutex.unlock();
 }
 
 void ColumnGenSolve::sync()
 {
-	// cout << "sync begin" << '\n';
-	// cout.flush();
 	for(;;)
 	{
 		for(int i = 0; i < THREAD_CNT; i++)
@@ -693,8 +471,6 @@ void ColumnGenSolve::sync()
 		fail:
 		std::this_thread::sleep_for(std::chrono::microseconds(100));
 	}
-	// cout << "sync end" << '\n';
-	// cout.flush();
 }
 
 bool ColumnGenSolve::suggestTree(
@@ -730,8 +506,6 @@ Tree ColumnGenSolve::suggestTree(
 	Tree btree(terminalSet);
 	int T = max(n, m);
 	while(T--)
-	// for(int i = 0; i < n; i++)
-		// for(int j = 0; j < m; j++)
 		{
 			int i = rand() % n, j = rand() % m;
 			double cw = 0;
@@ -743,9 +517,7 @@ Tree ColumnGenSolve::suggestTree(
 					goto fail;
 				for(Point cp(i, j); cp.x != -1 && cp.y != -1; cp = dijMatrix[cp].second)
 					tree.map.set(cp);
-				// tree.map |= dijMatrix[i][j].second;
 			}
-			// tree.map.set(i, j);
 			removeNonCuts(solver->board->map, terminalSet->id, tree.map, n, m);
 			for(int i1 = 0; i1 < n; i1++)
 				for(int j1 = 0; j1 < m; j1++)
@@ -798,7 +570,6 @@ void ColumnGenSolve::removeNonCuts(
 	const Matrix<double> *mapW
 ) const
 {
-	// cout << "Begin Removal\n" << tree;
 	struct TreeEdge
 	{
 		int s, t;
@@ -925,8 +696,6 @@ void ColumnGenSolve::removeNonCuts(
 	if(mapW == NULL)
 		goto funcend;
 	
-	// cout << "optimizing tree\n";
-	// cout << tree;
 	
 	for(auto edge: edges)
 		if(edge->enabled)
@@ -948,15 +717,11 @@ void ColumnGenSolve::removeNonCuts(
 						dist = dijResult[i][j].first;
 						bestPoint1.x = i; bestPoint1.y = j;
 					}
-			// cout << "dist " << dist << '\n';
 			for(auto point: edge->points)
 				dist -= (*mapW)[point];
-			// cout << "dist " << dist << '\n';
 			static int a = 0;
 			static int b = 0;
 			a += (int) (dist >= 0); b++;
-			// cout << "q " << a << "/" << b << "\n";
-			// cout.flush();
 			if(dist >= 0)
 				continue;
 			while(bestPoint1 != Point(-1, -1))
@@ -972,14 +737,7 @@ void ColumnGenSolve::removeNonCuts(
 	funcend:;
 	for(auto edge: edges)
 		delete edge;
-	
-	// if(mapW != NULL)
-	// {
-		// cout << "optimize finished\n";
-		// cout << tree;
-	// }
 
-	// cout << "End Removal\n" << tree;
 }
 
 double ColumnGenSolve::removeNonCuts(
